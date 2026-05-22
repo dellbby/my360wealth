@@ -349,24 +349,14 @@
 <script>
 (function() {
   fetch('/nav.html').then(r => r.text()).then(html => {
-    document.getElementById('site-nav').innerHTML = html;
-    initNav();
+    const host = document.getElementById('site-nav');
+    host.innerHTML = html;
+    host.querySelectorAll('script').forEach(old => {
+      const s = document.createElement('script');
+      s.textContent = old.textContent;
+      document.body.appendChild(s);
+    });
   }).catch(() => { document.getElementById('site-nav').innerHTML = '<div style="padding:14px 24px;color:#c9a974;text-align:center;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;background:#110f0d;">Nav requires a web server to load</div>'; });
-  function initNav() {
-    const nav = document.getElementById('nav');
-    if (!nav) return;
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 50);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    const menu = document.getElementById('menu');
-    const menuBtn = document.getElementById('menuBtn');
-    const menuClose = document.getElementById('menuClose');
-    const openMenu = () => { menu.classList.add('open'); document.body.style.overflow = 'hidden'; };
-    const closeMenu = () => { menu.classList.remove('open'); document.body.style.overflow = ''; };
-    menuBtn.addEventListener('click', openMenu);
-    menuClose.addEventListener('click', closeMenu);
-    document.querySelectorAll('[data-close]').forEach(a => a.addEventListener('click', closeMenu));
-  }
 })();
 </script>
 
