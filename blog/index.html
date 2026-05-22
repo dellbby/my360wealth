@@ -392,60 +392,30 @@
 <body>
 
 <!-- Navigation -->
-<header class="nav" id="nav">
-  <div class="container nav-inner">
-    <a href="../index.html" class="logo">
-      <span class="logo-main"><span class="gold">My </span>360<span class="logo-deg">&deg;</span></span>
-      <span class="logo-sub">Wealth</span>
-    </a>
-    <nav class="nav-links">
-      <a href="../services.html">Services</a>
-      <a href="index.html#process">Our Process</a>
-      <a href="index.html#milestones">Life Milestones</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="#contact" class="portals">Client Portals</a>
-      <span class="divider"></span>
-      <a class="btn-gold" href="#contact">Schedule a Consultation</a>
-    </div>
-    <div class="nav-mobile">
-      <button class="icon-btn" id="menuBtn" aria-label="Open menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
-    </div>
-  </div>
-</header>
-
-<!-- Mobile Menu -->
-<div class="menu-overlay" id="menu" aria-hidden="true">
-  <div class="menu-top">
-    <a href="../index.html" class="logo" data-close>
-      <span class="logo-main"><span class="gold">My </span>360<span class="logo-deg">&deg;</span></span>
-      <span class="logo-sub">Wealth</span>
-    </a>
-    <button class="icon-btn" id="menuClose" aria-label="Close menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </button>
-  </div>
-  <nav class="menu-links">
-    <a href="../services.html" data-close>Services</a>
-    <a href="index.html#process" data-close>Our Process</a>
-    <a href="index.html#milestones" data-close>Life Milestones</a>
-    <a href="#contact" data-close>Contact</a>
-  </nav>
-  <div class="menu-bottom">
-    <a class="btn-gold" href="#contact" data-close>Schedule a Consultation</a>
-    <div class="menu-meta">
-      <a href="tel:8185474720">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 16.92z"/></svg>
-        (818) 547-4720
-      </a>
-      <span style="color:rgba(243,238,226,0.1)">|</span>
-      <a href="mailto:service@my360wealth.com">service@my360wealth.com</a>
-    </div>
-  </div>
-</div>
+<div id="site-nav"></div>
+<script>
+(function() {
+  fetch('/nav.html').then(r => r.text()).then(html => {
+    document.getElementById('site-nav').innerHTML = html;
+    initNav();
+  }).catch(() => { document.getElementById('site-nav').innerHTML = '<div style="padding:14px 24px;color:#c9a974;text-align:center;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;background:#110f0d;">Nav requires a web server to load</div>'; });
+  function initNav() {
+    const nav = document.getElementById('nav');
+    if (!nav) return;
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    const menu = document.getElementById('menu');
+    const menuBtn = document.getElementById('menuBtn');
+    const menuClose = document.getElementById('menuClose');
+    const openMenu = () => { menu.classList.add('open'); document.body.style.overflow = 'hidden'; };
+    const closeMenu = () => { menu.classList.remove('open'); document.body.style.overflow = ''; };
+    menuBtn.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    document.querySelectorAll('[data-close]').forEach(a => a.addEventListener('click', closeMenu));
+  }
+})();
+</script>
 
 <main id="top" style="padding-top:80px;">
   <section class="section" style="padding-bottom:24px;">
@@ -595,22 +565,6 @@
 <script>
   // Year
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Nav scroll effect
-  const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 50);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // Mobile menu
-  const menu = document.getElementById('menu');
-  const menuBtn = document.getElementById('menuBtn');
-  const menuClose = document.getElementById('menuClose');
-  const openMenu = () => { menu.classList.add('open'); document.body.style.overflow = 'hidden'; };
-  const closeMenu = () => { menu.classList.remove('open'); document.body.style.overflow = ''; };
-  menuBtn.addEventListener('click', openMenu);
-  menuClose.addEventListener('click', closeMenu);
-  document.querySelectorAll('[data-close]').forEach(a => a.addEventListener('click', closeMenu));
 
   // Reveal-on-scroll
   const io = new IntersectionObserver((entries) => {
