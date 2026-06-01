@@ -145,6 +145,11 @@
   .nav-item .nav-trigger:hover, .nav-item:hover .nav-trigger, .nav-item:focus-within .nav-trigger { color: var(--cream); }
   .nav-item .caret { transition: transform 0.25s; }
   .nav-item:hover .caret, .nav-item:focus-within .caret { transform: rotate(180deg); }
+    /* Slim single-column dropdown variant */
+  .dropdown.dropdown-sm { min-width: 220px; grid-template-columns: 1fr; padding: 10px 14px; gap: 0; }
+  .dropdown.dropdown-sm .dropdown-col { gap: 2px; }
+  .dropdown.dropdown-sm .dropdown-col a { padding: 6px 0; font-size: 13px; }
+
   .dropdown { position: absolute; top: 100%; left: 50%; transform: translate(-50%, 8px); min-width: 540px; background: rgba(17,15,13,0.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.08); padding: 22px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.25s, transform 0.25s, visibility 0s linear 0.25s; }
   .nav-item:hover .dropdown, .nav-item:focus-within .dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); transition: opacity 0.25s, transform 0.25s; }
   /* Invisible bridge so the dropdown doesn't close when crossing the gap */
