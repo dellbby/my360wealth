@@ -362,18 +362,19 @@
 
 
 
-  /* === Style 7 — Two-Tone Split hero (inner pages) === */
-  .hb-split { display: grid !important; grid-template-columns: 1fr !important; min-height: 240px !important; padding: 0 !important; background: transparent !important; }
-  @media (min-width: 768px) { .hb-split { grid-template-columns: 1fr 1.2fr !important; } }
-  .hb-split-left { background: #2a2421; color: #f3eee2; padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
-  .hb-split-right { background: #f6efe3; padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
-  .hb-split-eyebrow { color: #c9a974; letter-spacing: 0.4em; text-transform: uppercase; font-size: 11px; margin: 0 0 14px; font-family: 'DM Sans', sans-serif; font-weight: 500; }
-  .hb-split-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-style: italic; font-size: 48px; color: #f3eee2; margin: 0; letter-spacing: -0.02em; line-height: 1.05; }
-  @media (min-width: 1024px) { .hb-split-title { font-size: 56px; } }
-  .hb-split-desc { color: rgba(42,34,26,0.82); font-size: 16px; max-width: 520px; line-height: 1.65; margin: 0; font-family: 'DM Sans', sans-serif; }
-  .hb-split-actions { margin-top: 18px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-  .hb-split-actions .btn-gold { height: 38px; padding: 0 22px; }
-  .hb-split-actions .ghost { color: #a07b32; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid rgba(160,123,50,0.4); padding-bottom: 2px; }
+
+  /* === Style 4 — Gold Accent Bar hero (inner pages) === */
+  .hb-bar { padding: 64px 0 !important; background: #fffaf0 !important; min-height: 0 !important; display: block !important; grid-template-columns: none !important; }
+  .hb-bar-inner { display: flex; gap: 28px; align-items: stretch; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+  .hb-bar-rule { width: 3px; background: linear-gradient(to bottom, #a07b32, rgba(160,123,50,0.2)); flex-shrink: 0; border-radius: 1px; }
+  .hb-bar-content { flex: 1; }
+  .hb-bar-eyebrow { color: #a07b32; letter-spacing: 0.3em; text-transform: uppercase; font-size: 11px; margin: 0 0 10px; font-family: 'DM Sans', sans-serif; font-weight: 500; }
+  .hb-bar-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 48px; color: #2a221a; margin: 0 0 14px; letter-spacing: -0.01em; line-height: 1.1; }
+  @media (max-width: 640px) { .hb-bar-title { font-size: 36px; } }
+  .hb-bar-desc { color: rgba(42,34,26,0.78); font-size: 16px; max-width: 620px; margin: 0; line-height: 1.65; font-family: 'DM Sans', sans-serif; }
+  .hb-bar-actions { margin-top: 22px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .hb-bar-actions .btn-gold { height: 38px; padding: 0 22px; }
+  .hb-bar-actions .ghost { color: #a07b32; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid rgba(160,123,50,0.4); padding-bottom: 2px; }
 </style>
 </head>
 <body>
@@ -396,16 +397,17 @@
 
 <main id="top" style="padding-top:140px;">
   <!-- Hero -->
-  <section class="hb-split">
-    <div class="hb-split-left">
-      <p class="hb-split-eyebrow">Personal & Family</p>
-      <h2 class="hb-split-title">Foundation & Endowment Advisory</h2>
-    </div>
-    <div class="hb-split-right">
-      <p class="hb-split-desc">Charitable giving works best when the investment strategy matches the mission. We advise private foundations, family foundations, endowments, and donor-advised fund holders on investment policy, spending strategy, and mission-aligned portfolio design — so the dollars you've set aside for impact actually create it, year after year.</p>
-      <div class="hb-split-actions">
-        <a class="btn-gold" href="../contact.html">Schedule a Consultation</a>
-        <a href="../services.html" class="ghost">All Services</a>
+  <section class="hb-bar">
+    <div class="hb-bar-inner">
+      <div class="hb-bar-rule"></div>
+      <div class="hb-bar-content">
+        <p class="hb-bar-eyebrow">Personal & Family</p>
+        <h2 class="hb-bar-title">Foundation & Endowment Advisory</h2>
+        <p class="hb-bar-desc">Charitable giving works best when the investment strategy matches the mission. We advise private foundations, family foundations, endowments, and donor-advised fund holders on investment policy, spending strategy, and mission-aligned portfolio design — so the dollars you've set aside for impact actually create it, year after year.</p>
+        <div class="hb-bar-actions">
+          <a class="btn-gold" href="../contact.html">Schedule a Consultation</a>
+          <a href="../services.html" class="ghost">All Services</a>
+        </div>
       </div>
     </div>
   </section>
