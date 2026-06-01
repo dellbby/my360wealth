@@ -1,3 +1,16 @@
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-meta">
+      <a href="tel:8185474720" class="topbar-link"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13 1 .37 1.97.72 2.9a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.18-1.18a2 2 0 012.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0122 16.92z"/></svg>(818) 547-4720</a>
+      <span class="topbar-sep">|</span>
+      <a href="mailto:service@my360wealth.com" class="topbar-link">service@my360wealth.com</a>
+    </div>
+    <div class="topbar-actions">
+      <a href="#" class="topbar-portals" id="portalsBtnTop">Client Portals</a>
+      <a class="btn-gold topbar-cta" href="/contact.html">Schedule a Consultation</a>
+    </div>
+  </div>
+</div>
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="/index.html" class="logo">
@@ -11,11 +24,7 @@
       <a href="/blog/index.html">Blog</a>
       <a href="/contact.html">Contact</a>
     </nav>
-    <div class="nav-cta">
-      <a href="#" class="portals" id="portalsBtn">Client Portals</a>
-      <span class="divider"></span>
-      <a class="btn-gold" href="/contact.html">Schedule a Consultation</a>
-    </div>
+    
     <div class="nav-mobile">
       <button class="icon-btn" id="menuBtn" aria-label="Open menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -98,6 +107,21 @@
 </div>
 
 <style>
+  /* Top utility bar (above main nav) */
+  .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 52; background: #0a0907; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .topbar-inner { display: flex; align-items: center; justify-content: space-between; min-height: 36px; padding: 6px 0; gap: 12px; flex-wrap: wrap; }
+  .topbar-meta { display: none; align-items: center; gap: 14px; font-size: 12px; color: rgba(243,238,226,0.55); }
+  @media (min-width: 768px) { .topbar-meta { display: flex; } }
+  .topbar-link { display: inline-flex; align-items: center; gap: 6px; color: rgba(243,238,226,0.55); transition: color 0.2s; }
+  .topbar-link:hover { color: var(--cream); }
+  .topbar-sep { color: rgba(243,238,226,0.2); }
+  .topbar-actions { display: flex; align-items: center; gap: 14px; margin-left: auto; }
+  .topbar-portals { font-size: 11px; color: rgba(243,238,226,0.65); letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+  .topbar-portals:hover { color: var(--gold); }
+  .topbar-cta { height: 30px; padding: 0 16px; font-size: 11px; }
+  /* Push main nav down to clear the top bar */
+  .nav { top: 42px !important; }
+
   /* Logo image */
   .logo-img { height: 56px; width: auto; display: block; }
   @media (min-width: 768px) { .logo-img { height: 68px; } }
@@ -144,8 +168,9 @@
   const overlay = document.getElementById('portalOverlay');
   function openPortals() { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
   function closePortals() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
-  const portalsBtn = document.getElementById('portalsBtn');
-  if (portalsBtn) portalsBtn.addEventListener('click', (e) => { e.preventDefault(); openPortals(); });
+  const portalsBtn = document.getElementById('portalsBtnTop') || document.getElementById('portalsBtn');
+  const portalsBtnAlt = document.getElementById('portalsBtn');
+  [portalsBtn, portalsBtnAlt].forEach(b => { if (b) b.addEventListener('click', (e) => { e.preventDefault(); openPortals(); }); });
   const portalsBtnMobile = document.getElementById('portalsBtnMobile');
   if (portalsBtnMobile) portalsBtnMobile.addEventListener('click', (e) => { e.preventDefault(); closeMenu(); setTimeout(openPortals, 250); });
   const portalClose = document.getElementById('portalClose');
