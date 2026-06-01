@@ -6,6 +6,7 @@
       <a href="mailto:service@my360wealth.com" class="topbar-link">service@my360wealth.com</a>
     </div>
     <div class="topbar-actions">
+      <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener" class="bc-badge" aria-label="FINRA BrokerCheck"><img src="https://static.fmgsuite.com/site/templates/global/img/brokerCheck-bar-logo.png" alt="BrokerCheck by FINRA" /></a>
       <a href="#" class="topbar-portals" id="portalsBtnTop">Client Portals</a>
       <a class="btn-gold topbar-cta" href="/contact.html">Schedule a Consultation</a>
     </div>
@@ -52,7 +53,7 @@
         </div>
       </div>
       <a href="/index.html#milestones">Life Milestones</a>
-      <a href="/blog/index.html">Blog</a>
+      <a href="/resource-center/index.html">Education</a>
       <a href="/contact.html">Contact</a>
     </nav>
     
@@ -78,7 +79,7 @@
     <a href="/services.html" data-close>Services</a>
     <a href="/process.html" data-close>Our Process</a>
     <a href="/index.html#milestones" data-close>Life Milestones</a>
-    <a href="/blog/index.html" data-close>Blog</a>
+    <a href="/resource-center/index.html" data-close>Education</a>
     <a href="#" id="portalsBtnMobile">Client Portals</a>
     <a href="/contact.html" data-close>Contact</a>
   </nav>
@@ -138,6 +139,11 @@
 </div>
 
 <style>
+  /* BrokerCheck by FINRA badge */
+  .bc-badge { display: inline-flex; align-items: center; transition: transform 0.2s, opacity 0.2s; }
+  .bc-badge:hover { transform: translateY(-1px); opacity: 0.9; }
+  .bc-badge img { height: 22px; width: auto; display: block; }
+
   /* Services dropdown */
   .nav-item.has-dropdown { position: relative; display: inline-flex; align-items: center; }
   .nav-item .nav-trigger { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-transform: uppercase; font-size: 13px; letter-spacing: 0.06em; transition: color 0.3s; }

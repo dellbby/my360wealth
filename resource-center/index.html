@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About Us | My 360 Wealth Management Group</title>
-<link rel="canonical" href="https://www.my360wealth.com/about.html" />
-<meta name="description" content="About My 360 Wealth Management Group — a holistic Financial Life Management firm led by CFP® professional and AIF® Pierre M. Movsessian, serving clients in Glendale, CA and nationwide." />
+<title>Blog | My 360 Wealth Management Group</title>
+<link rel="canonical" href="https://www.my360wealth.com/resource-center/" />
+<meta name="description" content="Insights and articles on retirement planning, tax strategy, investing, and wealth management from the My 360 Wealth Management team." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -358,27 +358,35 @@
   /* Force nav to be visible on light pages */
   .nav { background: rgba(17,15,13,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 12px 0; }
 
-  /* About page */
-  .about-prose p { color: rgba(42,34,26,0.82); font-size: 16px; line-height: 1.75; margin: 0 0 18px; }
-  .about-prose a { color: #a07b32; text-decoration: underline; }
-  .about-prose a:hover { color: #2a221a; }
-  .partners-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
-  @media (min-width: 640px) { .partners-grid { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1024px) { .partners-grid { grid-template-columns: 1fr 1fr 1fr; } }
-  .partner-card { background: #ffffff; border: 1px solid rgba(42,34,26,0.08); padding: 18px 20px; transition: border-color 0.3s, box-shadow 0.3s; }
-  .partner-card:hover { border-color: rgba(201,169,116,0.45); box-shadow: 0 6px 18px rgba(42,34,26,0.06); }
-  .partner-card h3 { font-family: var(--font-heading); font-size: 15px; color: #a07b32; margin: 0 0 6px; letter-spacing: 0.02em; }
-  .partner-card p { color: rgba(42,34,26,0.78); font-size: 14px; line-height: 1.6; margin: 0; }
-  .advisors { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 10px; }
-  @media (min-width: 640px) { .advisors { grid-template-columns: 1fr 1fr; } }
-  .advisors li { padding: 12px 16px; background: #ffffff; border-left: 3px solid #a07b32; color: rgba(42,34,26,0.82); font-size: 15px; }
-  .advisors li strong { color: #2a221a; }
-  .about-quote { max-width: 760px; text-align: center; padding: 24px; margin: 0 auto; }
-  .about-quote p { font-family: var(--font-heading); font-style: italic; font-size: 26px; color: #2a221a; margin: 0 0 16px; line-height: 1.4; }
-  @media (min-width: 768px) { .about-quote p { font-size: 32px; } }
-  .about-quote .attribution { color: rgba(42,34,26,0.7); font-size: 14px; }
-  .about-quote .attribution a { color: #a07b32; text-decoration: underline; }
-  .about-quote .attribution a:hover { color: #2a221a; }
+  /* Blog list */
+  .post-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  @media (min-width: 768px) { .post-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .post-grid { grid-template-columns: repeat(3, 1fr); } }
+  .post-card { display: flex; flex-direction: column; background: #ffffff; border: 1px solid rgba(42,34,26,0.08); text-decoration: none; color: inherit; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; overflow: hidden; }
+  .post-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(42,34,26,0.1); border-color: rgba(201,169,116,0.4); }
+  .post-card.coming { opacity: 0.75; cursor: default; }
+  .post-card.coming:hover { transform: none; box-shadow: none; border-color: rgba(42,34,26,0.08); }
+  .post-img { aspect-ratio: 16/10; background-size: cover; background-position: center; position: relative; }
+  .post-tag-pub { position: absolute; top: 14px; left: 14px; background: rgba(17,15,13,0.92); color: var(--cream); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; padding: 6px 10px; }
+  .post-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .post-cat { color: #a07b32; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; }
+  .post-title { font-family: var(--font-heading); font-size: 22px; color: #2a221a; margin: 0; line-height: 1.25; }
+  .post-excerpt { color: rgba(42,34,26,0.7); font-size: 15px; line-height: 1.6; margin: 0; flex: 1; }
+  .post-meta { display: flex; align-items: center; gap: 10px; color: rgba(42,34,26,0.5); font-size: 12px; letter-spacing: 0.05em; }
+  .post-meta .dot { color: rgba(42,34,26,0.35); }
+
+  /* Article page */
+  .article { max-width: 760px; margin: 0 auto; }
+  .article .hero-img { aspect-ratio: 16/8; background-size: cover; background-position: center; margin-bottom: 40px; }
+  .article h1 { font-family: var(--font-heading); font-size: 40px; color: #2a221a; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.01em; }
+  @media (min-width: 768px) { .article h1 { font-size: 52px; } }
+  .article .meta { display: flex; gap: 12px; color: rgba(42,34,26,0.55); font-size: 13px; margin-bottom: 32px; }
+  .article h2 { font-family: var(--font-heading); font-size: 28px; color: #2a221a; margin: 36px 0 14px; }
+  .article p, .article li { color: rgba(42,34,26,0.82); font-size: 17px; line-height: 1.75; }
+  .article p { margin: 0 0 18px; }
+  .article ul, .article ol { padding-left: 22px; margin: 0 0 18px; }
+  .article ul li, .article ol li { margin-bottom: 8px; }
+  .article blockquote { border-left: 3px solid #a07b32; margin: 24px 0; padding: 4px 0 4px 18px; color: rgba(42,34,26,0.75); font-style: italic; }
 </style>
 </head>
 <body>
@@ -400,109 +408,96 @@
 </script>
 
 <main id="top" style="padding-top:140px;">
-  <!-- Page header -->
-  <section class="section" style="padding: 48px 0 16px;">
+  <section class="section" style="padding-bottom:24px;">
     <div class="container">
-      <div class="section-head reveal" style="margin-bottom: 0;">
-        <span class="eyebrow">About Us</span>
-        <h2 style="font-size: 36px; margin-top: 12px;">Why Us</h2>
-        <p class="desc" style="margin-top: 14px; font-size: 15px; max-width: 760px;">Our mission is to empower our clients to live their one best life through education and trusted advice.</p>
+      <div class="section-head reveal">
+        <span class="eyebrow">Insights &amp; Articles</span>
+        <h2>Blog</h2>
+        <p class="desc">Practical financial planning, tax strategy, retirement, and investing insights from the My 360 Wealth Management team.</p>
       </div>
     </div>
   </section>
-
-  <!-- Story -->
-  <section class="section" style="padding: 24px 0 32px;">
-    <div class="container-narrow">
-      <div class="reveal about-prose">
-        <p>Financial planning and wealth management services originally began as a profession which guided the financial and administrative concerns of entrepreneurs and affluent families, thereby allowing them to focus on career, family and leisure.</p>
-        <p>My 360&deg; Wealth Management Group has maintained the essence of this relationship between the trusted advisor and the client. Through the active leadership and vision of our team leader, Pierre M. Movsessian, MBA, <a href="https://www.letsmakeaplan.org/why-choose-a-cfp-professional" target="_blank" rel="noopener">CERTIFIED FINANCIAL PLANNER&trade;</a> professional and <a href="https://www.fi360.com/resources/prudent-practices" target="_blank" rel="noopener">Accredited Investment Fiduciary</a>, we are proud to provide a holistic Financial Life Management process &mdash; who together with the client&rsquo;s accountant, attorney and other outside professionals, plan and manage the client&rsquo;s entire financial life and business affairs.</p>
-        <p>As Certified Financial Planners, Accredited Investment Fiduciaries and Registered Investment Advisor Representatives we are held to the highest industry standards. Acting under a fiduciary standard of care for our clients, we strive to always offer our best.</p>
-        <p>We are proud to work toward providing our clients the very best when it comes to helping them live their one best life. We do this by strategically partnering with leaders in every aspect of our industry:</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Partners grid -->
-  <section class="section" style="padding: 0 0 48px;">
-    <div class="container-narrow">
-      <div class="partners-grid">
-        <div class="partner-card reveal">
-          <h3>Asset Custodians</h3>
-          <p>Charles Schwab, TD Ameritrade</p>
-        </div>
-        <div class="partner-card reveal">
-          <h3>Renowned Asset Managers</h3>
-          <p>Dimensional Fund Advisors (DFA), American Funds Capital Group, Vanguard</p>
-        </div>
-        <div class="partner-card reveal">
-          <h3>Academia &amp; Research</h3>
-          <p>Nobel Laureate Eugene Fama, David Kelly (JP Morgan), Burt White (LPL Financial)</p>
-        </div>
-        <div class="partner-card reveal">
-          <h3>Client Planning Process</h3>
-          <p>United Capital FinLife Partners</p>
-        </div>
-        <div class="partner-card reveal">
-          <h3>Planning &amp; Reporting Technology</h3>
-          <p>MoneyGuide Pro, eMoney Advisors, Orion Advisors</p>
-        </div>
-        <div class="partner-card reveal">
-          <h3>Advisor Coaching</h3>
-          <p>Peak Advisor Alliance</p>
-        </div>
-        <div class="partner-card reveal">
-          <h3>Credit Union Partners</h3>
-          <p>SCE Federal Credit Union, LA Financial Credit Union, UMe Credit Union</p>
-        </div>
-        <div class="partner-card reveal">
-          <h3>Employer Retirement Plan Association</h3>
-          <p>Global Retirement Partners Advisor Alliance (GRPAA)</p>
-        </div>
-        <div class="partner-card reveal">
-          <h3>RIA &amp; LPL Hybrid Branch</h3>
-          <p>Global Retirement Partners (GRP) &mdash; one of the largest LPL Hybrid branches</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Advisory Board -->
-  <section class="section" style="padding: 24px 0 48px;">
-    <div class="container-narrow">
-      <div class="reveal" style="margin-bottom: 24px;">
-        <h2 style="font-family: var(--font-heading); font-size: 28px; color: #2a221a; margin: 0;">Advisory Board Thought Leaders &amp; Strategic Partners</h2>
-      </div>
-      <ul class="advisors reveal">
-        <li><strong>Ron Carson</strong> &mdash; Founder of Carson Group &amp; Peak Advisor Alliance</li>
-        <li><strong>Joe Duran</strong> &mdash; Founder of United Capital &amp; FinLife Partners</li>
-        <li><strong>Eugene Fama</strong> &mdash; Nobel Laureate &amp; Director of Dimensional Fund Advisors (DFA)</li>
-        <li><strong>Burt White</strong> &mdash; Head of Research &amp; CIO of LPL Financial</li>
-        <li><strong>David Kelly</strong> &mdash; Chief Investment Officer of JP Morgan</li>
-        <li><strong>Bill Chetney</strong> &mdash; Founder of GRP Advisor Alliance (GRP AA)</li>
-        <li><strong>Geoffrey White</strong> &mdash; CEO of Global Retirement Partners (GRP)</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Quote -->
-  <section class="section" style="padding: 24px 0 64px;">
-    <div class="container-narrow">
-      <div class="reveal about-quote">
-        <p>&ldquo;Life is a collection of experiences, we help you plan for them!&rdquo;</p>
-        <div class="attribution">&mdash; Pierre M. Movsessian, MBA, CFP&reg;, AIF&reg;, Founder &amp; Chief Investment Officer of My 360 Wealth Management Group</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
   <section class="section" style="padding-top:24px;">
-    <div class="container" style="text-align:center;">
-      <div class="reveal" style="max-width:640px;margin:0 auto;">
-        <p class="eyebrow" style="display:block;margin-bottom:16px;">Ready to Begin?</p>
-        <h2 class="heading" style="font-size:32px;color:#2a221a;margin:0 0 16px;">Let&apos;s start the conversation.</h2>
-        <p style="color:rgba(42,34,26,0.78);font-size:17px;line-height:1.7;margin:0 0 28px;">Every plan begins with a complimentary, no-obligation conversation about your goals.</p>
-        <a class="btn-gold" href="/contact.html" style="height:44px;padding:0 28px;">Schedule a Consultation</a>
+    <div class="container">
+      <div class="post-grid">
+        <a class="post-card" href="how-to-choose-a-financial-advisor.html">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80');">
+        
+      </div>
+      <div class="post-body">
+        <span class="post-cat">Financial Planning</span>
+        <h3 class="post-title">How to Choose a Financial Advisor: A 7-Question Checklist</h3>
+        <p class="post-excerpt">Not all financial advisors are the same. The right questions reveal whether someone is held to a fiduciary standard, how they're paid, and whether their approach fits your goals.</p>
+        <div class="post-meta">
+          <span>May 11, 2026</span><span class="dot">·</span><span>8 min read</span>
+        </div>
+      </div>
+    </a>
+    <a class="post-card coming" href="#" onclick="event.preventDefault();">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1200&q=80');">
+        <span class="post-tag-pub">Coming Soon</span>
+      </div>
+      <div class="post-body">
+        <span class="post-cat">Retirement</span>
+        <h3 class="post-title">Social Security Claiming Strategies: When to Take Benefits</h3>
+        <p class="post-excerpt">Deciding when to claim Social Security can mean a $100,000+ swing in lifetime benefits. Here's how we evaluate the decision.</p>
+        <div class="post-meta">
+          <span>Coming Soon</span><span class="dot">·</span><span>—</span>
+        </div>
+      </div>
+    </a>
+    <a class="post-card coming" href="#" onclick="event.preventDefault();">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&q=80');">
+        <span class="post-tag-pub">Coming Soon</span>
+      </div>
+      <div class="post-body">
+        <span class="post-cat">Tax Planning</span>
+        <h3 class="post-title">Roth Conversion Windows: Why Early Retirement Years Matter Most</h3>
+        <p class="post-excerpt">The gap between retirement and required minimum distributions is the most powerful tax-planning window most retirees miss.</p>
+        <div class="post-meta">
+          <span>Coming Soon</span><span class="dot">·</span><span>—</span>
+        </div>
+      </div>
+    </a>
+    <a class="post-card coming" href="#" onclick="event.preventDefault();">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80');">
+        <span class="post-tag-pub">Coming Soon</span>
+      </div>
+      <div class="post-body">
+        <span class="post-cat">Investing</span>
+        <h3 class="post-title">Sitting on Concentrated Stock? Five Ways to Diversify Tax-Smart</h3>
+        <p class="post-excerpt">When a single position is more than 20% of your net worth, it's time for a plan. Here are the strategies we use most often.</p>
+        <div class="post-meta">
+          <span>Coming Soon</span><span class="dot">·</span><span>—</span>
+        </div>
+      </div>
+    </a>
+    <a class="post-card coming" href="#" onclick="event.preventDefault();">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80');">
+        <span class="post-tag-pub">Coming Soon</span>
+      </div>
+      <div class="post-body">
+        <span class="post-cat">Business</span>
+        <h3 class="post-title">The Real Cost of Your 401(k): How to Spot Hidden Fees</h3>
+        <p class="post-excerpt">Plan sponsors who haven't benchmarked their 401(k) in 5+ years almost always have excess fees. Here's what to look for.</p>
+        <div class="post-meta">
+          <span>Coming Soon</span><span class="dot">·</span><span>—</span>
+        </div>
+      </div>
+    </a>
+    <a class="post-card coming" href="#" onclick="event.preventDefault();">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1528747045269-390fe33c19f2?w=1200&q=80');">
+        <span class="post-tag-pub">Coming Soon</span>
+      </div>
+      <div class="post-body">
+        <span class="post-cat">Estate Planning</span>
+        <h3 class="post-title">Five Estate Planning Mistakes We See Every Year</h3>
+        <p class="post-excerpt">From outdated beneficiaries to unfunded trusts, these are the small slips that derail otherwise great estate plans.</p>
+        <div class="post-meta">
+          <span>Coming Soon</span><span class="dot">·</span><span>—</span>
+        </div>
+      </div>
+    </a>
       </div>
     </div>
   </section>
