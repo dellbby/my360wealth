@@ -370,6 +370,18 @@
   .proc-body ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
   .proc-body li { position: relative; padding-left: 18px; color: rgba(42,34,26,0.7); font-size: 14px; line-height: 1.6; }
   .proc-body li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; background: #a07b32; border-radius: 50%; }
+
+  /* === Unified page-header styling for inner pages === */
+  main > section.section:first-of-type { padding: 32px 0 16px !important; }
+  main > section.section:first-of-type .section-head { margin-bottom: 0 !important; text-align: center; max-width: 760px; margin-left: auto; margin-right: auto; }
+  main > section.section:first-of-type .section-head .eyebrow { display: block; color: #a07b32; letter-spacing: 0.3em; text-transform: uppercase; font-size: 11px; margin-bottom: 12px; }
+  main > section.section:first-of-type .section-head h2 { font-family: 'Playfair Display', Georgia, serif !important; font-weight: 500 !important; font-size: 36px !important; line-height: 1.15 !important; letter-spacing: -0.01em !important; color: #2a221a !important; margin: 0 0 14px !important; }
+  main > section.section:first-of-type .section-head .desc { font-family: 'DM Sans', sans-serif; font-size: 15px !important; line-height: 1.65; color: rgba(42,34,26,0.7) !important; max-width: 720px; margin: 0 auto !important; }
+  /* Service detail pages use .svc-hero — match same look */
+  .svc-hero { padding: 32px 0 24px !important; }
+  .svc-hero .eyebrow { display: block; margin-bottom: 12px; color: #a07b32; letter-spacing: 0.3em; text-transform: uppercase; font-size: 11px; }
+  .svc-hero .svc-h1 { font-family: 'Playfair Display', Georgia, serif !important; font-weight: 500 !important; font-size: 36px !important; line-height: 1.15 !important; letter-spacing: -0.01em !important; color: #2a221a !important; margin: 0 0 14px !important; }
+  .svc-hero .svc-lead { font-size: 15px !important; line-height: 1.65 !important; max-width: 720px; }
 </style>
 </head>
 <body>
