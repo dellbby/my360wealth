@@ -100,7 +100,7 @@
   .menu-meta a:hover { color: var(--cream-50); }
 
   /* Hero */
-  .hero { position: relative; min-height: 70vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 110px 0 56px; }
+  .hero { position: relative; min-height: 56vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 88px 0 36px; }
   .hero-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1920&q=80') center/cover no-repeat; }
   .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,13,11,0.85), rgba(15,13,11,0.7), rgba(15,13,11,0.95)); }
   @media (min-width: 768px) { .hero-overlay { background: linear-gradient(to bottom, rgba(15,13,11,0.7), rgba(15,13,11,0.55), rgba(15,13,11,0.95)); } }
@@ -340,6 +340,10 @@
 
   /* Footer dark bg (so cream text is readable on light pages) */
   footer { background: #2a2421; color: var(--cream); position: relative; z-index: 1; }
+
+  /* Service card links on homepage */
+  a.card { text-decoration: none; color: inherit; cursor: pointer; }
+  a.card:hover { transform: translateY(-2px); }
 </style>
 </head>
 <body>
@@ -571,9 +575,11 @@
     { ico: 'file', t: 'Tax Planning', d: 'Integrated personal and business tax planning strategies that aim to minimize your tax burden.' },
     { ico: 'grad', t: 'Employee Education', d: 'Financial wellness programs, enrollment seminars, and retirement readiness education for your workforce.' }
   ];
-  const cardHTML = (s) => `<div class="card reveal"><span class="ico">${ICONS[s.ico]}</span><h4>${s.t}</h4><p>${s.d}</p><span class="underline"></span></div>`;
-  document.getElementById('services-personal').innerHTML = personal.map(cardHTML).join('');
-  document.getElementById('services-business').innerHTML = business.map(cardHTML).join('');
+  const personalLinks = ['/pages/wealth-retirement-planning.html','/pages/portfolio-management.html','/pages/trust-estate-planning.html','/pages/foundation-endowment.html','/pages/concentrated-stock-strategies.html','/pages/retirement-income.html'];
+  const businessLinks = ['/pages/401k-qualified-plans.html','/pages/deferred-compensation.html','/pages/insurance-services.html','/pages/business-succession.html','/pages/tax-planning.html','/pages/employee-education.html'];
+  const cardHTML = (s, href) => `<a class="card reveal" href="${href}"><span class="ico">${ICONS[s.ico]}</span><h4>${s.t}</h4><p>${s.d}</p><span class="underline"></span></a>`;
+  document.getElementById('services-personal').innerHTML = personal.map((s,i) => cardHTML(s, personalLinks[i])).join('');
+  document.getElementById('services-business').innerHTML = business.map((s,i) => cardHTML(s, businessLinks[i])).join('');
   observeReveals();
 
   // Process
