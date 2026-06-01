@@ -18,8 +18,39 @@
     </a>
     <nav class="nav-links">
       <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/process.html">Our Process</a>
+      <div class="nav-item has-dropdown">
+        <a href="/services.html" class="nav-trigger">Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <div class="dropdown">
+          <div class="dropdown-col">
+            <span class="dropdown-head">Personal &amp; Family</span>
+            <a href="/pages/wealth-retirement-planning.html">Wealth &amp; Retirement Planning</a>
+            <a href="/pages/portfolio-management.html">Portfolio Management</a>
+            <a href="/pages/trust-estate-planning.html">Trust &amp; Estate Planning</a>
+            <a href="/pages/foundation-endowment.html">Foundation &amp; Endowment</a>
+            <a href="/pages/concentrated-stock-strategies.html">Concentrated Stock Strategies</a>
+            <a href="/pages/retirement-income.html">Retirement Income Planning</a>
+          </div>
+          <div class="dropdown-col">
+            <span class="dropdown-head">Business &amp; Employers</span>
+            <a href="/pages/401k-qualified-plans.html">401(k) &amp; Qualified Plans</a>
+            <a href="/pages/deferred-compensation.html">Deferred Compensation</a>
+            <a href="/pages/insurance-services.html">Insurance Services</a>
+            <a href="/pages/business-succession.html">Business Succession</a>
+            <a href="/pages/tax-planning.html">Tax Planning</a>
+            <a href="/pages/employee-education.html">Employee Education</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-dropdown">
+        <a href="/process.html" class="nav-trigger">Our Process <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <div class="dropdown dropdown-sm">
+          <div class="dropdown-col">
+            <a href="/process.html">Our Process</a>
+            <a href="https://yourmoneymind.finlife.com/?iid=6c512f88-36fd-4ad5-bdef-66b7127b71d2" target="_blank" rel="noopener">What’s Your Money Mind?</a>
+            <a href="https://pro.riskalyze.com/embed/581f798ad603a7e761ab" target="_blank" rel="noopener">What’s Your Risk Score?</a>
+          </div>
+        </div>
+      </div>
       <a href="/index.html#milestones">Life Milestones</a>
       <a href="/blog/index.html">Blog</a>
       <a href="/contact.html">Contact</a>
@@ -107,6 +138,21 @@
 </div>
 
 <style>
+  /* Services dropdown */
+  .nav-item.has-dropdown { position: relative; display: inline-flex; align-items: center; }
+  .nav-item .nav-trigger { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-transform: uppercase; font-size: 13px; letter-spacing: 0.06em; transition: color 0.3s; }
+  .nav-item .nav-trigger:hover, .nav-item:hover .nav-trigger, .nav-item:focus-within .nav-trigger { color: var(--cream); }
+  .nav-item .caret { transition: transform 0.25s; }
+  .nav-item:hover .caret, .nav-item:focus-within .caret { transform: rotate(180deg); }
+  .dropdown { position: absolute; top: 100%; left: 50%; transform: translate(-50%, 8px); min-width: 540px; background: rgba(17,15,13,0.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.08); padding: 22px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.25s, transform 0.25s, visibility 0s linear 0.25s; }
+  .nav-item:hover .dropdown, .nav-item:focus-within .dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); transition: opacity 0.25s, transform 0.25s; }
+  /* Invisible bridge so the dropdown doesn't close when crossing the gap */
+  .nav-item .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 12px; }
+  .dropdown-col { display: flex; flex-direction: column; gap: 8px; }
+  .dropdown-head { font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); padding-bottom: 6px; border-bottom: 1px solid rgba(201,169,116,0.25); margin-bottom: 4px; }
+  .dropdown a { color: rgba(243,238,226,0.85); font-size: 13px; letter-spacing: 0; text-transform: none; padding: 4px 0; transition: color 0.2s; }
+  .dropdown a:hover { color: var(--gold); }
+
   /* Top utility bar (above main nav) */
   .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 52; background: #0a0907; border-bottom: 1px solid rgba(255,255,255,0.05); }
   .topbar-inner { display: flex; align-items: center; justify-content: space-between; min-height: 36px; padding: 6px 0; gap: 12px; flex-wrap: wrap; }
