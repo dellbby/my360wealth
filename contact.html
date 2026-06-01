@@ -305,6 +305,33 @@
   .hb-bar-actions { margin-top: 22px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
   .hb-bar-actions .btn-gold { height: 38px; padding: 0 22px; }
   .hb-bar-actions .ghost { color: #a07b32; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid rgba(160,123,50,0.4); padding-bottom: 2px; }
+
+  /* === Contact section — light-theme readability fix === */
+  .contact { background: transparent !important; }
+  .contact::before { display: none !important; }
+  .field label { color: rgba(42,34,26,0.7) !important; }
+  .field input, .field textarea { background: #ffffff !important; border-color: rgba(42,34,26,0.15) !important; color: #2a221a !important; }
+  .field input::placeholder, .field textarea::placeholder { color: rgba(42,34,26,0.4) !important; }
+  .field input:focus, .field textarea:focus { border-color: #a07b32 !important; }
+  .submit { background: #a07b32 !important; color: #ffffff !important; }
+  .submit:hover { background: #b89043 !important; }
+  .thanks { background: #ffffff !important; border-color: rgba(160,123,50,0.4) !important; }
+  .thanks h3 { color: #2a221a !important; }
+  .thanks p { color: rgba(42,34,26,0.7) !important; }
+  .thanks .badge { color: #a07b32 !important; border-color: rgba(160,123,50,0.4) !important; }
+  .offices h3 { color: #2a221a !important; }
+  .offices .rule { background: rgba(160,123,50,0.5) !important; }
+  .office { background: #ffffff !important; border-color: rgba(42,34,26,0.08) !important; }
+  .office:hover { border-color: rgba(160,123,50,0.4) !important; }
+  .office-name .name { color: #2a221a !important; }
+  .office-name .pill { color: #a07b32 !important; border-color: rgba(160,123,50,0.35) !important; }
+  .office-row { color: rgba(42,34,26,0.7) !important; }
+  .office-row a { color: #2a221a !important; }
+  .office-row a:hover { color: #a07b32 !important; }
+  .office-row .ico { color: #a07b32 !important; }
+  .email-row { color: rgba(42,34,26,0.7); }
+  .email-row a { color: #2a221a !important; }
+  .email-row a:hover { color: #a07b32 !important; }
 </style>
 </head>
 <body>
