@@ -402,6 +402,8 @@
   .gp-item:hover { border-color: rgba(201,169,116,0.4); }
   .gp-item dt { font-family: var(--font-heading); font-size: 16px; color: #2a221a; margin-bottom: 6px; }
   .gp-item dd { margin: 0; color: rgba(42,34,26,0.75); font-size: 13.5px; line-height: 1.6; }
+
+  #articles, #glossary { scroll-margin-top: 140px; }
 </style>
 </head>
 <body>
@@ -435,12 +437,12 @@
   <section style="padding: 0 0 8px;">
     <div class="container">
       <div class="page-subnav reveal">
-        <a href="/resource-center/index.html" class="active">Articles</a>
-        <a href="/resource-center/glossary.html">Glossary</a>
+        <a href="#articles" class="active">Articles</a>
+        <a href="#glossary">Glossary</a>
       </div>
     </div>
   </section>
-  <section class="section" style="padding-top:24px;">
+  <section class="section" id="articles" style="padding-top:24px;">
     <div class="container">
       <div class="post-grid">
         <a class="post-card" href="how-to-choose-a-financial-advisor.html">
@@ -525,7 +527,7 @@
     </div>
   </section>
 
-  <section class="section" style="padding: 32px 0 64px;">
+  <section class="section" id="glossary" style="padding: 32px 0 64px;">
     <div class="container">
       <div class="reveal" style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:24px;">
         <div>
