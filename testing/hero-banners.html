@@ -415,6 +415,103 @@
   .hb-5-eyebrow { color: #a07b32; letter-spacing: 0.3em; text-transform: uppercase; font-size: 11px; margin: 0 0 10px; }
   .hb-5-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 44px; color: #2a221a; margin: 0 0 12px; letter-spacing: -0.01em; }
   .hb-5-desc { color: rgba(42,34,26,0.78); font-size: 15px; max-width: 640px; margin: 0; line-height: 1.65; }
+
+  /* STYLE 6 — Display Numeral */
+  .hb-6 { padding: 72px 0; background: #faf6ec; }
+  .hb-6-inner { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; }
+  .hb-6-num { font-family: 'Playfair Display', serif; font-style: italic; font-size: 140px; color: rgba(160,123,50,0.22); line-height: 1; letter-spacing: -0.04em; }
+  @media (max-width: 640px) { .hb-6-num { font-size: 96px; } }
+  .hb-6-eyebrow { color: #a07b32; letter-spacing: 0.3em; text-transform: uppercase; font-size: 11px; margin: 0 0 10px; }
+  .hb-6-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 48px; color: #2a221a; margin: 0 0 14px; letter-spacing: -0.01em; }
+  .hb-6-desc { color: rgba(42,34,26,0.78); font-size: 16px; max-width: 540px; margin: 0; line-height: 1.65; }
+
+  /* STYLE 7 — Two-Tone Split */
+  .hb-7 { display: grid; grid-template-columns: 1fr; min-height: 280px; }
+  @media (min-width: 768px) { .hb-7 { grid-template-columns: 1fr 1.2fr; } }
+  .hb-7-left { background: #2a2421; color: #f3eee2; padding: 56px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .hb-7-right { background: #f6efe3; padding: 56px 40px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .hb-7-eyebrow { color: #c9a974; letter-spacing: 0.4em; text-transform: uppercase; font-size: 11px; margin: 0 0 14px; }
+  .hb-7-title { font-family: 'Playfair Display', serif; font-weight: 500; font-style: italic; font-size: 56px; color: #f3eee2; margin: 0; letter-spacing: -0.02em; line-height: 1; }
+  .hb-7-desc { color: rgba(42,34,26,0.82); font-size: 16px; max-width: 480px; line-height: 1.65; margin: 0; }
+
+  /* STYLE 8 — Glass Card on Image */
+  .hb-8 { position: relative; padding: 72px 0; overflow: hidden; }
+  .hb-8-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80') center/cover no-repeat; }
+  .hb-8-inner { position: relative; z-index: 1; }
+  .hb-8-card { max-width: 640px; background: rgba(246,239,227,0.86); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.4); padding: 36px 40px; }
+  .hb-8-eyebrow { color: #a07b32; letter-spacing: 0.3em; text-transform: uppercase; font-size: 11px; margin: 0 0 10px; }
+  .hb-8-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 48px; color: #2a221a; margin: 0 0 14px; letter-spacing: -0.01em; }
+  .hb-8-desc { color: rgba(42,34,26,0.82); font-size: 16px; max-width: 540px; margin: 0; line-height: 1.65; }
+
+  /* STYLE 9 — Corner Brackets */
+  .hb-9 { padding: 64px 0; background: #f6efe3; }
+  .hb-9-frame { position: relative; max-width: 760px; margin: 0 auto; padding: 56px 48px; text-align: center; }
+  .hb-9-corner { position: absolute; width: 28px; height: 28px; border-color: #a07b32; border-style: solid; border-width: 0; }
+  .hb-9-corner.tl { top: 0; left: 0; border-top-width: 2px; border-left-width: 2px; }
+  .hb-9-corner.tr { top: 0; right: 0; border-top-width: 2px; border-right-width: 2px; }
+  .hb-9-corner.bl { bottom: 0; left: 0; border-bottom-width: 2px; border-left-width: 2px; }
+  .hb-9-corner.br { bottom: 0; right: 0; border-bottom-width: 2px; border-right-width: 2px; }
+  .hb-9-eyebrow { color: #a07b32; letter-spacing: 0.4em; text-transform: uppercase; font-size: 11px; margin: 0 0 14px; }
+  .hb-9-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 52px; color: #2a221a; margin: 0 0 14px; letter-spacing: -0.02em; }
+  .hb-9-desc { color: rgba(42,34,26,0.78); font-size: 16px; max-width: 560px; margin: 0 auto; line-height: 1.65; }
+
+  /* STYLE 10 — Vertical Wordmark */
+  .hb-10 { padding: 72px 0; background: #fffaf0; border-top: 4px solid #a07b32; }
+  .hb-10-inner { display: grid; grid-template-columns: auto 1fr; gap: 36px; align-items: center; }
+  .hb-10-vert { writing-mode: vertical-rl; transform: rotate(180deg); color: rgba(42,34,26,0.4); font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; align-self: stretch; display: flex; align-items: center; }
+  .hb-10-eyebrow { color: #a07b32; letter-spacing: 0.3em; text-transform: uppercase; font-size: 11px; margin: 0 0 10px; }
+  .hb-10-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 52px; color: #2a221a; margin: 0 0 14px; letter-spacing: -0.01em; line-height: 1.05; }
+  .hb-10-desc { color: rgba(42,34,26,0.82); font-size: 16px; max-width: 580px; margin: 0; line-height: 1.65; }
+
+  /* STYLE 11 — Compact Strip */
+  .hb-11 { background: #2a2421; color: #f3eee2; padding: 18px 0; }
+  .hb-11-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .hb-11-crumbs { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(243,238,226,0.55); display: flex; align-items: center; gap: 8px; }
+  .hb-11-crumbs a { color: #c9a974; }
+  .hb-11-title { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; font-size: 28px; color: #f3eee2; margin: 0; letter-spacing: -0.01em; }
+  .hb-11-cta { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #c9a974; border-bottom: 1px solid rgba(201,169,116,0.4); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+  .hb-11-cta:hover { color: #d8bb8a; border-color: #d8bb8a; }
+
+  /* STYLE 12 — Photo Half */
+  .hb-12 { display: grid; grid-template-columns: 1fr; }
+  @media (min-width: 768px) { .hb-12 { grid-template-columns: 1fr 1fr; } }
+  .hb-12-text { background: #f6efe3; padding: 64px 48px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .hb-12-image { background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80') center/cover no-repeat; min-height: 280px; position: relative; }
+  .hb-12-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(246,239,227,0.4), transparent 30%); }
+  .hb-12-eyebrow { color: #a07b32; letter-spacing: 0.4em; text-transform: uppercase; font-size: 11px; margin: 0 0 12px; }
+  .hb-12-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 56px; color: #2a221a; margin: 0 0 16px; letter-spacing: -0.02em; line-height: 1; }
+  .hb-12-desc { color: rgba(42,34,26,0.78); font-size: 16px; max-width: 440px; margin: 0; line-height: 1.65; }
+
+  /* STYLE 13 — Outline Display */
+  .hb-13 { background: #2a2421; padding: 80px 0; }
+  .hb-13-inner { text-align: center; }
+  .hb-13-eyebrow { color: #c9a974; letter-spacing: 0.4em; text-transform: uppercase; font-size: 11px; margin: 0 0 14px; }
+  .hb-13-title { font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic; font-size: 96px; line-height: 1; margin: 0 0 16px; letter-spacing: -0.03em; display: flex; gap: 18px; align-items: baseline; justify-content: center; flex-wrap: wrap; }
+  .hb-13-title .solid { color: #f3eee2; }
+  .hb-13-title .outline { color: transparent; -webkit-text-stroke: 1.5px #c9a974; }
+  @media (max-width: 640px) { .hb-13-title { font-size: 64px; } }
+  .hb-13-desc { color: rgba(243,238,226,0.7); font-size: 16px; max-width: 520px; margin: 0 auto; line-height: 1.65; }
+
+  /* STYLE 14 — Ornament & Italic */
+  .hb-14 { background: #fffaf0; padding: 80px 0; }
+  .hb-14-inner { text-align: center; }
+  .hb-14-ornament { margin: 0 auto 20px; display: flex; justify-content: center; }
+  .hb-14-title { font-family: 'Playfair Display', serif; font-weight: 500; font-style: italic; font-size: 72px; color: #2a221a; margin: 0 0 16px; letter-spacing: -0.02em; line-height: 1.05; }
+  @media (max-width: 640px) { .hb-14-title { font-size: 52px; } }
+  .hb-14-desc { color: rgba(42,34,26,0.78); font-size: 16px; max-width: 520px; margin: 0 auto; line-height: 1.65; }
+
+  /* STYLE 15 — Stamped Badge */
+  .hb-15 { background: #f6efe3; padding: 64px 0; }
+  .hb-15-inner { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: center; }
+  @media (min-width: 768px) { .hb-15-inner { grid-template-columns: 160px 1fr; gap: 56px; } }
+  .hb-15-badge { position: relative; width: 140px; height: 140px; flex-shrink: 0; margin: 0 auto; }
+  .hb-15-badge::before { content: ''; position: absolute; inset: 0; border: 1.5px solid rgba(160,123,50,0.6); border-radius: 50%; }
+  .hb-15-arc { position: absolute; inset: 0; font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: #a07b32; animation: hb15spin 14s linear infinite; display: flex; align-items: flex-start; justify-content: center; padding-top: 6px; }
+  .hb-15-num { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: 44px; color: #a07b32; }
+  @keyframes hb15spin { to { transform: rotate(360deg); } }
+  .hb-15-eyebrow { color: #a07b32; letter-spacing: 0.3em; text-transform: uppercase; font-size: 11px; margin: 0 0 10px; }
+  .hb-15-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 52px; color: #2a221a; margin: 0 0 14px; letter-spacing: -0.01em; line-height: 1.05; }
+  .hb-15-desc { color: rgba(42,34,26,0.78); font-size: 16px; max-width: 560px; margin: 0; line-height: 1.65; }
 </style>
 </head>
 <body>
@@ -515,6 +612,164 @@
           <p class="hb-5-eyebrow">About Us</p>
           <h2 class="hb-5-title">Why Us</h2>
           <p class="hb-5-desc">Holistic wealth management designed to help you live your one best life.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  
+  <!-- STYLE 6: Asymmetric with display number -->
+  <div class="style-frame">
+    <div class="style-label">Style 6 — Display Numeral</div>
+    <section class="hb-6">
+      <div class="container hb-6-inner">
+        <span class="hb-6-num">06</span>
+        <div>
+          <p class="hb-6-eyebrow">About Us</p>
+          <h2 class="hb-6-title">Why Us</h2>
+          <p class="hb-6-desc">Holistic wealth management designed to help you live your one best life.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- STYLE 7: Two-tone diagonal split -->
+  <div class="style-frame">
+    <div class="style-label">Style 7 — Two-Tone Split</div>
+    <section class="hb-7">
+      <div class="hb-7-left">
+        <p class="hb-7-eyebrow">About Us</p>
+        <h2 class="hb-7-title">Why Us</h2>
+      </div>
+      <div class="hb-7-right">
+        <p class="hb-7-desc">Holistic wealth management designed to help you live your one best life. Coordinated planning across investments, tax, estate, and insurance.</p>
+        <a href="#" class="btn-gold" style="margin-top:18px;height:38px;padding:0 22px;">Schedule a Consultation</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- STYLE 8: Image hero with glass-morphism card -->
+  <div class="style-frame">
+    <div class="style-label">Style 8 — Glass Card on Image</div>
+    <section class="hb-8">
+      <div class="hb-8-bg"></div>
+      <div class="container hb-8-inner">
+        <div class="hb-8-card">
+          <p class="hb-8-eyebrow">About Us</p>
+          <h2 class="hb-8-title">Why Us</h2>
+          <p class="hb-8-desc">Holistic wealth management designed to help you live your one best life.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- STYLE 9: Centered with corner brackets -->
+  <div class="style-frame">
+    <div class="style-label">Style 9 — Corner Brackets</div>
+    <section class="hb-9">
+      <div class="container">
+        <div class="hb-9-frame">
+          <span class="hb-9-corner tl"></span>
+          <span class="hb-9-corner tr"></span>
+          <span class="hb-9-corner bl"></span>
+          <span class="hb-9-corner br"></span>
+          <p class="hb-9-eyebrow">About Us</p>
+          <h2 class="hb-9-title">Why Us</h2>
+          <p class="hb-9-desc">Holistic wealth management designed to help you live your one best life.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- STYLE 10: Wordmark sidebar -->
+  <div class="style-frame">
+    <div class="style-label">Style 10 — Vertical Wordmark</div>
+    <section class="hb-10">
+      <div class="container hb-10-inner">
+        <span class="hb-10-vert">About&nbsp;·&nbsp;My&nbsp;360&nbsp;Wealth</span>
+        <div>
+          <p class="hb-10-eyebrow">About Us</p>
+          <h2 class="hb-10-title">Why Us</h2>
+          <p class="hb-10-desc">Holistic wealth management designed to help you live your one best life. We coordinate planning across investments, tax, estate, and insurance.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  
+  <!-- STYLE 11: Compact horizontal strip -->
+  <div class="style-frame">
+    <div class="style-label">Style 11 — Compact Strip</div>
+    <section class="hb-11">
+      <div class="container hb-11-inner">
+        <nav class="hb-11-crumbs"><a href="/index.html">Home</a><span>›</span><span>About</span></nav>
+        <h2 class="hb-11-title">Why Us</h2>
+        <a href="#" class="hb-11-cta">Get in touch →</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- STYLE 12: Photo-half hero (text left, image right) -->
+  <div class="style-frame">
+    <div class="style-label">Style 12 — Photo Half</div>
+    <section class="hb-12">
+      <div class="hb-12-text">
+        <p class="hb-12-eyebrow">About Us</p>
+        <h2 class="hb-12-title">Why Us</h2>
+        <p class="hb-12-desc">Holistic wealth management designed to help you live your one best life.</p>
+        <a href="#" class="btn-gold" style="margin-top:18px;height:38px;padding:0 22px;">Schedule</a>
+      </div>
+      <div class="hb-12-image" role="img" aria-label="Modern architecture"></div>
+    </section>
+  </div>
+
+  <!-- STYLE 13: Outline / stroked title -->
+  <div class="style-frame">
+    <div class="style-label">Style 13 — Outline Display</div>
+    <section class="hb-13">
+      <div class="container hb-13-inner">
+        <p class="hb-13-eyebrow">About Us</p>
+        <h2 class="hb-13-title" aria-label="Why Us">
+          <span class="solid">Why</span>
+          <span class="outline">Us</span>
+        </h2>
+        <p class="hb-13-desc">Holistic wealth management designed to help you live your one best life.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- STYLE 14: Ornament + oversized italic title -->
+  <div class="style-frame">
+    <div class="style-label">Style 14 — Ornament &amp; Italic</div>
+    <section class="hb-14">
+      <div class="container hb-14-inner">
+        <div class="hb-14-ornament" aria-hidden="true">
+          <svg width="80" height="14" viewBox="0 0 80 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 7 L30 7" stroke="#a07b32" stroke-width="1"/>
+            <circle cx="40" cy="7" r="4" stroke="#a07b32" stroke-width="1" fill="none"/>
+            <circle cx="40" cy="7" r="1.4" fill="#a07b32"/>
+            <path d="M50 7 L80 7" stroke="#a07b32" stroke-width="1"/>
+          </svg>
+        </div>
+        <h2 class="hb-14-title">Why Us</h2>
+        <p class="hb-14-desc">Holistic wealth management designed to help you live your one best life.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- STYLE 15: Sticker badge + side note -->
+  <div class="style-frame">
+    <div class="style-label">Style 15 — Stamped Badge</div>
+    <section class="hb-15">
+      <div class="container hb-15-inner">
+        <div class="hb-15-badge">
+          <span class="hb-15-arc">About · About · About · About ·</span>
+          <span class="hb-15-num">01</span>
+        </div>
+        <div class="hb-15-text">
+          <p class="hb-15-eyebrow">About Us</p>
+          <h2 class="hb-15-title">Why Us</h2>
+          <p class="hb-15-desc">Holistic wealth management designed to help you live your one best life.</p>
         </div>
       </div>
     </section>
