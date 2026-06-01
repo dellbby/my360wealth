@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sitemap | My 360 Wealth Management Group</title>
-<link rel="canonical" href="https://www.my360wealth.com/sitemap.html" />
-<meta name="description" content="Sitemap of pages on My 360 Wealth Management Group: home, services, blog, contact, and detailed service pages." />
+<title>About Us | My 360 Wealth Management Group</title>
+<link rel="canonical" href="https://www.my360wealth.com/about.html" />
+<meta name="description" content="About My 360 Wealth Management Group — a holistic Financial Life Management firm led by CFP® professional and AIF® Pierre M. Movsessian, serving clients in Glendale, CA and nationwide." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -358,19 +358,27 @@
   /* Force nav to be visible on light pages */
   .nav { background: rgba(17,15,13,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 12px 0; }
 
-  /* Sitemap page */
-  .sitemap-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
-  @media (min-width: 640px) { .sitemap-grid { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1024px) { .sitemap-grid { grid-template-columns: repeat(3, 1fr); } }
-  .sm-col { background: #ffffff; border: 1px solid rgba(42,34,26,0.08); padding: 28px; transition: border-color 0.3s, box-shadow 0.3s; }
-  .sm-col:hover { border-color: rgba(201,169,116,0.45); box-shadow: 0 8px 24px rgba(42,34,26,0.06); }
-  .sm-col h3 { font-family: var(--font-heading); font-size: 18px; color: #a07b32; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(160,123,50,0.25); letter-spacing: 0.02em; }
-  .sm-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
-  .sm-col li { font-size: 15px; }
-  .sm-col a { color: #2a221a; text-decoration: none; transition: color 0.2s; display: inline-flex; align-items: center; gap: 8px; }
-  .sm-col a::before { content: '→'; color: #a07b32; opacity: 0.6; transition: transform 0.2s, opacity 0.2s; }
-  .sm-col a:hover { color: #a07b32; }
-  .sm-col a:hover::before { transform: translateX(2px); opacity: 1; }
+  /* About page */
+  .about-prose p { color: rgba(42,34,26,0.82); font-size: 16px; line-height: 1.75; margin: 0 0 18px; }
+  .about-prose a { color: #a07b32; text-decoration: underline; }
+  .about-prose a:hover { color: #2a221a; }
+  .partners-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 640px) { .partners-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1024px) { .partners-grid { grid-template-columns: 1fr 1fr 1fr; } }
+  .partner-card { background: #ffffff; border: 1px solid rgba(42,34,26,0.08); padding: 18px 20px; transition: border-color 0.3s, box-shadow 0.3s; }
+  .partner-card:hover { border-color: rgba(201,169,116,0.45); box-shadow: 0 6px 18px rgba(42,34,26,0.06); }
+  .partner-card h3 { font-family: var(--font-heading); font-size: 15px; color: #a07b32; margin: 0 0 6px; letter-spacing: 0.02em; }
+  .partner-card p { color: rgba(42,34,26,0.78); font-size: 14px; line-height: 1.6; margin: 0; }
+  .advisors { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr; gap: 10px; }
+  @media (min-width: 640px) { .advisors { grid-template-columns: 1fr 1fr; } }
+  .advisors li { padding: 12px 16px; background: #ffffff; border-left: 3px solid #a07b32; color: rgba(42,34,26,0.82); font-size: 15px; }
+  .advisors li strong { color: #2a221a; }
+  .about-quote { max-width: 760px; text-align: center; padding: 32px 24px; border-top: 1px solid rgba(160,123,50,0.3); border-bottom: 1px solid rgba(160,123,50,0.3); }
+  .about-quote p { font-family: var(--font-heading); font-style: italic; font-size: 26px; color: #2a221a; margin: 0 0 16px; line-height: 1.4; }
+  @media (min-width: 768px) { .about-quote p { font-size: 32px; } }
+  .about-quote .attribution { color: rgba(42,34,26,0.7); font-size: 14px; }
+  .about-quote .attribution a { color: #a07b32; text-decoration: underline; }
+  .about-quote .attribution a:hover { color: #2a221a; }
 </style>
 </head>
 <body>
@@ -392,69 +400,109 @@
 </script>
 
 <main id="top" style="padding-top:104px;">
-  <section class="section" style="padding-bottom:24px;">
+  <!-- Page header -->
+  <section class="section" style="padding: 48px 0 16px;">
     <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Site Index</span>
-        <h2>Sitemap</h2>
-        <p class="desc">A complete index of pages on my360wealth.com.</p>
+      <div class="section-head reveal" style="margin-bottom: 0;">
+        <span class="eyebrow">About Us</span>
+        <h2 style="font-size: 36px; margin-top: 12px;">Why Us</h2>
+        <p class="desc" style="margin-top: 14px; font-size: 15px; max-width: 760px;">Our mission is to empower our clients to live their one best life through education and trusted advice.</p>
       </div>
     </div>
   </section>
 
+  <!-- Story -->
+  <section class="section" style="padding: 24px 0 32px;">
+    <div class="container-narrow">
+      <div class="reveal about-prose">
+        <p>Financial planning and wealth management services originally began as a profession which guided the financial and administrative concerns of entrepreneurs and affluent families, thereby allowing them to focus on career, family and leisure.</p>
+        <p>My 360&deg; Wealth Management Group has maintained the essence of this relationship between the trusted advisor and the client. Through the active leadership and vision of our team leader, Pierre M. Movsessian, MBA, <a href="https://www.letsmakeaplan.org/why-choose-a-cfp-professional" target="_blank" rel="noopener">CERTIFIED FINANCIAL PLANNER&trade;</a> professional and <a href="https://www.fi360.com/resources/prudent-practices" target="_blank" rel="noopener">Accredited Investment Fiduciary</a>, we are proud to provide a holistic Financial Life Management process &mdash; who together with the client&rsquo;s accountant, attorney and other outside professionals, plan and manage the client&rsquo;s entire financial life and business affairs.</p>
+        <p>As Certified Financial Planners, Accredited Investment Fiduciaries and Registered Investment Advisor Representatives we are held to the highest industry standards. Acting under a fiduciary standard of care for our clients, we strive to always offer our best.</p>
+        <p>We are proud to work toward providing our clients the very best when it comes to helping them live their one best life. We do this by strategically partnering with leaders in every aspect of our industry:</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners grid -->
+  <section class="section" style="padding: 0 0 48px;">
+    <div class="container-narrow">
+      <div class="partners-grid">
+        <div class="partner-card reveal">
+          <h3>Asset Custodians</h3>
+          <p>Charles Schwab, TD Ameritrade</p>
+        </div>
+        <div class="partner-card reveal">
+          <h3>Renowned Asset Managers</h3>
+          <p>Dimensional Fund Advisors (DFA), American Funds Capital Group, Vanguard</p>
+        </div>
+        <div class="partner-card reveal">
+          <h3>Academia &amp; Research</h3>
+          <p>Nobel Laureate Eugene Fama, David Kelly (JP Morgan), Burt White (LPL Financial)</p>
+        </div>
+        <div class="partner-card reveal">
+          <h3>Client Planning Process</h3>
+          <p>United Capital FinLife Partners</p>
+        </div>
+        <div class="partner-card reveal">
+          <h3>Planning &amp; Reporting Technology</h3>
+          <p>MoneyGuide Pro, eMoney Advisors, Orion Advisors</p>
+        </div>
+        <div class="partner-card reveal">
+          <h3>Advisor Coaching</h3>
+          <p>Peak Advisor Alliance</p>
+        </div>
+        <div class="partner-card reveal">
+          <h3>Credit Union Partners</h3>
+          <p>SCE Federal Credit Union, LA Financial Credit Union, UMe Credit Union</p>
+        </div>
+        <div class="partner-card reveal">
+          <h3>Employer Retirement Plan Association</h3>
+          <p>Global Retirement Partners Advisor Alliance (GRPAA)</p>
+        </div>
+        <div class="partner-card reveal">
+          <h3>RIA &amp; LPL Hybrid Branch</h3>
+          <p>Global Retirement Partners (GRP) &mdash; one of the largest LPL Hybrid branches</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advisory Board -->
+  <section class="section" style="padding: 24px 0 48px;">
+    <div class="container-narrow">
+      <div class="reveal" style="margin-bottom: 24px;">
+        <h2 style="font-family: var(--font-heading); font-size: 28px; color: #2a221a; margin: 0;">Advisory Board Thought Leaders &amp; Strategic Partners</h2>
+      </div>
+      <ul class="advisors reveal">
+        <li><strong>Ron Carson</strong> &mdash; Founder of Carson Group &amp; Peak Advisor Alliance</li>
+        <li><strong>Joe Duran</strong> &mdash; Founder of United Capital &amp; FinLife Partners</li>
+        <li><strong>Eugene Fama</strong> &mdash; Nobel Laureate &amp; Director of Dimensional Fund Advisors (DFA)</li>
+        <li><strong>Burt White</strong> &mdash; Head of Research &amp; CIO of LPL Financial</li>
+        <li><strong>David Kelly</strong> &mdash; Chief Investment Officer of JP Morgan</li>
+        <li><strong>Bill Chetney</strong> &mdash; Founder of GRP Advisor Alliance (GRP AA)</li>
+        <li><strong>Geoffrey White</strong> &mdash; CEO of Global Retirement Partners (GRP)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="section" style="padding: 24px 0 64px;">
+    <div class="container-narrow">
+      <div class="reveal about-quote">
+        <p>&ldquo;Life is a collection of experiences, we help you plan for them!&rdquo;</p>
+        <div class="attribution">&mdash; <a href="https://www.my360wealth.com/team/pierre-m-movsessian-mba-cfp-aif" target="_blank" rel="noopener">Pierre M. Movsessian, MBA, CFP&reg;, AIF&reg;</a>, Founder &amp; Chief Investment Officer of My 360 Wealth Management Group</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="section" style="padding-top:24px;">
-    <div class="container">
-      <div class="sitemap-grid">
-        <div class="sm-col reveal">
-          <h3>Main</h3>
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/services.html">Our Services</a></li>
-            <li><a href="/process.html">Our Process</a></li>
-            <li><a href="/blog/index.html">Blog</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="sm-col reveal">
-          <h3>Personal &amp; Family Services</h3>
-          <ul>
-            <li><a href="/pages/wealth-retirement-planning.html">Wealth &amp; Retirement Planning</a></li>
-            <li><a href="/pages/portfolio-management.html">Portfolio Management</a></li>
-            <li><a href="/pages/trust-estate-planning.html">Trust &amp; Estate Planning</a></li>
-            <li><a href="/pages/foundation-endowment.html">Foundation &amp; Endowment</a></li>
-            <li><a href="/pages/concentrated-stock-strategies.html">Concentrated Stock Strategies</a></li>
-            <li><a href="/pages/retirement-income.html">Retirement Income Planning</a></li>
-          </ul>
-        </div>
-
-        <div class="sm-col reveal">
-          <h3>Business &amp; Employers Services</h3>
-          <ul>
-            <li><a href="/pages/401k-qualified-plans.html">401(k) &amp; Qualified Plans</a></li>
-            <li><a href="/pages/deferred-compensation.html">Deferred Compensation</a></li>
-            <li><a href="/pages/insurance-services.html">Insurance Services</a></li>
-            <li><a href="/pages/business-succession.html">Business Succession</a></li>
-            <li><a href="/pages/tax-planning.html">Tax Planning</a></li>
-            <li><a href="/pages/employee-education.html">Employee Education</a></li>
-          </ul>
-        </div>
-
-        <div class="sm-col reveal">
-          <h3>Blog Articles</h3>
-          <ul>
-            <li><a href="/blog/how-to-choose-a-financial-advisor.html">How to Choose a Financial Advisor</a></li>
-          </ul>
-        </div>
-
-        <div class="sm-col reveal">
-          <h3>Resources</h3>
-          <ul>
-            <li><a href="/sitemap.xml">XML Sitemap (search engines)</a></li>
-            <li><a href="/robots.txt">robots.txt</a></li>
-          </ul>
-        </div>
+    <div class="container" style="text-align:center;">
+      <div class="reveal" style="max-width:640px;margin:0 auto;">
+        <p class="eyebrow" style="display:block;margin-bottom:16px;">Ready to Begin?</p>
+        <h2 class="heading" style="font-size:32px;color:#2a221a;margin:0 0 16px;">Let&apos;s start the conversation.</h2>
+        <p style="color:rgba(42,34,26,0.78);font-size:17px;line-height:1.7;margin:0 0 28px;">Every plan begins with a complimentary, no-obligation conversation about your goals.</p>
+        <a class="btn-gold" href="/contact.html" style="height:44px;padding:0 28px;">Schedule a Consultation</a>
       </div>
     </div>
   </section>
