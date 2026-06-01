@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sitemap | My 360 Wealth Management Group</title>
-<link rel="canonical" href="https://www.my360wealth.com/sitemap.html" />
-<meta name="description" content="Sitemap of pages on My 360 Wealth Management Group: home, services, blog, contact, and detailed service pages." />
+<title>Our Process | My 360 Wealth Management Group</title>
+<link rel="canonical" href="https://www.my360wealth.com/process.html" />
+<meta name="description" content="A four-step holistic financial planning process: Discovery, Planning, Solutions, and Monitoring. Tailored wealth management for individuals, families, and businesses in Glendale, CA." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -358,19 +358,18 @@
   /* Force nav to be visible on light pages */
   .nav { background: rgba(17,15,13,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 12px 0; }
 
-  /* Sitemap page */
-  .sitemap-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
-  @media (min-width: 640px) { .sitemap-grid { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1024px) { .sitemap-grid { grid-template-columns: repeat(3, 1fr); } }
-  .sm-col { background: #ffffff; border: 1px solid rgba(42,34,26,0.08); padding: 28px; transition: border-color 0.3s, box-shadow 0.3s; }
-  .sm-col:hover { border-color: rgba(201,169,116,0.45); box-shadow: 0 8px 24px rgba(42,34,26,0.06); }
-  .sm-col h3 { font-family: var(--font-heading); font-size: 18px; color: #a07b32; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(160,123,50,0.25); letter-spacing: 0.02em; }
-  .sm-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
-  .sm-col li { font-size: 15px; }
-  .sm-col a { color: #2a221a; text-decoration: none; transition: color 0.2s; display: inline-flex; align-items: center; gap: 8px; }
-  .sm-col a::before { content: '→'; color: #a07b32; opacity: 0.6; transition: transform 0.2s, opacity 0.2s; }
-  .sm-col a:hover { color: #a07b32; }
-  .sm-col a:hover::before { transform: translateX(2px); opacity: 1; }
+  /* Our Process page */
+  .process-list { display: flex; flex-direction: column; gap: 20px; max-width: 920px; margin: 0 auto; }
+  .proc-step { display: grid; grid-template-columns: 1fr; gap: 16px; padding: 28px; background: #ffffff; border: 1px solid rgba(42,34,26,0.08); transition: border-color 0.3s, box-shadow 0.3s; }
+  .proc-step:hover { border-color: rgba(201,169,116,0.45); box-shadow: 0 8px 24px rgba(42,34,26,0.06); }
+  @media (min-width: 640px) { .proc-step { grid-template-columns: 90px 1fr; gap: 28px; padding: 32px; align-items: start; } }
+  .proc-num { font-family: var(--font-heading); font-size: 56px; color: rgba(160,123,50,0.55); line-height: 1; }
+  @media (min-width: 640px) { .proc-num { font-size: 72px; } }
+  .proc-body h3 { font-family: var(--font-heading); font-size: 26px; color: #2a221a; margin: 0 0 10px; font-style: italic; }
+  .proc-body p { color: rgba(42,34,26,0.78); font-size: 15px; line-height: 1.7; margin: 0 0 14px; }
+  .proc-body ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .proc-body li { position: relative; padding-left: 18px; color: rgba(42,34,26,0.7); font-size: 14px; line-height: 1.6; }
+  .proc-body li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; background: #a07b32; border-radius: 50%; }
 </style>
 </head>
 <body>
@@ -392,68 +391,81 @@
 </script>
 
 <main id="top" style="padding-top:104px;">
-  <section class="section" style="padding-bottom:24px;">
+  <!-- Page header -->
+  <section class="section" style="padding: 48px 0 16px;">
     <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Site Index</span>
-        <h2>Sitemap</h2>
-        <p class="desc">A complete index of pages on my360wealth.com.</p>
+      <div class="section-head reveal" style="margin-bottom: 0;">
+        <span class="eyebrow">Advice For Life</span>
+        <h2 style="font-size: 36px; margin-top: 12px;">Our Process</h2>
+        <p class="desc" style="margin-top: 14px; font-size: 15px;">A four-step, client-centric holistic approach to financial guidance — tailored to your priorities and life circumstances.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:24px;">
+  <!-- Step grid -->
+  <section class="section" style="padding: 24px 0 48px;">
     <div class="container">
-      <div class="sitemap-grid">
-        <div class="sm-col reveal">
-          <h3>Main</h3>
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/services.html">Our Services</a></li>
-            <li><a href="/process.html">Our Process</a></li>
-            <li><a href="/blog/index.html">Blog</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
+      <div class="process-list">
+        <div class="proc-step reveal">
+          <span class="proc-num">01</span>
+          <div class="proc-body">
+            <h3>Discovery</h3>
+            <p>Before we crunch numbers, we talk about what matters most to you — family, community, pastimes, aspirations. We ask what you're thinking, feeling, and worried about. Together we figure out where you are now.</p>
+            <ul>
+              <li>Initial complimentary conversation about your goals and concerns</li>
+              <li>Review of current income, assets, debts, insurance, and estate documents</li>
+              <li>Identification of values, priorities, and milestones that shape your plan</li>
+            </ul>
+          </div>
         </div>
+        <div class="proc-step reveal">
+          <span class="proc-num">02</span>
+          <div class="proc-body">
+            <h3>Planning</h3>
+            <p>We assess your personal situation, gauge where you are relative to your life goals and priorities, and consider what gaps exist. We weigh the financial implications of each goal and construct a framework that supports them.</p>
+            <ul>
+              <li>Cash flow modeling and savings rate analysis</li>
+              <li>Retirement income projections with multiple scenarios</li>
+              <li>Tax, estate, insurance, and investment gap analysis</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proc-step reveal">
+          <span class="proc-num">03</span>
+          <div class="proc-body">
+            <h3>Solutions</h3>
+            <p>Holistic planning provides a comprehensive view of all areas of your financial life. We recommend specific strategies aligned with each of your goals and help implement your customized plan.</p>
+            <ul>
+              <li>Tailored investment, retirement, tax, and estate strategies</li>
+              <li>Coordination with your CPA, estate attorney, and other advisors</li>
+              <li>Step-by-step implementation with clear timelines</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proc-step reveal">
+          <span class="proc-num">04</span>
+          <div class="proc-body">
+            <h3>Monitoring</h3>
+            <p>Life happens — events large or small can change everything. We incorporate tracking systems to help keep your plan on target, plan for the unexpected, and adjust your plan over time as necessary.</p>
+            <ul>
+              <li>Scheduled reviews to track progress against goals</li>
+              <li>Portfolio rebalancing and tax-loss harvesting</li>
+              <li>Plan updates triggered by life events, market shifts, or tax law changes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="sm-col reveal">
-          <h3>Personal &amp; Family Services</h3>
-          <ul>
-            <li><a href="/pages/wealth-retirement-planning.html">Wealth &amp; Retirement Planning</a></li>
-            <li><a href="/pages/portfolio-management.html">Portfolio Management</a></li>
-            <li><a href="/pages/trust-estate-planning.html">Trust &amp; Estate Planning</a></li>
-            <li><a href="/pages/foundation-endowment.html">Foundation &amp; Endowment</a></li>
-            <li><a href="/pages/concentrated-stock-strategies.html">Concentrated Stock Strategies</a></li>
-            <li><a href="/pages/retirement-income.html">Retirement Income Planning</a></li>
-          </ul>
-        </div>
-
-        <div class="sm-col reveal">
-          <h3>Business &amp; Employers Services</h3>
-          <ul>
-            <li><a href="/pages/401k-qualified-plans.html">401(k) &amp; Qualified Plans</a></li>
-            <li><a href="/pages/deferred-compensation.html">Deferred Compensation</a></li>
-            <li><a href="/pages/insurance-services.html">Insurance Services</a></li>
-            <li><a href="/pages/business-succession.html">Business Succession</a></li>
-            <li><a href="/pages/tax-planning.html">Tax Planning</a></li>
-            <li><a href="/pages/employee-education.html">Employee Education</a></li>
-          </ul>
-        </div>
-
-        <div class="sm-col reveal">
-          <h3>Blog Articles</h3>
-          <ul>
-            <li><a href="/blog/how-to-choose-a-financial-advisor.html">How to Choose a Financial Advisor</a></li>
-          </ul>
-        </div>
-
-        <div class="sm-col reveal">
-          <h3>Resources</h3>
-          <ul>
-            <li><a href="/sitemap.xml">XML Sitemap (search engines)</a></li>
-            <li><a href="/robots.txt">robots.txt</a></li>
-          </ul>
-        </div>
+  <!-- CTA -->
+  <section class="section" style="padding-top:24px;">
+    <div class="container" style="text-align:center;">
+      <div class="reveal" style="max-width:640px;margin:0 auto;">
+        <p class="eyebrow" style="display:block;margin-bottom:16px;">Ready to Begin?</p>
+        <h2 class="heading" style="font-size:32px;color:#2a221a;margin:0 0 16px;">Let&apos;s start the conversation.</h2>
+        <p style="color:rgba(42,34,26,0.78);font-size:17px;line-height:1.7;margin:0 0 28px;">Every plan begins with a complimentary, no-obligation conversation about your goals.</p>
+        <a class="btn-gold" href="/contact.html" style="height:44px;padding:0 28px;">Schedule a Consultation</a>
       </div>
     </div>
   </section>
