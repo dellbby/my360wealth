@@ -387,6 +387,21 @@
   .article ul, .article ol { padding-left: 22px; margin: 0 0 18px; }
   .article ul li, .article ol li { margin-bottom: 8px; }
   .article blockquote { border-left: 3px solid #a07b32; margin: 24px 0; padding: 4px 0 4px 18px; color: rgba(42,34,26,0.75); font-style: italic; }
+
+  /* Page sub-nav (tabs) */
+  .page-subnav { display: inline-flex; gap: 4px; background: rgba(42,34,26,0.06); padding: 4px; border-radius: 999px; }
+  .page-subnav a { padding: 8px 18px; font-size: 13px; color: rgba(42,34,26,0.65); border-radius: 999px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; transition: background 0.2s, color 0.2s; }
+  .page-subnav a:hover { color: #2a221a; }
+  .page-subnav a.active { background: #a07b32; color: #fff; }
+
+  /* Glossary preview cards */
+  .glossary-preview { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 700px) { .glossary-preview { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1024px) { .glossary-preview { grid-template-columns: 1fr 1fr 1fr; } }
+  .gp-item { background: #ffffff; border: 1px solid rgba(42,34,26,0.06); padding: 16px 18px; transition: border-color 0.2s; }
+  .gp-item:hover { border-color: rgba(201,169,116,0.4); }
+  .gp-item dt { font-family: var(--font-heading); font-size: 16px; color: #2a221a; margin-bottom: 6px; }
+  .gp-item dd { margin: 0; color: rgba(42,34,26,0.75); font-size: 13.5px; line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -412,8 +427,16 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Insights &amp; Articles</span>
-        <h2>Blog</h2>
+        <h2>Education</h2>
         <p class="desc">Practical financial planning, tax strategy, retirement, and investing insights from the My 360 Wealth Management team.</p>
+      </div>
+    </div>
+  </section>
+  <section style="padding: 0 0 8px;">
+    <div class="container">
+      <div class="page-subnav reveal">
+        <a href="/resource-center/index.html" class="active">Articles</a>
+        <a href="/resource-center/glossary.html">Glossary</a>
       </div>
     </div>
   </section>
@@ -498,6 +521,27 @@
         </div>
       </div>
     </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding: 32px 0 64px;">
+    <div class="container">
+      <div class="reveal" style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:24px;">
+        <div>
+          <span class="eyebrow" style="display:block; margin-bottom:8px;">Reference</span>
+          <h2 style="font-family: var(--font-heading); font-size: 28px; color:#2a221a; margin:0;">Financial Glossary</h2>
+          <p style="margin:6px 0 0; color: rgba(42,34,26,0.7); font-size:14px; max-width:560px;">Plain-English definitions for common financial planning, investing, and retirement terms.</p>
+        </div>
+        <a href="/resource-center/glossary.html" class="btn-gold" style="height:40px; padding:0 22px;">View Full Glossary</a>
+      </div>
+      <div class="glossary-preview reveal">
+        <div class="gp-item"><dt>Asset Allocation</dt><dd>How a portfolio is divided across stocks, bonds, real estate, and cash — often the single biggest driver of long-term results.</dd></div>
+        <div class="gp-item"><dt>Compound Interest</dt><dd>Interest earned on both your original deposit and on interest already added. The longer it compounds, the more dramatic the growth.</dd></div>
+        <div class="gp-item"><dt>Fiduciary</dt><dd>A standard of care, not a title. An advisor acting under a fiduciary standard is legally required to put the client's interests first.</dd></div>
+        <div class="gp-item"><dt>Roth IRA</dt><dd>A retirement account funded with after-tax dollars. Qualified withdrawals — including all growth — are tax-free in retirement.</dd></div>
+        <div class="gp-item"><dt>Required Minimum Distribution (RMD)</dt><dd>The minimum amount the IRS requires you to withdraw each year from most tax-deferred retirement accounts beginning at a specified age.</dd></div>
+        <div class="gp-item"><dt>Tax-Loss Harvesting</dt><dd>Selling an investment at a loss in a taxable account to offset taxable gains elsewhere — a tool to reduce the tax drag on long-term investing.</dd></div>
       </div>
     </div>
   </section>
