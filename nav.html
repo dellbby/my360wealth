@@ -1,8 +1,7 @@
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="/index.html" class="logo">
-      <span class="logo-main"><span class="gold">My </span>360<span class="logo-deg">&deg;</span></span>
-      <span class="logo-sub">Wealth</span>
+      <img src="/images/logo_white_transparent.webp" alt="My 360 Wealth Management Group" class="logo-img" />
     </a>
     <nav class="nav-links">
       <a href="/services.html">Services</a>
@@ -27,8 +26,7 @@
 <div class="menu-overlay" id="menu" aria-hidden="true">
   <div class="menu-top">
     <a href="/index.html" class="logo" data-close>
-      <span class="logo-main"><span class="gold">My </span>360<span class="logo-deg">&deg;</span></span>
-      <span class="logo-sub">Wealth</span>
+      <img src="/images/logo_white_transparent.webp" alt="My 360 Wealth Management Group" class="logo-img" />
     </a>
     <button class="icon-btn" id="menuClose" aria-label="Close menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
@@ -81,6 +79,10 @@
 </div>
 
 <style>
+  /* Logo image */
+  .logo-img { height: 36px; width: auto; display: block; }
+  @media (min-width: 768px) { .logo-img { height: 40px; } }
+
   /* Compliance bar (FINRA BrokerCheck) — static, scrolls with the page */
   .compliance-bar { position: relative; z-index: 52; background: #0a0907; border-bottom: 1px solid rgba(255,255,255,0.05); padding: 7px 0; text-align: center; font-size: 12px; color: #d9d3c4; line-height: 1.4; }
   .compliance-bar a { color: #c9a974; text-decoration: underline; }
