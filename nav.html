@@ -1,3 +1,6 @@
+<div class="compliance-bar">
+  <div class="container">Check the background of investment professionals associated with this site on FINRA's <a href="http://brokercheck.finra.org" target="_blank" rel="noopener">BrokerCheck</a>.</div>
+</div>
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="/index.html" class="logo">
@@ -81,6 +84,13 @@
 </div>
 
 <style>
+  /* Compliance bar (FINRA BrokerCheck) */
+  .compliance-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 51; background: #0a0907; border-bottom: 1px solid rgba(255,255,255,0.05); padding: 7px 0; text-align: center; font-size: 12px; color: #d9d3c4; line-height: 1.4; }
+  .compliance-bar a { color: #c9a974; text-decoration: underline; }
+  .compliance-bar a:hover { color: #d8bb8a; }
+  /* Push fixed nav down to clear the compliance bar */
+  .nav { top: 32px !important; inset: auto auto auto auto !important; left: 0 !important; right: 0 !important; }
+
   .portal-overlay { position: fixed; inset: 0; z-index: 70; background: rgba(0,0,0,0.85); display: none; align-items: flex-start; justify-content: center; padding: 80px 20px 20px; overflow-y: auto; }
   .portal-overlay.open { display: flex; }
   .portal-modal { background: #110f0d; border: 1px solid rgba(255,255,255,0.08); width: 100%; max-width: 720px; padding: 40px 32px 32px; position: relative; }
