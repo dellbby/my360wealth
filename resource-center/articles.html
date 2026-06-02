@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Our Services | My 360 Wealth Management Group</title>
-<meta name="description" content="Holistic wealth management and financial life planning. We help you visualize and implement your life goals through education and trusted advice." />
+<title>All Articles | My 360 Wealth Resource Center</title>
+<link rel="canonical" href="https://www.my360wealth.com/resource-center/articles.html" />
+<meta name="description" content="All articles from the My 360 Wealth Resource Center — financial planning, retirement, tax strategy, and investing insights." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -357,6 +358,53 @@
   /* Force nav to be visible on light pages */
   .nav { background: rgba(17,15,13,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 12px 0; }
 
+  /* Blog list */
+  .post-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  @media (min-width: 768px) { .post-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .post-grid { grid-template-columns: repeat(3, 1fr); } }
+  .post-card { display: flex; flex-direction: column; background: #ffffff; border: 1px solid rgba(42,34,26,0.08); text-decoration: none; color: inherit; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; overflow: hidden; }
+  .post-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(42,34,26,0.1); border-color: rgba(201,169,116,0.4); }
+  .post-card.coming { opacity: 0.75; cursor: default; }
+  .post-card.coming:hover { transform: none; box-shadow: none; border-color: rgba(42,34,26,0.08); }
+  .post-img { aspect-ratio: 16/10; background-size: cover; background-position: center; position: relative; }
+  .post-tag-pub { position: absolute; top: 14px; left: 14px; background: rgba(17,15,13,0.92); color: var(--cream); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; padding: 6px 10px; }
+  .post-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .post-cat { color: #a07b32; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; }
+  .post-title { font-family: var(--font-heading); font-size: 22px; color: #2a221a; margin: 0; line-height: 1.25; }
+  .post-excerpt { color: rgba(42,34,26,0.7); font-size: 15px; line-height: 1.6; margin: 0; flex: 1; }
+  .post-meta { display: flex; align-items: center; gap: 10px; color: rgba(42,34,26,0.5); font-size: 12px; letter-spacing: 0.05em; }
+  .post-meta .dot { color: rgba(42,34,26,0.35); }
+
+  /* Article page */
+  .article { max-width: 760px; margin: 0 auto; }
+  .article .hero-img { aspect-ratio: 16/8; background-size: cover; background-position: center; margin-bottom: 40px; }
+  .article h1 { font-family: var(--font-heading); font-size: 40px; color: #2a221a; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.01em; }
+  @media (min-width: 768px) { .article h1 { font-size: 52px; } }
+  .article .meta { display: flex; gap: 12px; color: rgba(42,34,26,0.55); font-size: 13px; margin-bottom: 32px; }
+  .article h2 { font-family: var(--font-heading); font-size: 28px; color: #2a221a; margin: 36px 0 14px; }
+  .article p, .article li { color: rgba(42,34,26,0.82); font-size: 17px; line-height: 1.75; }
+  .article p { margin: 0 0 18px; }
+  .article ul, .article ol { padding-left: 22px; margin: 0 0 18px; }
+  .article ul li, .article ol li { margin-bottom: 8px; }
+  .article blockquote { border-left: 3px solid #a07b32; margin: 24px 0; padding: 4px 0 4px 18px; color: rgba(42,34,26,0.75); font-style: italic; }
+
+  /* Page sub-nav (tabs) */
+  .page-subnav { display: inline-flex; gap: 4px; background: rgba(42,34,26,0.06); padding: 4px; border-radius: 999px; }
+  .page-subnav a { padding: 8px 18px; font-size: 13px; color: rgba(42,34,26,0.65); border-radius: 999px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; transition: background 0.2s, color 0.2s; }
+  .page-subnav a:hover { color: #2a221a; }
+  .page-subnav a.active { background: #a07b32; color: #fff; }
+
+  /* Glossary preview cards */
+  .glossary-preview { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 700px) { .glossary-preview { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1024px) { .glossary-preview { grid-template-columns: 1fr 1fr 1fr; } }
+  .gp-item { background: #ffffff; border: 1px solid rgba(42,34,26,0.06); padding: 16px 18px; transition: border-color 0.2s; }
+  .gp-item:hover { border-color: rgba(201,169,116,0.4); }
+  .gp-item dt { font-family: var(--font-heading); font-size: 16px; color: #2a221a; margin-bottom: 6px; }
+  .gp-item dd { margin: 0; color: rgba(42,34,26,0.75); font-size: 13.5px; line-height: 1.6; }
+
+  #articles, #glossary { scroll-margin-top: 140px; }
+
 
 
 
@@ -372,6 +420,12 @@
   .hb-bar-actions { margin-top: 22px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
   .hb-bar-actions .btn-gold { height: 38px; padding: 0 22px; }
   .hb-bar-actions .ghost { color: #a07b32; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid rgba(160,123,50,0.4); padding-bottom: 2px; }
+
+  /* Resource Center category filters */
+  .post-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .pf-btn { padding: 8px 16px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; color: rgba(42,34,26,0.7); background: #ffffff; border: 1px solid rgba(42,34,26,0.12); cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; font-family: 'DM Sans', sans-serif; }
+  .pf-btn:hover { color: #a07b32; border-color: rgba(160,123,50,0.4); }
+  .pf-btn.active { background: #a07b32; color: #fff; border-color: #a07b32; }
 
   /* Disable scroll-reveal animation — content visible immediately */
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
@@ -396,52 +450,99 @@
 </script>
 
 <main id="top" style="padding-top:140px;">
-  <!-- Page header -->
   <section class="hb-bar">
     <div class="hb-bar-inner">
       <div class="hb-bar-rule"></div>
       <div class="hb-bar-content">
-        <p class="hb-bar-eyebrow">How We Serve You</p>
-        <h2 class="hb-bar-title">Our Services</h2>
-        <p class="hb-bar-desc">A comprehensive wealth management plan to navigate you throughout your financial life.</p>
+        <p class="hb-bar-eyebrow">Insights &amp; Articles</p>
+        <h2 class="hb-bar-title">All Articles</h2>
+        <p class="hb-bar-desc">Practical financial planning, tax strategy, retirement, and investing insights from the My 360 Wealth Management team.</p>
       </div>
     </div>
   </section>
-
-  <!-- Personal & Family -->
-  <section class="section" style="padding: 24px 0 48px;">
+  <section style="padding: 0 0 8px;">
     <div class="container">
-      <div class="group-head reveal"><span class="bar"></span><h3>Personal &amp; Family</h3></div>
-      <div class="svc-list" id="svc-personal"></div>
-    </div>
-  </section>
-
-  <!-- Business & Employers -->
-  <section class="section">
-    <div class="container">
-      <div class="group-head reveal"><span class="bar"></span><h3>Business &amp; Employers</h3></div>
-      <div class="svc-list" id="svc-business"></div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section" style="padding-top:24px;">
-    <div class="container" style="text-align:center;">
-      <div class="reveal" style="max-width:640px;margin:0 auto;">
-        <p class="eyebrow" style="display:block;margin-bottom:16px;">Ready to Begin?</p>
-        <h2 class="heading" style="font-size:32px;color:var(--cream);margin:0 0 16px;">Let&apos;s start the conversation.</h2>
-        <p style="color:var(--cream-60);font-size:17px;line-height:1.7;margin:0 0 28px;">Every plan begins with a complimentary, no-obligation conversation about your goals.</p>
-        <a class="btn-gold" href="contact.html" style="height:44px;padding:0 28px;">Schedule a Consultation</a>
+      <div class="page-subnav reveal">
+        <a href="#articles" class="active">Articles</a>
+        <a href="#glossary">Glossary</a>
       </div>
     </div>
   </section>
-
-  <!-- LPL / tax & legal disclaimer (Comment 8) -->
-  <section class="section" style="padding: 32px 0; background: #f0e8d8;">
+  <section class="section" id="articles" style="padding-top:24px;">
     <div class="container">
-      <div class="reveal" style="max-width: 920px; margin: 0 auto; font-size: 13px; line-height: 1.65; color: rgba(42,34,26,0.78);">
-        <p style="margin: 0 0 12px;">My 360 Wealth Management Group, Global Retirement Partners and LPL Financial do not provide tax or legal advice. Please consult your tax advisor or attorney for guidance specific to your situation.</p>
-        <p style="margin: 0;">LPL Financial Representatives offer access to securities and investment advisory services through LPL Financial, an SEC registered broker-dealer and investment advisor. Member <a href="https://www.finra.org/" target="_blank" rel="noopener" style="color:#a07b32;">FINRA</a> / <a href="https://www.sipc.org/" target="_blank" rel="noopener" style="color:#a07b32;">SIPC</a>.</p>
+      <div class="post-filters reveal">
+        <button class="pf-btn active" data-filter="all">All</button>
+        <button class="pf-btn" data-filter="Financial Planning">Financial Planning</button>
+        <button class="pf-btn" data-filter="Retirement">Retirement</button>
+        <button class="pf-btn" data-filter="Tax Planning">Tax Planning</button>
+      </div>
+      <div class="post-grid" id="articles">
+    <a class="post-card" data-category="Tax Planning" href="tax-loss-harvesting-explained.html">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80');"></div>
+      <div class="post-body">
+        <span class="post-cat">Tax Planning</span>
+        <h3 class="post-title">Tax-Loss Harvesting Explained</h3>
+        <p class="post-excerpt">What tax-loss harvesting is, how the wash-sale rule limits it, when it adds the most value, and the practical mechanics of using realized losses to offset gains or ordinary income.</p>
+        <div class="post-meta">
+          <span>May 18, 2026</span><span class="dot">·</span><span>6 min read</span>
+        </div>
+      </div>
+    </a>
+    <a class="post-card" data-category="Tax Planning" href="roth-conversion-windows.html">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&q=80');"></div>
+      <div class="post-body">
+        <span class="post-cat">Tax Planning</span>
+        <h3 class="post-title">Roth Conversion Windows: Timing for Long-Term Tax Savings</h3>
+        <p class="post-excerpt">How retirees and pre-retirees identify low-bracket years to convert traditional retirement balances to Roth — a strategy aimed at reducing lifetime taxes and future RMD exposure.</p>
+        <div class="post-meta">
+          <span>May 18, 2026</span><span class="dot">·</span><span>8 min read</span>
+        </div>
+      </div>
+    </a>
+    <a class="post-card" data-category="Retirement" href="required-minimum-distributions.html">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80');"></div>
+      <div class="post-body">
+        <span class="post-cat">Retirement</span>
+        <h3 class="post-title">Required Minimum Distributions (RMDs): What Retirees Need to Know</h3>
+        <p class="post-excerpt">What Required Minimum Distributions are, when they start, how they are calculated, and the most common strategies retirees use to manage the tax impact.</p>
+        <div class="post-meta">
+          <span>May 18, 2026</span><span class="dot">·</span><span>7 min read</span>
+        </div>
+      </div>
+    </a>
+    <a class="post-card" data-category="Retirement" href="healthcare-costs-in-retirement.html">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1200&q=80');"></div>
+      <div class="post-body">
+        <span class="post-cat">Retirement</span>
+        <h3 class="post-title">Healthcare Costs in Retirement: What to Plan For</h3>
+        <p class="post-excerpt">A clear-headed look at the categories of healthcare costs retirees face — Medicare, supplements, prescriptions, dental, vision, and long-term care — and how to plan for each.</p>
+        <div class="post-meta">
+          <span>May 18, 2026</span><span class="dot">·</span><span>8 min read</span>
+        </div>
+      </div>
+    </a>
+    <a class="post-card" data-category="Retirement" href="when-to-take-social-security.html">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&q=80');"></div>
+      <div class="post-body">
+        <span class="post-cat">Retirement</span>
+        <h3 class="post-title">When to Take Social Security: A Practical Framework</h3>
+        <p class="post-excerpt">A balanced framework for thinking through when to file for Social Security retirement benefits, including how delayed credits, spousal benefits, and life expectancy can shape the decision.</p>
+        <div class="post-meta">
+          <span>May 18, 2026</span><span class="dot">·</span><span>9 min read</span>
+        </div>
+      </div>
+    </a>
+    <a class="post-card" data-category="Financial Planning" href="how-to-choose-a-financial-advisor.html">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80');"></div>
+      <div class="post-body">
+        <span class="post-cat">Financial Planning</span>
+        <h3 class="post-title">How to Choose a Financial Advisor: A 7-Question Checklist</h3>
+        <p class="post-excerpt">Not all financial advisors are the same. The right questions reveal whether someone is held to a fiduciary standard, how they're paid, and whether their approach fits your goals.</p>
+        <div class="post-meta">
+          <span>May 11, 2026</span><span class="dot">·</span><span>8 min read</span>
+        </div>
+      </div>
+    </a>
       </div>
     </div>
   </section>
@@ -599,33 +700,26 @@
       <div class="svc-main"><h4>${s.t}</h4><p class="tag">${s.tag}</p></div>
       <div class="svc-detail"><ul>${s.d.map(x => `<li>${x}</li>`).join('')}</ul></div>
     </div>`;
-  document.getElementById('svc-personal').innerHTML = personal.map(rowHTML).join('');
-  document.getElementById('svc-business').innerHTML = business.map(rowHTML).join('');
   observeReveals();
 
-  // Wrap each service row in a link to its detail page + add a Learn More button
-  const personalLinks = ['pages/wealth-retirement-planning.html','pages/portfolio-management.html','pages/trust-estate-planning.html','pages/foundation-endowment.html','pages/concentrated-stock-strategies.html','pages/retirement-income.html'];
-  const businessLinks = ['pages/401k-qualified-plans.html','pages/deferred-compensation.html','pages/insurance-services.html','pages/business-succession.html','pages/tax-planning.html','pages/employee-education.html'];
-  function wrapRows(containerId, links) {
-    const c = document.getElementById(containerId);
-    Array.from(c.children).forEach((row, i) => {
-      const a = document.createElement('a');
-      a.href = links[i];
-      a.style.display = 'block';
-      a.style.textDecoration = 'none';
-      a.style.color = 'inherit';
-      row.parentNode.insertBefore(a, row);
-      a.appendChild(row);
-      row.classList.add('svc-row-link');
-      const learn = document.createElement('span');
-      learn.className = 'learn-more';
-      learn.innerHTML = 'Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
-      row.appendChild(learn);
-    });
-  }
-  wrapRows('svc-personal', personalLinks);
-  wrapRows('svc-business', businessLinks);
+  
 
+</script>
+
+<script>
+(function(){
+  const btns = document.querySelectorAll('.pf-btn');
+  const cards = document.querySelectorAll('#articles .post-card');
+  btns.forEach(b => b.addEventListener('click', () => {
+    btns.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const f = b.dataset.filter;
+    cards.forEach(c => {
+      const show = (f === 'all') || (c.dataset.category === f);
+      c.style.display = show ? '' : 'none';
+    });
+  }));
+})();
 </script>
 </body>
 </html>

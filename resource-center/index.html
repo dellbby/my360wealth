@@ -426,6 +426,9 @@
   .pf-btn { padding: 8px 16px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; color: rgba(42,34,26,0.7); background: #ffffff; border: 1px solid rgba(42,34,26,0.12); cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; font-family: 'DM Sans', sans-serif; }
   .pf-btn:hover { color: #a07b32; border-color: rgba(160,123,50,0.4); }
   .pf-btn.active { background: #a07b32; color: #fff; border-color: #a07b32; }
+
+  /* Disable scroll-reveal animation — content visible immediately */
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 </style>
 </head>
 <body>
@@ -467,41 +470,24 @@
   </section>
   <section class="section" id="articles" style="padding-top:24px;">
     <div class="container">
-      <div class="post-filters reveal">
-        <button class="pf-btn active" data-filter="all">All</button>
-        <button class="pf-btn" data-filter="Financial Planning">Financial Planning</button>
-        <button class="pf-btn" data-filter="Retirement">Retirement</button>
-        <button class="pf-btn" data-filter="Tax Planning">Tax Planning</button>
-      </div>
-      <div class="post-grid">
-    <a class="post-card" data-category="Financial Planning" href="how-to-choose-a-financial-advisor.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80');"></div>
+      <div class="post-grid" id="articles">
+    <a class="post-card" data-category="Tax Planning" href="tax-loss-harvesting-explained.html">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80');"></div>
       <div class="post-body">
-        <span class="post-cat">Financial Planning</span>
-        <h3 class="post-title">How to Choose a Financial Advisor: A 7-Question Checklist</h3>
-        <p class="post-excerpt">Not all financial advisors are the same. The right questions reveal whether someone is held to a fiduciary standard, how they're paid, and whether their approach fits your goals.</p>
+        <span class="post-cat">Tax Planning</span>
+        <h3 class="post-title">Tax-Loss Harvesting Explained</h3>
+        <p class="post-excerpt">What tax-loss harvesting is, how the wash-sale rule limits it, when it adds the most value, and the practical mechanics of using realized losses to offset gains or ordinary income.</p>
         <div class="post-meta">
-          <span>May 11, 2026</span><span class="dot">·</span><span>8 min read</span>
+          <span>May 18, 2026</span><span class="dot">·</span><span>6 min read</span>
         </div>
       </div>
     </a>
-    <a class="post-card" data-category="Retirement" href="when-to-take-social-security.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&q=80');"></div>
+    <a class="post-card" data-category="Tax Planning" href="roth-conversion-windows.html">
+      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&q=80');"></div>
       <div class="post-body">
-        <span class="post-cat">Retirement</span>
-        <h3 class="post-title">When to Take Social Security: A Practical Framework</h3>
-        <p class="post-excerpt">A balanced framework for thinking through when to file for Social Security retirement benefits, including how delayed credits, spousal benefits, and life expectancy can shape the decision.</p>
-        <div class="post-meta">
-          <span>May 18, 2026</span><span class="dot">·</span><span>9 min read</span>
-        </div>
-      </div>
-    </a>
-    <a class="post-card" data-category="Retirement" href="healthcare-costs-in-retirement.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Retirement</span>
-        <h3 class="post-title">Healthcare Costs in Retirement: What to Plan For</h3>
-        <p class="post-excerpt">A clear-headed look at the categories of healthcare costs retirees face — Medicare, supplements, prescriptions, dental, vision, and long-term care — and how to plan for each.</p>
+        <span class="post-cat">Tax Planning</span>
+        <h3 class="post-title">Roth Conversion Windows: Timing for Long-Term Tax Savings</h3>
+        <p class="post-excerpt">How retirees and pre-retirees identify low-bracket years to convert traditional retirement balances to Roth — a strategy aimed at reducing lifetime taxes and future RMD exposure.</p>
         <div class="post-meta">
           <span>May 18, 2026</span><span class="dot">·</span><span>8 min read</span>
         </div>
@@ -518,30 +504,11 @@
         </div>
       </div>
     </a>
-    <a class="post-card" data-category="Tax Planning" href="roth-conversion-windows.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Tax Planning</span>
-        <h3 class="post-title">Roth Conversion Windows: Timing for Long-Term Tax Savings</h3>
-        <p class="post-excerpt">How retirees and pre-retirees identify low-bracket years to convert traditional retirement balances to Roth — a strategy aimed at reducing lifetime taxes and future RMD exposure.</p>
-        <div class="post-meta">
-          <span>May 18, 2026</span><span class="dot">·</span><span>8 min read</span>
-        </div>
       </div>
-    </a>
-    <a class="post-card" data-category="Tax Planning" href="tax-loss-harvesting-explained.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Tax Planning</span>
-        <h3 class="post-title">Tax-Loss Harvesting Explained</h3>
-        <p class="post-excerpt">What tax-loss harvesting is, how the wash-sale rule limits it, when it adds the most value, and the practical mechanics of using realized losses to offset gains or ordinary income.</p>
-        <div class="post-meta">
-          <span>May 18, 2026</span><span class="dot">·</span><span>6 min read</span>
-        </div>
+      <div style="text-align:center; margin-top: 32px;">
+        <a href="/resource-center/articles.html" class="btn-gold" style="height:40px; padding:0 24px;">View All Articles</a>
       </div>
-    </a>
       </div>
-    </div>
   </section>
 
   <section class="section" id="glossary" style="padding: 32px 0 64px;">
