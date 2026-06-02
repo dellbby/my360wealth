@@ -441,6 +441,15 @@
   .calc-chart-wrap { background: #faf6ec; border: 1px solid rgba(42,34,26,0.08); padding: 12px; margin-bottom: 14px; }
   .calc-chart-wrap canvas { width: 100%; height: auto; display: block; }
   .calc-disclaimer { color: rgba(42,34,26,0.55); font-size: 11px; line-height: 1.6; margin: 0; }
+
+  /* SEO prose */
+  .seo-prose h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #2a221a; margin: 0 0 16px; }
+  .seo-prose h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: #a07b32; margin: 24px 0 8px; }
+  .seo-prose h4 { font-family: 'DM Sans', sans-serif; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #2a221a; margin: 18px 0 6px; font-weight: 600; }
+  .seo-prose p, .seo-prose li { color: rgba(42,34,26,0.78); font-size: 15px; line-height: 1.75; max-width: 760px; }
+  .seo-prose p { margin: 0 0 14px; }
+  .seo-prose ul { padding-left: 20px; margin: 8px 0 14px; }
+  .seo-prose li { margin-bottom: 6px; }
 </style>
 </head>
 <body>
@@ -515,6 +524,47 @@
   </div>
     </div>
   </section>
+
+  <!-- SEO content -->
+  <section class="section" style="padding: 32px 0 64px; background: #fffaf0;">
+    <div class="container-narrow">
+      <div class="seo-prose">
+        <h2>About the &ldquo;How Long Will Your Money Last&rdquo; Calculator</h2>
+        <p>This retirement withdrawal calculator estimates how many years a portfolio could support a chosen level of spending, based on four inputs: your starting balance, the amount you plan to withdraw in the first year (in today&rsquo;s dollars), an assumed annual investment return, and an assumed annual inflation rate. The calculator runs a year-by-year simulation: each year, the portfolio grows by the return rate, and an inflation-adjusted withdrawal is subtracted. The model continues until the balance reaches zero or until 80 years pass.</p>
+
+        <h3>How the math works</h3>
+        <p>The simulation uses a simple, transparent formula many financial planning calculators rely on. For each year, the new balance equals the prior balance multiplied by (1 + expected return), minus the year&rsquo;s withdrawal. The withdrawal in year n equals the first-year withdrawal multiplied by (1 + inflation) raised to the (n &minus; 1) power. This approach reflects that retirees typically need their spending to keep up with rising prices over a long retirement.</p>
+
+        <h3>The 4% rule and sustainable withdrawal rates</h3>
+        <p>The classic &ldquo;4% rule&rdquo; from the Trinity Study suggests that an initial withdrawal of about 4% of a balanced portfolio, adjusted upward each year for inflation, has historically supported a 30-year retirement under most market conditions. The 4% rule is a useful starting point, not a guarantee. Real-world results depend on the order of market returns (sequence-of-returns risk), tax treatment of withdrawals, fees, and unexpected expenses. Many planners now suggest dynamic withdrawal rules &mdash; spending a little less when markets fall and a little more when they rise &mdash; rather than fixed annual amounts.</p>
+
+        <h3>What this calculator does not model</h3>
+        <ul>
+          <li><strong>Taxes.</strong> Withdrawals from traditional IRA, 401(k), Roth, and taxable accounts are taxed differently. A real plan accounts for the order and tax treatment of withdrawals.</li>
+          <li><strong>Sequence-of-returns risk.</strong> The model uses a single, smooth average return. Real markets have volatile early-retirement years that can shorten how long a portfolio lasts even when long-term averages match.</li>
+          <li><strong>Social Security, pensions, or part-time income.</strong> Those streams typically reduce the amount that must come from the portfolio each year.</li>
+          <li><strong>Healthcare costs and long-term care.</strong> Medical spending often rises faster than general inflation in later years.</li>
+          <li><strong>Required Minimum Distributions (RMDs).</strong> Withdrawals from tax-deferred accounts beginning at age 73 (or 75) can drive withdrawal timing.</li>
+          <li><strong>Investment fees and advisor costs.</strong> These reduce net return.</li>
+        </ul>
+
+        <h3>Common questions retirees ask</h3>
+        <h4>What return assumption should I use?</h4>
+        <p>A balanced portfolio of stocks and bonds has historically averaged a long-term return roughly in the 5&ndash;7% range, before inflation. Using a conservative figure (4&ndash;6%) is one common approach. The right number depends on your asset allocation and your view of future markets.</p>
+
+        <h4>What inflation rate should I use?</h4>
+        <p>Long-term U.S. inflation has averaged roughly 2&ndash;3%. Healthcare-related inflation has historically been higher.</p>
+
+        <h4>How long should I plan for?</h4>
+        <p>Many planners model 30 or more years of retirement for a 65-year-old, longer for couples. Planning to a shorter window can underestimate longevity risk &mdash; the risk of living longer than the portfolio can support.</p>
+
+        <h2>Talk to a fee-only fiduciary advisor</h2>
+        <p>Calculators are a starting point. A complete retirement income plan considers your tax brackets, the location of your assets, Social Security timing, healthcare, estate goals, and how your portfolio is invested. My 360 Wealth Management Group advisors act under a fiduciary standard of care for our clients and are available for a complimentary, no-obligation conversation.</p>
+        <p style="margin-top:20px;"><a href="/contact.html" class="btn-gold" style="height:40px;padding:0 24px;">Schedule a Consultation</a></p>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <!-- Footer -->
@@ -784,5 +834,5 @@
   project();
 })();
 </script>
-</body>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What return assumption should I use in a retirement withdrawal calculator?", "acceptedAnswer": {"@type": "Answer", "text": "A balanced portfolio of stocks and bonds has historically averaged a long-term return roughly in the 5 to 7 percent range, before inflation. Using a conservative figure (4 to 6 percent) is a common starting point. The right number depends on your asset allocation and your view of future markets."}}, {"@type": "Question", "name": "What is the 4 percent rule?", "acceptedAnswer": {"@type": "Answer", "text": "The 4 percent rule suggests that an initial withdrawal of about 4 percent of a balanced portfolio, adjusted upward each year for inflation, has historically supported a 30-year retirement under most market conditions. It is a useful starting point, not a guarantee. Real outcomes depend on the order of returns, taxes, fees, and other factors."}}, {"@type": "Question", "name": "What is sequence-of-returns risk?", "acceptedAnswer": {"@type": "Answer", "text": "Sequence-of-returns risk is the risk that poor returns in the early years of retirement permanently shorten how long a portfolio can support spending, even when the long-term average return is acceptable. Withdrawals during a down market lock in losses that cannot be recovered."}}]}</script></body>
 </html>
