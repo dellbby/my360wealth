@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Calculators | My 360 Wealth Resource Center</title>
-<link rel="canonical" href="https://www.my360wealth.com/resource-center/calculators/index.html" />
-<meta name="description" content="Free retirement and financial planning calculators from the My 360 Wealth Resource Center." />
+<title>What Is My Net Worth? | Net Worth Calculator | My 360 Wealth</title>
+<link rel="canonical" href="https://www.my360wealth.com/resource-center/calculators/what-is-my-net-worth.html" />
+<meta name="description" content="Free net worth calculator. Add up your assets and liabilities to estimate your net worth and see a breakdown by category." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -419,6 +419,52 @@
 
   /* Disable scroll-reveal animation — content visible immediately */
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* Calculator UI */
+  .calc-wrap { max-width: 1080px; margin: 0 auto; }
+  .calc-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  @media (min-width: 900px) { .calc-grid { grid-template-columns: 1fr 1.2fr; } }
+  .calc-form, .calc-result { background: #ffffff; border: 1px solid rgba(42,34,26,0.08); padding: 28px 28px 24px; }
+  .calc-form h3, .calc-result h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: #2a221a; margin: 0 0 6px; }
+  .calc-note { color: rgba(42,34,26,0.6); font-size: 13px; margin: 0 0 18px; }
+  .calc-field { margin-bottom: 16px; }
+  .calc-field label { display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(42,34,26,0.65); margin-bottom: 6px; font-weight: 500; }
+  .calc-input { display: flex; align-items: center; background: #faf6ec; border: 1px solid rgba(42,34,26,0.12); padding: 0 12px; transition: border-color 0.2s; }
+  .calc-input:focus-within { border-color: #a07b32; }
+  .calc-input .prefix, .calc-input .suffix { color: #a07b32; font-weight: 600; padding: 0 6px; font-size: 14px; }
+  .calc-input input { border: none; background: transparent; padding: 12px 6px; font-size: 16px; color: #2a221a; width: 100%; outline: none; font-family: 'DM Sans', sans-serif; }
+  .calc-btn { background: #a07b32; color: #fff; padding: 13px 22px; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; border: none; cursor: pointer; transition: background 0.2s; width: 100%; }
+  .calc-btn:hover { background: #b89043; }
+  .calc-big { font-family: 'Playfair Display', serif; font-style: italic; font-size: 64px; color: #a07b32; line-height: 1.05; margin: 4px 0 4px; }
+  @media (max-width: 640px) { .calc-big { font-size: 48px; } }
+  .calc-sub { color: rgba(42,34,26,0.78); font-size: 15px; line-height: 1.55; margin-bottom: 18px; }
+  .calc-chart-wrap { background: #faf6ec; border: 1px solid rgba(42,34,26,0.08); padding: 12px; margin-bottom: 14px; }
+  .calc-chart-wrap canvas { width: 100%; height: auto; display: block; }
+  .calc-disclaimer { color: rgba(42,34,26,0.55); font-size: 11px; line-height: 1.6; margin: 0; }
+
+  /* SEO prose */
+  .seo-prose h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #2a221a; margin: 0 0 16px; }
+  .seo-prose h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: #a07b32; margin: 24px 0 8px; }
+  .seo-prose h4 { font-family: 'DM Sans', sans-serif; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #2a221a; margin: 18px 0 6px; font-weight: 600; }
+  .seo-prose p, .seo-prose li { color: rgba(42,34,26,0.78); font-size: 15px; line-height: 1.75; max-width: 760px; }
+  .seo-prose p { margin: 0 0 14px; }
+  .seo-prose ul { padding-left: 20px; margin: 8px 0 14px; }
+  .seo-prose li { margin-bottom: 6px; }
+
+  /* Net Worth additions */
+  .nw-grid { gap: 18px; }
+  @media (min-width: 900px) { .nw-grid { grid-template-columns: 1fr 1fr; } }
+  .nw-subtotal { margin-top: 10px; padding-top: 14px; border-top: 1px solid rgba(42,34,26,0.1); font-family: 'Playfair Display', serif; font-size: 18px; color: #2a221a; }
+  .nw-result { margin-top: 22px; }
+  .nw-bars { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
+  .nw-bar { display: grid; grid-template-columns: 110px 1fr 130px; align-items: center; gap: 14px; }
+  .nw-label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(42,34,26,0.7); font-weight: 600; }
+  .nw-track { background: #faf6ec; border: 1px solid rgba(42,34,26,0.08); height: 16px; position: relative; overflow: hidden; }
+  .nw-fill { height: 100%; transition: width 0.35s ease; }
+  .nw-fill-a { background: linear-gradient(to right, #a07b32, #c9a974); }
+  .nw-fill-l { background: linear-gradient(to right, #6b5e4c, rgba(107,94,76,0.55)); }
+  .nw-amt { font-family: 'DM Sans', sans-serif; font-size: 14px; color: #2a221a; text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+  @media (max-width: 640px) { .nw-bar { grid-template-columns: 1fr; gap: 6px; } .nw-amt { text-align: left; } }
 </style>
 </head>
 <body>
@@ -444,8 +490,8 @@
     <div class="hb-bar-inner">
       <div class="hb-bar-rule"></div>
       <div class="hb-bar-content">
-        <p class="hb-bar-eyebrow">Insights &amp; Articles</p>
-        <h2 class="hb-bar-title">Calculators</h2>
+        <p class="hb-bar-eyebrow">Resource Center &middot; Calculator</p>
+        <h2 class="hb-bar-title">What Is My Net Worth?</h2>
         <p class="hb-bar-desc">Practical financial planning, tax strategy, retirement, and investing insights from the My 360 Wealth Management team.</p>
       </div>
     </div>
@@ -453,28 +499,105 @@
   
   <section class="section" id="articles" style="padding-top:24px;">
     <div class="container">
-      <div class="post-grid" id="calculators">
-    <a class="post-card" href="what-is-my-net-worth.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Net Worth</span>
-        <h3 class="post-title">What Is My Net Worth?</h3>
-        <p class="post-excerpt">Add up your assets and liabilities to estimate your household net worth and see a breakdown by category.</p>
-        <div class="post-meta"><span>Personal Balance Sheet</span></div>
+      <div class="calc-wrap">
+    <div class="calc-grid nw-grid">
+      <div class="calc-form">
+        <h3>Assets</h3>
+        <p class="calc-note">What you own. Use approximate current values.</p>
+        <div class="calc-field"><label for="a_cash">Cash &amp; checking/savings</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="a_cash" data-side="a" value="25000" min="0" step="1000"></div></div>
+        <div class="calc-field"><label for="a_invest">Taxable investments (brokerage, ETFs)</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="a_invest" data-side="a" value="100000" min="0" step="1000"></div></div>
+        <div class="calc-field"><label for="a_retire">Retirement accounts (401(k), IRA, Roth)</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="a_retire" data-side="a" value="250000" min="0" step="1000"></div></div>
+        <div class="calc-field"><label for="a_home">Primary home (current market value)</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="a_home" data-side="a" value="600000" min="0" step="5000"></div></div>
+        <div class="calc-field"><label for="a_realestate">Other real estate</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="a_realestate" data-side="a" value="0" min="0" step="5000"></div></div>
+        <div class="calc-field"><label for="a_vehicles">Vehicles</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="a_vehicles" data-side="a" value="25000" min="0" step="1000"></div></div>
+        <div class="calc-field"><label for="a_business">Business / private equity interests</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="a_business" data-side="a" value="0" min="0" step="1000"></div></div>
+        <div class="calc-field"><label for="a_other">Other assets (collectibles, etc.)</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="a_other" data-side="a" value="0" min="0" step="500"></div></div>
+        <div class="nw-subtotal" id="totAssets">Total assets: $0</div>
       </div>
-    </a>
-    <a class="post-card" href="how-long-will-your-money-last.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Retirement</span>
-        <h3 class="post-title">How Long Will Your Money Last?</h3>
-        <p class="post-excerpt">Estimate how long your retirement savings can support your spending, given expected returns and inflation.</p>
-        <div class="post-meta"><span>Retirement Income Calculator</span></div>
+
+      <div class="calc-form">
+        <h3>Liabilities</h3>
+        <p class="calc-note">What you owe. Outstanding balances, not original loan amounts.</p>
+        <div class="calc-field"><label for="l_mortgage">Mortgage on primary home</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="l_mortgage" data-side="l" value="400000" min="0" step="1000"></div></div>
+        <div class="calc-field"><label for="l_mortgage2">Other mortgages</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="l_mortgage2" data-side="l" value="0" min="0" step="1000"></div></div>
+        <div class="calc-field"><label for="l_heloc">HELOC / home equity loan</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="l_heloc" data-side="l" value="0" min="0" step="500"></div></div>
+        <div class="calc-field"><label for="l_credit">Credit card balances</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="l_credit" data-side="l" value="3000" min="0" step="100"></div></div>
+        <div class="calc-field"><label for="l_student">Student loans</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="l_student" data-side="l" value="0" min="0" step="500"></div></div>
+        <div class="calc-field"><label for="l_auto">Auto loans</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="l_auto" data-side="l" value="12000" min="0" step="500"></div></div>
+        <div class="calc-field"><label for="l_personal">Personal / other loans</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="l_personal" data-side="l" value="0" min="0" step="500"></div></div>
+        <div class="nw-subtotal" id="totLiabilities">Total liabilities: $0</div>
       </div>
-    </a>
+    </div>
+
+    <div class="calc-result nw-result">
+      <h3>Your estimated net worth</h3>
+      <div class="calc-big" id="nwBig">—</div>
+      <div class="calc-sub" id="nwSub">Assets minus liabilities. Calculator updates as you type.</div>
+      <div class="nw-bars">
+        <div class="nw-bar"><span class="nw-label">Assets</span><div class="nw-track"><div class="nw-fill nw-fill-a" id="barA"></div></div><span class="nw-amt" id="amtA">$0</span></div>
+        <div class="nw-bar"><span class="nw-label">Liabilities</span><div class="nw-track"><div class="nw-fill nw-fill-l" id="barL"></div></div><span class="nw-amt" id="amtL">$0</span></div>
+      </div>
+      <p class="calc-disclaimer">This calculator is for illustrative purposes only and does not constitute tax, legal, or investment advice. A complete net worth statement may also include life insurance cash value, defined-benefit pension present value, and contingent liabilities. Consult a qualified financial professional before making decisions.</p>
+    </div>
+  </div>
+  </section>
+
+  <!-- SEO content -->
+  <section class="section" style="padding: 32px 0 64px; background: #fffaf0;">
+    <div class="container-narrow">
+      <div class="seo-prose">
+        <h2>About the Net Worth Calculator</h2>
+        <p>Net worth is one of the simplest and most useful measures of overall financial progress. It is the difference between everything you own (your assets) and everything you owe (your liabilities). Tracking net worth over time tells you whether your overall picture is improving &mdash; even in years when investment markets move sideways.</p>
+
+        <h3>How net worth is calculated</h3>
+        <p>The formula is straightforward: <strong>Net Worth = Total Assets &minus; Total Liabilities</strong>. This calculator adds up the values you enter for cash, investments, retirement accounts, real estate, vehicles, business interests, and other assets, then subtracts the outstanding balances on mortgages, credit cards, student loans, auto loans, and other debts. The result updates live as you type.</p>
+
+        <h3>What counts as an asset?</h3>
+        <ul>
+          <li><strong>Cash and savings</strong> &mdash; checking, savings, money market accounts, CDs.</li>
+          <li><strong>Investment accounts</strong> &mdash; taxable brokerage accounts holding stocks, bonds, ETFs, or mutual funds.</li>
+          <li><strong>Retirement accounts</strong> &mdash; 401(k), 403(b), Traditional IRA, Roth IRA, SEP-IRA, pension lump sums.</li>
+          <li><strong>Real estate</strong> &mdash; current market value of your home and any rental or investment property.</li>
+          <li><strong>Personal property</strong> &mdash; vehicles, valuable collectibles, jewelry (use realistic resale value).</li>
+          <li><strong>Business interests</strong> &mdash; ownership stakes in privately held companies or partnerships.</li>
+        </ul>
+
+        <h3>What counts as a liability?</h3>
+        <ul>
+          <li><strong>Mortgages</strong> &mdash; outstanding balances on your home and any other property.</li>
+          <li><strong>HELOC &amp; home equity loans</strong> &mdash; current draw, not the credit line.</li>
+          <li><strong>Credit cards</strong> &mdash; full statement balances, not just the minimum payment.</li>
+          <li><strong>Student loans</strong> &mdash; federal and private balances.</li>
+          <li><strong>Auto loans</strong> &mdash; remaining balance on each financed vehicle.</li>
+          <li><strong>Personal &amp; other loans</strong> &mdash; family loans, business loans, tax debt.</li>
+        </ul>
+
+        <h3>Why track your net worth?</h3>
+        <p>Income and account balances change from month to month. Net worth is the longer-term scoreboard. Updating it once or twice a year tells you whether you are gaining ground (positive trend), holding steady, or losing ground. It is a more meaningful long-term measure than any single account balance, and it often clarifies decisions about saving, debt repayment, and large purchases.</p>
+
+        <h3>Common pitfalls to avoid</h3>
+        <ul>
+          <li><strong>Overstating real estate.</strong> Use a realistic, conservative current market value &mdash; not what a home might sell for in a peak market.</li>
+          <li><strong>Forgetting the mortgage.</strong> Home value is an asset; the loan against it is a liability. Many people only think about one side.</li>
+          <li><strong>Ignoring small debts.</strong> Credit cards and personal loans compound quickly. Including them gives a realistic picture.</li>
+          <li><strong>Overstating personal property.</strong> Vehicles depreciate; collectibles vary widely in resale value.</li>
+        </ul>
+
+        <h3>What this calculator does not include</h3>
+        <ul>
+          <li>Present value of defined-benefit pensions and lifetime Social Security benefits</li>
+          <li>Cash value of permanent life insurance</li>
+          <li>Contingent liabilities (cosigned debts, lawsuits, guarantees)</li>
+          <li>Future tax owed on tax-deferred retirement balances (a Roth dollar is worth more than a Traditional IRA dollar of equal balance)</li>
+        </ul>
+
+        <h2>Build a complete financial picture</h2>
+        <p>Net worth is one number on a much larger financial dashboard. A complete picture also includes cash flow, tax position, retirement income projections, estate documents, and risk management. My 360 Wealth Management Group advisors act under a fiduciary standard of care for our clients and are available for a complimentary, no-obligation conversation.</p>
+        <p style="margin-top:20px;"><a href="/contact.html" class="btn-gold" style="height:40px;padding:0 24px;">Schedule a Consultation</a></p>
       </div>
     </div>
   </section>
+
 </main>
 
 <!-- Footer -->
@@ -650,5 +773,42 @@
   }));
 })();
 </script>
-</body>
+
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  function fmt(n) {
+    const v = Math.round(n);
+    const sign = v < 0 ? '-' : '';
+    return sign + '$' + Math.abs(v).toLocaleString('en-US');
+  }
+  function recalc() {
+    const inputs = document.querySelectorAll('.calc-form .calc-input input');
+    let totA = 0, totL = 0;
+    inputs.forEach(i => {
+      const v = Math.max(0, parseFloat(i.value) || 0);
+      if (i.dataset.side === 'a') totA += v;
+      else if (i.dataset.side === 'l') totL += v;
+    });
+    $('totAssets').textContent = 'Total assets: ' + fmt(totA);
+    $('totLiabilities').textContent = 'Total liabilities: ' + fmt(totL);
+    const nw = totA - totL;
+    $('nwBig').textContent = fmt(nw);
+    $('nwSub').textContent = nw >= 0
+      ? `Your estimated net worth is ${fmt(nw)} (total assets ${fmt(totA)} minus total liabilities ${fmt(totL)}).`
+      : `Your liabilities currently exceed your assets by ${fmt(Math.abs(nw))}. Many households start here and build positive net worth over time through saving and debt repayment.`;
+    const max = Math.max(totA, totL, 1);
+    $('barA').style.width = (totA / max * 100) + '%';
+    $('barL').style.width = (totL / max * 100) + '%';
+    $('amtA').textContent = fmt(totA);
+    $('amtL').textContent = fmt(totL);
+  }
+  document.querySelectorAll('.calc-form .calc-input input').forEach(i =>
+    i.addEventListener('input', recalc));
+  recalc();
+})();
+</script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is net worth?", "acceptedAnswer": {"@type": "Answer", "text": "Net worth is the difference between everything you own (assets) and everything you owe (liabilities). It is a useful long-term measure of overall financial progress."}}, {"@type": "Question", "name": "How is net worth calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Net worth equals total assets minus total liabilities. Add up the current value of cash, investments, retirement accounts, real estate, vehicles, and other assets, then subtract outstanding balances on mortgages, credit cards, student loans, and other debts."}}, {"@type": "Question", "name": "How often should I update my net worth?", "acceptedAnswer": {"@type": "Answer", "text": "Updating once or twice a year is usually enough to see meaningful trends. Some people update monthly. The most important thing is using consistent valuation methods so the trend is comparable over time."}}]}</script></body>
 </html>
