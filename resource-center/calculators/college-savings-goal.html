@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Calculators | My 360 Wealth Resource Center</title>
-<link rel="canonical" href="https://www.my360wealth.com/resource-center/calculators/index.html" />
-<meta name="description" content="Free retirement and financial planning calculators from the My 360 Wealth Resource Center." />
+<title>College Savings Goal | My 360 Wealth</title>
+<link rel="canonical" href="https://www.my360wealth.com/resource-center/calculators/college-savings-goal.html" />
+<meta name="description" content="Estimate the full cost of college and the monthly savings required, including education inflation." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -419,6 +419,37 @@
 
   /* Disable scroll-reveal animation — content visible immediately */
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* Calculator UI */
+  .calc-wrap { max-width: 1080px; margin: 0 auto; }
+  .calc-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  @media (min-width: 900px) { .calc-grid { grid-template-columns: 1fr 1.2fr; } }
+  .calc-form, .calc-result { background: #ffffff; border: 1px solid rgba(42,34,26,0.08); padding: 28px 28px 24px; }
+  .calc-form h3, .calc-result h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: #2a221a; margin: 0 0 6px; }
+  .calc-note { color: rgba(42,34,26,0.6); font-size: 13px; margin: 0 0 18px; }
+  .calc-field { margin-bottom: 16px; }
+  .calc-field label { display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(42,34,26,0.65); margin-bottom: 6px; font-weight: 500; }
+  .calc-input { display: flex; align-items: center; background: #faf6ec; border: 1px solid rgba(42,34,26,0.12); padding: 0 12px; transition: border-color 0.2s; }
+  .calc-input:focus-within { border-color: #a07b32; }
+  .calc-input .prefix, .calc-input .suffix { color: #a07b32; font-weight: 600; padding: 0 6px; font-size: 14px; }
+  .calc-input input { border: none; background: transparent; padding: 12px 6px; font-size: 16px; color: #2a221a; width: 100%; outline: none; font-family: 'DM Sans', sans-serif; }
+  .calc-btn { background: #a07b32; color: #fff; padding: 13px 22px; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; border: none; cursor: pointer; transition: background 0.2s; width: 100%; }
+  .calc-btn:hover { background: #b89043; }
+  .calc-big { font-family: 'Playfair Display', serif; font-style: italic; font-size: 64px; color: #a07b32; line-height: 1.05; margin: 4px 0 4px; }
+  @media (max-width: 640px) { .calc-big { font-size: 48px; } }
+  .calc-sub { color: rgba(42,34,26,0.78); font-size: 15px; line-height: 1.55; margin-bottom: 18px; }
+  .calc-chart-wrap { background: #faf6ec; border: 1px solid rgba(42,34,26,0.08); padding: 12px; margin-bottom: 14px; }
+  .calc-chart-wrap canvas { width: 100%; height: auto; display: block; }
+  .calc-disclaimer { color: rgba(42,34,26,0.55); font-size: 11px; line-height: 1.6; margin: 0; }
+
+  /* SEO prose */
+  .seo-prose h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #2a221a; margin: 0 0 16px; }
+  .seo-prose h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: #a07b32; margin: 24px 0 8px; }
+  .seo-prose h4 { font-family: 'DM Sans', sans-serif; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #2a221a; margin: 18px 0 6px; font-weight: 600; }
+  .seo-prose p, .seo-prose li { color: rgba(42,34,26,0.78); font-size: 15px; line-height: 1.75; max-width: 760px; }
+  .seo-prose p { margin: 0 0 14px; }
+  .seo-prose ul { padding-left: 20px; margin: 8px 0 14px; }
+  .seo-prose li { margin-bottom: 6px; }
 </style>
 </head>
 <body>
@@ -444,8 +475,8 @@
     <div class="hb-bar-inner">
       <div class="hb-bar-rule"></div>
       <div class="hb-bar-content">
-        <p class="hb-bar-eyebrow">Insights &amp; Articles</p>
-        <h2 class="hb-bar-title">Calculators</h2>
+        <p class="hb-bar-eyebrow">Resource Center &middot; Calculator</p>
+        <h2 class="hb-bar-title">College Savings Goal</h2>
         <p class="hb-bar-desc">Practical financial planning, tax strategy, retirement, and investing insights from the My 360 Wealth Management team.</p>
       </div>
     </div>
@@ -453,32 +484,12 @@
   
   <section class="section" id="articles" style="padding-top:24px;">
     <div class="container">
-      <div class="post-grid" id="calculators">
-    <a class="post-card" href="what-is-my-net-worth.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Net Worth</span>
-        <h3 class="post-title">What Is My Net Worth?</h3>
-        <p class="post-excerpt">Add up your assets and liabilities to estimate your household net worth and see a breakdown by category.</p>
-        <div class="post-meta"><span>Personal Balance Sheet</span></div>
-      </div>
-    </a>
-    <a class="post-card" href="retirement-savings-goal.html"><div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&q=80');"></div><div class="post-body"><span class="post-cat">Retirement</span><h3 class="post-title">Retirement Savings Goal</h3><p class="post-excerpt">How much you may need to retire and how much to save each month to get there.</p><div class="post-meta"><span>Free Tool</span></div></div></a>
-    <a class="post-card" href="college-savings-goal.html"><div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80');"></div><div class="post-body"><span class="post-cat">Education</span><h3 class="post-title">College Savings Goal (529)</h3><p class="post-excerpt">Estimate the full cost of college and the monthly savings required.</p><div class="post-meta"><span>Free Tool</span></div></div></a>
-    <a class="post-card" href="roth-vs-traditional-ira.html"><div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&q=80');"></div><div class="post-body"><span class="post-cat">Tax Planning</span><h3 class="post-title">Roth vs. Traditional IRA</h3><p class="post-excerpt">Compare projected after-tax balances for Roth and Traditional IRA contributions.</p><div class="post-meta"><span>Free Tool</span></div></div></a>
-    <a class="post-card" href="mortgage-payment-calculator.html"><div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80');"></div><div class="post-body"><span class="post-cat">Home</span><h3 class="post-title">Mortgage Payment Calculator</h3><p class="post-excerpt">Estimate your monthly mortgage payment including taxes, insurance, and PMI.</p><div class="post-meta"><span>Free Tool</span></div></div></a>
-    <a class="post-card" href="how-long-will-your-money-last.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Retirement</span>
-        <h3 class="post-title">How Long Will Your Money Last?</h3>
-        <p class="post-excerpt">Estimate how long your retirement savings can support your spending, given expected returns and inflation.</p>
-        <div class="post-meta"><span>Retirement Income Calculator</span></div>
-      </div>
-    </a>
-      </div>
-    </div>
+      <div class="calc-wrap"><div class="calc-grid"><div class="calc-form"><h3>Your inputs</h3><p class="calc-note">Estimate the total cost of college and the monthly savings needed.</p><div class="calc-field"><label for="child_age">Child&rsquo;s current age</label><div class="calc-input"><input type="number" id="child_age" value="5" min="0" max="18"><span class="suffix">yrs</span></div></div><div class="calc-field"><label for="start_age">College start age</label><div class="calc-input"><input type="number" id="start_age" value="18" min="14" max="22"><span class="suffix">yrs</span></div></div><div class="calc-field"><label for="years_col">Years of college</label><div class="calc-input"><input type="number" id="years_col" value="4" min="1" max="8"><span class="suffix">yrs</span></div></div><div class="calc-field"><label for="annual_cost">Annual cost today (tuition + room/board)</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="annual_cost" value="32000" min="0" step="1000"></div></div><div class="calc-field"><label for="ed_inflation">Education inflation (%)</label><div class="calc-input"><input type="number" id="ed_inflation" value="5" min="0" max="15" step="0.1"><span class="suffix">%</span></div></div><div class="calc-field"><label for="col_saved">Current college savings</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="col_saved" value="10000" min="0" step="500"></div></div><div class="calc-field"><label for="col_return">Expected annual return (%)</label><div class="calc-input"><input type="number" id="col_return" value="6" min="0" max="20" step="0.1"><span class="suffix">%</span></div></div></div><div class="calc-result"><h3>Projected college cost</h3><div class="calc-big" id="costBig">—</div><div class="calc-sub" id="costSub">Inflation-adjusted total across all college years.</div><div style="margin: 18px 0; padding: 14px 16px; background: #faf6ec; border-left: 3px solid #a07b32;"><div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(42,34,26,0.65); font-weight: 600;">Monthly savings needed</div><div style="font-family: 'Playfair Display', serif; font-size: 32px; color: #a07b32; line-height: 1; margin-top: 4px;" id="colMonthly">—</div><div style="font-size: 13px; color: rgba(42,34,26,0.7); margin-top: 6px;" id="colMonthlySub">From now until college starts.</div></div><p class="calc-disclaimer">For illustration only. Calculator does not include scholarships, grants, financial aid, or 529 tax benefits.</p></div></div></div>
   </section>
+
+  <!-- SEO content -->
+  <section class="section" style="padding: 32px 0 64px; background: #fffaf0;"><div class="container-narrow"><div class="seo-prose"><h2>About the College Savings Calculator</h2><p>This calculator estimates the full inflation-adjusted cost of an undergraduate degree and the monthly savings required to fund it. College costs have historically risen faster than general inflation.</p><h3>What the 529 plan adds</h3><p>A 529 plan is a state-sponsored education savings account. Contributions grow tax-deferred, and qualified withdrawals for tuition, fees, room and board, books, and required supplies are tax-free. Many states also offer a state income tax deduction or credit on contributions.</p><h3>What this calculator does not include</h3><ul><li>Scholarships, grants, work-study, or federal student aid</li><li>State tax benefits of contributing to a 529 plan</li><li>Differences between in-state, out-of-state, and private school costs</li><li>Graduate school costs</li></ul><h2>Build a plan tailored to your family</h2><p>My 360 Wealth Management Group advisors can help map a college funding plan alongside retirement and tax planning.</p><p style="margin-top:20px;"><a href="/contact.html" class="btn-gold" style="height:40px;padding:0 24px;">Schedule a Consultation</a></p></div></div></section>
+
 </main>
 
 <!-- Footer -->
@@ -639,20 +650,100 @@
 
 </script>
 
+<script>(function(){const $=id=>document.getElementById(id);function fmt(n){return '$'+Math.round(Math.max(0,n)).toLocaleString('en-US');}function calc(){const ca=+$('child_age').value;const sa=+$('start_age').value;const yc=Math.max(1,+$('years_col').value);const an=Math.max(0,+$('annual_cost').value);const ei=(+$('ed_inflation').value||0)/100;const sv=Math.max(0,+$('col_saved').value);const r=(+$('col_return').value||0)/100;const yt=Math.max(0,sa-ca);let tot=0;for(let k=0;k<yc;k++){tot+=an*Math.pow(1+ei,yt+k);}$('costBig').textContent=fmt(tot);$('costSub').textContent=`Projected ${yc}-year cost starting in ${yt} years (${(ei*100).toFixed(1)}% education inflation).`;const n=yt*12;const m=r/12;const fvC=sv*Math.pow(1+m,n);const gap=Math.max(0,tot-fvC);let mo;if(n===0)mo=0;else if(Math.abs(m)<1e-9)mo=gap/n;else mo=gap*m/(Math.pow(1+m,n)-1);$('colMonthly').textContent=fmt(mo);$('colMonthlySub').textContent=yt===0?`College is starting now — most funding will need to come from current resources.`:`Save about ${fmt(mo)}/month for ${yt} years (${(r*100).toFixed(1)}% return).`;}document.querySelectorAll('.calc-form input').forEach(i=>i.addEventListener('input',calc));calc();})();</script>
+
 <script>
 (function(){
-  const btns = document.querySelectorAll('.pf-btn');
-  const cards = document.querySelectorAll('#articles .post-card');
-  btns.forEach(b => b.addEventListener('click', () => {
-    btns.forEach(x => x.classList.remove('active'));
-    b.classList.add('active');
-    const f = b.dataset.filter;
-    cards.forEach(c => {
-      const show = (f === 'all') || (c.dataset.category === f);
-      c.style.display = show ? '' : 'none';
+  const $ = id => document.getElementById(id);
+  function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+  function project() {
+    const balance0 = Math.max(0, parseFloat($('balance').value) || 0);
+    const w0 = Math.max(0, parseFloat($('withdrawal').value) || 0);
+    const r = (parseFloat($('ret').value) || 0) / 100;
+    const i = (parseFloat($('infl').value) || 0) / 100;
+    let bal = balance0;
+    let year = 0;
+    const series = [bal];
+    const MAX = 80;
+    while (bal > 0 && year < MAX) {
+      year++;
+      const w = w0 * Math.pow(1 + i, year - 1);
+      bal = bal * (1 + r) - w;
+      series.push(Math.max(0, bal));
+      if (bal <= 0) break;
+    }
+    const lasted = bal <= 0 ? year : MAX;
+    const yearsTxt = (bal <= 0 ? `${lasted}` : `${MAX}+`);
+    $('resultYears').textContent = yearsTxt + ' years';
+    if (bal <= 0) {
+      $('resultDetail').textContent = `Starting with ${fmt(balance0)} and withdrawing ${fmt(w0)} in year 1 (rising each year with inflation), your balance is projected to reach $0 in approximately year ${lasted}.`;
+    } else {
+      $('resultDetail').textContent = `Starting with ${fmt(balance0)}, your savings are projected to remain positive after ${MAX} years. Final balance ≈ ${fmt(bal)}.`;
+    }
+    drawChart(series, balance0);
+  }
+
+  function drawChart(series, max0) {
+    const c = $('calcChart');
+    const ctx = c.getContext('2d');
+    const W = c.width, H = c.height;
+    ctx.clearRect(0,0,W,H);
+    const padL = 50, padR = 14, padT = 14, padB = 28;
+    const innerW = W - padL - padR;
+    const innerH = H - padT - padB;
+    const n = series.length;
+    const maxVal = Math.max(max0, ...series, 1);
+    // grid
+    ctx.strokeStyle = 'rgba(42,34,26,0.08)';
+    ctx.lineWidth = 1;
+    for (let g = 0; g <= 4; g++) {
+      const y = padT + innerH * (g/4);
+      ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(W - padR, y); ctx.stroke();
+      // y-axis labels
+      const v = maxVal * (1 - g/4);
+      ctx.fillStyle = 'rgba(42,34,26,0.55)';
+      ctx.font = '10px DM Sans, sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText('$' + Math.round(v/1000) + 'k', padL - 6, y + 3);
+    }
+    // x-axis labels every ~10 years
+    ctx.textAlign = 'center';
+    for (let yr = 0; yr <= n - 1; yr += Math.max(1, Math.ceil((n-1)/8))) {
+      const x = padL + (innerW * yr / Math.max(1, n - 1));
+      ctx.fillStyle = 'rgba(42,34,26,0.55)';
+      ctx.fillText('Yr ' + yr, x, H - 10);
+    }
+    // area under line
+    ctx.beginPath();
+    series.forEach((v, idx) => {
+      const x = padL + (innerW * idx / Math.max(1, n - 1));
+      const y = padT + innerH * (1 - v / maxVal);
+      if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
     });
-  }));
+    ctx.lineTo(padL + innerW, padT + innerH);
+    ctx.lineTo(padL, padT + innerH);
+    ctx.closePath();
+    const grad = ctx.createLinearGradient(0, padT, 0, padT + innerH);
+    grad.addColorStop(0, 'rgba(160,123,50,0.35)');
+    grad.addColorStop(1, 'rgba(160,123,50,0.03)');
+    ctx.fillStyle = grad;
+    ctx.fill();
+    // line
+    ctx.beginPath();
+    series.forEach((v, idx) => {
+      const x = padL + (innerW * idx / Math.max(1, n - 1));
+      const y = padT + innerH * (1 - v / maxVal);
+      if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.strokeStyle = '#a07b32';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  }
+
+  $('calcBtn').addEventListener('click', project);
+  ['balance','withdrawal','ret','infl'].forEach(id => $(id).addEventListener('input', project));
+  project();
 })();
 </script>
-</body>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much should I save for college?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the type of school, when your child will attend, and what portion you intend to fund. This calculator estimates the projected total cost using education inflation, then solves for a monthly savings amount."}}, {"@type": "Question", "name": "What is a 529 plan?", "acceptedAnswer": {"@type": "Answer", "text": "A 529 plan is a state-sponsored education savings account. Contributions can grow tax-deferred, and qualified withdrawals for education expenses are federally tax-free."}}, {"@type": "Question", "name": "What education inflation rate should I use?", "acceptedAnswer": {"@type": "Answer", "text": "Historically, college costs have grown about 4 to 6 percent per year. A 5 percent assumption is a reasonable middle ground."}}]}</script></body>
 </html>

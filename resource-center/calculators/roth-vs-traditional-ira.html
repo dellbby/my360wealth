@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Calculators | My 360 Wealth Resource Center</title>
-<link rel="canonical" href="https://www.my360wealth.com/resource-center/calculators/index.html" />
-<meta name="description" content="Free retirement and financial planning calculators from the My 360 Wealth Resource Center." />
+<title>Roth vs. Traditional IRA | My 360 Wealth</title>
+<link rel="canonical" href="https://www.my360wealth.com/resource-center/calculators/roth-vs-traditional-ira.html" />
+<meta name="description" content="Compare projected after-tax balances for Roth and Traditional IRA contributions." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -419,6 +419,43 @@
 
   /* Disable scroll-reveal animation — content visible immediately */
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* Calculator UI */
+  .calc-wrap { max-width: 1080px; margin: 0 auto; }
+  .calc-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  @media (min-width: 900px) { .calc-grid { grid-template-columns: 1fr 1.2fr; } }
+  .calc-form, .calc-result { background: #ffffff; border: 1px solid rgba(42,34,26,0.08); padding: 28px 28px 24px; }
+  .calc-form h3, .calc-result h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: #2a221a; margin: 0 0 6px; }
+  .calc-note { color: rgba(42,34,26,0.6); font-size: 13px; margin: 0 0 18px; }
+  .calc-field { margin-bottom: 16px; }
+  .calc-field label { display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(42,34,26,0.65); margin-bottom: 6px; font-weight: 500; }
+  .calc-input { display: flex; align-items: center; background: #faf6ec; border: 1px solid rgba(42,34,26,0.12); padding: 0 12px; transition: border-color 0.2s; }
+  .calc-input:focus-within { border-color: #a07b32; }
+  .calc-input .prefix, .calc-input .suffix { color: #a07b32; font-weight: 600; padding: 0 6px; font-size: 14px; }
+  .calc-input input { border: none; background: transparent; padding: 12px 6px; font-size: 16px; color: #2a221a; width: 100%; outline: none; font-family: 'DM Sans', sans-serif; }
+  .calc-btn { background: #a07b32; color: #fff; padding: 13px 22px; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; border: none; cursor: pointer; transition: background 0.2s; width: 100%; }
+  .calc-btn:hover { background: #b89043; }
+  .calc-big { font-family: 'Playfair Display', serif; font-style: italic; font-size: 64px; color: #a07b32; line-height: 1.05; margin: 4px 0 4px; }
+  @media (max-width: 640px) { .calc-big { font-size: 48px; } }
+  .calc-sub { color: rgba(42,34,26,0.78); font-size: 15px; line-height: 1.55; margin-bottom: 18px; }
+  .calc-chart-wrap { background: #faf6ec; border: 1px solid rgba(42,34,26,0.08); padding: 12px; margin-bottom: 14px; }
+  .calc-chart-wrap canvas { width: 100%; height: auto; display: block; }
+  .calc-disclaimer { color: rgba(42,34,26,0.55); font-size: 11px; line-height: 1.6; margin: 0; }
+
+  /* SEO prose */
+  .seo-prose h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #2a221a; margin: 0 0 16px; }
+  .seo-prose h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: #a07b32; margin: 24px 0 8px; }
+  .seo-prose h4 { font-family: 'DM Sans', sans-serif; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #2a221a; margin: 18px 0 6px; font-weight: 600; }
+  .seo-prose p, .seo-prose li { color: rgba(42,34,26,0.78); font-size: 15px; line-height: 1.75; max-width: 760px; }
+  .seo-prose p { margin: 0 0 14px; }
+  .seo-prose ul { padding-left: 20px; margin: 8px 0 14px; }
+  .seo-prose li { margin-bottom: 6px; }
+  .rt-row { display: flex; align-items: baseline; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(42,34,26,0.08); }
+  .rt-row:last-of-type { border-bottom: none; }
+  .rt-row.rt-diff { background: #faf6ec; padding: 14px 14px; margin-top: 8px; border-bottom: none; }
+  .rt-label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(42,34,26,0.7); font-weight: 600; }
+  .rt-val { font-family: 'Playfair Display', serif; font-size: 28px; color: #2a221a; font-variant-numeric: tabular-nums; }
+  .rt-diff .rt-val { color: #a07b32; }
 </style>
 </head>
 <body>
@@ -444,8 +481,8 @@
     <div class="hb-bar-inner">
       <div class="hb-bar-rule"></div>
       <div class="hb-bar-content">
-        <p class="hb-bar-eyebrow">Insights &amp; Articles</p>
-        <h2 class="hb-bar-title">Calculators</h2>
+        <p class="hb-bar-eyebrow">Resource Center &middot; Calculator</p>
+        <h2 class="hb-bar-title">Roth vs. Traditional IRA</h2>
         <p class="hb-bar-desc">Practical financial planning, tax strategy, retirement, and investing insights from the My 360 Wealth Management team.</p>
       </div>
     </div>
@@ -453,32 +490,12 @@
   
   <section class="section" id="articles" style="padding-top:24px;">
     <div class="container">
-      <div class="post-grid" id="calculators">
-    <a class="post-card" href="what-is-my-net-worth.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Net Worth</span>
-        <h3 class="post-title">What Is My Net Worth?</h3>
-        <p class="post-excerpt">Add up your assets and liabilities to estimate your household net worth and see a breakdown by category.</p>
-        <div class="post-meta"><span>Personal Balance Sheet</span></div>
-      </div>
-    </a>
-    <a class="post-card" href="retirement-savings-goal.html"><div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&q=80');"></div><div class="post-body"><span class="post-cat">Retirement</span><h3 class="post-title">Retirement Savings Goal</h3><p class="post-excerpt">How much you may need to retire and how much to save each month to get there.</p><div class="post-meta"><span>Free Tool</span></div></div></a>
-    <a class="post-card" href="college-savings-goal.html"><div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80');"></div><div class="post-body"><span class="post-cat">Education</span><h3 class="post-title">College Savings Goal (529)</h3><p class="post-excerpt">Estimate the full cost of college and the monthly savings required.</p><div class="post-meta"><span>Free Tool</span></div></div></a>
-    <a class="post-card" href="roth-vs-traditional-ira.html"><div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&q=80');"></div><div class="post-body"><span class="post-cat">Tax Planning</span><h3 class="post-title">Roth vs. Traditional IRA</h3><p class="post-excerpt">Compare projected after-tax balances for Roth and Traditional IRA contributions.</p><div class="post-meta"><span>Free Tool</span></div></div></a>
-    <a class="post-card" href="mortgage-payment-calculator.html"><div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80');"></div><div class="post-body"><span class="post-cat">Home</span><h3 class="post-title">Mortgage Payment Calculator</h3><p class="post-excerpt">Estimate your monthly mortgage payment including taxes, insurance, and PMI.</p><div class="post-meta"><span>Free Tool</span></div></div></a>
-    <a class="post-card" href="how-long-will-your-money-last.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Retirement</span>
-        <h3 class="post-title">How Long Will Your Money Last?</h3>
-        <p class="post-excerpt">Estimate how long your retirement savings can support your spending, given expected returns and inflation.</p>
-        <div class="post-meta"><span>Retirement Income Calculator</span></div>
-      </div>
-    </a>
-      </div>
-    </div>
+      <div class="calc-wrap"><div class="calc-grid"><div class="calc-form"><h3>Your inputs</h3><p class="calc-note">Compare projected after-tax balances for Roth and Traditional IRA contributions.</p><div class="calc-field"><label for="rt_age">Current age</label><div class="calc-input"><input type="number" id="rt_age" value="35" min="18" max="80"><span class="suffix">yrs</span></div></div><div class="calc-field"><label for="rt_retage">Retirement age</label><div class="calc-input"><input type="number" id="rt_retage" value="65" min="40" max="85"><span class="suffix">yrs</span></div></div><div class="calc-field"><label for="rt_contrib">Annual contribution</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="rt_contrib" value="7000" min="0" step="500"></div></div><div class="calc-field"><label for="rt_return">Expected annual return (%)</label><div class="calc-input"><input type="number" id="rt_return" value="7" min="0" max="20" step="0.1"><span class="suffix">%</span></div></div><div class="calc-field"><label for="rt_now">Current marginal tax rate (%)</label><div class="calc-input"><input type="number" id="rt_now" value="24" min="0" max="50" step="0.5"><span class="suffix">%</span></div></div><div class="calc-field"><label for="rt_later">Tax rate in retirement (%)</label><div class="calc-input"><input type="number" id="rt_later" value="22" min="0" max="50" step="0.5"><span class="suffix">%</span></div></div></div><div class="calc-result"><h3>After-tax results at retirement</h3><div class="rt-row"><span class="rt-label">Roth IRA</span><span class="rt-val" id="rothBig">—</span></div><div class="rt-row"><span class="rt-label">Traditional IRA</span><span class="rt-val" id="tradBig">—</span></div><div class="rt-row rt-diff"><span class="rt-label" id="diffLabel">Difference</span><span class="rt-val" id="diffBig">—</span></div><p class="calc-sub" id="rtSub" style="margin-top: 16px;">Assumes the same gross annual contribution.</p><p class="calc-disclaimer">For illustration only. Does not model contribution limits, eligibility phase-outs, RMDs, or alternative use of tax savings.</p></div></div></div>
   </section>
+
+  <!-- SEO content -->
+  <section class="section" style="padding: 32px 0 64px; background: #fffaf0;"><div class="container-narrow"><div class="seo-prose"><h2>About the Roth vs. Traditional IRA Comparison</h2><p>The Roth vs. Traditional decision often comes down to one question: do you expect to be in a higher or lower tax bracket in retirement than you are today?</p><h3>When Roth typically wins</h3><ul><li>You expect higher tax rates in retirement than you have today</li><li>You are early in your career with rising income</li><li>You want tax-free withdrawals to manage Medicare premium tiers (IRMAA)</li><li>You want to leave tax-free assets to heirs</li></ul><h3>When Traditional typically wins</h3><ul><li>You expect lower tax rates in retirement</li><li>You are in your peak earning years and the up-front deduction matters now</li><li>You plan to live in a state with no income tax during retirement</li></ul><h3>What this calculator does not model</h3><ul><li>IRS contribution limits and income-based eligibility phase-outs</li><li>Required Minimum Distributions starting at age 73 for Traditional IRAs</li><li>Reinvestment of Traditional tax savings into a taxable account</li></ul><h2>Get a personalized recommendation</h2><p>My 360 Wealth Management Group advisors can model the Roth vs. Traditional decision alongside your full tax picture.</p><p style="margin-top:20px;"><a href="/contact.html" class="btn-gold" style="height:40px;padding:0 24px;">Schedule a Consultation</a></p></div></div></section>
+
 </main>
 
 <!-- Footer -->
@@ -639,20 +656,100 @@
 
 </script>
 
+<script>(function(){const $=id=>document.getElementById(id);function fmt(n){const v=Math.round(n);return(v<0?'-':'')+'$'+Math.abs(v).toLocaleString('en-US');}function calc(){const yr=Math.max(0,+$('rt_retage').value-+$('rt_age').value);const c=Math.max(0,+$('rt_contrib').value);const r=(+$('rt_return').value||0)/100;const tL=(+$('rt_later').value||0)/100;let fv;if(Math.abs(r)<1e-9)fv=c*yr;else fv=c*(Math.pow(1+r,yr)-1)/r;const roth=fv;const trad=fv*(1-tL);$('rothBig').textContent=fmt(roth);$('tradBig').textContent=fmt(trad);const diff=roth-trad;$('diffBig').textContent=(diff>=0?'+':'')+fmt(diff);$('diffLabel').textContent=diff>=0?'Roth advantage':'Traditional advantage';$('rtSub').textContent=`Same gross contribution each year. Roth funded with after-tax dollars; Traditional taxed on withdrawal.`;}document.querySelectorAll('.calc-form input').forEach(i=>i.addEventListener('input',calc));calc();})();</script>
+
 <script>
 (function(){
-  const btns = document.querySelectorAll('.pf-btn');
-  const cards = document.querySelectorAll('#articles .post-card');
-  btns.forEach(b => b.addEventListener('click', () => {
-    btns.forEach(x => x.classList.remove('active'));
-    b.classList.add('active');
-    const f = b.dataset.filter;
-    cards.forEach(c => {
-      const show = (f === 'all') || (c.dataset.category === f);
-      c.style.display = show ? '' : 'none';
+  const $ = id => document.getElementById(id);
+  function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+  function project() {
+    const balance0 = Math.max(0, parseFloat($('balance').value) || 0);
+    const w0 = Math.max(0, parseFloat($('withdrawal').value) || 0);
+    const r = (parseFloat($('ret').value) || 0) / 100;
+    const i = (parseFloat($('infl').value) || 0) / 100;
+    let bal = balance0;
+    let year = 0;
+    const series = [bal];
+    const MAX = 80;
+    while (bal > 0 && year < MAX) {
+      year++;
+      const w = w0 * Math.pow(1 + i, year - 1);
+      bal = bal * (1 + r) - w;
+      series.push(Math.max(0, bal));
+      if (bal <= 0) break;
+    }
+    const lasted = bal <= 0 ? year : MAX;
+    const yearsTxt = (bal <= 0 ? `${lasted}` : `${MAX}+`);
+    $('resultYears').textContent = yearsTxt + ' years';
+    if (bal <= 0) {
+      $('resultDetail').textContent = `Starting with ${fmt(balance0)} and withdrawing ${fmt(w0)} in year 1 (rising each year with inflation), your balance is projected to reach $0 in approximately year ${lasted}.`;
+    } else {
+      $('resultDetail').textContent = `Starting with ${fmt(balance0)}, your savings are projected to remain positive after ${MAX} years. Final balance ≈ ${fmt(bal)}.`;
+    }
+    drawChart(series, balance0);
+  }
+
+  function drawChart(series, max0) {
+    const c = $('calcChart');
+    const ctx = c.getContext('2d');
+    const W = c.width, H = c.height;
+    ctx.clearRect(0,0,W,H);
+    const padL = 50, padR = 14, padT = 14, padB = 28;
+    const innerW = W - padL - padR;
+    const innerH = H - padT - padB;
+    const n = series.length;
+    const maxVal = Math.max(max0, ...series, 1);
+    // grid
+    ctx.strokeStyle = 'rgba(42,34,26,0.08)';
+    ctx.lineWidth = 1;
+    for (let g = 0; g <= 4; g++) {
+      const y = padT + innerH * (g/4);
+      ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(W - padR, y); ctx.stroke();
+      // y-axis labels
+      const v = maxVal * (1 - g/4);
+      ctx.fillStyle = 'rgba(42,34,26,0.55)';
+      ctx.font = '10px DM Sans, sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText('$' + Math.round(v/1000) + 'k', padL - 6, y + 3);
+    }
+    // x-axis labels every ~10 years
+    ctx.textAlign = 'center';
+    for (let yr = 0; yr <= n - 1; yr += Math.max(1, Math.ceil((n-1)/8))) {
+      const x = padL + (innerW * yr / Math.max(1, n - 1));
+      ctx.fillStyle = 'rgba(42,34,26,0.55)';
+      ctx.fillText('Yr ' + yr, x, H - 10);
+    }
+    // area under line
+    ctx.beginPath();
+    series.forEach((v, idx) => {
+      const x = padL + (innerW * idx / Math.max(1, n - 1));
+      const y = padT + innerH * (1 - v / maxVal);
+      if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
     });
-  }));
+    ctx.lineTo(padL + innerW, padT + innerH);
+    ctx.lineTo(padL, padT + innerH);
+    ctx.closePath();
+    const grad = ctx.createLinearGradient(0, padT, 0, padT + innerH);
+    grad.addColorStop(0, 'rgba(160,123,50,0.35)');
+    grad.addColorStop(1, 'rgba(160,123,50,0.03)');
+    ctx.fillStyle = grad;
+    ctx.fill();
+    // line
+    ctx.beginPath();
+    series.forEach((v, idx) => {
+      const x = padL + (innerW * idx / Math.max(1, n - 1));
+      const y = padT + innerH * (1 - v / maxVal);
+      if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.strokeStyle = '#a07b32';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  }
+
+  $('calcBtn').addEventListener('click', project);
+  ['balance','withdrawal','ret','infl'].forEach(id => $(id).addEventListener('input', project));
+  project();
 })();
 </script>
-</body>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Roth or Traditional IRA - which is better?", "acceptedAnswer": {"@type": "Answer", "text": "It depends mostly on whether you expect your tax rate to be higher or lower in retirement than it is today. Roth wins when retirement tax rates are higher; Traditional wins when retirement tax rates are lower."}}, {"@type": "Question", "name": "Are Roth withdrawals really tax-free?", "acceptedAnswer": {"@type": "Answer", "text": "Qualified Roth IRA withdrawals are federal income tax-free, including investment growth."}}, {"@type": "Question", "name": "Does Traditional IRA tax savings change the comparison?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If up-front tax savings from a Traditional contribution are reinvested in a taxable account, the Traditional path can become more competitive."}}]}</script></body>
 </html>

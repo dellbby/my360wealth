@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Calculators | My 360 Wealth Resource Center</title>
-<link rel="canonical" href="https://www.my360wealth.com/resource-center/calculators/index.html" />
-<meta name="description" content="Free retirement and financial planning calculators from the My 360 Wealth Resource Center." />
+<title>Mortgage Payment Calculator | My 360 Wealth</title>
+<link rel="canonical" href="https://www.my360wealth.com/resource-center/calculators/mortgage-payment-calculator.html" />
+<meta name="description" content="Estimate your full monthly mortgage payment including principal, interest, property tax, homeowners insurance, and PMI." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -419,6 +419,43 @@
 
   /* Disable scroll-reveal animation — content visible immediately */
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* Calculator UI */
+  .calc-wrap { max-width: 1080px; margin: 0 auto; }
+  .calc-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  @media (min-width: 900px) { .calc-grid { grid-template-columns: 1fr 1.2fr; } }
+  .calc-form, .calc-result { background: #ffffff; border: 1px solid rgba(42,34,26,0.08); padding: 28px 28px 24px; }
+  .calc-form h3, .calc-result h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: #2a221a; margin: 0 0 6px; }
+  .calc-note { color: rgba(42,34,26,0.6); font-size: 13px; margin: 0 0 18px; }
+  .calc-field { margin-bottom: 16px; }
+  .calc-field label { display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(42,34,26,0.65); margin-bottom: 6px; font-weight: 500; }
+  .calc-input { display: flex; align-items: center; background: #faf6ec; border: 1px solid rgba(42,34,26,0.12); padding: 0 12px; transition: border-color 0.2s; }
+  .calc-input:focus-within { border-color: #a07b32; }
+  .calc-input .prefix, .calc-input .suffix { color: #a07b32; font-weight: 600; padding: 0 6px; font-size: 14px; }
+  .calc-input input { border: none; background: transparent; padding: 12px 6px; font-size: 16px; color: #2a221a; width: 100%; outline: none; font-family: 'DM Sans', sans-serif; }
+  .calc-btn { background: #a07b32; color: #fff; padding: 13px 22px; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; border: none; cursor: pointer; transition: background 0.2s; width: 100%; }
+  .calc-btn:hover { background: #b89043; }
+  .calc-big { font-family: 'Playfair Display', serif; font-style: italic; font-size: 64px; color: #a07b32; line-height: 1.05; margin: 4px 0 4px; }
+  @media (max-width: 640px) { .calc-big { font-size: 48px; } }
+  .calc-sub { color: rgba(42,34,26,0.78); font-size: 15px; line-height: 1.55; margin-bottom: 18px; }
+  .calc-chart-wrap { background: #faf6ec; border: 1px solid rgba(42,34,26,0.08); padding: 12px; margin-bottom: 14px; }
+  .calc-chart-wrap canvas { width: 100%; height: auto; display: block; }
+  .calc-disclaimer { color: rgba(42,34,26,0.55); font-size: 11px; line-height: 1.6; margin: 0; }
+
+  /* SEO prose */
+  .seo-prose h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #2a221a; margin: 0 0 16px; }
+  .seo-prose h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: #a07b32; margin: 24px 0 8px; }
+  .seo-prose h4 { font-family: 'DM Sans', sans-serif; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #2a221a; margin: 18px 0 6px; font-weight: 600; }
+  .seo-prose p, .seo-prose li { color: rgba(42,34,26,0.78); font-size: 15px; line-height: 1.75; max-width: 760px; }
+  .seo-prose p { margin: 0 0 14px; }
+  .seo-prose ul { padding-left: 20px; margin: 8px 0 14px; }
+  .seo-prose li { margin-bottom: 6px; }
+  .rt-row { display: flex; align-items: baseline; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(42,34,26,0.08); }
+  .rt-row:last-of-type { border-bottom: none; }
+  .rt-row.rt-diff { background: #faf6ec; padding: 14px 14px; margin-top: 8px; border-bottom: none; }
+  .rt-label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(42,34,26,0.7); font-weight: 600; }
+  .rt-val { font-family: 'Playfair Display', serif; font-size: 28px; color: #2a221a; font-variant-numeric: tabular-nums; }
+  .rt-diff .rt-val { color: #a07b32; }
 </style>
 </head>
 <body>
@@ -444,8 +481,8 @@
     <div class="hb-bar-inner">
       <div class="hb-bar-rule"></div>
       <div class="hb-bar-content">
-        <p class="hb-bar-eyebrow">Insights &amp; Articles</p>
-        <h2 class="hb-bar-title">Calculators</h2>
+        <p class="hb-bar-eyebrow">Resource Center &middot; Calculator</p>
+        <h2 class="hb-bar-title">Mortgage Payment Calculator</h2>
         <p class="hb-bar-desc">Practical financial planning, tax strategy, retirement, and investing insights from the My 360 Wealth Management team.</p>
       </div>
     </div>
@@ -453,32 +490,12 @@
   
   <section class="section" id="articles" style="padding-top:24px;">
     <div class="container">
-      <div class="post-grid" id="calculators">
-    <a class="post-card" href="what-is-my-net-worth.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Net Worth</span>
-        <h3 class="post-title">What Is My Net Worth?</h3>
-        <p class="post-excerpt">Add up your assets and liabilities to estimate your household net worth and see a breakdown by category.</p>
-        <div class="post-meta"><span>Personal Balance Sheet</span></div>
-      </div>
-    </a>
-    <a class="post-card" href="retirement-savings-goal.html"><div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&q=80');"></div><div class="post-body"><span class="post-cat">Retirement</span><h3 class="post-title">Retirement Savings Goal</h3><p class="post-excerpt">How much you may need to retire and how much to save each month to get there.</p><div class="post-meta"><span>Free Tool</span></div></div></a>
-    <a class="post-card" href="college-savings-goal.html"><div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80');"></div><div class="post-body"><span class="post-cat">Education</span><h3 class="post-title">College Savings Goal (529)</h3><p class="post-excerpt">Estimate the full cost of college and the monthly savings required.</p><div class="post-meta"><span>Free Tool</span></div></div></a>
-    <a class="post-card" href="roth-vs-traditional-ira.html"><div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&q=80');"></div><div class="post-body"><span class="post-cat">Tax Planning</span><h3 class="post-title">Roth vs. Traditional IRA</h3><p class="post-excerpt">Compare projected after-tax balances for Roth and Traditional IRA contributions.</p><div class="post-meta"><span>Free Tool</span></div></div></a>
-    <a class="post-card" href="mortgage-payment-calculator.html"><div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80');"></div><div class="post-body"><span class="post-cat">Home</span><h3 class="post-title">Mortgage Payment Calculator</h3><p class="post-excerpt">Estimate your monthly mortgage payment including taxes, insurance, and PMI.</p><div class="post-meta"><span>Free Tool</span></div></div></a>
-    <a class="post-card" href="how-long-will-your-money-last.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Retirement</span>
-        <h3 class="post-title">How Long Will Your Money Last?</h3>
-        <p class="post-excerpt">Estimate how long your retirement savings can support your spending, given expected returns and inflation.</p>
-        <div class="post-meta"><span>Retirement Income Calculator</span></div>
-      </div>
-    </a>
-      </div>
-    </div>
+      <div class="calc-wrap"><div class="calc-grid"><div class="calc-form"><h3>Your inputs</h3><p class="calc-note">Calculates monthly principal &amp; interest, plus estimated tax, insurance, and PMI.</p><div class="calc-field"><label for="m_price">Home price</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="m_price" value="600000" min="0" step="5000"></div></div><div class="calc-field"><label for="m_down">Down payment</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="m_down" value="120000" min="0" step="5000"></div></div><div class="calc-field"><label for="m_term">Loan term</label><div class="calc-input"><input type="number" id="m_term" value="30" min="5" max="40"><span class="suffix">yrs</span></div></div><div class="calc-field"><label for="m_rate">Interest rate (%)</label><div class="calc-input"><input type="number" id="m_rate" value="6.5" min="0" max="20" step="0.05"><span class="suffix">%</span></div></div><div class="calc-field"><label for="m_tax">Annual property tax (%)</label><div class="calc-input"><input type="number" id="m_tax" value="1.1" min="0" max="5" step="0.05"><span class="suffix">%</span></div></div><div class="calc-field"><label for="m_ins">Annual homeowners insurance</label><div class="calc-input"><span class="prefix">$</span><input type="number" id="m_ins" value="1800" min="0" step="50"></div></div><div class="calc-field"><label for="m_pmi">Annual PMI (% of loan, if down &lt; 20%)</label><div class="calc-input"><input type="number" id="m_pmi" value="0.5" min="0" max="3" step="0.05"><span class="suffix">%</span></div></div></div><div class="calc-result"><h3>Monthly payment</h3><div class="calc-big" id="mPiti">—</div><div class="calc-sub" id="mPitiSub">Total PITI (principal, interest, tax, insurance).</div><div class="rt-row"><span class="rt-label">Principal &amp; interest</span><span class="rt-val" id="mPi">—</span></div><div class="rt-row"><span class="rt-label">Property tax</span><span class="rt-val" id="mTax">—</span></div><div class="rt-row"><span class="rt-label">Homeowners insurance</span><span class="rt-val" id="mInsM">—</span></div><div class="rt-row"><span class="rt-label">PMI <span id="mPmiNote" style="font-size:10px;color:rgba(42,34,26,0.5);"></span></span><span class="rt-val" id="mPmi">—</span></div><div class="rt-row rt-diff"><span class="rt-label">Total interest over loan</span><span class="rt-val" id="mTotI">—</span></div><p class="calc-disclaimer">For illustration only. Does not include HOA dues, closing costs, or alternative mortgage insurance structures.</p></div></div></div>
   </section>
+
+  <!-- SEO content -->
+  <section class="section" style="padding: 32px 0 64px; background: #fffaf0;"><div class="container-narrow"><div class="seo-prose"><h2>About the Mortgage Payment Calculator</h2><p>This calculator estimates your full monthly mortgage payment &mdash; principal and interest, property tax, homeowners insurance, and PMI when applicable. The total is commonly called PITI.</p><h3>What this calculator does not include</h3><ul><li>HOA fees or community assessments</li><li>Closing costs (typically 2-5% of loan amount)</li><li>Mortgage interest tax deduction</li><li>FHA or VA loan-specific insurance structures</li><li>Adjustable-rate mortgage (ARM) features</li></ul><h3>How to use it</h3><p>Try different down payment amounts to see the impact on PMI &mdash; reaching 20% equity removes the PMI line entirely. Also compare 15-year vs. 30-year terms: the 15-year payment is higher, but total interest paid is dramatically lower.</p><h2>Talk to a fiduciary advisor about the bigger picture</h2><p>A home purchase often has implications beyond the monthly payment &mdash; cash reserves, retirement contributions, and tax planning. My 360 Wealth Management Group advisors are available for a complimentary conversation.</p><p style="margin-top:20px;"><a href="/contact.html" class="btn-gold" style="height:40px;padding:0 24px;">Schedule a Consultation</a></p></div></div></section>
+
 </main>
 
 <!-- Footer -->
@@ -639,20 +656,100 @@
 
 </script>
 
+<script>(function(){const $=id=>document.getElementById(id);function fmt(n){const v=Math.round(n);return(v<0?'-':'')+'$'+Math.abs(v).toLocaleString('en-US');}function calc(){const p=Math.max(0,+$('m_price').value);const dn=Math.min(p,Math.max(0,+$('m_down').value));const L=p-dn;const yrs=Math.max(1,+$('m_term').value);const r=(+$('m_rate').value||0)/100/12;const n=yrs*12;let pi;if(L===0)pi=0;else if(r===0)pi=L/n;else pi=L*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);const tax=p*((+$('m_tax').value||0)/100)/12;const ins=(+$('m_ins').value||0)/12;const ltv=p>0?dn/p:1;const pmiPct=(+$('m_pmi').value||0)/100;const pmi=ltv<0.2?L*pmiPct/12:0;const piti=pi+tax+ins+pmi;const totI=pi*n-L;$('mPiti').textContent=fmt(piti);$('mPitiSub').textContent=`Loan ${fmt(L)} at ${(+$('m_rate').value).toFixed(2)}% for ${yrs} years.`;$('mPi').textContent=fmt(pi);$('mTax').textContent=fmt(tax);$('mInsM').textContent=fmt(ins);$('mPmi').textContent=fmt(pmi);$('mPmiNote').textContent=ltv<0.2?'(down < 20%)':'(not required)';$('mTotI').textContent=fmt(totI);}document.querySelectorAll('.calc-form input').forEach(i=>i.addEventListener('input',calc));calc();})();</script>
+
 <script>
 (function(){
-  const btns = document.querySelectorAll('.pf-btn');
-  const cards = document.querySelectorAll('#articles .post-card');
-  btns.forEach(b => b.addEventListener('click', () => {
-    btns.forEach(x => x.classList.remove('active'));
-    b.classList.add('active');
-    const f = b.dataset.filter;
-    cards.forEach(c => {
-      const show = (f === 'all') || (c.dataset.category === f);
-      c.style.display = show ? '' : 'none';
+  const $ = id => document.getElementById(id);
+  function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+  function project() {
+    const balance0 = Math.max(0, parseFloat($('balance').value) || 0);
+    const w0 = Math.max(0, parseFloat($('withdrawal').value) || 0);
+    const r = (parseFloat($('ret').value) || 0) / 100;
+    const i = (parseFloat($('infl').value) || 0) / 100;
+    let bal = balance0;
+    let year = 0;
+    const series = [bal];
+    const MAX = 80;
+    while (bal > 0 && year < MAX) {
+      year++;
+      const w = w0 * Math.pow(1 + i, year - 1);
+      bal = bal * (1 + r) - w;
+      series.push(Math.max(0, bal));
+      if (bal <= 0) break;
+    }
+    const lasted = bal <= 0 ? year : MAX;
+    const yearsTxt = (bal <= 0 ? `${lasted}` : `${MAX}+`);
+    $('resultYears').textContent = yearsTxt + ' years';
+    if (bal <= 0) {
+      $('resultDetail').textContent = `Starting with ${fmt(balance0)} and withdrawing ${fmt(w0)} in year 1 (rising each year with inflation), your balance is projected to reach $0 in approximately year ${lasted}.`;
+    } else {
+      $('resultDetail').textContent = `Starting with ${fmt(balance0)}, your savings are projected to remain positive after ${MAX} years. Final balance ≈ ${fmt(bal)}.`;
+    }
+    drawChart(series, balance0);
+  }
+
+  function drawChart(series, max0) {
+    const c = $('calcChart');
+    const ctx = c.getContext('2d');
+    const W = c.width, H = c.height;
+    ctx.clearRect(0,0,W,H);
+    const padL = 50, padR = 14, padT = 14, padB = 28;
+    const innerW = W - padL - padR;
+    const innerH = H - padT - padB;
+    const n = series.length;
+    const maxVal = Math.max(max0, ...series, 1);
+    // grid
+    ctx.strokeStyle = 'rgba(42,34,26,0.08)';
+    ctx.lineWidth = 1;
+    for (let g = 0; g <= 4; g++) {
+      const y = padT + innerH * (g/4);
+      ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(W - padR, y); ctx.stroke();
+      // y-axis labels
+      const v = maxVal * (1 - g/4);
+      ctx.fillStyle = 'rgba(42,34,26,0.55)';
+      ctx.font = '10px DM Sans, sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText('$' + Math.round(v/1000) + 'k', padL - 6, y + 3);
+    }
+    // x-axis labels every ~10 years
+    ctx.textAlign = 'center';
+    for (let yr = 0; yr <= n - 1; yr += Math.max(1, Math.ceil((n-1)/8))) {
+      const x = padL + (innerW * yr / Math.max(1, n - 1));
+      ctx.fillStyle = 'rgba(42,34,26,0.55)';
+      ctx.fillText('Yr ' + yr, x, H - 10);
+    }
+    // area under line
+    ctx.beginPath();
+    series.forEach((v, idx) => {
+      const x = padL + (innerW * idx / Math.max(1, n - 1));
+      const y = padT + innerH * (1 - v / maxVal);
+      if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
     });
-  }));
+    ctx.lineTo(padL + innerW, padT + innerH);
+    ctx.lineTo(padL, padT + innerH);
+    ctx.closePath();
+    const grad = ctx.createLinearGradient(0, padT, 0, padT + innerH);
+    grad.addColorStop(0, 'rgba(160,123,50,0.35)');
+    grad.addColorStop(1, 'rgba(160,123,50,0.03)');
+    ctx.fillStyle = grad;
+    ctx.fill();
+    // line
+    ctx.beginPath();
+    series.forEach((v, idx) => {
+      const x = padL + (innerW * idx / Math.max(1, n - 1));
+      const y = padT + innerH * (1 - v / maxVal);
+      if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.strokeStyle = '#a07b32';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  }
+
+  $('calcBtn').addEventListener('click', project);
+  ['balance','withdrawal','ret','infl'].forEach(id => $(id).addEventListener('input', project));
+  project();
 })();
 </script>
-</body>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is PITI?", "acceptedAnswer": {"@type": "Answer", "text": "PITI stands for Principal, Interest, Tax, and Insurance - the four components of a typical monthly mortgage payment when an escrow account is used."}}, {"@type": "Question", "name": "When is PMI required?", "acceptedAnswer": {"@type": "Answer", "text": "Private Mortgage Insurance is generally required on conventional loans when the down payment is less than 20 percent of the home price. PMI typically drops off automatically once the loan balance reaches 78 percent of original value."}}, {"@type": "Question", "name": "How much house can I afford?", "acceptedAnswer": {"@type": "Answer", "text": "A common guideline is that PITI plus other housing costs should not exceed 28 to 35 percent of gross monthly income."}}]}</script></body>
 </html>
