@@ -337,8 +337,15 @@
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 
   /* === Light theme override (contact page) === */
-  body { background: #f6efe3 !important; color: #2a221a !important; }
-  main { background: #f6efe3; }
+  body { background: #f6efe3 !important; }
+  main { background: #f6efe3; color: #2a221a; }
+  /* Force fixed nav to keep its dark background on this light page */
+  .nav { background: rgba(17,15,13,0.92) !important; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  /* Footer keeps its dark theme + cream text */
+  footer, footer * { color: var(--cream); }
+  footer h4 { color: var(--cream-40); }
+  footer .footer-brand p, footer .footer-links a, footer .footer-contact { color: var(--cream-30); }
+  footer .disclaimers { color: rgba(243,238,226,0.2); }
 </style>
 </head>
 <body>
