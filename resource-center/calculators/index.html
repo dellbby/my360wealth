@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>All Articles | My 360 Wealth Resource Center</title>
-<link rel="canonical" href="https://www.my360wealth.com/resource-center/articles.html" />
-<meta name="description" content="All articles from the My 360 Wealth Resource Center — financial planning, retirement, tax strategy, and investing insights." />
+<title>Calculators | My 360 Wealth Resource Center</title>
+<link rel="canonical" href="https://www.my360wealth.com/resource-center/calculators/index.html" />
+<meta name="description" content="Free retirement and financial planning calculators from the My 360 Wealth Resource Center." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -412,18 +412,13 @@
   .hb-bar-actions .ghost { color: #a07b32; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid rgba(160,123,50,0.4); padding-bottom: 2px; }
 
   /* Resource Center category filters */
-  .post-filters { display: flex !important; flex-wrap: wrap !important; gap: 10px !important; margin: 0 0 28px !important; padding: 0 !important; }
-  .post-filters .pf-btn { display: inline-flex !important; align-items: center !important; padding: 10px 18px !important; font-size: 12px !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; font-weight: 600 !important; color: rgba(42,34,26,0.7) !important; background: #ffffff !important; border: 1px solid rgba(42,34,26,0.12) !important; border-radius: 999px !important; cursor: pointer !important; transition: background 0.2s, color 0.2s, border-color 0.2s !important; font-family: 'DM Sans', sans-serif !important; line-height: 1 !important; }
-  .post-filters .pf-btn:hover { color: #a07b32 !important; border-color: rgba(160,123,50,0.4) !important; }
-  .post-filters .pf-btn.active { background: #a07b32 !important; color: #fff !important; border-color: #a07b32 !important; }
+  .post-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .pf-btn { padding: 8px 16px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; color: rgba(42,34,26,0.7); background: #ffffff; border: 1px solid rgba(42,34,26,0.12); cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; font-family: 'DM Sans', sans-serif; }
+  .pf-btn:hover { color: #a07b32; border-color: rgba(160,123,50,0.4); }
+  .pf-btn.active { background: #a07b32; color: #fff; border-color: #a07b32; }
 
   /* Disable scroll-reveal animation — content visible immediately */
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-
-  /* SEO prose */
-  .seo-prose h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #2a221a; margin: 0 0 16px; }
-  .seo-prose h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: #a07b32; margin: 22px 0 8px; }
-  .seo-prose p { color: rgba(42,34,26,0.78); font-size: 15px; line-height: 1.75; margin: 0 0 14px; max-width: 760px; }
 </style>
 </head>
 <body>
@@ -450,7 +445,7 @@
       <div class="hb-bar-rule"></div>
       <div class="hb-bar-content">
         <p class="hb-bar-eyebrow">Insights &amp; Articles</p>
-        <h2 class="hb-bar-title">All Articles</h2>
+        <h2 class="hb-bar-title">Calculators</h2>
         <p class="hb-bar-desc">Practical financial planning, tax strategy, retirement, and investing insights from the My 360 Wealth Management team.</p>
       </div>
     </div>
@@ -464,95 +459,19 @@
         <button class="pf-btn" data-filter="Retirement">Retirement</button>
         <button class="pf-btn" data-filter="Tax Planning">Tax Planning</button>
       </div>
-      <div class="post-grid" id="articles">
-    <a class="post-card" data-category="Tax Planning" href="tax-loss-harvesting-explained.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Tax Planning</span>
-        <h3 class="post-title">Tax-Loss Harvesting Explained</h3>
-        <p class="post-excerpt">What tax-loss harvesting is, how the wash-sale rule limits it, when it adds the most value, and the practical mechanics of using realized losses to offset gains or ordinary income.</p>
-        <div class="post-meta">
-          <span>May 18, 2026</span><span class="dot">·</span><span>6 min read</span>
-        </div>
-      </div>
-    </a>
-    <a class="post-card" data-category="Tax Planning" href="roth-conversion-windows.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Tax Planning</span>
-        <h3 class="post-title">Roth Conversion Windows: Timing for Long-Term Tax Savings</h3>
-        <p class="post-excerpt">How retirees and pre-retirees identify low-bracket years to convert traditional retirement balances to Roth — a strategy aimed at reducing lifetime taxes and future RMD exposure.</p>
-        <div class="post-meta">
-          <span>May 18, 2026</span><span class="dot">·</span><span>8 min read</span>
-        </div>
-      </div>
-    </a>
-    <a class="post-card" data-category="Retirement" href="required-minimum-distributions.html">
+      <div class="post-grid" id="calculators">
+    <a class="post-card" href="how-long-will-your-money-last.html">
       <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80');"></div>
       <div class="post-body">
         <span class="post-cat">Retirement</span>
-        <h3 class="post-title">Required Minimum Distributions (RMDs): What Retirees Need to Know</h3>
-        <p class="post-excerpt">What Required Minimum Distributions are, when they start, how they are calculated, and the most common strategies retirees use to manage the tax impact.</p>
-        <div class="post-meta">
-          <span>May 18, 2026</span><span class="dot">·</span><span>7 min read</span>
-        </div>
-      </div>
-    </a>
-    <a class="post-card" data-category="Retirement" href="healthcare-costs-in-retirement.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Retirement</span>
-        <h3 class="post-title">Healthcare Costs in Retirement: What to Plan For</h3>
-        <p class="post-excerpt">A clear-headed look at the categories of healthcare costs retirees face — Medicare, supplements, prescriptions, dental, vision, and long-term care — and how to plan for each.</p>
-        <div class="post-meta">
-          <span>May 18, 2026</span><span class="dot">·</span><span>8 min read</span>
-        </div>
-      </div>
-    </a>
-    <a class="post-card" data-category="Retirement" href="when-to-take-social-security.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Retirement</span>
-        <h3 class="post-title">When to Take Social Security: A Practical Framework</h3>
-        <p class="post-excerpt">A balanced framework for thinking through when to file for Social Security retirement benefits, including how delayed credits, spousal benefits, and life expectancy can shape the decision.</p>
-        <div class="post-meta">
-          <span>May 18, 2026</span><span class="dot">·</span><span>9 min read</span>
-        </div>
-      </div>
-    </a>
-    <a class="post-card" data-category="Financial Planning" href="how-to-choose-a-financial-advisor.html">
-      <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80');"></div>
-      <div class="post-body">
-        <span class="post-cat">Financial Planning</span>
-        <h3 class="post-title">How to Choose a Financial Advisor: A 7-Question Checklist</h3>
-        <p class="post-excerpt">Not all financial advisors are the same. The right questions reveal whether someone is held to a fiduciary standard, how they're paid, and whether their approach fits your goals.</p>
-        <div class="post-meta">
-          <span>May 11, 2026</span><span class="dot">·</span><span>8 min read</span>
-        </div>
+        <h3 class="post-title">How Long Will Your Money Last?</h3>
+        <p class="post-excerpt">Estimate how long your retirement savings can support your spending, given expected returns and inflation.</p>
+        <div class="post-meta"><span>Retirement Income Calculator</span></div>
       </div>
     </a>
       </div>
     </div>
   </section>
-
-  <!-- SEO content -->
-  <section class="section" style="padding: 32px 0 64px; background: #fffaf0;">
-    <div class="container-narrow">
-      <div class="seo-prose">
-        <h2>Financial Planning Articles &amp; Insights</h2>
-        <p>The My 360 Wealth Management Resource Center is built to help individuals, families, and business owners think clearly about long-term financial decisions. The articles here are written in plain English and cover the topics that come up most often in our client conversations &mdash; retirement income planning, tax strategy, investment management, estate planning, and the practical decisions that come with each stage of life.</p>
-        <h3>Retirement Planning</h3>
-        <p>Retirement planning articles cover the questions that drive most retirement decisions: when to claim Social Security, how to manage healthcare costs in retirement, what required minimum distributions (RMDs) are, and how to think about sustainable withdrawal strategies. The right answer is rarely a single number &mdash; it depends on income mix, tax brackets, healthcare assumptions, and life expectancy.</p>
-        <h3>Tax Planning</h3>
-        <p>Tax planning articles focus on multi-year strategy rather than April filing. Topics include Roth conversion windows during low-bracket years, tax-loss harvesting and the wash-sale rule, IRMAA (Medicare premium surcharges), and how charitable giving can be timed for maximum benefit. Tax planning is one of the highest-return activities in financial planning, and small changes in approach often compound over decades.</p>
-        <h3>Investing &amp; Portfolio Management</h3>
-        <p>Investment articles explain the building blocks of a long-term portfolio: asset allocation, diversification, the role of bonds, rebalancing discipline, and how to manage concentrated stock positions. They lean toward the evidence-based, low-cost, long-horizon approach we use with clients.</p>
-        <h3>Why we publish this</h3>
-        <p>We believe better financial decisions come from better education. The articles here are not personalized advice, and every situation is different &mdash; but a clear vocabulary and a few well-chosen frameworks go a long way. If a topic raises questions for your own situation, we are happy to talk.</p>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <!-- Footer -->

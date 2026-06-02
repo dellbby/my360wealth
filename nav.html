@@ -53,6 +53,7 @@
           <div class="dropdown-col">
             <a href="/resource-center/index.html">Resource Center</a>
             <a href="/resource-center/articles.html">All Articles</a>
+            <a href="/resource-center/calculators/index.html">Calculators</a>
             <a href="/resource-center/glossary.html">Glossary</a>
           </div>
         </div>
@@ -83,6 +84,7 @@
     <a href="/index.html#milestones" data-close>Life Milestones</a>
     <a href="/resource-center/index.html" data-close>Resource Center</a>
     <a href="/resource-center/articles.html" data-close style="font-size: 22px;">All Articles</a>
+    <a href="/resource-center/calculators/index.html" data-close style="font-size: 22px;">Calculators</a>
     <a href="/resource-center/glossary.html" data-close style="font-size: 22px;">Glossary</a>
     <a href="#" id="portalsBtnMobile">Client Portals</a>
     <a href="/about.html" data-close>About</a>
@@ -100,6 +102,10 @@
     </div>
   </div>
 </div>
+
+<button id="scrollTopBtn" aria-label="Back to top" type="button">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
 
 <!-- Client Portals modal -->
 <div class="portal-overlay" id="portalOverlay" aria-hidden="true">
@@ -144,6 +150,12 @@
 </div>
 
 <style>
+  /* Scroll-to-top button */
+  #scrollTopBtn { position: fixed; right: 24px; bottom: 24px; z-index: 49; width: 46px; height: 46px; border-radius: 50%; background: #2a2421; color: #c9a974; border: 1px solid rgba(201,169,116,0.4); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity 0.25s, transform 0.25s, background 0.25s, color 0.25s; box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+  #scrollTopBtn.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  #scrollTopBtn:hover { background: #c9a974; color: #2a221a; border-color: #c9a974; }
+  @media (max-width: 640px) { #scrollTopBtn { right: 16px; bottom: 16px; width: 42px; height: 42px; } }
+
   /* BrokerCheck by FINRA badge */
   .bc-badge { display: inline-flex; align-items: center; transition: transform 0.2s, opacity 0.2s; }
   .bc-badge:hover { transform: translateY(-1px); opacity: 0.9; }
@@ -256,5 +268,13 @@
       document.getElementById('portalPanel-' + tab.dataset.tab).classList.add('active');
     });
   });
+  // Scroll-to-top
+  const stb = document.getElementById('scrollTopBtn');
+  if (stb) {
+    const onScrollTop = () => stb.classList.toggle('show', window.scrollY > 400);
+    window.addEventListener('scroll', onScrollTop, { passive: true });
+    onScrollTop();
+    stb.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
 })();
 </script>
