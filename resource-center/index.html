@@ -420,6 +420,12 @@
   .hb-bar-actions { margin-top: 22px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
   .hb-bar-actions .btn-gold { height: 38px; padding: 0 22px; }
   .hb-bar-actions .ghost { color: #a07b32; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid rgba(160,123,50,0.4); padding-bottom: 2px; }
+
+  /* Resource Center category filters */
+  .post-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .pf-btn { padding: 8px 16px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; color: rgba(42,34,26,0.7); background: #ffffff; border: 1px solid rgba(42,34,26,0.12); cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; font-family: 'DM Sans', sans-serif; }
+  .pf-btn:hover { color: #a07b32; border-color: rgba(160,123,50,0.4); }
+  .pf-btn.active { background: #a07b32; color: #fff; border-color: #a07b32; }
 </style>
 </head>
 <body>
@@ -461,8 +467,14 @@
   </section>
   <section class="section" id="articles" style="padding-top:24px;">
     <div class="container">
+      <div class="post-filters reveal">
+        <button class="pf-btn active" data-filter="all">All</button>
+        <button class="pf-btn" data-filter="Financial Planning">Financial Planning</button>
+        <button class="pf-btn" data-filter="Retirement">Retirement</button>
+        <button class="pf-btn" data-filter="Tax Planning">Tax Planning</button>
+      </div>
       <div class="post-grid">
-    <a class="post-card" href="how-to-choose-a-financial-advisor.html">
+    <a class="post-card" data-category="Financial Planning" href="how-to-choose-a-financial-advisor.html">
       <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80');"></div>
       <div class="post-body">
         <span class="post-cat">Financial Planning</span>
@@ -473,7 +485,7 @@
         </div>
       </div>
     </a>
-    <a class="post-card" href="when-to-take-social-security.html">
+    <a class="post-card" data-category="Retirement" href="when-to-take-social-security.html">
       <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&q=80');"></div>
       <div class="post-body">
         <span class="post-cat">Retirement</span>
@@ -484,7 +496,7 @@
         </div>
       </div>
     </a>
-    <a class="post-card" href="healthcare-costs-in-retirement.html">
+    <a class="post-card" data-category="Retirement" href="healthcare-costs-in-retirement.html">
       <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1200&q=80');"></div>
       <div class="post-body">
         <span class="post-cat">Retirement</span>
@@ -495,7 +507,7 @@
         </div>
       </div>
     </a>
-    <a class="post-card" href="required-minimum-distributions.html">
+    <a class="post-card" data-category="Retirement" href="required-minimum-distributions.html">
       <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80');"></div>
       <div class="post-body">
         <span class="post-cat">Retirement</span>
@@ -506,7 +518,7 @@
         </div>
       </div>
     </a>
-    <a class="post-card" href="roth-conversion-windows.html">
+    <a class="post-card" data-category="Tax Planning" href="roth-conversion-windows.html">
       <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&q=80');"></div>
       <div class="post-body">
         <span class="post-cat">Tax Planning</span>
@@ -517,7 +529,7 @@
         </div>
       </div>
     </a>
-    <a class="post-card" href="tax-loss-harvesting-explained.html">
+    <a class="post-card" data-category="Tax Planning" href="tax-loss-harvesting-explained.html">
       <div class="post-img" style="background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80');"></div>
       <div class="post-body">
         <span class="post-cat">Tax Planning</span>
@@ -710,6 +722,22 @@
 
   
 
+</script>
+
+<script>
+(function(){
+  const btns = document.querySelectorAll('.pf-btn');
+  const cards = document.querySelectorAll('#articles .post-card');
+  btns.forEach(b => b.addEventListener('click', () => {
+    btns.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const f = b.dataset.filter;
+    cards.forEach(c => {
+      const show = (f === 'all') || (c.dataset.category === f);
+      c.style.display = show ? '' : 'none';
+    });
+  }));
+})();
 </script>
 </body>
 </html>
