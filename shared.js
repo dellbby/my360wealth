@@ -240,6 +240,11 @@
   .dropdown-foot { grid-column: 1 / -1; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(201,169,116,0.25); display: flex; align-items: center; justify-content: flex-end; gap: 6px; color: var(--gold) !important; font-size: 12px !important; letter-spacing: 0.18em !important; text-transform: uppercase !important; font-weight: 500; transition: color 0.2s; }
   .dropdown-foot:hover { color: var(--gold-light) !important; }
   .dropdown-foot span { font-size: 14px; }
+
+  /* Mobile menu: allow scrolling so the Schedule button + contact info are always reachable on short screens */
+  .menu-overlay { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .menu-links { flex: 1 0 auto; justify-content: flex-start; }
+  .menu-bottom { margin-top: auto; padding-bottom: max(40px, env(safe-area-inset-bottom)); }
 </style>
 
 <script>
