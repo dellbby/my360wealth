@@ -122,7 +122,6 @@
     </div>
     <div class="portal-panel active" id="portalPanel-client" role="tabpanel">
       <div class="portal-grid">
-        <a class="portal-link" href="https://www.advisorclient.com/advisorclient/p/gridLogin" target="_blank" rel="noopener"><span>TD Ameritrade</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
         <a class="portal-link" href="https://login.orionadvisor.com/" target="_blank" rel="noopener"><span>Orion</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
         <a class="portal-link" href="http://guidecenter.finlifepartners.com/" target="_blank" rel="noopener"><span>GuideCenter</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
         <a class="portal-link" href="https://wealth.emaplan.com/ema/SignIn?ema" target="_blank" rel="noopener"><span>eMoney</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
