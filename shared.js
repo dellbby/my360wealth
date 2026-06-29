@@ -1,4 +1,7 @@
-<div class="topbar" style="position:fixed;top:0;left:0;right:0;z-index:52;background:#0a0907;border-bottom:1px solid rgba(255,255,255,0.05);">
+/* shared.js — site-wide header (nav) + footer.
+   Injected on every page. Edit this file to change the nav or footer everywhere. */
+(function () {
+  var NAV_HTML = `<div class="topbar" style="position:fixed;top:0;left:0;right:0;z-index:52;background:#0a0907;border-bottom:1px solid rgba(255,255,255,0.05);">
   <div class="container topbar-inner">
     <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener" class="bc-badge" aria-label="FINRA BrokerCheck"><img src="https://static.fmgsuite.com/site/templates/global/img/brokerCheck-bar-logo.png" alt="BrokerCheck by FINRA" /></a>
     <div class="topbar-actions">
@@ -277,4 +280,94 @@
     stb.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
 })();
-</script>
+</script>`;
+  var FOOTER_HTML = `<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/images/logo_white_transparent.webp" alt="My 360 Wealth Management Group" style="height:120px;width:auto;display:block;" />
+        <p>Holistic financial life management. Helping you live your one best life through education and trusted advice.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/pierremovsessian" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://x.com/pierre_my360" target="_blank" rel="noopener" aria-label="X (Twitter)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="/about.html">About</a>
+          <a href="/services.html">Services</a>
+          <a href="/process.html">Our Process</a>
+          <a href="/index.html#milestones">Life Milestones</a>
+          <a href="/resource-center/index.html">Resource Center</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <div class="footer-links">
+          <a href="/pages/wealth-retirement-planning.html">Wealth &amp; Retirement</a>
+          <a href="/pages/portfolio-management.html">Portfolio Management</a>
+          <a href="/pages/trust-estate-planning.html">Trust &amp; Estate</a>
+          <a href="/pages/foundation-endowment.html">Foundation &amp; Endowment</a>
+          <a href="/pages/concentrated-stock-strategies.html">Concentrated Stock</a>
+          <a href="/pages/retirement-income.html">Retirement Income</a>
+          <a href="/pages/401k-qualified-plans.html">401(k) &amp; Qualified Plans</a>
+          <a href="/pages/deferred-compensation.html">Deferred Compensation</a>
+          <a href="/pages/insurance-services.html">Insurance Services</a>
+          <a href="/pages/business-succession.html">Business Succession</a>
+          <a href="/pages/tax-planning.html">Tax Planning</a>
+          <a href="/pages/employee-education.html">Employee Education</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <span>500 N. Brand Blvd, Suite 2120</span>
+          <span>Glendale, CA 91203</span>
+          <a href="tel:8185474720" style="margin-top:8px">(818) 547-4720</a>
+          <a href="mailto:service@my360wealth.com">service@my360wealth.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimers">
+      <p><strong>Check the background of investment professionals associated with this site on FINRA's <a href="http://brokercheck.finra.org/" target="_blank" rel="noopener">BrokerCheck</a>.</strong></p>
+      <p>Investment Advisory Services offered through Global Retirement Partners, LLC, an SEC registered investment advisor, dba My 360 Wealth Management Group.</p>
+      <p>The information contained herein is for informational purposes only and should not be considered investment advice or a recommendation to buy or sell any security. Investing involves risk, including the potential loss of principal. No strategy assures success or protects against loss. Past performance is not indicative of future results.</p>
+      <p>The LPL Financial registered representative(s) associated with this website may discuss and/or transact business only with residents of the states in which they are properly registered or licensed.</p>
+      <div class="meta">
+        <a href="https://www.finra.org/" target="_blank" rel="noopener">FINRA</a> <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">BrokerCheck</a>
+        <span class="sep">|</span>
+        <span>&copy; <span id="year"></span> My 360 Wealth Management Group. All rights reserved.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  (function(){ var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
+</script>`;
+
+  function inject(host, html) {
+    if (!host) return;
+    host.innerHTML = html;
+    host.querySelectorAll('script').forEach(function (old) {
+      var s = document.createElement('script');
+      if (old.src) { s.src = old.src; } else { s.textContent = old.textContent; }
+      document.body.appendChild(s);
+    });
+  }
+
+  function init() {
+    inject(document.getElementById('site-nav'), NAV_HTML);
+    inject(document.getElementById('site-footer'), FOOTER_HTML);
+    var y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();

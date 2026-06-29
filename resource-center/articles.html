@@ -221,7 +221,7 @@
   .ml-body { padding: 4px 0 24px; }
   .ml-body .rule { width: 32px; height: 1px; background: var(--gold-20); margin-bottom: 16px; }
   @media (min-width: 1024px) { .ml-body .rule, .ml-list { margin-left: 36px; } }
-  .ml-list { display: flex; flex-direction: column; gap: 6px; }
+  .ml-list { display: flex; flex-direction: column; gap: 0; }
   .ml-list .row { display: flex; align-items: flex-start; gap: 12px; }
   .ml-list .bullet { margin-top: 8px; width: 4px; height: 4px; border-radius: 50%; background: var(--gold-40); flex-shrink: 0; }
   @media (min-width: 1024px) { .ml-list .bullet { width: 6px; height: 6px; } }
@@ -277,10 +277,10 @@
   .footer h4 { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream-40); margin: 0 0 16px; }
   .footer-links a { display: block; font-size: 14px; color: var(--cream-30); padding: 5px 0; transition: color 0.3s; }
   .footer-links a:hover { color: var(--cream); }
-  .footer-contact { font-size: 14px; color: var(--cream-30); display: flex; flex-direction: column; gap: 6px; }
+  .footer-contact { font-size: 14px; color: var(--cream-30); display: flex; flex-direction: column; gap: 0; }
   .footer-contact a { transition: color 0.3s; }
   .footer-contact a:hover { color: var(--cream); }
-  .disclaimers { padding: 28px 0 32px; border-top: 1px solid var(--border); font-size: 11px; color: rgba(243,238,226,0.55); line-height: 1.7; display: flex; flex-direction: column; gap: 6px; }
+  .disclaimers { padding: 28px 0 32px; border-top: 1px solid var(--border); font-size: 11px; color: rgba(243,238,226,0.55); line-height: 1.7; display: flex; flex-direction: column; gap: 0; }
   .disclaimers .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-top: 4px; }
   .disclaimers .meta a { color: rgba(243,238,226,0.25); transition: color 0.3s; }
   .disclaimers .meta a:hover { color: rgba(243,238,226,0.4); }
@@ -430,19 +430,6 @@
 
 <!-- Navigation -->
 <div id="site-nav"></div>
-<script>
-(function() {
-  fetch('/nav.html').then(r => r.text()).then(html => {
-    const host = document.getElementById('site-nav');
-    host.innerHTML = html;
-    host.querySelectorAll('script').forEach(old => {
-      const s = document.createElement('script');
-      s.textContent = old.textContent;
-      document.body.appendChild(s);
-    });
-  }).catch(() => { document.getElementById('site-nav').innerHTML = '<div style="padding:14px 24px;color:#c9a974;text-align:center;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;background:#110f0d;">Nav requires a web server to load</div>'; });
-})();
-</script>
 
 <main id="top" style="padding-top:140px;">
   <section class="hb-bar">
@@ -556,76 +543,11 @@
 </main>
 
 <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="/images/logo_white_transparent.webp" alt="My 360 Wealth Management Group" style="height:120px;width:auto;display:block;" />
-        <p>Holistic financial life management. Helping you live your one best life through education and trusted advice.</p>
-        <div class="socials">
-          <a href="https://www.linkedin.com/in/pierremovsessian" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="https://x.com/pierre_my360" target="_blank" rel="noopener" aria-label="X (Twitter)">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-        </div>
-      </div>
-      <div>
-        <h4>Navigation</h4>
-        <div class="footer-links">
-          <a href="/about.html">About</a>
-          <a href="/services.html">Services</a>
-          <a href="/process.html">Our Process</a>
-          <a href="/index.html#milestones">Life Milestones</a>
-          <a href="/resource-center/index.html">Resource Center</a>
-          <a href="/contact.html">Contact</a>
-        </div>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <div class="footer-links">
-          <a href="/pages/wealth-retirement-planning.html">Wealth &amp; Retirement</a>
-          <a href="/pages/portfolio-management.html">Portfolio Management</a>
-          <a href="/pages/trust-estate-planning.html">Trust &amp; Estate</a>
-          <a href="/pages/foundation-endowment.html">Foundation &amp; Endowment</a>
-          <a href="/pages/concentrated-stock-strategies.html">Concentrated Stock</a>
-          <a href="/pages/retirement-income.html">Retirement Income</a>
-          <a href="/pages/401k-qualified-plans.html">401(k) &amp; Qualified Plans</a>
-          <a href="/pages/deferred-compensation.html">Deferred Compensation</a>
-          <a href="/pages/insurance-services.html">Insurance Services</a>
-          <a href="/pages/business-succession.html">Business Succession</a>
-          <a href="/pages/tax-planning.html">Tax Planning</a>
-          <a href="/pages/employee-education.html">Employee Education</a>
-        </div>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <div class="footer-contact">
-          <span>500 N. Brand Blvd, Suite 2120</span>
-          <span>Glendale, CA 91203</span>
-          <a href="tel:8185474720" style="margin-top:8px">(818) 547-4720</a>
-          <a href="mailto:service@my360wealth.com">service@my360wealth.com</a>
-        </div>
-      </div>
-    </div>
-    <div class="disclaimers">
-      <p><strong>Check the background of investment professionals associated with this site on FINRA's <a href="http://brokercheck.finra.org/" target="_blank" rel="noopener">BrokerCheck</a>.</strong></p>
-      <p>Investment Advisory Services offered through Global Retirement Partners, LLC, an SEC registered investment advisor, dba My 360 Wealth Management Group.</p>
-      <p>The information contained herein is for informational purposes only and should not be considered investment advice or a recommendation to buy or sell any security. Investing involves risk, including the potential loss of principal. No strategy assures success or protects against loss. Past performance is not indicative of future results.</p>
-      <p>The LPL Financial registered representative(s) associated with this website may discuss and/or transact business only with residents of the states in which they are properly registered or licensed.</p>
-      <div class="meta">
-        <a href="https://www.finra.org/" target="_blank" rel="noopener">FINRA</a> <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">BrokerCheck</a>
-        <span class="sep">|</span>
-        <span>&copy; <span id="year"></span> My 360 Wealth Management Group. All rights reserved.</span>
-      </div>
-    </div>
-  </div>
-</footer>
+<div id="site-footer"></div>
 
 <script>
   // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  var _yr=document.getElementById('year'); if(_yr) _yr.textContent=new Date().getFullYear();
 
   // Reveal-on-scroll
   const io = new IntersectionObserver((entries) => {
@@ -728,5 +650,6 @@
   }));
 })();
 </script>
+<script src="/shared.js"></script>
 </body>
 </html>
