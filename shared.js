@@ -244,6 +244,7 @@
   /* Mobile menu: allow scrolling so the Schedule button + contact info are always reachable on short screens */
   .menu-overlay { overflow-y: auto; -webkit-overflow-scrolling: touch; }
   .menu-links { flex: 1 0 auto; justify-content: flex-start; }
+  .menu-links a { padding-top: 7px; padding-bottom: 7px; }
   .menu-bottom { margin-top: auto; padding-bottom: max(40px, env(safe-area-inset-bottom)); }
 </style>
 
