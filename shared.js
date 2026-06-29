@@ -86,9 +86,9 @@
     <a href="/process.html" data-close>Our Process</a>
     <a href="/index.html#milestones" data-close>Life Milestones</a>
     <a href="/resource-center/index.html" data-close>Resource Center</a>
-    <a href="/resource-center/articles.html" data-close style="font-size: 22px;">All Articles</a>
-    <a href="/resource-center/calculators/index.html" data-close style="font-size: 22px;">Calculators</a>
-    <a href="/resource-center/glossary.html" data-close style="font-size: 22px;">Glossary</a>
+    <a href="/resource-center/articles.html" data-close>All Articles</a>
+    <a href="/resource-center/calculators/index.html" data-close>Calculators</a>
+    <a href="/resource-center/glossary.html" data-close>Glossary</a>
     <a href="#" id="portalsBtnMobile">Client Portals</a>
     <a href="/about.html" data-close>About</a>
     <a href="/contact.html" data-close>Contact</a>
@@ -196,6 +196,8 @@
   .topbar-portals { font-size: 11px; color: rgba(243,238,226,0.65); letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
   .topbar-portals:hover { color: var(--gold); }
   .topbar-cta { height: 30px; padding: 0 16px; font-size: 11px; }
+  /* Hide Schedule button from topbar on mobile — it's already in the mobile menu */
+  @media (max-width: 767px) { .topbar-cta { display: none; } }
   /* Push main nav down to clear the top bar */
   .nav { top: 42px !important; }
 
