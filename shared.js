@@ -343,6 +343,7 @@
           <span>500 N. Brand Blvd, Suite 2120</span>
           <span>Glendale, CA 91203</span>
           <a href="tel:8185474720" style="margin-top:8px">(818) 547-4720</a>
+          <span>Fax: (818) 301-4020</span>
           <a href="mailto:service@my360wealth.com">service@my360wealth.com</a>
         </div>
       </div>
