@@ -160,9 +160,9 @@
   @media (max-width: 640px) { #scrollTopBtn { right: 16px; bottom: 16px; width: 42px; height: 42px; } }
 
   /* BrokerCheck by FINRA badge */
-  .bc-badge { display: inline-flex; align-items: center; transition: transform 0.2s, opacity 0.2s; }
+  .bc-badge { display: inline-flex; align-items: center; min-width: 0; flex: 0 1 auto; transition: transform 0.2s, opacity 0.2s; }
   .bc-badge:hover { transform: translateY(-1px); opacity: 0.9; }
-  .bc-badge img { height: 22px; width: auto; display: block; }
+  .bc-badge img { height: 22px; width: auto; max-width: 100%; display: block; }
 
   /* Services dropdown */
   .nav-item.has-dropdown { position: relative; display: inline-flex; align-items: center; }
@@ -186,18 +186,24 @@
 
   /* Top utility bar (above main nav) */
   .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 52; background: #0a0907; border-bottom: 1px solid rgba(255,255,255,0.05); }
-  .topbar-inner { display: flex; align-items: center; justify-content: space-between; min-height: 36px; padding: 6px 0; gap: 12px; flex-wrap: wrap; }
+  .topbar-inner { display: flex; align-items: center; justify-content: space-between; min-height: 36px; padding: 6px 0; gap: 12px; flex-wrap: nowrap; }
   .topbar-meta { display: none; align-items: center; gap: 14px; font-size: 12px; color: rgba(243,238,226,0.55); }
   @media (min-width: 768px) { .topbar-meta { display: flex; } }
   .topbar-link { display: inline-flex; align-items: center; gap: 6px; color: rgba(243,238,226,0.55); transition: color 0.2s; }
   .topbar-link:hover { color: var(--cream); }
   .topbar-sep { color: rgba(243,238,226,0.2); }
-  .topbar-actions { display: flex; align-items: center; gap: 14px; margin-left: auto; }
+  .topbar-actions { display: flex; align-items: center; gap: 14px; margin-left: auto; flex-shrink: 0; }
   .topbar-portals { font-size: 11px; color: rgba(243,238,226,0.65); letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
   .topbar-portals:hover { color: var(--gold); }
   .topbar-cta { height: 30px; padding: 0 16px; font-size: 11px; }
   /* Hide Schedule button from topbar on mobile — it's already in the mobile menu */
   @media (max-width: 767px) { .topbar-cta { display: none; } }
+  /* Narrow phones: shrink badge + Client Portals so both stay inside the frame */
+  @media (max-width: 430px) {
+    .container.topbar-inner { padding-left: 14px; padding-right: 14px; gap: 8px; }
+    .bc-badge img { height: 18px; }
+    .topbar-portals { font-size: 10px; letter-spacing: 0.06em; }
+  }
   /* Push main nav down to clear the top bar */
   .nav { top: 42px !important; }
 
