@@ -2,5 +2,19 @@
   "framework": null,
   "buildCommand": "echo 'static site - no build needed'",
   "installCommand": "echo 'no install needed'",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    { "source": "/pages/wealth-retirement-planning.html", "destination": "/services/wealth-retirement-planning.html", "permanent": true },
+    { "source": "/pages/portfolio-management.html", "destination": "/services/portfolio-management.html", "permanent": true },
+    { "source": "/pages/trust-estate-planning.html", "destination": "/services/trust-estate-planning.html", "permanent": true },
+    { "source": "/pages/foundation-endowment.html", "destination": "/services/foundation-endowment.html", "permanent": true },
+    { "source": "/pages/concentrated-stock-strategies.html", "destination": "/services/concentrated-stock-strategies.html", "permanent": true },
+    { "source": "/pages/retirement-income.html", "destination": "/services/retirement-income.html", "permanent": true },
+    { "source": "/pages/401k-qualified-plans.html", "destination": "/services/401k-qualified-plans.html", "permanent": true },
+    { "source": "/pages/deferred-compensation.html", "destination": "/services/deferred-compensation.html", "permanent": true },
+    { "source": "/pages/insurance-services.html", "destination": "/services/insurance-services.html", "permanent": true },
+    { "source": "/pages/business-succession.html", "destination": "/services/business-succession.html", "permanent": true },
+    { "source": "/pages/tax-planning.html", "destination": "/services/tax-planning.html", "permanent": true },
+    { "source": "/pages/employee-education.html", "destination": "/services/employee-education.html", "permanent": true }
+  ]
 }

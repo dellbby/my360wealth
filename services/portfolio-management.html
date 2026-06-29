@@ -3,9 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sitemap | My 360 Wealth Management Group</title>
-<link rel="canonical" href="https://www.my360wealth.com/sitemap.html" />
-<meta name="description" content="Sitemap of pages on My 360 Wealth Management Group: home, services, blog, contact, and detailed service pages." />
+<title>Portfolio Management Services | Asset Allocation & Tax-Loss Harvesting | My 360 Wealth</title>
+<meta name="keywords" content="portfolio management services, asset allocation, ETF portfolio, tax-loss harvesting, rebalancing strategy, index fund investing, core satellite, investment management California" />
+<meta name="robots" content="index,follow" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Portfolio Management Services | Asset Allocation & Tax-Loss Harvesting | My 360 Wealth" />
+<meta property="og:description" content="Custom portfolio management with risk-calibrated asset allocation, low-cost index core, satellite active strategies, disciplined rebalancing, and tax-loss harvesting." />
+<link rel="canonical" href="https://www.my360wealth.com/services/portfolio-management.html" />
+<meta name="description" content="Custom portfolio management with risk-calibrated asset allocation, low-cost index core, satellite active strategies, disciplined rebalancing, and tax-loss harvesting." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -332,45 +337,28 @@
   /* Footer dark bg */
   footer { background: #2a2421; color: var(--cream); position: relative; z-index: 1; }
 
-  .svc-row-link { cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease; }
-  a:has(> .svc-row-link):hover .svc-row-link { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(42,34,26,0.08); }
-  a:has(> .svc-row-link):hover .svc-ico { background: rgba(160,123,50,0.08); }
-
-  /* Learn More button on personal service rows */
-  .svc-row-link .learn-more {
-    display: inline-flex; align-items: center; gap: 8px;
-    margin-top: 16px;
-    color: #a07b32; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500;
-    border: 1px solid rgba(160,123,50,0.4); padding: 10px 18px;
-    transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.25s;
-    background: transparent;
-    align-self: start;
-    justify-self: start;
-    grid-column: 1 / -1;
-  }
-  @media (min-width: 768px) {
-    .svc-row-link { grid-template-columns: 56px 1fr 1fr auto; align-items: center; }
-    .svc-row-link .learn-more { grid-column: auto; margin-top: 0; }
-  }
-  a:hover .svc-row-link .learn-more { background: #a07b32; color: #ffffff; border-color: #a07b32; }
-  a:hover .svc-row-link .learn-more svg { transform: translateX(2px); transition: transform 0.25s; }
+  /* Service detail page */
+  .svc-hero { padding-top: 56px; }
+  .svc-hero .eyebrow { display: block; margin-bottom: 16px; }
+  .svc-h1 { font-family: var(--font-heading); font-size: 40px; color: #2a221a; margin: 0 0 24px; letter-spacing: -0.01em; line-height: 1.1; }
+  @media (min-width: 768px) { .svc-h1 { font-size: 56px; } }
+  .svc-lead { color: rgba(42,34,26,0.78); font-size: 18px; line-height: 1.75; max-width: 720px; margin: 0; }
+  .svc-block { padding: 48px 0; }
+  .svc-h2 { font-family: var(--font-heading); font-size: 28px; color: #2a221a; margin: 0 0 20px; }
+  @media (min-width: 768px) { .svc-h2 { font-size: 34px; } }
+  .svc-ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; max-width: 760px; }
+  .svc-ul li { position: relative; padding-left: 22px; color: rgba(42,34,26,0.78); font-size: 16px; line-height: 1.65; }
+  .svc-ul li::before { content: ''; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; background: #a07b32; border-radius: 50%; }
+  .faqs { display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+  .faq { background: #ffffff; border: 1px solid rgba(42,34,26,0.08); padding: 18px 22px; }
+  .faq summary { font-family: var(--font-heading); font-size: 18px; color: #2a221a; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; color: #a07b32; font-size: 24px; font-weight: 300; line-height: 1; }
+  .faq[open] summary::after { content: '−'; }
+  .faq p { margin: 14px 0 0; color: rgba(42,34,26,0.72); font-size: 15px; line-height: 1.65; }
 
   /* Force nav to be visible on light pages */
   .nav { background: rgba(17,15,13,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 12px 0; }
-
-  /* Sitemap page */
-  .sitemap-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
-  @media (min-width: 640px) { .sitemap-grid { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1024px) { .sitemap-grid { grid-template-columns: repeat(3, 1fr); } }
-  .sm-col { background: #ffffff; border: 1px solid rgba(42,34,26,0.08); padding: 28px; transition: border-color 0.3s, box-shadow 0.3s; }
-  .sm-col:hover { border-color: rgba(201,169,116,0.45); box-shadow: 0 8px 24px rgba(42,34,26,0.06); }
-  .sm-col h3 { font-family: var(--font-heading); font-size: 18px; color: #a07b32; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(160,123,50,0.25); letter-spacing: 0.02em; }
-  .sm-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
-  .sm-col li { font-size: 15px; }
-  .sm-col a { color: #2a221a; text-decoration: none; transition: color 0.2s; display: inline-flex; align-items: center; gap: 8px; }
-  .sm-col a::before { content: '→'; color: #a07b32; opacity: 0.6; transition: transform 0.2s, opacity 0.2s; }
-  .sm-col a:hover { color: #a07b32; }
-  .sm-col a:hover::before { transform: translateX(2px); opacity: 1; }
 
 
 
@@ -390,6 +378,16 @@
 
   /* Disable scroll-reveal animation — content visible immediately */
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* Breadcrumb */
+  .breadcrumb { background: #fffaf0; border-bottom: 1px solid rgba(42,34,26,0.08); padding: 10px 0; }
+  .breadcrumb ol { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 0; font-size: 13px; color: rgba(42,34,26,0.55); flex-wrap: wrap; }
+  .breadcrumb li { display: flex; align-items: center; }
+  .breadcrumb li + li::before { content: '/'; margin: 0 8px; color: rgba(42,34,26,0.25); }
+  .breadcrumb a { color: rgba(42,34,26,0.55); transition: color 0.2s; }
+  .breadcrumb a:hover { color: #a07b32; }
+  .breadcrumb [aria-current] { color: #2a221a; font-weight: 500; }
+
 </style>
 </head>
 <body>
@@ -398,70 +396,86 @@
 <div id="site-nav"></div>
 
 <main id="top" style="padding-top:140px;">
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container-narrow">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/services.html" itemprop="item"><span itemprop="name">Services</span></a>
+        <meta itemprop="position" content="2" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" aria-current="page">Portfolio Management Services</span>
+        <meta itemprop="item" content="https://www.my360wealth.com/services/portfolio-management.html" />
+        <meta itemprop="position" content="3" />
+      </li>
+    </ol>
+  </div>
+</nav>
+
+  <!-- Hero -->
   <section class="hb-bar">
     <div class="hb-bar-inner">
       <div class="hb-bar-rule"></div>
       <div class="hb-bar-content">
-        <p class="hb-bar-eyebrow">Site Index</p>
-        <h2 class="hb-bar-title">Sitemap</h2>
-        <p class="hb-bar-desc">A complete index of pages on my360wealth.com.</p>
+        <p class="hb-bar-eyebrow">Personal & Family</p>
+        <h2 class="hb-bar-title">Portfolio Management Services</h2>
+        <p class="hb-bar-desc">We build portfolios designed to do one thing: help you reach your goals with the least amount of risk required. Our core-and-satellite approach pairs low-cost index funds and ETFs with carefully selected active strategies where they add value. Then we manage the discipline — rebalancing, tax-loss harvesting, and ongoing review — so you don't have to.</p>
+        <div class="hb-bar-actions">
+          <a class="btn-gold" href="../contact.html">Schedule a Consultation</a>
+          <a href="../services.html" class="ghost">All Services</a>
+        </div>
       </div>
     </div>
   </section>
 
+  <section class="section svc-block">
+    <div class="container-narrow">
+      <div class="reveal">
+        <h2 class="svc-h2">Who We Help</h2>
+        <ul class="svc-ul"><li>Investors with $250,000 or more across taxable, IRA, and 401(k) accounts</li><li>Families who want a single, coordinated investment strategy across every account</li><li>Business owners and executives with concentrated stock positions who need diversification</li><li>Anyone who is tired of guessing whether their portfolio is built correctly</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="section svc-block">
+    <div class="container-narrow">
+      <div class="reveal">
+        <h2 class="svc-h2">Our Investment Philosophy</h2>
+        <ul class="svc-ul"><li>Low-cost ETF and index fund core for broad market exposure</li><li>Selective satellite positions in active strategies, real assets, or alternatives when they earn their fees</li><li>Asset location: putting tax-inefficient holdings in IRAs and tax-efficient holdings in taxable accounts</li><li>Annual tax-loss harvesting in taxable accounts to reduce your tax bill while keeping market exposure</li><li>Rebalancing on tolerance bands, not the calendar — we act when markets demand it</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="section svc-block">
+    <div class="container-narrow">
+      <div class="reveal">
+        <h2 class="svc-h2">What We Don't Do</h2>
+        <ul class="svc-ul"><li>We don't pick individual stocks for clients or chase the latest hot fund</li><li>We don't trade frequently or charge commissions on any transaction</li><li>We don't promise to beat the market — we promise to capture market returns at low cost with disciplined risk management</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section svc-block">
+    <div class="container-narrow">
+      <div class="reveal">
+        <h2 class="svc-h2">Frequently Asked Questions</h2>
+        <div class="faqs"><details class="faq"><summary>What is asset allocation?</summary><p>Asset allocation is how you split your portfolio across stocks, bonds, real estate, and other asset classes. Research suggests this single decision drives most of your long-term return and volatility.</p></details><details class="faq"><summary>How often do you rebalance?</summary><p>We rebalance based on drift tolerance bands — typically when a position is 20% off its target weight — rather than rigid quarterly schedules. This captures market volatility more efficiently.</p></details><details class="faq"><summary>Do you offer socially responsible or ESG investing?</summary><p>Yes. We can build portfolios screened for ESG, faith-based values, or mission alignment using diversified, low-cost ETFs.</p></details></div>
+      </div>
+    </div>
+  </section>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is asset allocation?", "acceptedAnswer": {"@type": "Answer", "text": "Asset allocation is how you split your portfolio across stocks, bonds, real estate, and other asset classes. Research suggests this single decision drives most of your long-term return and volatility."}}, {"@type": "Question", "name": "How often do you rebalance?", "acceptedAnswer": {"@type": "Answer", "text": "We rebalance based on drift tolerance bands \u2014 typically when a position is 20% off its target weight \u2014 rather than rigid quarterly schedules. This captures market volatility more efficiently."}}, {"@type": "Question", "name": "Do you offer socially responsible or ESG investing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can build portfolios screened for ESG, faith-based values, or mission alignment using diversified, low-cost ETFs."}}]}</script>
+  <!-- CTA -->
   <section class="section" style="padding-top:24px;">
-    <div class="container">
-      <div class="sitemap-grid">
-        <div class="sm-col reveal">
-          <h3>Main</h3>
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/services.html">Our Services</a></li>
-            <li><a href="/process.html">Our Process</a></li>
-            <li><a href="/resource-center/index.html">Resource Center</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="sm-col reveal">
-          <h3>Personal &amp; Family Services</h3>
-          <ul>
-            <li><a href="/services/wealth-retirement-planning.html">Wealth &amp; Retirement Planning</a></li>
-            <li><a href="/services/portfolio-management.html">Portfolio Management</a></li>
-            <li><a href="/services/trust-estate-planning.html">Trust &amp; Estate Planning</a></li>
-            <li><a href="/services/foundation-endowment.html">Foundation &amp; Endowment</a></li>
-            <li><a href="/services/concentrated-stock-strategies.html">Concentrated Stock Strategies</a></li>
-            <li><a href="/services/retirement-income.html">Retirement Income Planning</a></li>
-          </ul>
-        </div>
-
-        <div class="sm-col reveal">
-          <h3>Business &amp; Employers Services</h3>
-          <ul>
-            <li><a href="/services/401k-qualified-plans.html">401(k) &amp; Qualified Plans</a></li>
-            <li><a href="/services/deferred-compensation.html">Deferred Compensation</a></li>
-            <li><a href="/services/insurance-services.html">Insurance Services</a></li>
-            <li><a href="/services/business-succession.html">Business Succession</a></li>
-            <li><a href="/services/tax-planning.html">Tax Planning</a></li>
-            <li><a href="/services/employee-education.html">Employee Education</a></li>
-          </ul>
-        </div>
-
-        <div class="sm-col reveal">
-          <h3>Blog Articles</h3>
-          <ul>
-            <li><a href="/blog/how-to-choose-a-financial-advisor.html">How to Choose a Financial Advisor</a></li>
-          </ul>
-        </div>
-
-        <div class="sm-col reveal">
-          <h3>Resources</h3>
-          <ul>
-            <li><a href="/sitemap.xml">XML Sitemap (search engines)</a></li>
-            <li><a href="/robots.txt">robots.txt</a></li>
-          </ul>
-        </div>
+    <div class="container" style="text-align:center;">
+      <div class="reveal" style="max-width:640px;margin:0 auto;">
+        <p class="eyebrow" style="display:block;margin-bottom:16px;">Ready to Talk?</p>
+        <h2 class="heading" style="font-size:32px;color:#2a221a;margin:0 0 16px;">Let&apos;s start the conversation.</h2>
+        <p style="color:var(--cream-60);font-size:17px;line-height:1.7;margin:0 0 28px;">Every plan begins with a complimentary, no-obligation conversation about your goals.</p>
+        <a class="btn-gold" href="../contact.html" style="height:44px;padding:0 28px;">Schedule a Consultation</a>
       </div>
     </div>
   </section>
@@ -555,9 +569,6 @@
       <div class="svc-detail"><ul>${s.d.map(x => `<li>${x}</li>`).join('')}</ul></div>
     </div>`;
   observeReveals();
-
-  
-
 </script>
 <script src="/shared.js"></script>
 </body>

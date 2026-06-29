@@ -20,21 +20,21 @@
         <div class="dropdown">
           <div class="dropdown-col">
             <span class="dropdown-head">Personal &amp; Family</span>
-            <a href="/pages/wealth-retirement-planning.html">Wealth &amp; Retirement Planning</a>
-            <a href="/pages/portfolio-management.html">Portfolio Management</a>
-            <a href="/pages/trust-estate-planning.html">Trust &amp; Estate Planning</a>
-            <a href="/pages/foundation-endowment.html">Foundation &amp; Endowment</a>
-            <a href="/pages/concentrated-stock-strategies.html">Concentrated Stock Strategies</a>
-            <a href="/pages/retirement-income.html">Retirement Income Planning</a>
+            <a href="/services/wealth-retirement-planning.html">Wealth &amp; Retirement Planning</a>
+            <a href="/services/portfolio-management.html">Portfolio Management</a>
+            <a href="/services/trust-estate-planning.html">Trust &amp; Estate Planning</a>
+            <a href="/services/foundation-endowment.html">Foundation &amp; Endowment</a>
+            <a href="/services/concentrated-stock-strategies.html">Concentrated Stock Strategies</a>
+            <a href="/services/retirement-income.html">Retirement Income Planning</a>
           </div>
           <div class="dropdown-col">
             <span class="dropdown-head">Business &amp; Employers</span>
-            <a href="/pages/401k-qualified-plans.html">401(k) &amp; Qualified Plans</a>
-            <a href="/pages/deferred-compensation.html">Deferred Compensation</a>
-            <a href="/pages/insurance-services.html">Insurance Services</a>
-            <a href="/pages/business-succession.html">Business Succession</a>
-            <a href="/pages/tax-planning.html">Tax Planning</a>
-            <a href="/pages/employee-education.html">Employee Education</a>
+            <a href="/services/401k-qualified-plans.html">401(k) &amp; Qualified Plans</a>
+            <a href="/services/deferred-compensation.html">Deferred Compensation</a>
+            <a href="/services/insurance-services.html">Insurance Services</a>
+            <a href="/services/business-succession.html">Business Succession</a>
+            <a href="/services/tax-planning.html">Tax Planning</a>
+            <a href="/services/employee-education.html">Employee Education</a>
           </div>
           <a href="/services.html" class="dropdown-foot">View All Services <span aria-hidden="true">›</span></a>
         </div>
@@ -310,18 +310,18 @@
       <div>
         <h4>Services</h4>
         <div class="footer-links">
-          <a href="/pages/wealth-retirement-planning.html">Wealth &amp; Retirement</a>
-          <a href="/pages/portfolio-management.html">Portfolio Management</a>
-          <a href="/pages/trust-estate-planning.html">Trust &amp; Estate</a>
-          <a href="/pages/foundation-endowment.html">Foundation &amp; Endowment</a>
-          <a href="/pages/concentrated-stock-strategies.html">Concentrated Stock</a>
-          <a href="/pages/retirement-income.html">Retirement Income</a>
-          <a href="/pages/401k-qualified-plans.html">401(k) &amp; Qualified Plans</a>
-          <a href="/pages/deferred-compensation.html">Deferred Compensation</a>
-          <a href="/pages/insurance-services.html">Insurance Services</a>
-          <a href="/pages/business-succession.html">Business Succession</a>
-          <a href="/pages/tax-planning.html">Tax Planning</a>
-          <a href="/pages/employee-education.html">Employee Education</a>
+          <a href="/services/wealth-retirement-planning.html">Wealth &amp; Retirement</a>
+          <a href="/services/portfolio-management.html">Portfolio Management</a>
+          <a href="/services/trust-estate-planning.html">Trust &amp; Estate</a>
+          <a href="/services/foundation-endowment.html">Foundation &amp; Endowment</a>
+          <a href="/services/concentrated-stock-strategies.html">Concentrated Stock</a>
+          <a href="/services/retirement-income.html">Retirement Income</a>
+          <a href="/services/401k-qualified-plans.html">401(k) &amp; Qualified Plans</a>
+          <a href="/services/deferred-compensation.html">Deferred Compensation</a>
+          <a href="/services/insurance-services.html">Insurance Services</a>
+          <a href="/services/business-succession.html">Business Succession</a>
+          <a href="/services/tax-planning.html">Tax Planning</a>
+          <a href="/services/employee-education.html">Employee Education</a>
         </div>
       </div>
       <div>

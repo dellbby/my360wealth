@@ -500,8 +500,8 @@
     { ico: 'file', t: 'Tax Planning', d: 'Integrated personal and business tax planning strategies that aim to minimize your tax burden.' },
     { ico: 'grad', t: 'Employee Education', d: 'Financial wellness programs, enrollment seminars, and retirement readiness education for your workforce.' }
   ];
-  const personalLinks = ['/pages/wealth-retirement-planning.html','/pages/portfolio-management.html','/pages/trust-estate-planning.html','/pages/foundation-endowment.html','/pages/concentrated-stock-strategies.html','/pages/retirement-income.html'];
-  const businessLinks = ['/pages/401k-qualified-plans.html','/pages/deferred-compensation.html','/pages/insurance-services.html','/pages/business-succession.html','/pages/tax-planning.html','/pages/employee-education.html'];
+  const personalLinks = ['/services/wealth-retirement-planning.html','/services/portfolio-management.html','/services/trust-estate-planning.html','/services/foundation-endowment.html','/services/concentrated-stock-strategies.html','/services/retirement-income.html'];
+  const businessLinks = ['/services/401k-qualified-plans.html','/services/deferred-compensation.html','/services/insurance-services.html','/services/business-succession.html','/services/tax-planning.html','/services/employee-education.html'];
   const cardHTML = (s, href) => `<a class="card reveal" href="${href}"><span class="ico">${ICONS[s.ico]}</span><h4>${s.t}</h4><p>${s.d}</p><span class="underline"></span></a>`;
   document.getElementById('services-personal').innerHTML = personal.map((s,i) => cardHTML(s, personalLinks[i])).join('');
   document.getElementById('services-business').innerHTML = business.map((s,i) => cardHTML(s, businessLinks[i])).join('');
