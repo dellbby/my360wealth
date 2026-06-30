@@ -136,7 +136,7 @@
         <a class="portal-link" href="https://www.americanfunds.com/individual/accounts/login.htm" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/american_funds.webp" alt="American Funds" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
         <a class="portal-link" href="https://myaccount.ascensus.com/rplink/account/login" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/ascensus.webp" alt="Ascensus" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
         <a class="portal-link" href="https://www.jhancockpensions.com/do/home_page/homeRedirectionAction" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/john_hancock.webp" alt="John Hancock" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link" href="https://auth.lincolnfinancial.com/login?state=hKFo2SBrT1ZCZk9waDhHSk9SaElJWlhwQ0xfNFpjVkt4X1JXb6FupWxvZ2luo3RpZNkgYUYzdGZNb2ZvU1hsOVJOSU1ILXJOT3hmLTNTTjlweTijY2lk2SB0QnNlNmVoYmtWamI3VUZBR0xjbzUySElHYlBOZFRqWA&amp;client=tBse6ehbkVjb7UFAGLco52HIGbPNdTjX&amp;protocol=oauth2&amp;response_type=code&amp;scope=openid%20profile&amp;redirect_uri=https%3A%2F%2Fwww.lincolnfinancial.com%2Fsecure%2Flogin%2Fcallback&amp;nonce=2Z2uZqDpHPiQcfh08_SUjIMNCviqCdIFFAtI4qQQBoM&amp;code_challenge=w6OJ06FbLM1MiTSW3RAOXHlbopX8NO-6zajKRh9riwo&amp;code_challenge_method=S256" target="_blank" rel="noopener"><span>Lincoln Financial</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link" href="https://auth.lincolnfinancial.com/login?state=hKFo2SBrT1ZCZk9waDhHSk9SaElJWlhwQ0xfNFpjVkt4X1JXb6FupWxvZ2luo3RpZNkgYUYzdGZNb2ZvU1hsOVJOSU1ILXJOT3hmLTNTTjlweTijY2lk2SB0QnNlNmVoYmtWamI3VUZBR0xjbzUySElHYlBOZFRqWA&amp;client=tBse6ehbkVjb7UFAGLco52HIGbPNdTjX&amp;protocol=oauth2&amp;response_type=code&amp;scope=openid%20profile&amp;redirect_uri=https%3A%2F%2Fwww.lincolnfinancial.com%2Fsecure%2Flogin%2Fcallback&amp;nonce=2Z2uZqDpHPiQcfh08_SUjIMNCviqCdIFFAtI4qQQBoM&amp;code_challenge=w6OJ06FbLM1MiTSW3RAOXHlbopX8NO-6zajKRh9riwo&amp;code_challenge_method=S256" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/lincoln.webp" alt="Lincoln Financial" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
         <a class="portal-link" href="https://www.massmutual.com/login-list" target="_blank" rel="noopener"><span>Mass Mutual</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
         <a class="portal-link" href="https://login.nationwide.com/access/web/login.htm?logintType=retirementPlans" target="_blank" rel="noopener"><span>Nationwide</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
         <a class="portal-link" href="https://myapps.paychex.com/landing_remote/login.do?lang=en" target="_blank" rel="noopener"><span>Paychex</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
@@ -217,7 +217,7 @@
 
   .portal-overlay { position: fixed; inset: 0; z-index: 70; background: rgba(0,0,0,0.85); display: none; align-items: flex-start; justify-content: center; padding: 80px 20px 20px; overflow-y: auto; }
   .portal-overlay.open { display: flex; }
-  .portal-modal { background: #110f0d; border: 1px solid rgba(255,255,255,0.08); width: 100%; max-width: 720px; padding: 40px 32px 32px; position: relative; }
+  .portal-modal { background: #110f0d; border: 1px solid rgba(255,255,255,0.08); width: 100%; max-width: 820px; padding: 40px 32px 32px; position: relative; }
   .portal-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: rgba(243,238,226,0.78); background: none; border: none; cursor: pointer; transition: color 0.2s; }
   .portal-close:hover { color: #f3eee2; }
   .portal-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 28px; }
@@ -225,13 +225,13 @@
   .portal-tab.active { color: #c9a974; border-color: #c9a974; }
   .portal-panel { display: none; }
   .portal-panel.active { display: block; }
-  .portal-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
-  @media (min-width: 540px) { .portal-grid { grid-template-columns: 1fr 1fr; } }
+  .portal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (min-width: 600px) { .portal-grid { grid-template-columns: 1fr 1fr 1fr; } }
   .portal-link { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border: 1px solid rgba(255,255,255,0.1); color: #f3eee2; text-decoration: none; font-size: 15px; transition: border-color 0.2s, background 0.2s, color 0.2s; }
   .portal-link:hover { border-color: rgba(201,169,116,0.5); background: rgba(201,169,116,0.05); color: #c9a974; }
   .portal-link svg { color: rgba(243,238,226,0.5); transition: color 0.2s; }
   .portal-link:hover svg { color: #c9a974; }
-  .portal-logo { height: 22px; width: auto; max-width: 110px; object-fit: contain; display: block; }
+  .portal-logo { height: 36px; width: auto; max-width: 150px; object-fit: contain; display: block; }
   .portal-note { color: rgba(243,238,226,0.55); font-size: 12px; line-height: 1.6; margin: 24px 0 0; }
 
   /* Services dropdown — View All footer */
