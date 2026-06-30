@@ -231,7 +231,7 @@
   .portal-link:hover { border-color: rgba(201,169,116,0.5); background: rgba(201,169,116,0.05); color: #c9a974; }
   .portal-link svg { color: rgba(243,238,226,0.5); transition: color 0.2s; }
   .portal-link:hover svg { color: #c9a974; }
-  .portal-logo { height: 64px; width: auto; max-width: 190px; object-fit: contain; display: block; }
+  .portal-logo { height: 76px; width: auto; max-width: 200px; object-fit: contain; display: block; }
   .portal-note { color: rgba(243,238,226,0.55); font-size: 12px; line-height: 1.6; margin: 24px 0 0; }
 
   /* Services dropdown — View All footer */
