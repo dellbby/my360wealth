@@ -239,6 +239,19 @@
   .dropdown-foot:hover { color: var(--gold-light) !important; }
   .dropdown-foot span { font-size: 14px; }
 
+  /* Compliance disclosures placed in page content.
+     Font size comparable to the majority of site text; blank line between blocks.
+     Colour is inherited so it works on both the light and dark page themes. */
+  .compliance-note { font-size: 14px; line-height: 1.6; margin: 16px 0 0; opacity: 0.9; }
+  .compliance-block { display: flex; flex-direction: column; gap: 12px; font-size: 14px; line-height: 1.6; margin: 28px 0 0; opacity: 0.9; }
+  .compliance-block p { margin: 0; }
+
+  /* Compliance: footer disclosures must be a font size comparable to the majority of site text,
+     with a visible space between each disclosure block. */
+  .disclaimers { gap: 12px; font-size: 14px; line-height: 1.6; color: rgba(243,238,226,0.7); }
+  .disclaimers p { margin: 0; }
+  .disclaimers .meta { font-size: 12px; }
+
   /* Mobile menu: allow scrolling so the Schedule button + contact info are always reachable on short screens */
   .menu-overlay { overflow-y: auto; -webkit-overflow-scrolling: touch; }
   .menu-links { flex: 1 0 auto; justify-content: flex-start; }
@@ -349,9 +362,10 @@
     </div>
     <div class="disclaimers">
       <p><strong>Check the background of investment professionals associated with this site on FINRA's <a href="http://brokercheck.finra.org/" target="_blank" rel="noopener">BrokerCheck</a>.</strong></p>
-      <p>Investment Advisory Services offered through Global Retirement Partners, LLC, an SEC registered investment advisor, dba My 360 Wealth Management Group.</p>
-      <p>The information contained herein is for informational purposes only and should not be considered investment advice or a recommendation to buy or sell any security. Investing involves risk, including the potential loss of principal. No strategy assures success or protects against loss. Past performance is not indicative of future results.</p>
-      <p>The LPL Financial registered representative(s) associated with this website may discuss and/or transact business only with residents of the states in which they are properly registered or licensed.</p>
+      <p>Securities offered through LPL Financial, Member <a href="https://www.finra.org/" target="_blank" rel="noopener">FINRA</a>/<a href="https://www.sipc.org/" target="_blank" rel="noopener">SIPC</a>. Investment advisory services offered through Global Retirement Partners, LLC dba My 360 Wealth Management, a registered investment advisor and separate entity from LPL Financial.</p>
+      <p>My 360 Wealth Management Group employs (or contracts with) individuals who may be (1) registered representatives of LPL Financial and investment adviser representatives of Global Retirement Partners, LLC dba My 360 Wealth Management; or (2) solely investment adviser representatives of Global Retirement Partners, LLC dba My 360 Wealth Management. Although all personnel operate their businesses under the name My 360 Wealth Management Group, they are each possibly subject to differing obligations and limitations and may be able to provide differing products or services.</p>
+      <p>The LPL Financial registered representative(s) associated with this website may discuss and/or transact business only with residents of the states in which they are properly registered or licensed. No offers may be made or accepted from any resident of any other state.</p>
+      <p><a href="https://www.lpl.com/CRS" target="_blank" rel="noopener">LPL Financial Form CRS</a></p>
       <div class="meta">
         <a href="https://www.finra.org/" target="_blank" rel="noopener">FINRA</a> <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">BrokerCheck</a>
         <span class="sep">|</span>
