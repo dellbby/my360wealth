@@ -232,7 +232,7 @@
   .portal-panel.active { display: block; }
   .portal-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
   .portal-link { grid-column: span 3; }
-  @media (min-width: 600px) { .portal-link { grid-column: span 2; } .portal-link.portal-wide { grid-column: span 3; } }
+  @media (min-width: 600px) { .portal-link { grid-column: span 2; } .portal-link.portal-wide, #portalPanel-k401 .portal-link { grid-column: span 3; } }
   .portal-link { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border: 1px solid rgba(255,255,255,0.1); color: #f3eee2; text-decoration: none; font-size: 15px; transition: border-color 0.2s, background 0.2s, color 0.2s; }
   .portal-link:hover { border-color: rgba(201,169,116,0.5); background: rgba(201,169,116,0.05); color: #c9a974; }
   .portal-link svg { color: rgba(243,238,226,0.5); transition: color 0.2s; }
