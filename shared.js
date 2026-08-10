@@ -374,6 +374,8 @@
       <p>My 360 Wealth Management Group employs (or contracts with) individuals who may be (1) registered representatives of LPL Financial and investment adviser representatives of Global Retirement Partners, LLC dba My 360 Wealth Management; or (2) solely investment adviser representatives of Global Retirement Partners, LLC dba My 360 Wealth Management. Although all personnel operate their businesses under the name My 360 Wealth Management Group, they are each possibly subject to differing obligations and limitations and may be able to provide differing products or services.</p>
       <p>The LPL Financial registered representative(s) associated with this website may discuss and/or transact business only with residents of the states in which they are properly registered or licensed. No offers may be made or accepted from any resident of any other state.</p>
       <p><a href="https://www.lpl.com/CRS" target="_blank" rel="noopener">LPL Financial Form CRS</a></p>
+      <p>My 360 Wealth Management Group, Global Retirement Partners and LPL Financial do not provide tax or legal advice. Please consult your tax advisor or attorney for guidance specific to your situation.</p>
+      <p>LPL Financial representatives offer access to Trust Services through The Private Trust Company N.A. an affiliate of LPL Financial.</p>
       <div class="meta">
         <a href="https://www.finra.org/" target="_blank" rel="noopener">FINRA</a> <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener">BrokerCheck</a>
         <span class="sep">|</span>
