@@ -412,24 +412,24 @@
     <div class="container">
       <div class="contact-grid">
         <div class="reveal" id="form-wrap">
-          <form id="contactForm">
+          <form id="contactForm" action="https://formspree.io/f/maewebwe" method="POST">
             <div class="form-row">
               <div class="field">
                 <label for="name">Full Name</label>
-                <input id="name" required placeholder="John Smith" />
+                <input id="name" name="name" required placeholder="John Smith" />
               </div>
               <div class="field">
                 <label for="email">Email</label>
-                <input id="email" type="email" required placeholder="john@example.com" />
+                <input id="email" name="email" type="email" required placeholder="john@example.com" />
               </div>
             </div>
             <div class="field">
               <label for="phone">Phone</label>
-              <input id="phone" type="tel" placeholder="(555) 000-0000" />
+              <input id="phone" name="phone" type="tel" placeholder="(555) 000-0000" />
             </div>
             <div class="field">
               <label for="message">How Can We Help?</label>
-              <textarea id="message" rows="5" required placeholder="Tell us about your goals and what brought you here..."></textarea>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us about your goals and what brought you here..."></textarea>
             </div>
             <button class="submit" type="submit">Send Message</button>
           </form>
@@ -542,13 +542,33 @@
   // Form
   const form = document.getElementById('contactForm');
   const wrap = document.getElementById('form-wrap');
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    wrap.innerHTML = `<div class="thanks">
-      <div class="badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div>
-      <h3>Thank You</h3>
-      <p>We've received your message and will be in touch shortly.</p>
-    </div>`;
+    const btn = form.querySelector('.submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        wrap.innerHTML = `<div class="thanks">
+          <div class="badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+          <h3>Thank You</h3>
+          <p>We've received your message and will be in touch shortly.</p>
+        </div>`;
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+        alert('Sorry, something went wrong sending your message. Please try again or call us at (818) 547-4720.');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+      alert('Sorry, something went wrong sending your message. Please try again or call us at (818) 547-4720.');
+    }
   });
 </script>
 <script src="/shared.js"></script>
