@@ -43,7 +43,7 @@
             <span class="dropdown-head">Personal &amp; Family</span>
             <a href="/services/private-wealth.html">Private Wealth Management</a>
             <a href="/services/family-office.html">Family Office &amp; Family CFO</a>
-            <a href="/start-here.html">Start Here &mdash; find your gaps</a>
+            <a href="/start-here.html">Start Here &mdash; Find Your Gaps</a>
             <a href="/services/wealth-retirement-planning.html">Wealth &amp; Retirement Planning</a>
             <a href="/services/portfolio-management.html">Portfolio Management</a>
             <a href="/services/trust-estate-planning.html">Trust &amp; Estate Planning</a>
@@ -294,6 +294,10 @@
   .dropdown-col a { font-size: 15px; }
   .dropdown-head { font-size: 12px; }
   .footer-links a, .footer-brand p, .footer-contact p, .footer-contact a { font-size: 15px; }
+  /* Tighter footer link lists — the Services column runs long, and the old
+     22.5px line-height plus 5px padding plus 8px gap made the footer ~1300px tall. */
+  .footer-links { gap: 1px; }
+  .footer-links a { line-height: 1.35; padding: 3px 0; }
   .footer-head { font-size: 12px; }
   .footer-bottom, .footer-disc { font-size: 13px; line-height: 1.65; }
   .portal-link .portal-logo-text { font-size: 15px; }
@@ -418,7 +422,7 @@
           <a href="/services/group-benefits.html">Group Benefits &amp; Retirement Plans</a>
           <a href="/services/exit-planning.html">Exit Planning for Owners</a>
           <a href="/services/family-office.html">Family Office &amp; Family CFO</a>
-          <a href="/start-here.html">Start Here &mdash; find your gaps</a>
+          <a href="/start-here.html">Start Here &mdash; Find Your Gaps</a>
           <a href="/services/wealth-retirement-planning.html">Wealth &amp; Retirement Planning</a>
           <a href="/services/portfolio-management.html">Portfolio Management</a>
           <a href="/services/trust-estate-planning.html">Trust &amp; Estate Planning</a>

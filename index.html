@@ -304,6 +304,13 @@
   /* Section heads on light */
   .section.mission .eyebrow, .section#services .eyebrow, .section#milestones .eyebrow { color: #7d5f22; }
   .section#services .section-head h2, .section#milestones .section-head h2 { color: #2a221a; }
+  /* "Four quarters of one circle" was breaking after "one" and leaving "circle"
+     stranded on its own line. Widen the block and scale the type to the viewport
+     so the whole phrase stays on one line at every width above mobile. */
+  .section#services .section-head { max-width: 940px; }
+  @media (min-width: 700px) {
+    .section#services .section-head h2 { white-space: nowrap; font-size: clamp(30px, 5.6vw, 64px); }
+  }
   .section#services .section-head .desc, .section#milestones .section-head .desc { color: rgba(42,34,26,0.7); }
 
   /* Mission section on light */
