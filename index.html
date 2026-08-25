@@ -324,6 +324,39 @@
   /* Service section: group head, cards */
   .section#services .group-head h3 { color: #a07b32; }
   .section#services .group-head .bar { background: #a07b32; }
+
+  /* ---- #all-services : the twelve service cards -------------------------
+     This section sits on the light band, but .card / .section-head were
+     styled for the dark homepage, so the headline rendered cream-on-cream
+     and the cards came out as black boxes. Light treatment, scoped here. */
+  .section#all-services { background: #f6efe3; padding: 88px 0 96px; }
+  .section#all-services .eyebrow { color: #7d5f22; }
+  .section#all-services .section-head h2 { color: #2a221a; }
+  .section#all-services .section-head .desc { color: rgba(42,34,26,0.68); }
+  .section#all-services .section-head { margin-bottom: 44px; }
+  .section#all-services .group-head h3 { color: #a07b32; }
+  .section#all-services .group-head .bar { background: #a07b32; }
+  .section#all-services .group + .group { margin-top: 44px; }
+  .section#all-services .card {
+    background: #fffaf0;
+    border: 1px solid rgba(42,34,26,0.10);
+    padding: 24px;
+    transition: border-color .35s, box-shadow .35s, transform .35s;
+  }
+  .section#all-services .card:hover {
+    background: #fffaf0;
+    border-color: rgba(160,123,50,0.42);
+    box-shadow: 0 6px 22px rgba(42,34,26,0.07);
+    transform: translateY(-2px);
+  }
+  .section#all-services .card .ico { color: #a07b32; }
+  .section#all-services .card h4 { color: #2a221a; }
+  .section#all-services .card p { color: rgba(42,34,26,0.70); }
+  .section#all-services .card .underline { background: #a07b32; }
+  @media (max-width: 640px) {
+    .section#all-services { padding: 64px 0 70px; }
+    .section#all-services .group + .group { margin-top: 34px; }
+  }
   .section#services .card { background: #ffffff; border-color: rgba(42,34,26,0.08); }
   .section#services .card:hover { background: #fffaf0; border-color: rgba(201,169,116,0.45); }
   .section#services .card .ico { color: #a07b32; }
@@ -1172,7 +1205,7 @@
   <section class="section" id="all-services">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Every Service</span>
+        <span class="eyebrow">How We Serve You</span>
         <h2>Our Services</h2>
         <p class="desc">A comprehensive wealth management plan designed to navigate you throughout your financial life.</p>
       </div>
