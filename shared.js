@@ -225,7 +225,9 @@
 
   /* Top utility bar (above main nav) */
   .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 52; height: 42px; box-sizing: border-box; background: #0a0907; border-bottom: 1px solid rgba(255,255,255,0.05); }
-  .topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; min-height: 0; padding: 0; gap: 12px; flex-wrap: nowrap; }
+  /* padding was 0, which cancelled .container's 24px gutter and left the
+     BrokerCheck badge flush against the window edge, reading as cut off. */
+  .topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; min-height: 0; padding: 0 24px; gap: 12px; flex-wrap: nowrap; }
   .topbar-meta { display: none; align-items: center; gap: 14px; font-size: 12px; color: rgba(243,238,226,0.55); }
   @media (min-width: 768px) { .topbar-meta { display: flex; } }
   .topbar-link { display: inline-flex; align-items: center; gap: 6px; color: rgba(243,238,226,0.55); transition: color 0.2s; }

@@ -353,6 +353,7 @@
   .section#all-services .card h4 { color: #2a221a; }
   .section#all-services .card p { color: rgba(42,34,26,0.70); }
   .section#all-services .card .underline { background: #a07b32; }
+  .section#all-services .all-svc-cta { display: flex; justify-content: center; margin-top: 44px; }
   @media (max-width: 640px) {
     .section#all-services { padding: 64px 0 70px; }
     .section#all-services .group + .group { margin-top: 34px; }
@@ -1219,6 +1220,10 @@
         <div class="group-head reveal"><span class="bar"></span><h3>Business &amp; Employers</h3></div>
         <div class="grid-3" id="services-business"></div>
       </div>
+
+      <div class="all-svc-cta reveal">
+        <a class="svc-btn is-ghost" href="/services.html">View All Services <span aria-hidden="true">&rarr;</span></a>
+      </div>
     </div>
   </section>
 
@@ -1350,8 +1355,8 @@
   const personalLinks = ['/services/wealth-retirement-planning.html','/services/portfolio-management.html','/services/trust-estate-planning.html','/services/foundation-endowment.html','/services/concentrated-stock-strategies.html','/services/retirement-income.html'];
   const businessLinks = ['/services/401k-qualified-plans.html','/services/deferred-compensation.html','/services/insurance-services.html','/services/business-succession.html','/services/tax-planning.html','/services/employee-education.html'];
   const cardHTML = (s, href) => `<a class="card reveal" href="${href}"><span class="ico">${ICONS[s.ico]}</span><h4>${s.t}</h4><p>${s.d}</p><span class="underline"></span></a>`;
-  if (document.getElementById('services-personal')) document.getElementById('services-personal').innerHTML = personal.map((s,i) => cardHTML(s, personalLinks[i])).join('');
-  if (document.getElementById('services-business')) document.getElementById('services-business').innerHTML = business.map((s,i) => cardHTML(s, businessLinks[i])).join('');
+  if (document.getElementById('services-personal')) document.getElementById('services-personal').innerHTML = personal.slice(0, 3).map((s,i) => cardHTML(s, personalLinks[i])).join('');
+  if (document.getElementById('services-business')) document.getElementById('services-business').innerHTML = business.slice(0, 3).map((s,i) => cardHTML(s, businessLinks[i])).join('');
   observeReveals();
 
   // Process

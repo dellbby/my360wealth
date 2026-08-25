@@ -435,6 +435,14 @@
     </div>
   </section>
 
+  <!-- What We Do — the four practices -->
+  <section class="section" style="padding: 24px 0 48px;">
+    <div class="container">
+      <div class="group-head reveal"><span class="bar"></span><h3>What We Do</h3></div>
+      <div class="svc-list" id="svc-practices"></div>
+    </div>
+  </section>
+
   <!-- Personal & Family -->
   <section class="section" style="padding: 24px 0 48px;">
     <div class="container">
@@ -561,11 +569,32 @@
       <div class="svc-main"><h4>${s.t}</h4><p class="tag">${s.tag}</p></div>
       <div class="svc-detail"><ul>${s.d.map(x => `<li>${x}</li>`).join('')}</ul></div>
     </div>`;
+  const practices = [
+    { ico: 'trendingUp', t: 'Private Wealth Management', tag: 'Investment management and planning for families building and protecting what they have.',
+      d: ['Portfolio management and ongoing financial planning',
+          'Retirement income, tax and estate coordination',
+          'One relationship across the whole balance sheet'] },
+    { ico: 'users', t: 'Group Benefits & Retirement Plans', tag: 'Retirement plans and benefits for employers, and how we come to know most business owners.',
+      d: ['Plan design, fiduciary governance and provider search',
+          'Participant education and enrollment support',
+          'Cash balance and deferred compensation layering'] },
+    { ico: 'building', t: 'Exit Planning for Owners', tag: 'For owners whose wealth is still inside a business, before, during and after the sale.',
+      d: ['Readiness and value-gap assessment years ahead of a sale',
+          'Coordination with M&A counsel, bankers and your CPA',
+          'Post-liquidity planning for what the proceeds become'] },
+    { ico: 'shield', t: 'Family Office & Family CFO', tag: 'One Family CFO coordinating every adviser, with continuity arranged in advance.',
+      d: ['A single point of coordination across all your advisers',
+          'Estate, trust and tax work handled alongside investments',
+          'Continuity so your family never has to start over'] }
+  ];
+
+  document.getElementById('svc-practices').innerHTML = practices.map(rowHTML).join('');
   document.getElementById('svc-personal').innerHTML = personal.map(rowHTML).join('');
   document.getElementById('svc-business').innerHTML = business.map(rowHTML).join('');
   observeReveals();
 
   // Wrap each service row in a link to its detail page + add a Learn More button
+  const practiceLinks = ['services/private-wealth.html','services/group-benefits.html','services/exit-planning.html','services/family-office.html'];
   const personalLinks = ['services/wealth-retirement-planning.html','services/portfolio-management.html','services/trust-estate-planning.html','services/foundation-endowment.html','services/concentrated-stock-strategies.html','services/retirement-income.html'];
   const businessLinks = ['services/401k-qualified-plans.html','services/deferred-compensation.html','services/insurance-services.html','services/business-succession.html','services/tax-planning.html','services/employee-education.html'];
   function wrapRows(containerId, links) {
@@ -585,6 +614,7 @@
       row.appendChild(learn);
     });
   }
+  wrapRows('svc-practices', practiceLinks);
   wrapRows('svc-personal', personalLinks);
   wrapRows('svc-business', businessLinks);
 
