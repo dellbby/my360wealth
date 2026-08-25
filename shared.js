@@ -298,6 +298,12 @@
      22.5px line-height plus 5px padding plus 8px gap made the footer ~1300px tall. */
   .footer-links { gap: 1px; }
   .footer-links a { line-height: 1.35; padding: 3px 0; }
+  /* The Services column carries 17 links. Run it in two sub-columns above
+     640px so the footer isn't a single very long list. */
+  @media (min-width: 640px) {
+    .footer-links-2col { display: block; column-count: 2; column-gap: 26px; }
+    .footer-links-2col a { break-inside: avoid; }
+  }
   .footer-head { font-size: 12px; }
   .footer-bottom, .footer-disc { font-size: 13px; line-height: 1.65; }
   .portal-link .portal-logo-text { font-size: 15px; }
@@ -417,7 +423,7 @@
       </div>
       <div>
         <h4>Services In Detail</h4>
-        <div class="footer-links">
+        <div class="footer-links footer-links-2col">
           <a href="/services/private-wealth.html">Private Wealth Management</a>
           <a href="/services/group-benefits.html">Group Benefits &amp; Retirement Plans</a>
           <a href="/services/exit-planning.html">Exit Planning for Owners</a>
