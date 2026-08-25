@@ -31,19 +31,11 @@
     <nav class="nav-links">      <a href="/start-here.html">Start Here</a>
       <div class="nav-item has-dropdown">
         <a href="/services.html" class="nav-trigger">Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
-        <div class="dropdown dropdown-3">
-          <div class="dropdown-col">
-            <span class="dropdown-head">What We Do</span>
-            <a href="/index.html#private-wealth">Private Wealth</a>
-            <a href="/index.html#group-benefits">Group Benefits &amp; Retirement Plans</a>
-            <a href="/index.html#exit-planning">Exit Planning &mdash; Business Owners</a>
-            <a href="/index.html#family-office">Family Office &amp; Family CFO</a>
-          </div>
+        <div class="dropdown dropdown-2">
           <div class="dropdown-col">
             <span class="dropdown-head">Personal &amp; Family</span>
             <a href="/services/private-wealth.html">Private Wealth Management</a>
             <a href="/services/family-office.html">Family Office &amp; Family CFO</a>
-            <a href="/start-here.html">Start Here &mdash; Find Your Gaps</a>
             <a href="/services/wealth-retirement-planning.html">Wealth &amp; Retirement Planning</a>
             <a href="/services/portfolio-management.html">Portfolio Management</a>
             <a href="/services/trust-estate-planning.html">Trust &amp; Estate Planning</a>
@@ -213,11 +205,11 @@
   /* Invisible bridge so the dropdown doesn't close when crossing the gap */
   .nav-item .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 12px; }
   /* Three-column Services dropdown (practices + the two detail lists) */
-  .dropdown.dropdown-3 { grid-template-columns: repeat(3, 1fr); min-width: 0; width: min(840px, calc(100vw - 24px)); gap: 24px; }
-  @media (max-width: 1000px) { .dropdown.dropdown-3 { grid-template-columns: repeat(2, 1fr); gap: 18px 20px; } }
-  @media (max-width: 820px) { .dropdown.dropdown-3 { min-width: 0; width: calc(100vw - 24px); grid-template-columns: 1fr; gap: 14px; max-height: calc(100vh - 150px); overflow-y: auto; } }
-  .dropdown.dropdown-3 .dropdown-col:first-child a { color: #f3eee2; }
-  .dropdown.dropdown-3 .dropdown-col:first-child a:hover { color: var(--gold); }
+  .dropdown.dropdown-2 { grid-template-columns: repeat(2, 1fr); min-width: 0; width: min(620px, calc(100vw - 24px)); gap: 26px; }
+  
+  @media (max-width: 700px) { .dropdown.dropdown-2 { min-width: 0; width: calc(100vw - 24px); grid-template-columns: 1fr; gap: 14px; max-height: calc(100vh - 150px); overflow-y: auto; } }
+  
+  
   .dropdown-col { display: flex; flex-direction: column; gap: 8px; }
   .dropdown-head { font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); padding-bottom: 6px; border-bottom: 1px solid rgba(201,169,116,0.25); margin-bottom: 4px; }
   .dropdown a { color: rgba(243,238,226,0.85); font-size: 13px; letter-spacing: 0; text-transform: none; padding: 4px 0; transition: color 0.2s; }
