@@ -28,7 +28,8 @@
     <a href="/index.html" class="logo">
       <img src="/assets/logo.png" alt="My 360 Wealth Management Group" class="logo-img" />
     </a>
-    <nav class="nav-links">      <div class="nav-item has-dropdown">
+    <nav class="nav-links">      <a href="/start-here.html">Start Here</a>
+      <div class="nav-item has-dropdown">
         <a href="/services.html" class="nav-trigger">Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
         <div class="dropdown dropdown-3">
           <div class="dropdown-col">
@@ -74,7 +75,6 @@
           </div>
         </div>
       </div>
-      <a href="/start-here.html">Start Here</a>
       <a href="/index.html#milestones">Life Milestones</a>
       <div class="nav-item has-dropdown">
         <a href="/resource-center/index.html" class="nav-trigger">Resource Center <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
@@ -108,12 +108,12 @@
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
   </div>
-  <nav class="menu-links">    <a href="/services.html" data-close>Services</a>
+  <nav class="menu-links">    <a href="/start-here.html" data-close>Start Here</a>
+    <a href="/services.html" data-close>Services</a>
     <a href="/index.html#private-wealth" data-close>Private Wealth</a>
     <a href="/index.html#group-benefits" data-close>Group Benefits &amp; 401(k)</a>
     <a href="/index.html#exit-planning" data-close>Exit Planning</a>
     <a href="/index.html#family-office" data-close>Family Office</a>
-    <a href="/start-here.html" data-close>Start Here</a>
     <a href="/process.html" data-close>Our Process</a>
     <a href="/index.html#milestones" data-close>Life Milestones</a>
     <a href="/resource-center/index.html" data-close>Resource Center</a>
@@ -208,12 +208,14 @@
   .dropdown.dropdown-sm .dropdown-col { gap: 2px; }
   .dropdown.dropdown-sm .dropdown-col a { padding: 6px 0; font-size: 13px; }
 
-  .dropdown { position: absolute; top: 100%; left: 50%; transform: translate(-50%, 8px); min-width: 540px; background: rgba(17,15,13,0.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.08); padding: 22px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.25s, transform 0.25s, visibility 0s linear 0.25s; }
-  .nav-item:hover .dropdown, .nav-item:focus-within .dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); transition: opacity 0.25s, transform 0.25s; }
+  .dropdown { --dd-x: -50%; position: absolute; top: 100%; left: 50%; transform: translate(var(--dd-x), 8px); min-width: 540px; max-width: calc(100vw - 24px); box-sizing: border-box; overflow-x: hidden; background: rgba(17,15,13,0.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.08); padding: 22px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.25s, transform 0.25s, visibility 0s linear 0.25s; }
+  .nav-item:hover .dropdown, .nav-item:focus-within .dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(var(--dd-x), 0); transition: opacity 0.25s, transform 0.25s; }
   /* Invisible bridge so the dropdown doesn't close when crossing the gap */
   .nav-item .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 12px; }
   /* Three-column Services dropdown (practices + the two detail lists) */
-  .dropdown.dropdown-3 { grid-template-columns: repeat(3, 1fr); min-width: 0; width: min(840px, calc(100vw - 40px)); gap: 24px; }
+  .dropdown.dropdown-3 { grid-template-columns: repeat(3, 1fr); min-width: 0; width: min(840px, calc(100vw - 24px)); gap: 24px; }
+  @media (max-width: 1000px) { .dropdown.dropdown-3 { grid-template-columns: repeat(2, 1fr); gap: 18px 20px; } }
+  @media (max-width: 820px) { .dropdown.dropdown-3 { min-width: 0; width: calc(100vw - 24px); grid-template-columns: 1fr; gap: 14px; max-height: calc(100vh - 150px); overflow-y: auto; } }
   .dropdown.dropdown-3 .dropdown-col:first-child a { color: #f3eee2; }
   .dropdown.dropdown-3 .dropdown-col:first-child a:hover { color: var(--gold); }
   .dropdown-col { display: flex; flex-direction: column; gap: 8px; }
@@ -503,11 +505,52 @@
     });
   }
 
+
+  /* Keep dropdown panels inside the viewport. The panels are centred on their
+     trigger, so one near either edge of a narrow window used to be clipped.
+     Position is worked out from the trigger and the panel's own width rather
+     than from a measured rect, because the panel's transform is transitioned
+     and a rect read mid-animation gives the wrong answer. */
+  function keepDropdownsOnScreen() {
+    var PAD = 12;
+    function place(item) {
+      var dd = item.querySelector('.dropdown');
+      if (!dd) return;
+      var vw = document.documentElement.clientWidth;
+      var box = item.getBoundingClientRect();
+      var centre = box.left + box.width / 2;
+      var w = dd.offsetWidth;
+      if (!w) return;
+      var left = centre - w / 2;
+      var right = left + w;
+      var shift = 0;
+      if (w >= vw - PAD * 2) shift = (vw / 2) - centre;      // wider than the window: centre it
+      else if (left < PAD) shift = PAD - left;
+      else if (right > vw - PAD) shift = (vw - PAD) - right;
+      dd.style.setProperty('--dd-x', shift ? 'calc(-50% + ' + Math.round(shift) + 'px)' : '-50%');
+    }
+    var items = document.querySelectorAll('.nav-item.has-dropdown');
+    items.forEach(function (item) {
+      item.addEventListener('mouseenter', function () { place(item); });
+      item.addEventListener('focusin', function () { place(item); });
+    });
+    var timer;
+    window.addEventListener('resize', function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () { items.forEach(function (i) { place(i); }); }, 120);
+    });
+    items.forEach(function (i) { place(i); });
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { items.forEach(function (i) { place(i); }); });
+    }
+  }
+
   function init() {
     inject(document.getElementById('site-nav'), NAV_HTML);
     inject(document.getElementById('site-footer'), FOOTER_HTML);
     localizePaths(document);
     wireLogo();
+    keepDropdownsOnScreen();
     var y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
   }
