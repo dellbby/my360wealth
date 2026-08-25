@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About My 360 Wealth Management Group</title>
-<link rel="canonical" href="https://www.my360wealth.com/about.html" />
-<meta name="description" content="The team, credentials and institutions behind My 360 Wealth Management Group - an independent wealth and family office practice in Glendale, California." />
+<title>Start Here: Find Your Financial Gaps | My 360 Wealth</title>
+<link rel="canonical" href="https://www.my360wealth.com/start-here.html" />
+<meta name="description" content="Seven questions that show where the gaps are in how your wealth is handled today, and which part of our work would help first. No email required." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -604,6 +604,23 @@
   .deg-centre { font-family:var(--font-heading); font-size:15px; fill:#2a221a; text-anchor:middle; }
     .deg-centre-sub { font-size:9.5px; letter-spacing:.2em; text-transform:uppercase; fill:rgba(42,34,26,.5); text-anchor:middle; }
 
+
+  /* Provider / custodian walls. The supplied marks are white, so they sit on a dark band. */
+  .logo-wall { margin-top:26px; background:#17130f; padding:26px 28px 22px; }
+  .lw-k { margin:0 0 4px; font-size:10.5px; letter-spacing:.2em; text-transform:uppercase;
+          color:#c9a974; font-weight:700; }
+  .lw-sub { margin:16px 0 10px; font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+            color:rgba(243,238,226,.5); }
+  .lw-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px 20px; align-items:center;
+             margin-top:12px; }
+  @media (min-width:560px){ .lw-grid { grid-template-columns:repeat(3,1fr); } }
+  @media (min-width:860px){ .lw-grid { grid-template-columns:repeat(4,1fr); } }
+  .lw-grid img { width:100%; height:34px; object-fit:contain; object-position:left center;
+                 opacity:.82; transition:opacity .25s; }
+  .lw-grid img:hover { opacity:1; }
+  .lw-note { margin:18px 0 0; padding-top:14px; border-top:1px solid rgba(243,238,226,.13);
+             font-size:11.5px; line-height:1.6; color:rgba(243,238,226,.5); }
+
   /* ---- Service section headers, one accent, four quarters ---- */
   .svc-head { display:flex; align-items:center; gap:18px; margin-bottom:22px; }
   .svc-mark { flex:0 0 auto; width:46px; height:46px; }
@@ -704,9 +721,9 @@
   .about-head { max-width:620px; margin-bottom:28px; }
   .about-head .lab { font-size:11px; letter-spacing:.26em; text-transform:uppercase;
                      color:#a07b32; font-weight:600; margin:0 0 10px; }
-  .about-head h1, .about-head h1, .about-head h2 { font-family:var(--font-heading); font-weight:500; font-size:30px; line-height:1.14;
+  .about-head h2 { font-family:var(--font-heading); font-weight:500; font-size:30px; line-height:1.14;
                    color:#2a221a; margin:0 0 10px; }
-  @media (min-width:768px){ .about-head h1, .about-head h1, .about-head h2 { font-size:36px; } }
+  @media (min-width:768px){ .about-head h2 { font-size:36px; } }
   .about-head p { font-size:16px; line-height:1.7; color:rgba(42,34,26,.74); margin:0; }
 
   .about-cols { display:grid; grid-template-columns:1fr; gap:14px; align-items:start; }
@@ -721,20 +738,6 @@
   .about-col li::before { content:''; position:absolute; left:0; top:13px; width:4px; height:4px;
                           border-radius:50%; background:rgba(160,123,50,.6); }
   /* About says how the practice is built — the four service sections already say what it does */
-
-  .ab-story { background:#fff; border:1px solid rgba(42,34,26,.09); padding:26px 28px; margin-bottom:14px; }
-  .abs-lede { margin:0 0 4px; font-size:16px; line-height:1.72; color:rgba(42,34,26,.78); }
-  .abs-tl { margin-top:22px; }
-  .abs-era { position:relative; padding:16px 0 16px 74px; border-top:1px solid rgba(42,34,26,.09); }
-  .abs-era:first-child { border-top:0; }
-  .abs-yr { position:absolute; left:0; top:18px; margin:0; font-family:var(--font-heading);
-            font-size:19px; color:#a07b32; line-height:1; }
-  .abs-era h4 { margin:0 0 6px; font-family:var(--font-heading); font-weight:500; font-size:18px;
-                color:#2a221a; line-height:1.28; }
-  .abs-era p { margin:0; font-size:14.5px; line-height:1.68; color:rgba(42,34,26,.72); }
-  .abs-close { margin:20px 0 0; padding-top:18px; border-top:1px solid rgba(42,34,26,.13);
-               font-family:var(--font-heading); font-size:19px; line-height:1.5; color:#2a221a; }
-  @media (max-width:560px){ .abs-era { padding-left:0; } .abs-yr { position:static; margin-bottom:6px; } }
   .ab-points { display:flex; flex-direction:column; }
   .ab-pt { padding:13px 0; }
   .ab-pt + .ab-pt { border-top:1px solid rgba(42,34,26,.09); }
@@ -830,133 +833,378 @@
   .svc-ul li, .qz-txt strong, .sh-txt strong, .faq p, .faqs summary,
   .qz-gaps li, .qz-verdict p, .hub-cell p, .ab-pt p, .abs-era p { font-size: 16px; }
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "AboutPage",
-      "@id": "https://www.my360wealth.com/about.html#webpage",
-      "url": "https://www.my360wealth.com/about.html",
-      "name": "About Us | My 360 Wealth Management Group",
-      "description": "About My 360 Wealth Management Group — a holistic Financial Life Management firm led by CFP® professional and AIF® Pierre M. Movsessian, serving clients in Glendale, CA and nationwide.",
-      "isPartOf": {"@id": "https://www.my360wealth.com/#website"},
-      "about": {"@id": "https://www.my360wealth.com/#organization"},
-      "inLanguage": "en-US"
-    },
-    {
-      "@type": "Person",
-      "@id": "https://www.my360wealth.com/#pierre-movsessian",
-      "name": "Pierre M. Movsessian",
-      "honorificSuffix": "MBA, CFP®, AIF®",
-      "jobTitle": "Financial Advisor & Team Leader",
-      "description": "CFP® professional and Accredited Investment Fiduciary leading My 360 Wealth Management Group's holistic Financial Life Management process.",
-      "worksFor": {"@id": "https://www.my360wealth.com/#organization"},
-      "url": "https://www.my360wealth.com/about.html"
-    }
-  ]
-}
-</script>
 </head>
-<body>
+<style>
+  .sh-wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  .sh-hero{background:#17130f;color:#f3eee2;padding:168px 0 54px;text-align:center}
+  .sh-hero .lab{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#c9a974;font-weight:700;margin:0 0 14px}
+  .sh-hero h1{font-family:var(--font-heading);font-weight:400;font-size:clamp(34px,5vw,52px);line-height:1.1;margin:0 0 16px}
+  .sh-hero p{margin:0 auto;max-width:560px;font-size:16.5px;line-height:1.7;color:rgba(243,238,226,.72)}
+  .sh-meta{margin-top:22px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,238,226,.45)}
+
+  .sh-main{background:#f6efe3;padding:44px 0 80px}
+  .sh-progress{height:3px;background:rgba(42,34,26,.12);margin-bottom:34px}
+  .sh-progress span{display:block;height:100%;width:0;background:#a07b32;transition:width .4s cubic-bezier(.22,1,.36,1)}
+
+  .sh-step{display:none}
+  .sh-step.on{display:block}
+  .sh-count{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#7d5f22;font-weight:700;margin:0 0 10px}
+  .sh-q{font-family:var(--font-heading);font-weight:400;font-size:clamp(24px,3.4vw,32px);line-height:1.22;color:#2a221a;margin:0 0 8px}
+  .sh-help{margin:0 0 22px;font-size:14.5px;line-height:1.65;color:rgba(42,34,26,.66)}
+
+  .sh-opts{display:grid;gap:10px}
+  .sh-opt{display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;background:#fff;
+          border:1px solid rgba(42,34,26,.14);padding:16px 18px;font:inherit;color:inherit;cursor:pointer;
+          transition:border-color .2s,background .2s,transform .15s}
+  .sh-opt:hover{border-color:rgba(160,123,50,.55);background:#fffaf0}
+  .sh-opt:focus-visible{outline:2px solid #a07b32;outline-offset:2px}
+  .sh-opt.sel{border-color:#a07b32;background:#fffaf0}
+  .sh-box{flex:0 0 auto;width:19px;height:19px;border:1px solid rgba(42,34,26,.35);margin-top:2px;
+          display:grid;place-items:center;background:#fff}
+  .sh-opt.sel .sh-box{background:#a07b32;border-color:#a07b32}
+  .sh-box svg{opacity:0}
+  .sh-opt.sel .sh-box svg{opacity:1}
+  .sh-txt strong{display:block;font-size:15.5px;color:#2a221a;font-weight:600;line-height:1.35}
+  .sh-txt span{display:block;margin-top:3px;font-size:13.5px;line-height:1.55;color:rgba(42,34,26,.66)}
+
+  .sh-nav{display:flex;gap:14px;align-items:center;margin-top:26px}
+  .sh-btn{font:inherit;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:0;cursor:pointer;
+          background:#a07b32;color:#fffaf0;padding:14px 26px;transition:background .2s}
+  .sh-btn:hover{background:#8a6a2b}
+  .sh-btn[disabled]{opacity:.4;cursor:not-allowed}
+  .sh-back{font:inherit;font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:none;border:0;
+           color:rgba(42,34,26,.55);cursor:pointer;padding:6px 2px;border-bottom:1px solid rgba(42,34,26,.2)}
+  .sh-skip{margin-left:auto;font-size:12.5px;color:rgba(42,34,26,.5)}
+
+  /* result */
+  .sh-res{display:none}
+  .sh-res.on{display:block}
+  .sh-lead-in{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#7d5f22;font-weight:700;margin:0 0 10px}
+  .sh-res h2{font-family:var(--font-heading);font-weight:400;font-size:clamp(26px,3.6vw,36px);line-height:1.18;color:#2a221a;margin:0 0 14px}
+  .sh-res .why{font-size:16px;line-height:1.72;color:rgba(42,34,26,.76);margin:0 0 26px}
+  .sh-card{background:#fff;border:1px solid rgba(42,34,26,.13);padding:26px 28px;margin-bottom:14px}
+  .sh-card .rank{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#7d5f22;font-weight:700;margin:0 0 7px}
+  .sh-card h3{font-family:var(--font-heading);font-weight:500;font-size:22px;color:#2a221a;margin:0 0 8px;line-height:1.25}
+  .sh-card p{margin:0 0 14px;font-size:14.5px;line-height:1.68;color:rgba(42,34,26,.72)}
+  .sh-card a{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#7d5f22;
+             border-bottom:1px solid rgba(125,95,34,.4);padding-bottom:2px;margin-right:20px}
+  .sh-gaps{background:#fffaf0;border-left:3px solid #a07b32;padding:20px 24px;margin:26px 0}
+  .sh-gaps h4{font-family:var(--font-heading);font-weight:500;font-size:18px;margin:0 0 10px;color:#2a221a}
+  .sh-gaps ul{margin:0;padding:0;list-style:none}
+  .sh-gaps li{position:relative;padding:7px 0 7px 17px;font-size:14px;line-height:1.6;color:rgba(42,34,26,.75);
+              border-top:1px solid rgba(42,34,26,.08)}
+  .sh-gaps li:first-child{border-top:0}
+  .sh-gaps li::before{content:'';position:absolute;left:0;top:15px;width:5px;height:5px;border-radius:50%;background:#a07b32}
+  .sh-cta{background:#17130f;color:#f3eee2;padding:30px 32px;margin-top:26px}
+  .sh-cta h4{font-family:var(--font-heading);font-weight:400;font-size:24px;margin:0 0 10px}
+  .sh-cta p{margin:0 0 20px;font-size:15px;line-height:1.7;color:rgba(243,238,226,.72)}
+  .sh-cta .btn-gold{display:inline-flex;align-items:center;height:46px;padding:0 28px}
+  .sh-cta .alt{margin-left:18px;font-size:13.5px;color:rgba(243,238,226,.7);
+               border-bottom:1px solid rgba(201,169,116,.4);padding-bottom:2px}
+  .sh-restart{margin-top:24px;font-size:13px;color:rgba(42,34,26,.55);background:none;border:0;
+              cursor:pointer;border-bottom:1px solid rgba(42,34,26,.2);padding:4px 2px;font-family:inherit}
+  .sh-priv{margin-top:30px;font-size:12px;line-height:1.65;color:rgba(42,34,26,.5)}
+</style><body>
 <div id="site-nav"></div>
-<script src="shared.js"></script>
-<main id="top" style="padding-top:150px;">
-  <section class="section about-sec" id="about" style="background:#f6efe3;">
-    <div class="container-narrow">
-      <div class="about-head reveal">
-        <p class="lab">About Us</p>
-        <h1>Who we are</h1>
-        <p>A local team in Glendale, California, with national institutions behind us &mdash; and a way of working built around one relationship rather than a list of products.</p>
+<main>
+
+<section class="sh-hero">
+  <div class="sh-wrap">
+    <p class="lab">Start Here</p>
+    <h1>Where are the gaps?</h1>
+    <p>Seven questions about your situation. At the end you get a plain-language read on what is most likely being missed today, and which part of our work would help first.</p>
+    <p class="sh-meta">About two minutes &middot; Nothing is sent to us unless you ask</p>
+  </div>
+</section>
+
+<section class="sh-main">
+  <div class="sh-wrap">
+    <div class="sh-progress" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="shBar"></span></div>
+
+    <form id="shForm" novalidate>
+
+      <div class="sh-step on" data-step="0">
+        <p class="sh-count">Question 1 of 7</p>
+        <h2 class="sh-q">Which best describes where your wealth sits today?</h2>
+        <p class="sh-help">Choose the one that is closest. You can change it later.</p>
+        <div class="sh-opts" data-name="where" data-multi="false"></div>
       </div>
 
-      <div class="ab-story reveal">
-        <p class="ac-k">Where this comes from</p>
-        <p class="abs-lede">Wealth management did not begin as a way to sell investments. It began as a service to entrepreneurs and affluent families &mdash; running the financial and administrative side of their lives so they could put their attention on the business, the family and the years they actually wanted to enjoy. Somewhere along the way most of the industry kept the fee and dropped the job.</p>
-
-        <div class="abs-tl">
-          <div class="abs-era">
-            <p class="abs-yr">1882</p>
-            <h4>The office is invented</h4>
-            <p>John D. Rockefeller hires a full-time staff to run his family&rsquo;s entire financial life &mdash; the investments, the taxes, the properties, the entities, the giving, the next generation. The family office is born, and at the centre of it sits what amounts to a chief financial officer for a family rather than a company.</p>
-          </div>
-          <div class="abs-era">
-            <p class="abs-yr">1900s</p>
-            <h4>Families begin sharing it</h4>
-            <p>The idea works, but it is priced for dynasties: a staff, an office, seven figures a year. Families start sharing offices to split the cost. For a century the function stays real and stays out of reach for almost everyone who could use it.</p>
-          </div>
-          <div class="abs-era">
-            <p class="abs-yr">Today</p>
-            <h4>It becomes a relationship, not a payroll</h4>
-            <p>Technology and a coordinated network of specialists now deliver the same function without the building and the staff. What once took dozens of people takes the right one relationship &mdash; someone who holds the whole picture and works alongside your accountant, your attorney and your other advisers rather than replacing them.</p>
-          </div>
-        </div>
-
-        <p class="abs-close">That is the relationship My&nbsp;360 was built to be. We have kept the original job description: plan and manage a family&rsquo;s entire financial life, together with the professionals they already trust &mdash; and make the decisions that come once in a lifetime a little less lonely.</p>
+      <div class="sh-step" data-step="1">
+        <p class="sh-count">Question 2 of 7</p>
+        <h2 class="sh-q">Do you own all or part of a business?</h2>
+        <p class="sh-help">Including a professional practice or a partnership interest.</p>
+        <div class="sh-opts" data-name="biz" data-multi="false"></div>
       </div>
 
-      <div class="about-cols reveal">
-        <div class="about-col is-wide">
-          <p class="ac-k">How we&rsquo;re built</p>
-          <div class="ab-points">
-            <div class="ab-pt">
-              <h4>Somebody holds the whole picture.</h4>
-              <p>Most families end up with a set of specialists who never speak to each other &mdash; an attorney here, a CPA there, a broker somewhere else. A Family CFO and the team around them sit in the middle of that group and keep the plan, the documents and the accounts pointing the same way, so nothing falls between the seats. It is a function, not a person: your family should never be dependent on any single individual, including us.</p>
-            </div>
-            <div class="ab-pt">
-              <h4>Nobody upstream decides what we recommend.</h4>
-              <p>We are independent. No parent company sets a product list, and no proprietary fund has to appear in your portfolio. Where a family needs a specialist we genuinely don&rsquo;t have &mdash; an M&amp;A attorney, a forensic CPA &mdash; we bring in a vetted one rather than stretch to cover it.</p>
-            </div>
-            <div class="ab-pt">
-              <h4>It is built to outlast any one person.</h4>
-              <p>Including us, and including you. Everything sits in one place your family can reach, with a written continuity protocol, so nobody is ever handed a shoebox of statements and told to start over.</p>
-            </div>
-          </div>
-        </div>
-        <div class="about-col">
-          <p class="ac-k">Behind us</p>
-          <div class="backing">
-            <div class="bk-tier">
-              <p class="bk-name">LPL Financial</p>
-              <p class="bk-role">The brokerage and custody platform. The nation&rsquo;s #1 ranked independent broker-dealer.</p>
-              <p class="bk-fig">$1.74T under management &middot; 28,888 advisors</p>
-            </div>
-            <div class="bk-tier">
-              <p class="bk-name">Global Retirement Partners</p>
-              <p class="bk-role">Our registered investment adviser, and one of the largest RIAs in the country.</p>
-              <p class="bk-fig">$145.2B+ under advisement &middot; 530+ advisors</p>
-            </div>
-            <div class="bk-tier is-us">
-              <p class="bk-name">My 360 Wealth Management Group</p>
-              <p class="bk-role">The team you actually work with, in Glendale.</p>
-            </div>
-          </div>
-        </div>
+      <div class="sh-step" data-step="2">
+        <p class="sh-count">Question 3 of 7</p>
+        <h2 class="sh-q">Does your company sponsor a retirement plan?</h2>
+        <p class="sh-help">A 401(k), 403(b), 457, SIMPLE or defined benefit plan.</p>
+        <div class="sh-opts" data-name="plan" data-multi="false"></div>
       </div>
 
-      <div class="about-stats reveal">
-        <div class="as-item"><p class="as-n">10,388+</p><p class="as-l">Retirement plans served</p></div>
-        <div class="as-item"><p class="as-n">2.01M+</p><p class="as-l">Plan participants</p></div>
-        <div class="as-item"><p class="as-n">$145.2B+</p><p class="as-l">Assets under advisement</p></div>
-        <div class="as-item"><p class="as-n">6</p><p class="as-l">Designations across the team</p></div>
+      <div class="sh-step" data-step="3">
+        <p class="sh-count">Question 4 of 7</p>
+        <h2 class="sh-q">Which of these are true right now?</h2>
+        <p class="sh-help">Choose as many as apply &mdash; this is where most gaps show up.</p>
+        <div class="sh-opts" data-name="gaps" data-multi="true"></div>
       </div>
-      <div class="about-foot reveal">
-        <p class="af-copy">Founded and led by <b>Pierre M. Movsessian, MBA, CFP<sup>&reg;</sup>, AIF<sup>&reg;</sup>, CEPA</b> from Glendale, California, with a team credentialed across financial planning, fiduciary investment management, retirement income and exit planning.</p>
-        <p class="af-copy" style="margin-top:12px;">As CERTIFIED FINANCIAL PLANNER&trade; professionals, Accredited Investment Fiduciaries<sup>&reg;</sup> and Investment Adviser Representatives, we are committed to high professional and ethical standards. When providing advisory services we are subject to fiduciary obligations, and focused on helping clients make informed financial decisions.</p>
-        <div class="af-creds">
-          <a href="https://www.cfp.net/why-get-certified/the-standard-of-excellence" target="_blank" rel="noopener">CFP&reg;</a>
-          <a href="https://www.fi360.com/what-we-do/learning-development/aif-training/aif-designation" target="_blank" rel="noopener">AIF&reg;</a>
-          <a href="https://exit-planning-institute.org/program/certified-exit-planning-advisor" target="_blank" rel="noopener">CEPA&reg;</a>
-          <a href="https://www.theamericancollege.edu/learn/professional-designations-certifications/ricp" target="_blank" rel="noopener">RICP&reg;</a>
-          <span class="cred-plain">CFC&reg;</span>
-          <span class="cred-plain">MBA</span>
-        </div>
-        <p class="af-src">My 360&deg; Wealth Management Group, Global Retirement Partners and LPL Financial do not provide tax or legal advice. Tax, legal, accounting and other professional services are offered by independent third parties and are separate from services offered through My 360&deg; Wealth Management Group, Global Retirement Partners and LPL Financial. Clients are under no obligation to use any referenced provider.</p>
-        <p class="af-src">Figures as reported by LPL Financial and Global Retirement Partners. &ldquo;#1 independent broker-dealer&rdquo; per <i>Financial Advisor</i> magazine&rsquo;s 2025 ranking of the Top 30 Independent Broker-Dealers, based on FY2024 data. Rankings are not indicative of future performance and do not reflect any one client&rsquo;s experience.</p>
+
+      <div class="sh-step" data-step="4">
+        <p class="sh-count">Question 5 of 7</p>
+        <h2 class="sh-q">If something happened to you tomorrow, could your family take over?</h2>
+        <p class="sh-help">Would they know what exists, where it is, and who to call?</p>
+        <div class="sh-opts" data-name="cont" data-multi="false"></div>
       </div>
-    </div>
-  </section>
+
+      <div class="sh-step" data-step="5">
+        <p class="sh-count">Question 6 of 7</p>
+        <h2 class="sh-q">What would you most like to be true a year from now?</h2>
+        <p class="sh-help">One answer. This shapes what we lead with.</p>
+        <div class="sh-opts" data-name="want" data-multi="false"></div>
+      </div>
+
+      <div class="sh-step" data-step="6">
+        <p class="sh-count">Question 7 of 7</p>
+        <h2 class="sh-q">When would you want to do something about it?</h2>
+        <p class="sh-help">There is no wrong answer &mdash; it just tells us how to follow up.</p>
+        <div class="sh-opts" data-name="when" data-multi="false"></div>
+      </div>
+
+      <div class="sh-nav">
+        <button type="button" class="sh-btn" id="shNext" disabled>Continue</button>
+        <button type="button" class="sh-back" id="shBack" hidden>Back</button>
+        <span class="sh-skip" id="shSkip"></span>
+      </div>
+    </form>
+
+    <div class="sh-res" id="shRes" tabindex="-1"></div>
+  </div>
+</section>
+
 </main>
 <div id="site-footer"></div>
+<script src="shared.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* Each option carries weights for the four services. Nothing here is advice —
+     it decides which of our four areas to lead with, and which gaps to name. */
+  var PW='pw', GB='gb', EP='ep', FO='fo';
+
+  var Q = {
+    where: [
+      ['Mostly in markets — brokerage, IRAs, a 401(k)', 'Investments, retirement accounts and maybe a home.', {pw:3}],
+      ['Mostly inside a business I own', 'The company is the larger part of the picture.', {ep:3, fo:1}],
+      ['Split between a business and investments', 'Both matter, and they are not coordinated.', {ep:2, pw:1, fo:1}],
+      ['Spread across a lot of moving parts', 'Entities, property, private holdings, several advisers.', {fo:3, pw:1}],
+      ['I recently sold or had a liquidity event', 'A large sum that now has to last.', {fo:3, ep:1, pw:1}]
+    ],
+    biz: [
+      ['No, I don’t own a business', '', {pw:1}],
+      ['Yes, and I expect to sell or transition within 5 years', '', {ep:4, fo:1}],
+      ['Yes, but a sale is further out or undecided', '', {ep:2, gb:1}],
+      ['Yes, and I plan to pass it to family or management', '', {ep:3, fo:2}],
+      ['I sold one already', '', {fo:3, pw:1}]
+    ],
+    plan: [
+      ['Yes, and I am responsible for it', 'Owner, trustee or committee member.', {gb:4}],
+      ['Yes, but someone else handles it', '', {gb:2}],
+      ['No, but we have employees and have thought about it', '', {gb:3}],
+      ['No — not applicable', '', {}]
+    ],
+    gaps: [
+      ['My advisers don’t talk to each other', 'Attorney, CPA, insurance and investments run separately.', {fo:3}],
+      ['I don’t know what my business is actually worth', '', {ep:3}],
+      ['My estate documents are more than five years old', 'Or I am not certain the titling matches them.', {pw:2, fo:2}],
+      ['I have a large position in one stock', '', {pw:3}],
+      ['I don’t have a clear picture of everything in one place', '', {fo:3, pw:1}],
+      ['I am not sure my retirement income actually lasts', '', {pw:3}],
+      ['Our plan hasn’t been benchmarked in years', 'Fees, funds or recordkeeper.', {gb:3}],
+      ['My employees get no real financial help', '', {gb:3}],
+      ['None of these', '', {}]
+    ],
+    cont: [
+      ['Yes — it is documented and they know', '', {}],
+      ['Partly — they would find most of it eventually', '', {fo:2, pw:1}],
+      ['Honestly, no', 'It is largely in my head.', {fo:4}]
+    ],
+    want: [
+      ['A plan I trust, and less to think about', '', {pw:2}],
+      ['To know what my business is worth and how to exit well', '', {ep:3}],
+      ['One person coordinating everything', '', {fo:3}],
+      ['A retirement plan that works for my people and for me', '', {gb:3}],
+      ['To know my family is protected if I’m not here', '', {fo:3, pw:1}]
+    ],
+    when: [
+      ['Now — something has changed', 'A sale, a job change, an inheritance, a family event.', {}],
+      ['In the next few months', '', {}],
+      ['This year sometime', '', {}],
+      ['Just looking for now', '', {}]
+    ]
+  };
+
+  var SERVICE = {
+    pw: { name:'Private Wealth',
+          page:'services/private-wealth.html', bro:'brochure-private-wealth.html',
+          line:'Investment management and planning built around the decisions that actually change the outcome — tax, timing, protection and income.' },
+    gb: { name:'Group Benefits & Retirement Plans',
+          page:'services/group-benefits.html', bro:'brochure-employers.html',
+          line:'Fiduciary support and plan design for the company, an owner’s tool for you, and real one-on-one advice for every employee.' },
+    ep: { name:'Exit Planning',
+          page:'services/exit-planning.html', bro:'brochure-exit-planning.html',
+          line:'Valuation and readiness before a sale, one seat accountable to your family during it, and a plan for the proceeds afterward.' },
+    fo: { name:'Family Office & Family CFO',
+          page:'services/family-office.html', bro:'brochure-family-office.html',
+          line:'One person at the centre of every adviser you have, holding the whole balance sheet — and continuity so your family never starts over.' }
+  };
+
+  var GAPTEXT = {
+    'My advisers don’t talk to each other':'Nobody owns the whole picture, so decisions get made one piece at a time.',
+    'I don’t know what my business is actually worth':'Almost every exit decision depends on this number, and it is usually the last one owners get.',
+    'My estate documents are more than five years old':'Documents drift out of step with the accounts they are meant to govern.',
+    'I have a large position in one stock':'Concentration is the fastest way a good outcome becomes a bad one.',
+    'I don’t have a clear picture of everything in one place':'What cannot be seen in one view cannot really be planned.',
+    'I am not sure my retirement income actually lasts':'Sequence of withdrawals and claiming timing change this more than returns do.',
+    'Our plan hasn’t been benchmarked in years':'Plan fees and fund menus drift, and the fiduciary duty to check them does not pause.',
+    'My employees get no real financial help':'Enrollment is not advice, and participants notice the difference.'
+  };
+
+  var form=document.getElementById('shForm'), res=document.getElementById('shRes'),
+      bar=document.getElementById('shBar'), next=document.getElementById('shNext'),
+      back=document.getElementById('shBack'), skip=document.getElementById('shSkip'),
+      steps=[].slice.call(document.querySelectorAll('.sh-step'));
+  var cur=0, answers={};
+
+  var CHECK='<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fffaf0" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+
+  steps.forEach(function (st) {
+    var wrap=st.querySelector('.sh-opts'), name=wrap.dataset.name, multi=wrap.dataset.multi==='true';
+    Q[name].forEach(function (o, i) {
+      var b=document.createElement('button');
+      b.type='button'; b.className='sh-opt'; b.dataset.i=i;
+      b.setAttribute('aria-pressed','false');
+      b.innerHTML='<span class="sh-box">'+CHECK+'</span><span class="sh-txt"><strong>'+o[0]+'</strong>'+
+                  (o[1]?'<span>'+o[1]+'</span>':'')+'</span>';
+      b.addEventListener('click', function () {
+        if (multi) {
+          b.classList.toggle('sel');
+        } else {
+          wrap.querySelectorAll('.sh-opt').forEach(function (x) { x.classList.remove('sel'); x.setAttribute('aria-pressed','false'); });
+          b.classList.add('sel');
+        }
+        b.setAttribute('aria-pressed', b.classList.contains('sel') ? 'true' : 'false');
+        answers[name]=[].slice.call(wrap.querySelectorAll('.sh-opt.sel')).map(function (x) { return +x.dataset.i; });
+        sync();
+      });
+      wrap.appendChild(b);
+    });
+  });
+
+  function sync() {
+    var name=steps[cur].querySelector('.sh-opts').dataset.name;
+    var multi=steps[cur].querySelector('.sh-opts').dataset.multi==='true';
+    var picked=(answers[name]||[]).length;
+    next.disabled = !multi && picked===0;
+    next.textContent = cur===steps.length-1 ? 'See my result' : 'Continue';
+    back.hidden = cur===0;
+    skip.textContent = multi ? 'Choose any that apply, or none' : '';
+    bar.style.width = Math.round((cur/steps.length)*100)+'%';
+    bar.parentElement.setAttribute('aria-valuenow', Math.round((cur/steps.length)*100));
+  }
+
+  function show(i) {
+    steps[cur].classList.remove('on');
+    cur=i;
+    steps[cur].classList.add('on');
+    sync();
+    steps[cur].scrollIntoView({block:'start', behavior:'smooth'});
+  }
+
+  next.addEventListener('click', function () {
+    if (cur < steps.length-1) { show(cur+1); return; }
+    finish();
+  });
+  back.addEventListener('click', function () { if (cur>0) show(cur-1); });
+
+  function finish() {
+    var score={pw:0,gb:0,ep:0,fo:0}, gaps=[];
+    Object.keys(answers).forEach(function (name) {
+      (answers[name]||[]).forEach(function (i) {
+        var opt=Q[name][i];
+        Object.keys(opt[2]).forEach(function (k) { score[k]+=opt[2][k]; });
+        if (name==='gaps' && GAPTEXT[opt[0]]) gaps.push([opt[0], GAPTEXT[opt[0]]]);
+      });
+    });
+    var ranked=Object.keys(score).sort(function (a,b) { return score[b]-score[a]; })
+                     .filter(function (k) { return score[k]>0; });
+    if (!ranked.length) ranked=['pw'];
+
+    var top=SERVICE[ranked[0]], second=ranked[1]?SERVICE[ranked[1]]:null;
+    var html='<p class="sh-lead-in">Your result</p>';
+    html+='<h2>Start with '+top.name+'.</h2>';
+    html+='<p class="why">'+top.line+'</p>';
+
+    if (gaps.length) {
+      html+='<div class="sh-gaps"><h4>What you told us is most likely being missed</h4><ul>';
+      gaps.forEach(function (g) { html+='<li><strong>'+g[0]+'</strong> &mdash; '+g[1]+'</li>'; });
+      html+='</ul></div>';
+    }
+
+    html+='<div class="sh-card"><p class="rank">Where to start</p><h3>'+top.name+'</h3><p>'+top.line+'</p>'+
+          '<a href="'+top.page+'">Read the full page &rarr;</a><a href="'+top.bro+'">See the brochure &rarr;</a></div>';
+    if (second) {
+      html+='<div class="sh-card"><p class="rank">Also relevant</p><h3>'+second.name+'</h3><p>'+second.line+'</p>'+
+            '<a href="'+second.page+'">Read the full page &rarr;</a><a href="'+second.bro+'">See the brochure &rarr;</a></div>';
+    }
+
+    function plain(x){var d=document.createElement('div');d.innerHTML=x;return (d.textContent||'').trim();}
+    var L=['My 360 \u2014 Start Here questionnaire','','RESULT: Start with '+plain(top.name)];
+    if (second) L.push('Also relevant: '+plain(second.name));
+    L.push('','MY ANSWERS');
+    var QORDER=['where','biz','plan','gaps','cont','want','when'];
+    var QTEXT={where:'Where my wealth sits today',biz:'Do I own a business',
+               plan:'Company retirement plan',gaps:'What is true right now',
+               cont:'Could my family take over',want:'What I want a year from now',when:'When I want to act'};
+    QORDER.forEach(function(name,i){
+      var picked=(answers[name]||[]).map(function(ix){return plain(Q[name][ix][0]);});
+      L.push((i+1)+'. '+QTEXT[name]);
+      L.push(picked.length?'   '+picked.join('\n   '):'   (not answered)');
+    });
+    if (gaps.length){ L.push('','WHAT STOOD OUT'); gaps.forEach(function(g){ L.push(' - '+plain(g[0])); }); }
+    L.push('','Please contact me:','Name:','Best number:','Best time to reach me:','');
+    var body=L.join('\n');
+
+    html+='<div class="sh-cta"><h4>The next step is a conversation, not a commitment.</h4>'+
+          '<p>Bring your result. A short call tells you whether these gaps are worth acting on now or later &mdash; and if the answer is later, we will say so.</p>'+
+          '<a class="btn-gold" href="mailto:service@my360wealth.com?subject='+
+          encodeURIComponent('Start Here result \u2014 '+plain(top.name))+
+          '&body='+encodeURIComponent(body)+
+          '">Send this and book a call</a>'+
+          '<a class="alt" href="tel:8185474720">or call 818.547.4720</a></div>';
+
+    html+='<button type="button" class="sh-restart" id="shAgain">Start over</button>';
+    html+='<p class="sh-priv">Your answers stay in this browser. Nothing is transmitted to My 360 Wealth unless you choose to send it. '+
+          'This is a general educational tool, not personalised investment, tax or legal advice, and it does not consider your full circumstances.</p>';
+
+    form.style.display='none';
+    bar.style.width='100%';
+    res.innerHTML=html;
+    res.classList.add('on');
+    res.focus();
+    res.scrollIntoView({block:'start', behavior:'smooth'});
+    document.getElementById('shAgain').addEventListener('click', function () {
+      res.classList.remove('on'); res.innerHTML='';
+      form.style.display=''; answers={};
+      document.querySelectorAll('.sh-opt.sel').forEach(function (x) { x.classList.remove('sel'); x.setAttribute('aria-pressed','false'); });
+      show(0);
+    });
+  }
+
+  sync();
+})();
+</script>
 </body>
 </html>

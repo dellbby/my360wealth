@@ -1,6 +1,19 @@
 /* shared.js — site-wide header (nav) + footer.
    Injected on every page. Edit this file to change the nav or footer everywhere. */
 (function () {
+  /* Where this script was loaded from ('' at the site root, '../' inside /services).
+     Used only when the pages are opened directly off a disk, where a leading "/"
+     would resolve to the root of the filesystem instead of the root of the site. */
+  var BASE = (function () {
+    var el = document.currentScript;
+    if (!el) {
+      var all = document.getElementsByTagName('script');
+      el = all[all.length - 1];
+    }
+    var src = (el && el.getAttribute('src')) || '';
+    return src.replace(/shared\.js$/, '');
+  })();
+
   var NAV_HTML = `<div class="topbar" style="position:fixed;top:0;left:0;right:0;z-index:52;background:#0a0907;border-bottom:1px solid rgba(255,255,255,0.05);">
   <div class="container topbar-inner">
     <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener" class="bc-badge" aria-label="FINRA BrokerCheck"><img src="https://static.fmgsuite.com/site/templates/global/img/brokerCheck-bar-logo.png" alt="BrokerCheck by FINRA" /></a>
@@ -13,13 +26,23 @@
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="/index.html" class="logo">
-      <img src="/images/logo_white_transparent.webp" alt="My 360 Wealth Management Group" class="logo-img" />
+      <img src="/assets/logo.png" alt="My 360 Wealth Management Group" class="logo-img" />
     </a>
     <nav class="nav-links">      <div class="nav-item has-dropdown">
         <a href="/services.html" class="nav-trigger">Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
-        <div class="dropdown">
+        <div class="dropdown dropdown-3">
+          <div class="dropdown-col">
+            <span class="dropdown-head">What We Do</span>
+            <a href="/index.html#private-wealth">Private Wealth</a>
+            <a href="/index.html#group-benefits">Group Benefits &amp; Retirement Plans</a>
+            <a href="/index.html#exit-planning">Exit Planning &mdash; Business Owners</a>
+            <a href="/index.html#family-office">Family Office &amp; Family CFO</a>
+          </div>
           <div class="dropdown-col">
             <span class="dropdown-head">Personal &amp; Family</span>
+            <a href="/services/private-wealth.html">Private Wealth Management</a>
+            <a href="/services/family-office.html">Family Office &amp; Family CFO</a>
+            <a href="/start-here.html">Start Here &mdash; find your gaps</a>
             <a href="/services/wealth-retirement-planning.html">Wealth &amp; Retirement Planning</a>
             <a href="/services/portfolio-management.html">Portfolio Management</a>
             <a href="/services/trust-estate-planning.html">Trust &amp; Estate Planning</a>
@@ -29,6 +52,8 @@
           </div>
           <div class="dropdown-col">
             <span class="dropdown-head">Business &amp; Employers</span>
+            <a href="/services/group-benefits.html">Group Benefits &amp; Retirement Plans</a>
+            <a href="/services/exit-planning.html">Exit Planning for Owners</a>
             <a href="/services/401k-qualified-plans.html">401(k) &amp; Qualified Plans</a>
             <a href="/services/deferred-compensation.html">Deferred Compensation</a>
             <a href="/services/insurance-services.html">Insurance Services</a>
@@ -36,7 +61,7 @@
             <a href="/services/tax-planning.html">Tax Planning</a>
             <a href="/services/employee-education.html">Employee Education</a>
           </div>
-          <a href="/services.html" class="dropdown-foot">View All Services <span aria-hidden="true">›</span></a>
+          <a href="/services.html" class="dropdown-foot">View all services <span aria-hidden="true">›</span></a>
         </div>
       </div>
       <div class="nav-item has-dropdown">
@@ -49,6 +74,7 @@
           </div>
         </div>
       </div>
+      <a href="/start-here.html">Start Here</a>
       <a href="/index.html#milestones">Life Milestones</a>
       <div class="nav-item has-dropdown">
         <a href="/resource-center/index.html" class="nav-trigger">Resource Center <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
@@ -76,13 +102,18 @@
 <div class="menu-overlay" id="menu" aria-hidden="true">
   <div class="menu-top">
     <a href="/index.html" class="logo" data-close>
-      <img src="/images/logo_white_transparent.webp" alt="My 360 Wealth Management Group" class="logo-img" />
+      <img src="/assets/logo.png" alt="My 360 Wealth Management Group" class="logo-img" />
     </a>
     <button class="icon-btn" id="menuClose" aria-label="Close menu">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
   </div>
   <nav class="menu-links">    <a href="/services.html" data-close>Services</a>
+    <a href="/index.html#private-wealth" data-close>Private Wealth</a>
+    <a href="/index.html#group-benefits" data-close>Group Benefits &amp; 401(k)</a>
+    <a href="/index.html#exit-planning" data-close>Exit Planning</a>
+    <a href="/index.html#family-office" data-close>Family Office</a>
+    <a href="/start-here.html" data-close>Start Here</a>
     <a href="/process.html" data-close>Our Process</a>
     <a href="/index.html#milestones" data-close>Life Milestones</a>
     <a href="/resource-center/index.html" data-close>Resource Center</a>
@@ -122,32 +153,32 @@
     </div>
     <div class="portal-panel active" id="portalPanel-client" role="tabpanel">
       <div class="portal-grid">
-        <a class="portal-link portal-wide" href="https://wealth.emaplan.com/ema/SignIn?ema" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/emoney.webp" alt="eMoney" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link portal-wide" href="https://login.orionadvisor.com/login.html?g=1527f71a-5067-4021-b194-35e4d88f2acd" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/black_diamond.webp" alt="Black Diamond" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link" href="https://client.schwab.com/Login/SignOn/CustomerCenterLogin.aspx" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/charles.webp" alt="Charles Schwab" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link" href="https://www.fidelity.com/PASclient" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/fidelity.webp" alt="Fidelity" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link" href="https://accountview.lpl.com/web/login" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/lplfinancial.webp" alt="LPL Financial" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link portal-wide" href="https://wealth.emaplan.com/ema/SignIn?ema" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/emoney.png" alt="eMoney" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link portal-wide" href="https://login.orionadvisor.com/login.html?g=1527f71a-5067-4021-b194-35e4d88f2acd" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/black_diamond.png" alt="Black Diamond" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link" href="https://client.schwab.com/Login/SignOn/CustomerCenterLogin.aspx" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/charles.png" alt="Charles Schwab" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link" href="https://www.fidelity.com/PASclient" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/fidelity.png" alt="Fidelity" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link" href="https://accountview.lpl.com/web/login" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/lplfinancial.png" alt="LPL Financial" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
       </div>
       <p class="portal-note" style="font-size: 11px; line-height: 1.6;"><strong>PLEASE NOTE:</strong> The information being provided is strictly as a courtesy. When you link to any of the websites provided here, you are leaving this website. We make no representation as to the completeness or accuracy of information provided at these websites. Nor is the company liable for any direct or indirect technical or system issues or any consequences arising out of your access to or your use of third-party technologies, websites, information and programs made available through this website. When you access one of these websites, you are leaving our website and assume total responsibility and risk for your use of the websites you are linking to.</p>
     </div>
     <div class="portal-panel" id="portalPanel-k401" role="tabpanel">
       <div class="portal-grid">
-        <a class="portal-link portal-wide" href="https://www.mykplan.com/" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/adp.webp" alt="ADP" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link portal-wide" href="https://www.americanfunds.com/individual/accounts/login.htm" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/american_funds.webp" alt="American Funds" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link" href="https://myaccount.ascensus.com/rplink/account/login" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/ascensus.webp" alt="Ascensus" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link" href="https://www.jhancockpensions.com/do/home_page/homeRedirectionAction" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/john_hancock.webp" alt="John Hancock" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link" href="https://auth.lincolnfinancial.com/login?state=hKFo2SBrT1ZCZk9waDhHSk9SaElJWlhwQ0xfNFpjVkt4X1JXb6FupWxvZ2luo3RpZNkgYUYzdGZNb2ZvU1hsOVJOSU1ILXJOT3hmLTNTTjlweTijY2lk2SB0QnNlNmVoYmtWamI3VUZBR0xjbzUySElHYlBOZFRqWA&amp;client=tBse6ehbkVjb7UFAGLco52HIGbPNdTjX&amp;protocol=oauth2&amp;response_type=code&amp;scope=openid%20profile&amp;redirect_uri=https%3A%2F%2Fwww.lincolnfinancial.com%2Fsecure%2Flogin%2Fcallback&amp;nonce=2Z2uZqDpHPiQcfh08_SUjIMNCviqCdIFFAtI4qQQBoM&amp;code_challenge=w6OJ06FbLM1MiTSW3RAOXHlbopX8NO-6zajKRh9riwo&amp;code_challenge_method=S256" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/lincoln.webp" alt="Lincoln Financial" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link" href="https://www.massmutual.com/login-list" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/mass_mutual.webp" alt="Mass Mutual" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link" href="https://login.nationwide.com/access/web/login.htm?logintType=retirementPlans" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/nationwide.webp" alt="Nationwide" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link" href="https://myapps.paychex.com/landing_remote/login.do?lang=en" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/paychex.webp" alt="Paychex" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link" href="https://participant.empower-retirement.com/participant/#/login" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/pentegra.webp" alt="Pentegra" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link" href="https://secure.transamerica.com/login/sign-in/login.html?TAM_OP=login&amp;_ga=2.84273369.1522537505.1540496111-1996331011.1540496111" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/transamerica.webp" alt="Transamerica" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link" href="https://login.vanguard.com/login?state=hKFo2SAxV3JiUzZxZFBTZTBJQWN5ekhiXy14a3ZzaTVyTWFxRqFupWxvZ2luo3RpZNkgbWhNQ3RHM0VOeE9icXZ4V2JpMXpmUVNjeUY3QlBQTGGjY2lk2SBzeER2N3M3MGJPTkc0V2p3MGtXVVNrTE50cFduTkV0Mg&amp;client=sxDv7s70bONG4Wjw0kWUSkLNtpWnNEt2&amp;protocol=oauth2&amp;nonce=_lxG_DZoKkzj0PnUxlAKp1-v&amp;response_mode=query&amp;redirect_uri=https:%2F%2Fpersonal1.vanguard.com%2Fusa%2Flogin&amp;connection=crems&amp;code_challenge_method=S256&amp;code_challenge=3QtGgEXQ-jt841UTXoJcWHDZYSnET86Y7Spnqt-IJRg&amp;response_type=code&amp;audience=https:%2F%2Fretail.vanguard.com&amp;site=pi&amp;scope=openid%20offline_access" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/vangaurd.webp" alt="Vanguard" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link portal-placeholder" href="https://login.voya.com/voyassoui/index.html#/login-pweb" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/voya.webp" alt="Voya" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link portal-placeholder" href="https://accounts.principal.com/app/bookmark/0oadm2qe1orihoKba5d7/login" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/principal.webp" alt="Principal" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link portal-placeholder" href="https://secure.newportgroup.com/login/participant.aspx" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/newport_group.webp" alt="Newport Group" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link portal-placeholder" href="https://login.standard.com/" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/standard.webp" alt="The Standard" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
-        <a class="portal-link portal-placeholder" href="https://my.guideline.com" target="_blank" rel="noopener"><img class="portal-logo" src="/images/logos/gusto_guideline.webp" alt="Gusto by Guideline" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link portal-wide" href="https://www.mykplan.com/" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/adp.png" alt="ADP" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link portal-wide" href="https://www.americanfunds.com/individual/accounts/login.htm" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/american_funds.png" alt="American Funds" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link" href="https://myaccount.ascensus.com/rplink/account/login" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/ascensus.png" alt="Ascensus" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link" href="https://www.jhancockpensions.com/do/home_page/homeRedirectionAction" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/john_hancock.png" alt="John Hancock" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link" href="https://auth.lincolnfinancial.com/login?state=hKFo2SBrT1ZCZk9waDhHSk9SaElJWlhwQ0xfNFpjVkt4X1JXb6FupWxvZ2luo3RpZNkgYUYzdGZNb2ZvU1hsOVJOSU1ILXJOT3hmLTNTTjlweTijY2lk2SB0QnNlNmVoYmtWamI3VUZBR0xjbzUySElHYlBOZFRqWA&amp;client=tBse6ehbkVjb7UFAGLco52HIGbPNdTjX&amp;protocol=oauth2&amp;response_type=code&amp;scope=openid%20profile&amp;redirect_uri=https%3A%2F%2Fwww.lincolnfinancial.com%2Fsecure%2Flogin%2Fcallback&amp;nonce=2Z2uZqDpHPiQcfh08_SUjIMNCviqCdIFFAtI4qQQBoM&amp;code_challenge=w6OJ06FbLM1MiTSW3RAOXHlbopX8NO-6zajKRh9riwo&amp;code_challenge_method=S256" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/lincoln.png" alt="Lincoln Financial" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link" href="https://www.massmutual.com/login-list" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/mass_mutual.png" alt="Mass Mutual" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link" href="https://login.nationwide.com/access/web/login.htm?logintType=retirementPlans" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/nationwide.png" alt="Nationwide" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link" href="https://myapps.paychex.com/landing_remote/login.do?lang=en" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/paychex.png" alt="Paychex" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link" href="https://participant.empower-retirement.com/participant/#/login" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/pentegra.png" alt="Pentegra" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link" href="https://secure.transamerica.com/login/sign-in/login.html?TAM_OP=login&amp;_ga=2.84273369.1522537505.1540496111-1996331011.1540496111" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/transamerica.png" alt="Transamerica" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link" href="https://login.vanguard.com/login?state=hKFo2SAxV3JiUzZxZFBTZTBJQWN5ekhiXy14a3ZzaTVyTWFxRqFupWxvZ2luo3RpZNkgbWhNQ3RHM0VOeE9icXZ4V2JpMXpmUVNjeUY3QlBQTGGjY2lk2SBzeER2N3M3MGJPTkc0V2p3MGtXVVNrTE50cFduTkV0Mg&amp;client=sxDv7s70bONG4Wjw0kWUSkLNtpWnNEt2&amp;protocol=oauth2&amp;nonce=_lxG_DZoKkzj0PnUxlAKp1-v&amp;response_mode=query&amp;redirect_uri=https:%2F%2Fpersonal1.vanguard.com%2Fusa%2Flogin&amp;connection=crems&amp;code_challenge_method=S256&amp;code_challenge=3QtGgEXQ-jt841UTXoJcWHDZYSnET86Y7Spnqt-IJRg&amp;response_type=code&amp;audience=https:%2F%2Fretail.vanguard.com&amp;site=pi&amp;scope=openid%20offline_access" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/vangaurd.png" alt="Vanguard" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link portal-placeholder" href="https://login.voya.com/voyassoui/index.html#/login-pweb" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/voya.png" alt="Voya" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link portal-placeholder" href="https://accounts.principal.com/app/bookmark/0oadm2qe1orihoKba5d7/login" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/principal.png" alt="Principal" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link portal-placeholder" href="https://secure.newportgroup.com/login/participant.aspx" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/newport_group.png" alt="Newport Group" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link portal-placeholder" href="https://login.standard.com/" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/standard.png" alt="The Standard" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
+        <a class="portal-link portal-placeholder" href="https://my.guideline.com" target="_blank" rel="noopener"><img class="portal-logo" src="/assets/logos/gusto_guideline.png" alt="Gusto by Guideline" /><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg></a>
       </div>
       <p class="portal-note" style="font-size: 11px; line-height: 1.6;"><strong>PLEASE NOTE:</strong> The information being provided is strictly as a courtesy. When you link to any of the websites provided here, you are leaving this website. We make no representation as to the completeness or accuracy of information provided at these websites. Nor is the company liable for any direct or indirect technical or system issues or any consequences arising out of your access to or your use of third-party technologies, websites, information and programs made available through this website. When you access one of these websites, you are leaving our website and assume total responsibility and risk for your use of the websites you are linking to.</p>
     </div>
@@ -181,6 +212,10 @@
   .nav-item:hover .dropdown, .nav-item:focus-within .dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); transition: opacity 0.25s, transform 0.25s; }
   /* Invisible bridge so the dropdown doesn't close when crossing the gap */
   .nav-item .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 12px; }
+  /* Three-column Services dropdown (practices + the two detail lists) */
+  .dropdown.dropdown-3 { grid-template-columns: repeat(3, 1fr); min-width: 0; width: min(840px, calc(100vw - 40px)); gap: 24px; }
+  .dropdown.dropdown-3 .dropdown-col:first-child a { color: #f3eee2; }
+  .dropdown.dropdown-3 .dropdown-col:first-child a:hover { color: var(--gold); }
   .dropdown-col { display: flex; flex-direction: column; gap: 8px; }
   .dropdown-head { font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); padding-bottom: 6px; border-bottom: 1px solid rgba(201,169,116,0.25); margin-bottom: 4px; }
   .dropdown a { color: rgba(243,238,226,0.85); font-size: 13px; letter-spacing: 0; text-transform: none; padding: 4px 0; transition: color 0.2s; }
@@ -211,9 +246,11 @@
 
   /* Logo image */
   .logo { flex-shrink: 0; max-width: 45%; }
-  .logo-img { height: 48px; width: auto; max-width: 100%; display: block; object-fit: contain; }
-  @media (min-width: 768px) { .logo-img { height: 56px; } }
-  @media (min-width: 1100px) { .logo-img { height: 64px; } }
+  .logo-img { height: 62px; width: auto; max-width: 100%; display: block; object-fit: contain;
+              transition: height 0.35s cubic-bezier(0.22,1,0.36,1); }
+  .nav.scrolled .logo-img { height: 42px; }
+  @media (min-width: 768px) { .logo-img { height: 76px; } .nav.scrolled .logo-img { height: 46px; } }
+  @media (min-width: 1100px) { .logo-img { height: 88px; } .nav.scrolled .logo-img { height: 50px; } }
 
   /* Compliance bar (FINRA BrokerCheck) — static, scrolls with the page */
   .compliance-bar { position: relative; z-index: 52; background: #0a0907; border-bottom: 1px solid rgba(255,255,255,0.05); padding: 7px 0; text-align: center; font-size: 12px; color: #d9d3c4; line-height: 1.4; }
@@ -237,9 +274,27 @@
   .portal-link:hover { border-color: rgba(201,169,116,0.5); background: rgba(201,169,116,0.05); color: #c9a974; }
   .portal-link svg { color: rgba(243,238,226,0.5); transition: color 0.2s; }
   .portal-link:hover svg { color: #c9a974; }
-  .portal-logo { height: 76px; width: auto; max-width: 200px; object-fit: contain; display: block; }
+  /* fixed box + contain: each trimmed wordmark fills the box on its longer axis */
+  .portal-logo { width: 200px; height: 76px; object-fit: contain; object-position: left center; display: block; }
   .portal-logo-text { height: 76px; display: flex; align-items: center; font-size: 17px; letter-spacing: 0.02em; color: #f3eee2; }
+  /* Client Login: the two primary platforms lead, the custodians sit under them */
+  #portalPanel-client .portal-link.portal-wide { padding: 26px 28px; }
+  #portalPanel-client .portal-link.portal-wide .portal-logo { width: 270px; height: 104px; }
+  #portalPanel-client .portal-link.portal-wide .portal-logo-text { height: 104px; font-size: 21px; }
+  #portalPanel-client .portal-link:not(.portal-wide) { padding: 13px 16px; }
+  #portalPanel-client .portal-link:not(.portal-wide) .portal-logo { width: 155px; height: 60px; }
+  #portalPanel-client .portal-link:not(.portal-wide) .portal-logo-text { height: 60px; font-size: 14px; }
   .portal-link:hover .portal-logo-text { color: #c9a974; }
+
+  /* Legibility floor for the injected header and footer */
+  .topbar-portals, .btn-gold.topbar-cta { font-size: 13px; }
+  .nav-links a { font-size: 14px; }
+  .dropdown-col a { font-size: 15px; }
+  .dropdown-head { font-size: 12px; }
+  .footer-links a, .footer-brand p, .footer-contact p, .footer-contact a { font-size: 15px; }
+  .footer-head { font-size: 12px; }
+  .footer-bottom, .footer-disc { font-size: 13px; line-height: 1.65; }
+  .portal-link .portal-logo-text { font-size: 15px; }
   .portal-note { color: rgba(243,238,226,0.55); font-size: 12px; line-height: 1.6; margin: 24px 0 0; }
 
   /* Services dropdown — View All footer */
@@ -271,7 +326,10 @@
 (function() {
   const nav = document.getElementById('nav');
   if (nav) {
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 50);
+    // Pages without a dark hero have nothing for a transparent bar to sit on,
+    // so the nav keeps its solid background from the top.
+    const needsSolid = !document.querySelector('.hero');
+    const onScroll = () => nav.classList.toggle('scrolled', needsSolid || window.scrollY > 50);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
@@ -286,6 +344,9 @@
   function openPortals() { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
   function closePortals() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
   const portalsBtn = document.getElementById('portalsBtnTop') || document.getElementById('portalsBtn');
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.footer-portals')) { e.preventDefault(); openPortals(); }
+  });
   const portalsBtnAlt = document.getElementById('portalsBtn');
   [portalsBtn, portalsBtnAlt].forEach(b => { if (b) b.addEventListener('click', (e) => { e.preventDefault(); openPortals(); }); });
   const portalsBtnMobile = document.getElementById('portalsBtnMobile');
@@ -318,7 +379,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/images/logo_white_transparent.webp" alt="My 360 Wealth Management Group" style="height:120px;width:auto;display:block;" />
+        <img src="/assets/logo.png" alt="My 360 Wealth Management Group" style="height:120px;width:auto;display:block;" />
         <p>Holistic financial life management. Helping you live your one best life through education and trusted advice.</p>
         <div class="socials">
           <a href="https://www.linkedin.com/in/pierremovsessian" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -330,25 +391,38 @@
         </div>
       </div>
       <div>
-        <h4>Navigation</h4>
+        <h4>What We Do</h4>
+        <div class="footer-links">
+          <a href="/index.html#private-wealth">Private Wealth</a>
+          <a href="/index.html#group-benefits">Group Benefits &amp; 401(k)</a>
+          <a href="/index.html#exit-planning">Exit Planning</a>
+          <a href="/index.html#family-office">Family Office &amp; Family CFO</a>
+        </div>
+        <h4 style="margin-top:24px;">Navigation</h4>
         <div class="footer-links">
           <a href="/about.html">About</a>
-          <a href="/services.html">Services</a>
+          <a href="/services.html">All Services</a>
           <a href="/process.html">Our Process</a>
           <a href="/index.html#milestones">Life Milestones</a>
           <a href="/resource-center/index.html">Resource Center</a>
           <a href="/contact.html">Contact</a>
+          <a href="#" class="footer-portals">Client Login</a>
         </div>
       </div>
       <div>
-        <h4>Services</h4>
+        <h4>Services In Detail</h4>
         <div class="footer-links">
-          <a href="/services/wealth-retirement-planning.html">Wealth &amp; Retirement</a>
+          <a href="/services/private-wealth.html">Private Wealth Management</a>
+          <a href="/services/group-benefits.html">Group Benefits &amp; Retirement Plans</a>
+          <a href="/services/exit-planning.html">Exit Planning for Owners</a>
+          <a href="/services/family-office.html">Family Office &amp; Family CFO</a>
+          <a href="/start-here.html">Start Here &mdash; find your gaps</a>
+          <a href="/services/wealth-retirement-planning.html">Wealth &amp; Retirement Planning</a>
           <a href="/services/portfolio-management.html">Portfolio Management</a>
-          <a href="/services/trust-estate-planning.html">Trust &amp; Estate</a>
+          <a href="/services/trust-estate-planning.html">Trust &amp; Estate Planning</a>
           <a href="/services/foundation-endowment.html">Foundation &amp; Endowment</a>
-          <a href="/services/concentrated-stock-strategies.html">Concentrated Stock</a>
-          <a href="/services/retirement-income.html">Retirement Income</a>
+          <a href="/services/concentrated-stock-strategies.html">Concentrated Stock Strategies</a>
+          <a href="/services/retirement-income.html">Retirement Income Planning</a>
           <a href="/services/401k-qualified-plans.html">401(k) &amp; Qualified Plans</a>
           <a href="/services/deferred-compensation.html">Deferred Compensation</a>
           <a href="/services/insurance-services.html">Insurance Services</a>
@@ -398,9 +472,42 @@
     });
   }
 
+  /* Opened from a disk rather than served over http: rewrite site-absolute
+     paths so the nav, footer and their images still resolve. No effect on the
+     deployed site, where a leading "/" is already correct. */
+  function localizePaths(scope) {
+    if (location.protocol !== 'file:') return;
+    scope.querySelectorAll('[href^="/"], [src^="/"]').forEach(function (el) {
+      ['href', 'src'].forEach(function (attr) {
+        var v = el.getAttribute(attr);
+        if (v && v.charAt(0) === '/' && v.charAt(1) !== '/') {
+          el.setAttribute(attr, BASE + v.slice(1));
+        }
+      });
+    });
+  }
+
+  // on a one-page site the mark should take you back to the top
+  function wireLogo() {
+    document.querySelectorAll('.logo').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var here = location.pathname.replace(/index\.html$/, '');
+        var target = (a.getAttribute('href') || '').replace(/index\.html$/, '');
+        // only swallow the click when we are already on the home page
+        if (target === here) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          history.replaceState(null, '', location.pathname);
+        }
+      });
+    });
+  }
+
   function init() {
     inject(document.getElementById('site-nav'), NAV_HTML);
     inject(document.getElementById('site-footer'), FOOTER_HTML);
+    localizePaths(document);
+    wireLogo();
     var y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
   }
