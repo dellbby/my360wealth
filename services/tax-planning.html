@@ -394,14 +394,14 @@
   .svc-hero .eyebrow { display: block; margin-bottom: 16px; }
   .svc-h1 { font-family: var(--font-heading); font-size: 40px; color: #2a221a; margin: 0 0 24px; letter-spacing: -0.01em; line-height: 1.1; }
   @media (min-width: 768px) { .svc-h1 { font-size: 56px; } }
-  .svc-lead { color: rgba(42,34,26,0.78); font-size: 18px; line-height: 1.75; max-width: 720px; margin: 0; }
+  .svc-lead { color: rgba(42,34,26,0.78); font-size: 18px; line-height: 1.75; max-width: none; margin: 0; }
   .svc-block { padding: 48px 0; }
   .svc-h2 { font-family: var(--font-heading); font-size: 28px; color: #2a221a; margin: 0 0 20px; }
   @media (min-width: 768px) { .svc-h2 { font-size: 34px; } }
-  .svc-ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; max-width: 760px; }
-  .svc-ul li { position: relative; padding-left: 22px; color: rgba(42,34,26,0.78); font-size: 16px; line-height: 1.65; }
+  .svc-ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; max-width: none; }
+  .svc-ul li { position: relative; padding-left: 26px; color: rgba(42,34,26,0.78); font-size: 17px; line-height: 1.65; }
   .svc-ul li::before { content: ''; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; background: #a07b32; border-radius: 50%; }
-  .faqs { display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+  .faqs { display: flex; flex-direction: column; gap: 12px; max-width: none; }
   .faq { background: #ffffff; border: 1px solid rgba(42,34,26,0.08); padding: 18px 22px; }
   .faq summary { font-family: var(--font-heading); font-size: 18px; color: #2a221a; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
   .faq summary::-webkit-details-marker { display: none; }
@@ -417,7 +417,10 @@
 
   /* === Style 4 — Gold Accent Bar hero (inner pages) === */
   .hb-bar { padding: 64px 0 !important; background: #fffaf0 !important; min-height: 0 !important; display: block !important; grid-template-columns: none !important; }
-  .hb-bar-inner { display: flex; gap: 28px; align-items: stretch; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+  .hb-bar-inner { display: flex; gap: 28px; align-items: stretch; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  /* one measure for the whole page: the bottom CTA block used the 1280px
+     .container while everything above it used the 1120px one. */
+  main > .section > .container { max-width: 1120px; }
   .hb-bar-rule { width: 3px; background: linear-gradient(to bottom, #a07b32, rgba(160,123,50,0.2)); flex-shrink: 0; border-radius: 1px; }
   .hb-bar-content { flex: 1; }
   .hb-bar-eyebrow { color: #a07b32; letter-spacing: 0.3em; text-transform: uppercase; font-size: 11px; margin: 0 0 10px; font-family: 'DM Sans', sans-serif; font-weight: 500; }
