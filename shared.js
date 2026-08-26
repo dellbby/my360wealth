@@ -30,7 +30,7 @@
     </a>
     <nav class="nav-links">      <a href="/start-here.html">Start Here</a>
       <div class="nav-item has-dropdown">
-        <a href="/services.html" class="nav-trigger">Practices <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <a href="/practices.html" class="nav-trigger">Practices <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
         <div class="dropdown dropdown-sm dropdown-practices">
           <div class="dropdown-col">
             <a href="/services/private-wealth.html">Private Wealth Management</a>
