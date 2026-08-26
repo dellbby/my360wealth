@@ -45,8 +45,6 @@
         <div class="dropdown dropdown-2">
           <div class="dropdown-col">
             <span class="dropdown-head">Personal &amp; Family</span>
-            <a href="/services/private-wealth.html">Private Wealth Management</a>
-            <a href="/services/family-office.html">Family Office &amp; Family CFO</a>
             <a href="/services/wealth-retirement-planning.html">Wealth &amp; Retirement Planning</a>
             <a href="/services/portfolio-management.html">Portfolio Management</a>
             <a href="/services/trust-estate-planning.html">Trust &amp; Estate Planning</a>
@@ -56,8 +54,6 @@
           </div>
           <div class="dropdown-col">
             <span class="dropdown-head">Business &amp; Employers</span>
-            <a href="/services/group-benefits.html">Group Benefits &amp; Retirement Plans</a>
-            <a href="/services/exit-planning.html">Exit Planning for Owners</a>
             <a href="/services/401k-qualified-plans.html">401(k) &amp; Qualified Plans</a>
             <a href="/services/deferred-compensation.html">Deferred Compensation</a>
             <a href="/services/insurance-services.html">Insurance Services</a>
@@ -83,7 +79,7 @@
         <div class="dropdown dropdown-sm">
           <div class="dropdown-col">
             <a href="/resource-center/index.html">Resource Center</a>
-            <a href="/resource-center/articles.html">All Articles</a>
+            <a href="/resource-center/articles.html">Articles</a>
             <a href="/resource-center/calculators/index.html">Calculators</a>
             <a href="/resource-center/glossary.html">Glossary</a>
           </div>
@@ -118,7 +114,7 @@
     <a href="/services/family-office.html" data-close>Family Office &amp; Family CFO</a>
     <a href="/process.html" data-close>Our Process</a>
     <a href="/resource-center/index.html" data-close>Resource Center</a>
-    <a href="/resource-center/articles.html" data-close>All Articles</a>
+    <a href="/resource-center/articles.html" data-close>Articles</a>
     <a href="/resource-center/calculators/index.html" data-close>Calculators</a>
     <a href="/resource-center/glossary.html" data-close>Glossary</a>
     <a href="#" id="portalsBtnMobile">Client Portals</a>
@@ -303,6 +299,12 @@
      22.5px line-height plus 5px padding plus 8px gap made the footer ~1300px tall. */
   .footer-links { gap: 1px; }
   .footer-links a { line-height: 1.35; padding: 3px 0; }
+  /* The logo had a fixed height:120px with width:auto, but a global
+     img{max-width:100%} squeezed the width as the column narrowed while the
+     height stayed put, so it stretched. Cap the height and let width follow. */
+  .footer-logo { height: auto; width: auto; max-height: 120px; max-width: 100%;
+                 object-fit: contain; display: block; }
+  .footer-hours { display: block; margin-top: 8px; opacity: .8; }
   /* The Services column carries 17 links. Run it in two sub-columns above
      640px so the footer isn't a single very long list. */
   @media (min-width: 640px) {
@@ -396,7 +398,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/assets/logo.png" alt="My 360 Wealth Management Group" style="height:120px;width:auto;display:block;" />
+        <img src="/assets/logo.png" alt="My 360 Wealth Management Group" class="footer-logo" />
         <p>Holistic financial life management. Helping you live your one best life through education and trusted advice.</p>
         <div class="socials">
           <a href="https://www.linkedin.com/in/pierremovsessian" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -408,17 +410,17 @@
         </div>
       </div>
       <div>
-        <h4>What We Do</h4>
+        <h4>Practices</h4>
         <div class="footer-links">
-          <a href="/index.html#private-wealth">Private Wealth</a>
-          <a href="/index.html#group-benefits">Group Benefits &amp; 401(k)</a>
-          <a href="/index.html#exit-planning">Exit Planning</a>
-          <a href="/index.html#family-office">Family Office &amp; Family CFO</a>
+          <a href="/services/private-wealth.html">Private Wealth Management</a>
+          <a href="/services/group-benefits.html">Group Benefits &amp; Retirement Plans</a>
+          <a href="/services/exit-planning.html">Exit Planning for Owners</a>
+          <a href="/services/family-office.html">Family Office &amp; Family CFO</a>
         </div>
-        <h4 style="margin-top:24px;">Navigation</h4>
+        <h4 style="margin-top:24px;">Explore</h4>
         <div class="footer-links">
           <a href="/about.html">About</a>
-          <a href="/services.html">All Services</a>
+          <a href="/services.html">Services</a>
           <a href="/process.html">Our Process</a>
           <a href="/index.html#milestones">Life Milestones</a>
           <a href="/resource-center/index.html">Resource Center</a>
@@ -427,13 +429,8 @@
         </div>
       </div>
       <div>
-        <h4>Services In Detail</h4>
+        <h4>Services</h4>
         <div class="footer-links footer-links-2col">
-          <a href="/services/private-wealth.html">Private Wealth Management</a>
-          <a href="/services/group-benefits.html">Group Benefits &amp; Retirement Plans</a>
-          <a href="/services/exit-planning.html">Exit Planning for Owners</a>
-          <a href="/services/family-office.html">Family Office &amp; Family CFO</a>
-          <a href="/start-here.html">Start Here &mdash; Find Your Gaps</a>
           <a href="/services/wealth-retirement-planning.html">Wealth &amp; Retirement Planning</a>
           <a href="/services/portfolio-management.html">Portfolio Management</a>
           <a href="/services/trust-estate-planning.html">Trust &amp; Estate Planning</a>
@@ -455,6 +452,7 @@
           <span>Glendale, CA 91203</span>
           <a href="tel:8185474720" style="margin-top:8px">(818) 547-4720</a>
           <span>Fax: (818) 301-4020</span>
+          <span class="footer-hours">Mon &mdash; Fri, 8:00 AM &mdash; 5:00 PM</span>
           <a href="mailto:service@my360wealth.com">service@my360wealth.com</a>
         </div>
       </div>
