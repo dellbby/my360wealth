@@ -30,6 +30,17 @@
     </a>
     <nav class="nav-links">      <a href="/start-here.html">Start Here</a>
       <div class="nav-item has-dropdown">
+        <a href="/services.html" class="nav-trigger">Practices <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <div class="dropdown dropdown-sm dropdown-practices">
+          <div class="dropdown-col">
+            <a href="/services/private-wealth.html">Private Wealth Management</a>
+            <a href="/services/group-benefits.html">Group Benefits &amp; Retirement Plans</a>
+            <a href="/services/exit-planning.html">Exit Planning for Owners</a>
+            <a href="/services/family-office.html">Family Office &amp; Family CFO</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-dropdown">
         <a href="/services.html" class="nav-trigger">Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
         <div class="dropdown dropdown-2">
           <div class="dropdown-col">
@@ -67,7 +78,6 @@
           </div>
         </div>
       </div>
-      <a href="/index.html#milestones">Life Milestones</a>
       <div class="nav-item has-dropdown">
         <a href="/resource-center/index.html" class="nav-trigger">Resource Center <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
         <div class="dropdown dropdown-sm">
@@ -102,12 +112,11 @@
   </div>
   <nav class="menu-links">    <a href="/start-here.html" data-close>Start Here</a>
     <a href="/services.html" data-close>Services</a>
-    <a href="/index.html#private-wealth" data-close>Private Wealth</a>
-    <a href="/index.html#group-benefits" data-close>Group Benefits &amp; 401(k)</a>
-    <a href="/index.html#exit-planning" data-close>Exit Planning</a>
-    <a href="/index.html#family-office" data-close>Family Office</a>
+    <a href="/services/private-wealth.html" data-close>Private Wealth Management</a>
+    <a href="/services/group-benefits.html" data-close>Group Benefits &amp; Retirement Plans</a>
+    <a href="/services/exit-planning.html" data-close>Exit Planning for Owners</a>
+    <a href="/services/family-office.html" data-close>Family Office &amp; Family CFO</a>
     <a href="/process.html" data-close>Our Process</a>
-    <a href="/index.html#milestones" data-close>Life Milestones</a>
     <a href="/resource-center/index.html" data-close>Resource Center</a>
     <a href="/resource-center/articles.html" data-close>All Articles</a>
     <a href="/resource-center/calculators/index.html" data-close>Calculators</a>
@@ -197,6 +206,8 @@
   .nav-item:hover .caret, .nav-item:focus-within .caret { transform: rotate(180deg); }
     /* Slim single-column dropdown variant */
   .dropdown.dropdown-sm { min-width: 220px; grid-template-columns: 1fr; padding: 10px 14px; gap: 0; }
+  .dropdown.dropdown-practices { min-width: 300px; padding: 14px 18px; }
+  .dropdown.dropdown-practices .dropdown-col a { padding: 7px 0; font-size: 13.5px; }
   .dropdown.dropdown-sm .dropdown-col { gap: 2px; }
   .dropdown.dropdown-sm .dropdown-col a { padding: 6px 0; font-size: 13px; }
 
