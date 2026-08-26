@@ -804,9 +804,11 @@
 
   html { scroll-padding-top: 150px; }
 
-  /* Reading measure: past ~75 characters a line is hard to track, and harder with age. */
+  /* Reading measure. Was 38em (~75 characters), which left the right half of the
+     page empty on desktop. Now fills the container, with the cap kept only on
+     narrow screens where it makes no difference. */
   .svc-ul, .svc-block > .container-narrow > .reveal > p,
-  .faqs .faq p, .abs-era p, .ab-pt p, .abs-lede, .abs-close { max-width: 38em; }
+  .faqs .faq p, .abs-era p, .ab-pt p, .abs-lede, .abs-close { max-width: none; }
 
   /* ---------------------------------------------------------------
      LEGIBILITY FLOOR
