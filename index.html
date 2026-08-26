@@ -325,39 +325,6 @@
   .section#services .group-head h3 { color: #a07b32; }
   .section#services .group-head .bar { background: #a07b32; }
 
-  /* ---- #all-services : the twelve service cards -------------------------
-     This section sits on the light band, but .card / .section-head were
-     styled for the dark homepage, so the headline rendered cream-on-cream
-     and the cards came out as black boxes. Light treatment, scoped here. */
-  .section#all-services { background: #f6efe3; padding: 88px 0 96px; }
-  .section#all-services .eyebrow { color: #7d5f22; }
-  .section#all-services .section-head h2 { color: #2a221a; }
-  .section#all-services .section-head .desc { color: rgba(42,34,26,0.68); }
-  .section#all-services .section-head { margin-bottom: 44px; }
-  .section#all-services .group-head h3 { color: #a07b32; }
-  .section#all-services .group-head .bar { background: #a07b32; }
-  .section#all-services .group + .group { margin-top: 44px; }
-  .section#all-services .card {
-    background: #fffaf0;
-    border: 1px solid rgba(42,34,26,0.10);
-    padding: 24px;
-    transition: border-color .35s, box-shadow .35s, transform .35s;
-  }
-  .section#all-services .card:hover {
-    background: #fffaf0;
-    border-color: rgba(160,123,50,0.42);
-    box-shadow: 0 6px 22px rgba(42,34,26,0.07);
-    transform: translateY(-2px);
-  }
-  .section#all-services .card .ico { color: #a07b32; }
-  .section#all-services .card h4 { color: #2a221a; }
-  .section#all-services .card p { color: rgba(42,34,26,0.70); }
-  .section#all-services .card .underline { background: #a07b32; }
-  .section#all-services .all-svc-cta { display: flex; justify-content: center; margin-top: 44px; }
-  @media (max-width: 640px) {
-    .section#all-services { padding: 64px 0 70px; }
-    .section#all-services .group + .group { margin-top: 34px; }
-  }
   .section#services .card { background: #ffffff; border-color: rgba(42,34,26,0.08); }
   .section#services .card:hover { background: #fffaf0; border-color: rgba(201,169,116,0.45); }
   .section#services .card .ico { color: #a07b32; }
@@ -1201,32 +1168,7 @@
   </section>
 
   <!-- Advice for Life -->
-    <!-- Services in detail (restored: the twelve service pages) -->
-  <section class="section" id="all-services">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">How We Serve You</span>
-        <h2>Our Services</h2>
-        <p class="desc">A comprehensive wealth management plan designed to navigate you throughout your financial life.</p>
-      </div>
-
-      <div class="group">
-        <div class="group-head reveal"><span class="bar"></span><h3>Personal &amp; Family</h3></div>
-        <div class="grid-3" id="services-personal"></div>
-      </div>
-
-      <div class="group">
-        <div class="group-head reveal"><span class="bar"></span><h3>Business &amp; Employers</h3></div>
-        <div class="grid-3" id="services-business"></div>
-      </div>
-
-      <div class="all-svc-cta reveal">
-        <a class="svc-btn is-ghost" href="/services.html">View All Services <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section process-section" id="process">
+    <section class="section process-section" id="process">
     <div class="process-bg"></div>
     <div class="process-overlay"></div>
     <div class="container">
@@ -1333,30 +1275,6 @@
     bars: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
     chev: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>'
   };
-
-  // Services
-  const personal = [
-    { ico: 'trendingUp', t: 'Wealth & Retirement Planning', d: 'Comprehensive strategies designed with the goal of growing and preserving your wealth throughout every stage of life.' },
-    { ico: 'briefcase', t: 'Portfolio Management', d: 'Custom-tailored investment portfolios using a core and satellite approach.' },
-    { ico: 'shield', t: 'Trust & Estate Planning', d: 'Strategies designed with the goal of protecting your legacy and help direct your assets according to your wishes.' },
-    { ico: 'landmark', t: 'Foundation & Endowment', d: 'Advisement for private foundations and endowments aligned with your philanthropic goals.' },
-    { ico: 'piggy', t: 'Concentrated Stock Strategies', d: 'Manage concentrated equity positions with tax-efficient diversification strategies.' },
-    { ico: 'wallet', t: 'Retirement Income Planning', d: 'Income distribution strategies, Social Security optimization, and sustainable withdrawal planning for retirement.' }
-  ];
-  const business = [
-    { ico: 'users', t: '401(k) & Qualified Plans', d: 'Full-service employer retirement plans tailored to your company size and culture.' },
-    { ico: 'dollar', t: 'Deferred Compensation', d: 'Deferred compensation and defined benefit plans for key employee retention.' },
-    { ico: 'handshake', t: 'Insurance Services', d: 'Comprehensive business and personal insurance strategies to protect what matters most.' },
-    { ico: 'building', t: 'Business Succession', d: 'Plan your exit strategy with the goal of a smooth transition for your business legacy.' },
-    { ico: 'file', t: 'Tax Planning', d: 'Integrated personal and business tax planning strategies that aim to minimize your tax burden.' },
-    { ico: 'grad', t: 'Employee Education', d: 'Financial wellness programs, enrollment seminars, and retirement readiness education for your workforce.' }
-  ];
-  const personalLinks = ['/services/wealth-retirement-planning.html','/services/portfolio-management.html','/services/trust-estate-planning.html','/services/foundation-endowment.html','/services/concentrated-stock-strategies.html','/services/retirement-income.html'];
-  const businessLinks = ['/services/401k-qualified-plans.html','/services/deferred-compensation.html','/services/insurance-services.html','/services/business-succession.html','/services/tax-planning.html','/services/employee-education.html'];
-  const cardHTML = (s, href) => `<a class="card reveal" href="${href}"><span class="ico">${ICONS[s.ico]}</span><h4>${s.t}</h4><p>${s.d}</p><span class="underline"></span></a>`;
-  if (document.getElementById('services-personal')) document.getElementById('services-personal').innerHTML = personal.slice(0, 3).map((s,i) => cardHTML(s, personalLinks[i])).join('');
-  if (document.getElementById('services-business')) document.getElementById('services-business').innerHTML = business.slice(0, 3).map((s,i) => cardHTML(s, businessLinks[i])).join('');
-  observeReveals();
 
   // Process
   const steps = [
