@@ -878,6 +878,9 @@
 <meta name="twitter:image" content="https://www.my360wealth.com/images/og-image.png" />
 <style>
   main{padding-top:140px}
+  /* the breadcrumb sits inside .section here, so it was picking up main's 140px
+     plus the section's own 110px. Every other page puts it directly in main. */
+  main > .section:first-of-type { padding-top: 0; }
   /* site-standard breadcrumb, matching the service pages */
   .breadcrumb { margin: 0 0 20px; }
   .breadcrumb ol { margin: 0; padding: 0; list-style: none; display: flex; align-items: center;
