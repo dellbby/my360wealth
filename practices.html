@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Practices | My 360 Wealth Management Group</title>
+<title>What We Do | My 360 Wealth Management Group</title>
 <link rel="canonical" href="https://www.my360wealth.com/practices.html" />
 <meta name="description" content="Our four practices: Private Wealth Management, Group Benefits & Retirement Plans, Exit Planning for Owners, and Family Office & Family CFO." />
 <script type="application/ld+json">
@@ -12,7 +12,7 @@
   "@type": "CollectionPage",
   "@id": "https://www.my360wealth.com/practices.html#webpage",
   "url": "https://www.my360wealth.com/practices.html",
-  "name": "Practices | My 360 Wealth Management Group",
+  "name": "What We Do | My 360 Wealth Management Group",
   "description": "Our four practices: Private Wealth Management, Group Benefits & Retirement Plans, Exit Planning for Owners, and Family Office & Family CFO.",
   "isPartOf": {"@id": "https://www.my360wealth.com/#website"},
   "about": {"@id": "https://www.my360wealth.com/#organization"},
@@ -397,6 +397,35 @@
 
   /* Disable scroll-reveal animation — content visible immediately */
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ---------------------------------------------------------------
+   ONE TYPE LADDER ACROSS EVERY PAGE
+   18px section opener · 16px body · 14px fine print.
+   Nothing below 14px, and no low-contrast text.
+   --------------------------------------------------------------- */
+.large, .section-head .desc, .svc-lead, .cs-lead, .lede,
+.about-head p, .bio-head p.sum, .hb-bar-desc { font-size:18px; line-height:1.7; }
+
+.deg-body p, .svc-point p, .process-cell p, .svc-note, .svc-cepa,
+.ab-pt p, .bk-role, .af-copy, .bio-blk p, .svc-main p.tag,
+.proc-body p, .lw-in p, .prin-card p, .faq-a p, .faq p,
+.svc-ul li, .faqs summary, .abs-era p, .abs-lede, .abs-close,
+.card p, .dsg .d, .milestone-body p { font-size:16px; line-height:1.72; }
+
+.af-src, .disclosure p, .legal p, .disclaimers p, .fineprint, .disc,
+.lw-note, .breadcrumb, .footer-links a, .contact-details a, .cd-v,
+.menu-meta a, .bf-meta, .qz-priv, .sh-priv, .qz-hint,
+.abs-yr, .footer-bottom, .footer-disc { font-size:14px; line-height:1.65; }
+
+/* nothing a visitor has to read or click drops below 14px */
+.btn-gold, .svc-btn, .ghost, .qz-btn, .bf-btn, .sh-btn, .qz-back, .sh-back,
+.topbar-portals, .portal-tab, .go, .cs-call, .learn-more { font-size:14px; }
+
+/* eyebrows and numerics stay small but keep their tracking for legibility */
+.eyebrow, .lab, .hb-bar-eyebrow, .qz-count, .lw-k, .lw-sub, .bf-k, .bf-num,
+.cd-k, .dropdown-head, .ml-num, .ac-k, .card-k, .pk, .sh-count, .sh-lead-in,
+.qz-score, .hub-k, .as-l, .af-creds a, .cred-plain, .footer-head,
+.rank, .proc-num { font-size:12px; letter-spacing:.16em; }
 </style>
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="My 360 Wealth Management Group" />
@@ -422,8 +451,8 @@
     <div class="hb-bar-inner">
       <div class="hb-bar-rule"></div>
       <div class="hb-bar-content">
-        <p class="hb-bar-eyebrow">What We Do</p>
-        <h2 class="hb-bar-title">Practices</h2>
+        <p class="hb-bar-eyebrow">My 360 Wealth Management Group</p>
+        <h2 class="hb-bar-title">What We Do</h2>
         <p class="hb-bar-desc">Four quarters of one circle. Whichever door you come through, the relationship is the same one.</p>
       </div>
     </div>
@@ -489,26 +518,13 @@
 
   const rowHTML = (s) => `<div class="svc-row reveal">
       <div class="svc-ico">${ICONS[s.ico]}</div>
-      <div class="svc-main"><h4>${s.t}</h4><p class="tag">${s.tag}</p></div>
-      <div class="svc-detail"><ul>${s.d.map(x => `<li>${x}</li>`).join('')}</ul></div>
+      <div class="svc-main"><h4>${s.t}</h4><p class="tag">${s.body}</p></div>
     </div>`;
   const practices = [
-    { ico: 'trendingUp', t: 'Private Wealth Management', tag: 'Investment management and planning for families building and protecting what they have.',
-      d: ['Portfolio management and ongoing financial planning',
-          'Retirement income, tax and estate coordination',
-          'One relationship across the whole balance sheet'] },
-    { ico: 'users', t: 'Group Benefits & Retirement Plans', tag: 'Retirement plans and benefits for employers, and how we come to know most business owners.',
-      d: ['Plan design, fiduciary governance and provider search',
-          'Participant education and enrollment support',
-          'Cash balance and deferred compensation layering'] },
-    { ico: 'building', t: 'Exit Planning for Owners', tag: 'For owners whose wealth is still inside a business, before, during and after the sale.',
-      d: ['Readiness and value-gap assessment years ahead of a sale',
-          'Coordination with M&A counsel, bankers and your CPA',
-          'Post-liquidity planning for what the proceeds become'] },
-    { ico: 'shield', t: 'Family Office & Family CFO', tag: 'One Family CFO coordinating every adviser, with continuity arranged in advance.',
-      d: ['A single point of coordination across all your advisers',
-          'Estate, trust and tax work handled alongside investments',
-          'Continuity so your family never has to start over'] }
+    { ico: 'trendingUp', t: 'Private Wealth Management', body: 'For families whose wealth sits in markets, property and retirement accounts. The investing is the visible part; what changes the outcome is the sequence of decisions around it &mdash; when to claim Social Security, how a concentrated position is unwound, whether the beneficiary designations still match the will. Usually the first relationship, and often the one the others grow out of.', tag: 'Investment management and planning for families building and protecting what they have.' },
+    { ico: 'users', t: 'Group Benefits & Retirement Plans', body: 'For companies and nonprofits that sponsor a plan and carry the fiduciary responsibility for it. A plan has three constituencies &mdash; the company, the owner, and the employees &mdash; and most advisers serve the first and treat the other two as afterthoughts. This is also how we come to know most business owners.', tag: 'Retirement plans and benefits for employers, and how we come to know most business owners.' },
+    { ico: 'building', t: 'Exit Planning for Owners', body: 'For owners whose wealth is still inside the company. Nearly everything that determines what you keep is decided in the years before a buyer is in the room, and the advisory team that helps you sell is not the one that helps you afterward. We are in all four rooms &mdash; before, during, after, and the years that follow.', tag: 'For owners whose wealth is still inside a business, before, during and after the sale.' },
+    { ico: 'shield', t: 'Family Office & Family CFO', body: 'For families whose picture has outgrown any single adviser: several professionals, entities and trusts, property in more than one state, a next generation who will inherit all of it. Someone has to hold the whole balance sheet and convene the specialists. Engaged on one flat annual fee, capped, once scope is agreed.', tag: 'One Family CFO coordinating every adviser, with continuity arranged in advance.' }
   ];
 
   document.getElementById('svc-practices').innerHTML = practices.map(rowHTML).join('');

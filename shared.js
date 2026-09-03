@@ -30,7 +30,7 @@
     </a>
     <nav class="nav-links">      <a href="/start-here.html">Start Here</a>
       <div class="nav-item has-dropdown">
-        <a href="/practices.html" class="nav-trigger">Practices <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <a href="/practices.html" class="nav-trigger">What We Do <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
         <div class="dropdown dropdown-sm dropdown-practices">
           <div class="dropdown-col">
             <a href="/services/private-wealth.html">Private Wealth Management</a>
@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="nav-item has-dropdown">
-        <a href="/services.html" class="nav-trigger">Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <a href="/services.html" class="nav-trigger">All Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="caret"><polyline points="6 9 12 15 18 9"/></svg></a>
         <div class="dropdown dropdown-2">
           <div class="dropdown-col">
             <span class="dropdown-head">Personal &amp; Family</span>
@@ -107,11 +107,12 @@
     </button>
   </div>
   <nav class="menu-links">    <a href="/start-here.html" data-close>Start Here</a>
-    <a href="/services.html" data-close>Services</a>
+    <a href="/practices.html" data-close>What We Do</a>
     <a href="/services/private-wealth.html" data-close>Private Wealth Management</a>
     <a href="/services/group-benefits.html" data-close>Group Benefits &amp; Retirement Plans</a>
     <a href="/services/exit-planning.html" data-close>Exit Planning for Owners</a>
     <a href="/services/family-office.html" data-close>Family Office &amp; Family CFO</a>
+    <a href="/services.html" data-close>All Services</a>
     <a href="/process.html" data-close>Our Process</a>
     <a href="/resource-center/index.html" data-close>Resource Center</a>
     <a href="/resource-center/articles.html" data-close>Articles</a>
@@ -339,6 +340,29 @@
   .menu-links { flex: 1 0 auto; justify-content: flex-start; }
   .menu-links a { padding-top: 7px; padding-bottom: 7px; }
   .menu-bottom { margin-top: auto; padding-bottom: max(40px, env(safe-area-inset-bottom)); }
+
+  /* ---------------------------------------------------------------
+     TYPE FLOOR FOR THE INJECTED NAV AND FOOTER
+     Matches the page type ladder: nothing a visitor reads or clicks
+     sits below 14px. Uppercase micro-labels keep 12px with tracking,
+     where the letter-spacing carries the legibility.
+     --------------------------------------------------------------- */
+  .nav-item .nav-trigger,
+  .dropdown a,
+  .dropdown.dropdown-sm .dropdown-col a,
+  .dropdown.dropdown-practices .dropdown-col a,
+  .topbar-portals,
+  .btn-gold.topbar-cta,
+  .portal-tab,
+  .footer-bottom, .footer-disc,
+  .disclaimers .meta,
+  .portal-note,
+  .compliance-bar,
+  .topbar-meta { font-size: 14px !important; }
+
+  /* uppercase labels: 12px is legible at this tracking and any larger
+     breaks the nav and footer column widths */
+  .dropdown-head, .footer-head, .dropdown-foot { font-size: 12px; letter-spacing: .16em; }
 </style>
 
 <script>
@@ -410,7 +434,7 @@
         </div>
       </div>
       <div>
-        <h4>Practices</h4>
+        <h4>What We Do</h4>
         <div class="footer-links">
           <a href="/services/private-wealth.html">Private Wealth Management</a>
           <a href="/services/group-benefits.html">Group Benefits &amp; Retirement Plans</a>
