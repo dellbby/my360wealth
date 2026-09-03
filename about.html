@@ -865,6 +865,37 @@
 .cd-k, .dropdown-head, .ml-num, .ac-k, .card-k, .pk, .sh-count, .sh-lead-in,
 .qz-score, .hub-k, .as-l, .af-creds a, .cred-plain, .footer-head,
 .rank, .proc-num { font-size:12px; letter-spacing:.16em; }
+
+  /* ---- About body: institutions, custodians, how we're built ---- */
+  .about-lede { margin-bottom:16px; }
+  .about-lede p { font-size:18px; line-height:1.7; color:rgba(42,34,26,.78); margin:0; }
+  .about-lede p b { color:#2a221a; font-weight:600; }
+
+  .ab-h { margin:0 0 18px; padding-bottom:12px; font-family:var(--font-heading); font-weight:500;
+          font-size:26px; line-height:1.2; color:#2a221a; letter-spacing:0;
+          border-bottom:1px solid rgba(42,34,26,.13); }
+
+  .ab-backing { background:#fff; border:1px solid rgba(42,34,26,.09); padding:24px 26px; margin-bottom:14px; }
+  .bk-name a { color:inherit; text-decoration:none; border-bottom:1px solid rgba(160,123,50,.4);
+               transition:color .2s, border-color .2s; }
+  .bk-name a:hover { color:#6f5219; border-color:#6f5219; }
+  .bk-ext { margin-left:5px; font-size:12px; color:#a07b32; vertical-align:1px; border:0; }
+
+  .ab-cust { background:#17130f; padding:26px 28px; margin-bottom:14px; }
+  .ab-cust .ab-h { color:#f3eee2; border-bottom-color:rgba(201,169,116,.28); }
+  .cu-grid { display:grid; grid-template-columns:repeat(1,1fr); gap:10px; margin-top:14px; }
+  @media (min-width:560px){ .cu-grid { grid-template-columns:repeat(3,1fr); } }
+  .cu-cell { display:grid; place-items:center; height:64px; padding:10px 14px; text-decoration:none;
+             border:1px solid rgba(243,238,226,.1); background:rgba(243,238,226,.03);
+             transition:border-color .25s, background .25s; }
+  .cu-cell:hover { border-color:rgba(201,169,116,.5); background:rgba(243,238,226,.06); }
+  .cu-cell:focus-visible { outline:2px solid #c9a974; outline-offset:2px; }
+  .cu-cell img { max-width:100%; max-height:36px; width:auto; height:auto; object-fit:contain;
+                 opacity:.85; transition:opacity .25s; }
+  .cu-cell:hover img { opacity:1; }
+
+  .about-col.is-only { max-width:none; }
+  .about-cols:has(.is-only) { display:block; }
 </style>
 <script type="application/ld+json">
 {
@@ -925,65 +956,54 @@
   <section class="section about-sec" id="about" style="background:#f6efe3;">
     <div class="container-narrow">
 
-      <div class="ab-story reveal">
-        <p class="ac-k">Where this comes from</p>
-        <p class="abs-lede">Wealth management did not begin as a way to sell investments. It began as a service to entrepreneurs and affluent families &mdash; running the financial and administrative side of their lives so they could put their attention on the business, the family and the years they actually wanted to enjoy. Somewhere along the way most of the industry kept the fee and dropped the job.</p>
+      <div class="about-lede reveal">
+        <p><b>My 360 Wealth Management Group</b> is an independent wealth management and family office firm serving families, business owners and the companies they run across Los Angeles and Southern California. The advice is ours and it stays here. The platform, the custody and the fiduciary structure behind it belong to two national institutions.</p>
+      </div>
 
-        <div class="abs-tl">
-          <div class="abs-era">
-            <p class="abs-yr">1882</p>
-            <h4>The office is invented</h4>
-            <p>John D. Rockefeller hires a full-time staff to run his family&rsquo;s entire financial life &mdash; the investments, the taxes, the properties, the entities, the giving, the next generation. The family office is born, and at the centre of it sits what amounts to a chief financial officer for a family rather than a company.</p>
+      <div class="ab-backing reveal">
+        <h2 class="ab-h">The institutions behind us</h2>
+        <div class="backing">
+          <div class="bk-tier">
+            <p class="bk-name"><a href="https://www.lpl.com/" target="_blank" rel="noopener">LPL Financial<span class="bk-ext" aria-hidden="true">&#8599;</span></a></p>
+            <p class="bk-role">The brokerage and custody platform behind your accounts. The nation&rsquo;s #1 ranked independent broker-dealer.</p>
+            <p class="bk-fig">$1.74T under management &middot; 28,888 advisors</p>
           </div>
-          <div class="abs-era">
-            <p class="abs-yr">1900s</p>
-            <h4>Families begin sharing it</h4>
-            <p>The idea works, but it is priced for dynasties: a staff, an office, seven figures a year. Families start sharing offices to split the cost. For a century the function stays real and stays out of reach for almost everyone who could use it.</p>
+          <div class="bk-tier">
+            <p class="bk-name"><a href="https://www.grpfinancial.com/" target="_blank" rel="noopener">Global Retirement Partners<span class="bk-ext" aria-hidden="true">&#8599;</span></a></p>
+            <p class="bk-role">Our registered investment adviser and the fiduciary of record, and one of the largest RIAs in the country.</p>
+            <p class="bk-fig">$145.2B+ under advisement &middot; 530+ advisors</p>
           </div>
-          <div class="abs-era">
-            <p class="abs-yr">Today</p>
-            <h4>It becomes a relationship, not a payroll</h4>
-            <p>Technology and a coordinated network of specialists now deliver the same function without the building and the staff. What once took dozens of people takes the right one relationship &mdash; someone who holds the whole picture and works alongside your accountant, your attorney and your other advisers rather than replacing them.</p>
+          <div class="bk-tier is-us">
+            <p class="bk-name">My 360 Wealth Management Group</p>
+            <p class="bk-role">The firm you engage, and the team accountable for the advice &mdash; from the first plan through a business sale and into the next generation.</p>
           </div>
         </div>
+      </div>
 
-        <p class="abs-close">That is the relationship My&nbsp;360 was built to be. We have kept the original job description: plan and manage a family&rsquo;s entire financial life, together with the professionals they already trust &mdash; and make the decisions that come once in a lifetime a little less lonely.</p>
+      <div class="ab-cust reveal">
+        <h2 class="ab-h">Where accounts are held</h2>
+        <div class="cu-grid">
+          <a class="cu-cell" href="https://www.schwab.com/" target="_blank" rel="noopener noreferrer" aria-label="Charles Schwab"><img src="/assets/logos/charles.png" alt="Charles Schwab" loading="lazy" /></a>
+          <a class="cu-cell" href="https://www.fidelity.com/" target="_blank" rel="noopener noreferrer" aria-label="Fidelity"><img src="/assets/logos/fidelity.png" alt="Fidelity" loading="lazy" /></a>
+          <a class="cu-cell" href="https://www.lpl.com/" target="_blank" rel="noopener noreferrer" aria-label="LPL Financial"><img src="/assets/logos/lplfinancial.png" alt="LPL Financial" loading="lazy" /></a>
+        </div>
       </div>
 
       <div class="about-cols reveal">
-        <div class="about-col is-wide">
-          <p class="ac-k">How we&rsquo;re built</p>
+        <div class="about-col is-wide is-only">
+          <h2 class="ab-h">How we&rsquo;re built</h2>
           <div class="ab-points">
             <div class="ab-pt">
               <h4>Somebody holds the whole picture.</h4>
-              <p>Most families end up with a set of specialists who never speak to each other &mdash; an attorney here, a CPA there, a broker somewhere else. A Family CFO and the team around them sit in the middle of that group and keep the plan, the documents and the accounts pointing the same way, so nothing falls between the seats. It is a function, not a person: your family should never be dependent on any single individual, including us.</p>
+              <p>Most families end up with a set of specialists who never speak to each other &mdash; an attorney here, a CPA there, a broker somewhere else. A Family CFO and the team around them sit in the middle of that group and keep the plan, the documents and the accounts pointing the same way. It is a function, not a person: your family should never depend on any single individual, including us.</p>
             </div>
             <div class="ab-pt">
               <h4>Nobody upstream decides what we recommend.</h4>
-              <p>We are independent. No parent company sets a product list, and no proprietary fund has to appear in your portfolio. Where a family needs a specialist we genuinely don&rsquo;t have &mdash; an M&amp;A attorney, a forensic CPA &mdash; we bring in a vetted one rather than stretch to cover it.</p>
+              <p>We are independent. No parent company sets a product list, and no proprietary fund has to appear in your portfolio. Where a family needs a specialist we don&rsquo;t have &mdash; an M&amp;A attorney, a forensic CPA &mdash; we bring in a vetted one rather than stretch to cover it.</p>
             </div>
             <div class="ab-pt">
-              <h4>It is built to outlast any one person.</h4>
+              <h4>Built to outlast any one person.</h4>
               <p>Including us, and including you. Everything sits in one place your family can reach, with a written continuity protocol, so nobody is ever handed a shoebox of statements and told to start over.</p>
-            </div>
-          </div>
-        </div>
-        <div class="about-col">
-          <p class="ac-k">Behind us</p>
-          <div class="backing">
-            <div class="bk-tier">
-              <p class="bk-name">LPL Financial</p>
-              <p class="bk-role">The brokerage and custody platform. The nation&rsquo;s #1 ranked independent broker-dealer.</p>
-              <p class="bk-fig">$1.74T under management &middot; 28,888 advisors</p>
-            </div>
-            <div class="bk-tier">
-              <p class="bk-name">Global Retirement Partners</p>
-              <p class="bk-role">Our registered investment adviser, and one of the largest RIAs in the country.</p>
-              <p class="bk-fig">$145.2B+ under advisement &middot; 530+ advisors</p>
-            </div>
-            <div class="bk-tier is-us">
-              <p class="bk-name">My 360 Wealth Management Group</p>
-              <p class="bk-role">The team you actually work with, in Glendale.</p>
             </div>
           </div>
         </div>
