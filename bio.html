@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About My 360 Wealth Management Group</title>
-<link rel="canonical" href="https://www.my360wealth.com/about.html" />
-<meta name="description" content="The team, credentials and institutions behind My 360 Wealth Management Group - an independent wealth and family office practice in Glendale, California." />
+<title>Pierre M. Movsessian, MBA, CFP&reg;, AIF&reg;, CEPA</title>
+<link rel="canonical" href="https://www.my360wealth.com/bio.html" />
+<meta name="description" content="Pierre M. Movsessian, MBA, CFP&reg;, AIF&reg;, CEPA &mdash; founder of My 360 Wealth Management Group in Los Angeles, and the adviser behind its four practices." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -701,14 +701,25 @@
 
   /* ---- About ---- */
   .about-sec { padding:66px 0; }
-  .about-head { max-width:620px; margin-bottom:28px; }
+  .about-head { margin-bottom:28px; }
   .about-head .lab { font-size:11px; letter-spacing:.26em; text-transform:uppercase;
                      color:#a07b32; font-weight:600; margin:0 0 10px; }
   .about-head h1, .about-head h1, .about-head h2 { font-family:var(--font-heading); font-weight:500; font-size:30px; line-height:1.14;
                    color:#2a221a; margin:0 0 10px; }
   @media (min-width:768px){ .about-head h1, .about-head h1, .about-head h2 { font-size:36px; } }
-  .about-head p { font-size:16px; line-height:1.7; color:rgba(42,34,26,.74); margin:0; }
+  .about-head p { font-size:19px; line-height:1.7; color:rgba(42,34,26,.78); margin:0; max-width:40em; }
+  .about-head p b { color:#2a221a; font-weight:600; }
 
+
+  /* the opening belongs in the same rhythm as the blocks beneath it */
+  .about-head { background:#fff; border:1px solid rgba(42,34,26,.09);
+                padding:30px 32px 34px; margin-bottom:14px; }
+  .about-head .lab { font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:#7d5f22;
+                     font-weight:700; margin:0 0 10px; padding-bottom:9px;
+                     border-bottom:1px solid rgba(160,123,50,.3); }
+  .about-head h1 { margin:0 0 14px; }
+  .about-col.is-only { max-width:none; }
+  .about-cols:has(.is-only) { display:block; }
   .about-cols { display:grid; grid-template-columns:1fr; gap:14px; align-items:start; }
   @media (min-width:820px){ .about-cols { grid-template-columns:1.6fr 1fr; } }
   .about-col { background:#fff; border:1px solid rgba(42,34,26,.09); padding:20px 22px; }
@@ -735,16 +746,32 @@
   .abs-close { margin:20px 0 0; padding-top:18px; border-top:1px solid rgba(42,34,26,.13);
                font-family:var(--font-heading); font-size:19px; line-height:1.5; color:#2a221a; }
   @media (max-width:560px){ .abs-era { padding-left:0; } .abs-yr { position:static; margin-bottom:6px; } }
+
+  /* Custodians — the assets are held away from us, and that matters */
+  .ab-cust{background:#17130f;padding:26px 28px;margin-bottom:14px}
+  .ab-cust .ac-k{color:#c9a974;border-bottom-color:rgba(201,169,116,.28)}
+  .cu-lede{margin:0;font-size:15px;line-height:1.72;color:rgba(243,238,226,.78)}
+  .cu-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:10px;margin-top:14px}
+  @media(min-width:560px){.cu-grid{grid-template-columns:repeat(3,1fr)}}
+  .cu-cell{display:grid;place-items:center;height:64px;padding:10px 14px;text-decoration:none;
+           border:1px solid rgba(243,238,226,.1);background:rgba(243,238,226,.03);
+           transition:border-color .2s,background .2s}
+  .cu-cell:hover{border-color:rgba(201,169,116,.5);background:rgba(243,238,226,.06)}
+  .cu-cell:hover img{opacity:1}
+  .cu-cell img{max-width:100%;max-height:36px;width:auto;height:auto;object-fit:contain;opacity:.85}
+  .cu-note{margin:18px 0 0;padding-top:14px;border-top:1px solid rgba(243,238,226,.13);
+           font-size:14px;line-height:1.6;color:rgba(243,238,226,.5)}
+  .ab-backing { background:#fff; border:1px solid rgba(42,34,26,.09); padding:24px 26px; margin-bottom:14px; }
   .ab-points { display:flex; flex-direction:column; }
   .ab-pt { padding:13px 0; }
   .ab-pt + .ab-pt { border-top:1px solid rgba(42,34,26,.09); }
-  .ab-pt h4 { margin:0 0 5px; font-family:var(--font-heading); font-weight:500; font-size:17px;
+  .ab-pt h4 { margin:0 0 5px; font-family:var(--font-heading); font-weight:500; font-size:18px;
               color:#2a221a; line-height:1.3; }
   .ab-pt p { margin:0; font-size:14px; line-height:1.68; color:rgba(42,34,26,.72); }
 
   .about-foot { margin-top:22px; padding-top:20px; border-top:1px solid rgba(42,34,26,.13);
                 display:flex; gap:26px; align-items:center; flex-wrap:wrap; }
-  .af-copy { flex:1 1 380px; font-size:14.5px; line-height:1.7; color:rgba(42,34,26,.74); margin:0; }
+  .af-copy { flex:1 1 380px; font-size:16px; line-height:1.7; color:rgba(42,34,26,.74); margin:0; }
   .af-copy b { color:#2a221a; font-weight:600; }
   .af-creds { display:flex; gap:8px; flex-wrap:wrap; }
   .af-creds a { font-family:var(--font-heading); font-size:16px; color:#a07b32;
@@ -753,7 +780,7 @@
   .af-creds a:hover { background:#a07b32; color:#fffaf0; }
   .cred-plain { font-family:var(--font-heading); font-size:16px; color:rgba(42,34,26,.5);
                 border:1px solid rgba(42,34,26,.16); padding:9px 15px; line-height:1; }
-  .af-src { flex:1 1 100%; margin:14px 0 0; font-size:11.5px; line-height:1.65;
+  .af-src { flex:1 1 100%; margin:14px 0 0; font-size:13px; line-height:1.65;
             color:rgba(42,34,26,.5); }
 
   /* who stands behind the practice — scale first, then who you actually call */
@@ -766,9 +793,13 @@
                     background:rgba(160,123,50,.28); }
   .bk-tier:last-child::after { display:none; }
   .bk-tier.is-us::before { background:#a07b32; width:7px; height:7px; left:2px; }
-  .bk-name { margin:0; font-family:var(--font-heading); font-size:15.5px; color:#2a221a; line-height:1.25; }
-  .bk-role { margin:4px 0 0; font-size:12.5px; line-height:1.55; color:rgba(42,34,26,.68); }
-  .bk-fig { margin:5px 0 0; font-size:11.5px; letter-spacing:.02em; color:#a07b32; font-weight:600; }
+  .bk-name { margin:0; font-family:var(--font-heading); font-size:18px; color:#2a221a; line-height:1.25; }
+
+  .bk-name a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(160,123,50,.35);padding-bottom:1px;transition:border-color .2s,color .2s}
+  .bk-name a:hover{color:#a07b32;border-color:#a07b32}
+  .bk-ext{margin-left:5px;font-size:12px;color:#a07b32;vertical-align:1px}
+  .bk-role { margin:5px 0 0; font-size:16px; line-height:1.7; color:rgba(42,34,26,.68); }
+  .bk-fig { margin:7px 0 0; font-size:13.5px; letter-spacing:.02em; color:#a07b32; font-weight:600; }
 
   .about-stats { margin-top:16px; display:grid; grid-template-columns:repeat(2,1fr); gap:1px;
                  background:rgba(42,34,26,.1); border:1px solid rgba(42,34,26,.1); }
@@ -831,149 +862,210 @@
   /* primary reading never drops below 16 */
   .svc-ul li, .qz-txt strong, .sh-txt strong, .faq p, .faqs summary,
   .qz-gaps li, .qz-verdict p, .hub-cell p, .ab-pt p, .abs-era p { font-size: 16px; }
-  .af-bio { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(160,123,50,.45);
-            transition: color .2s, border-color .2s; }
-  .af-bio:hover { color: #6f5219; border-color: #6f5219; }
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "AboutPage",
-      "@id": "https://www.my360wealth.com/about.html#webpage",
-      "url": "https://www.my360wealth.com/about.html",
-      "name": "About Us | My 360 Wealth Management Group",
-      "description": "About My 360 Wealth Management Group — a holistic Financial Life Management firm led by CFP® professional and AIF® Pierre M. Movsessian, serving clients in Glendale, CA and nationwide.",
-      "isPartOf": {"@id": "https://www.my360wealth.com/#website"},
-      "about": {"@id": "https://www.my360wealth.com/#organization"},
-      "inLanguage": "en-US"
-    },
-    {
-      "@type": "Person",
-      "@id": "https://www.my360wealth.com/#pierre-movsessian",
-      "name": "Pierre M. Movsessian",
-      "honorificSuffix": "MBA, CFP®, AIF®",
-      "jobTitle": "Financial Advisor & Team Leader",
-      "description": "CFP® professional and Accredited Investment Fiduciary leading My 360 Wealth Management Group's holistic Financial Life Management process.",
-      "worksFor": {"@id": "https://www.my360wealth.com/#organization"},
-      "url": "https://www.my360wealth.com/about.html"
-    }
-  ]
-}
-</script>
+
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="My 360 Wealth Management Group" />
-<meta property="og:title" content="About My 360 Wealth Management Group" />
-<meta property="og:description" content="The team, credentials and institutions behind My 360 Wealth Management Group - an independent wealth and family office practice in Glendale, California." />
-<meta property="og:url" content="https://www.my360wealth.com/about.html" />
+<meta property="og:title" content="Pierre M. Movsessian &mdash; My 360 Wealth Management Group" />
+<meta property="og:description" content="Pierre M. Movsessian, MBA, CFP&reg;, AIF&reg;, CEPA &mdash; founder of My 360 Wealth Management Group in Los Angeles, and the adviser behind its four practices." />
+<meta property="og:url" content="https://www.my360wealth.com/bio.html" />
 <meta property="og:image" content="https://www.my360wealth.com/images/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="About My 360 Wealth Management Group" />
-<meta name="twitter:description" content="The team, credentials and institutions behind My 360 Wealth Management Group - an independent wealth and family office practice in Glendale, California." />
+<meta name="twitter:title" content="Pierre M. Movsessian &mdash; My 360 Wealth Management Group" />
+<meta name="twitter:description" content="Pierre M. Movsessian, MBA, CFP&reg;, AIF&reg;, CEPA &mdash; founder of My 360 Wealth Management Group in Los Angeles, and the adviser behind its four practices." />
 <meta name="twitter:image" content="https://www.my360wealth.com/images/og-image.png" />
+<style>
+  main{padding-top:140px}
+  /* site-standard breadcrumb, matching the service pages */
+  .breadcrumb { margin: 0 0 20px; }
+  .breadcrumb ol { margin: 0; padding: 0; list-style: none; display: flex; align-items: center;
+                   gap: 0; font-size: 13px; color: rgba(42,34,26,0.55); flex-wrap: wrap; }
+  .breadcrumb li { display: flex; align-items: center; }
+  .breadcrumb li + li::before { content: '/'; margin: 0 8px; color: rgba(42,34,26,0.25); }
+  .breadcrumb a { color: rgba(42,34,26,0.55); text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: #a07b32; }
+  .breadcrumb [aria-current] { color: #2a221a; font-weight: 500; }
+  .bh-row{display:flex;align-items:center;gap:20px;margin-bottom:14px}
+  .bh-row .lab{margin-bottom:6px;padding-bottom:0;border-bottom:0}
+  .bh-row h1{margin:0;color:#2a221a}
+  .bh-photo{width:96px;height:96px;border-radius:50%;object-fit:cover;flex:0 0 96px;
+            border:1px solid rgba(160,123,50,.35)}
+  @media (max-width:560px){ .bh-row{gap:14px} .bh-photo{width:72px;height:72px;flex-basis:72px} }
+  .bio-head{background:#fff;border:1px solid rgba(42,34,26,.09);padding:30px 32px 34px;margin-bottom:14px}
+  .bio-head .lab{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#7d5f22;font-weight:700;
+                 margin:0 0 10px;padding-bottom:9px;border-bottom:1px solid rgba(160,123,50,.3)}
+  .bio-head h1{color:#2a221a;margin:0 0 6px;font-family:var(--font-heading);font-weight:500;font-size:36px;line-height:1.14}
+  .bio-head .cred{margin:0 0 16px;font-size:16px;letter-spacing:.03em;color:#6f5219;font-weight:600}
+  .bio-head p.sum{font-size:19px;line-height:1.7;color:rgba(42,34,26,.78);margin:0;max-width:none}
+  .bio-blk{background:#fff;border:1px solid rgba(42,34,26,.09);padding:28px 32px;margin-bottom:14px}
+  .bio-blk .ac-k{margin:0 0 16px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+                 color:#7d5f22;font-weight:700}
+  .bio-blk p{font-size:16px;line-height:1.75;color:rgba(42,34,26,.78);margin:0 0 14px;max-width:none}
+  .bio-blk p:last-child{margin-bottom:0}
+  .bio-q{margin:0;padding:22px 26px;background:#17130f;color:#f3eee2;border:0}
+  .bio-q blockquote{margin:0;font-family:var(--font-heading);font-size:24px;line-height:1.35;font-style:italic}
+  .bio-q cite{display:block;margin-top:12px;font-style:normal;font-size:13.5px;letter-spacing:.06em;
+              text-transform:uppercase;color:#c9a974}
+  .dsg{margin:0;padding:0;list-style:none}
+  .dsg li{padding:14px 0;border-top:1px solid rgba(42,34,26,.09)}
+  .dsg li:first-child{border-top:0}
+  .pr4 a{text-decoration:none;display:block}
+  .pr4 a:hover .n{color:#6f5219}
+  .pr4 .n{color:#2a221a}
+  .dsg .n{font-family:var(--font-heading);font-size:18px;color:#2a221a}
+  .dsg .d{display:block;margin-top:4px;font-size:16px;line-height:1.7;color:rgba(42,34,26,.72)}
+  .bio-back{color:#5c430f;display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-size:13px;letter-spacing:.14em;
+            text-transform:uppercase;color:#a07b32;text-decoration:none;font-weight:600}
+  .bio-back:hover{text-decoration:underline}
+
+/* one type ladder across every page: 18 lede / 16 body / 13 fine print */
+.large, .section-head .desc, .svc-lead, .cs-lead,
+.about-head p, .bio-head p.sum, .hb-bar-desc { font-size:18px; line-height:1.7; }
+.deg-body p, .svc-point p, .process-cell p, .svc-note, .svc-cepa,
+.ab-pt p, .bk-role, .af-copy, .bio-blk p, .svc-main p.tag,
+.proc-body p, .lw-note, .lw-in p, .prin-card p, .faq-a p { font-size:16px; line-height:1.72; }
+.af-src, .disclosure p, .legal p { font-size:14px; line-height:1.65; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://www.my360wealth.com/bio.html#webpage",
+  "url": "https://www.my360wealth.com/bio.html",
+  "name": "Pierre M. Movsessian, MBA, CFP\u00ae, AIF\u00ae, CEPA",
+  "isPartOf": {"@id": "https://www.my360wealth.com/#website"},
+  "inLanguage": "en-US",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Pierre M. Movsessian",
+    "jobTitle": "Founder and CEO",
+    "url": "https://www.my360wealth.com/bio.html",
+    "image": "https://www.my360wealth.com/assets/pierre-archive.jpg",
+    "worksFor": {"@id": "https://www.my360wealth.com/#organization"},
+    "alumniOf": {"@type": "CollegeOrUniversity", "name": "California State University, Northridge"},
+    "sameAs": ["https://www.linkedin.com/in/pierremovsessian"],
+    "hasCredential": [
+      {"@type": "EducationalOccupationalCredential", "name": "MBA"},
+      {"@type": "EducationalOccupationalCredential", "name": "CERTIFIED FINANCIAL PLANNER\u2122 (CFP\u00ae)"},
+      {"@type": "EducationalOccupationalCredential", "name": "Accredited Investment Fiduciary (AIF\u00ae)"},
+      {"@type": "EducationalOccupationalCredential", "name": "Certified Exit Planning Advisor (CEPA)"}
+    ]
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.my360wealth.com/"},
+      {"@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.my360wealth.com/about.html"},
+      {"@type": "ListItem", "position": 3, "name": "Pierre M. Movsessian", "item": "https://www.my360wealth.com/bio.html"}
+    ]
+  }
+}
+</script>
 </head>
 <body>
 <div id="site-nav"></div>
 <script src="/shared.js"></script>
-<main id="top" style="padding-top:150px;">
-  <section class="section about-sec" id="about" style="background:#f6efe3;">
+<main>
+  <section class="section">
     <div class="container-narrow">
-      <div class="about-head reveal">
-        <p class="lab">About Us</p>
-        <h1>Who we are</h1>
-        <p>A local team in Glendale, California, with national institutions behind us &mdash; and a way of working built around one relationship rather than a list of products.</p>
-      </div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/about.html" itemprop="item"><span itemprop="name">About Us</span></a>
+            <meta itemprop="position" content="2" />
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name" aria-current="page">Pierre M. Movsessian</span>
+            <meta itemprop="item" content="https://www.my360wealth.com/bio.html" />
+            <meta itemprop="position" content="3" />
+          </li>
+        </ol>
+      </nav>
 
-      <div class="ab-story reveal">
-        <p class="ac-k">Where this comes from</p>
-        <p class="abs-lede">Wealth management did not begin as a way to sell investments. It began as a service to entrepreneurs and affluent families &mdash; running the financial and administrative side of their lives so they could put their attention on the business, the family and the years they actually wanted to enjoy. Somewhere along the way most of the industry kept the fee and dropped the job.</p>
 
-        <div class="abs-tl">
-          <div class="abs-era">
-            <p class="abs-yr">1882</p>
-            <h4>The office is invented</h4>
-            <p>John D. Rockefeller hires a full-time staff to run his family&rsquo;s entire financial life &mdash; the investments, the taxes, the properties, the entities, the giving, the next generation. The family office is born, and at the centre of it sits what amounts to a chief financial officer for a family rather than a company.</p>
-          </div>
-          <div class="abs-era">
-            <p class="abs-yr">1900s</p>
-            <h4>Families begin sharing it</h4>
-            <p>The idea works, but it is priced for dynasties: a staff, an office, seven figures a year. Families start sharing offices to split the cost. For a century the function stays real and stays out of reach for almost everyone who could use it.</p>
-          </div>
-          <div class="abs-era">
-            <p class="abs-yr">Today</p>
-            <h4>It becomes a relationship, not a payroll</h4>
-            <p>Technology and a coordinated network of specialists now deliver the same function without the building and the staff. What once took dozens of people takes the right one relationship &mdash; someone who holds the whole picture and works alongside your accountant, your attorney and your other advisers rather than replacing them.</p>
-          </div>
-        </div>
-
-        <p class="abs-close">That is the relationship My&nbsp;360 was built to be. We have kept the original job description: plan and manage a family&rsquo;s entire financial life, together with the professionals they already trust &mdash; and make the decisions that come once in a lifetime a little less lonely.</p>
-      </div>
-
-      <div class="about-cols reveal">
-        <div class="about-col is-wide">
-          <p class="ac-k">How we&rsquo;re built</p>
-          <div class="ab-points">
-            <div class="ab-pt">
-              <h4>Somebody holds the whole picture.</h4>
-              <p>Most families end up with a set of specialists who never speak to each other &mdash; an attorney here, a CPA there, a broker somewhere else. A Family CFO and the team around them sit in the middle of that group and keep the plan, the documents and the accounts pointing the same way, so nothing falls between the seats. It is a function, not a person: your family should never be dependent on any single individual, including us.</p>
-            </div>
-            <div class="ab-pt">
-              <h4>Nobody upstream decides what we recommend.</h4>
-              <p>We are independent. No parent company sets a product list, and no proprietary fund has to appear in your portfolio. Where a family needs a specialist we genuinely don&rsquo;t have &mdash; an M&amp;A attorney, a forensic CPA &mdash; we bring in a vetted one rather than stretch to cover it.</p>
-            </div>
-            <div class="ab-pt">
-              <h4>It is built to outlast any one person.</h4>
-              <p>Including us, and including you. Everything sits in one place your family can reach, with a written continuity protocol, so nobody is ever handed a shoebox of statements and told to start over.</p>
-            </div>
+      <div class="bio-head reveal">
+        <div class="bh-row">
+          <img class="bh-photo" src="/assets/pierre-archive.jpg" alt="Pierre M. Movsessian" width="96" height="96">
+          <div>
+            <p class="lab">Founder and CEO</p>
+            <h1>Pierre M. Movsessian</h1>
           </div>
         </div>
-        <div class="about-col">
-          <p class="ac-k">Behind us</p>
-          <div class="backing">
-            <div class="bk-tier">
-              <p class="bk-name">LPL Financial</p>
-              <p class="bk-role">The brokerage and custody platform. The nation&rsquo;s #1 ranked independent broker-dealer.</p>
-              <p class="bk-fig">$1.74T under management &middot; 28,888 advisors</p>
-            </div>
-            <div class="bk-tier">
-              <p class="bk-name">Global Retirement Partners</p>
-              <p class="bk-role">Our registered investment adviser, and one of the largest RIAs in the country.</p>
-              <p class="bk-fig">$145.2B+ under advisement &middot; 530+ advisors</p>
-            </div>
-            <div class="bk-tier is-us">
-              <p class="bk-name">My 360 Wealth Management Group</p>
-              <p class="bk-role">The team you actually work with, in Glendale.</p>
-            </div>
-          </div>
-        </div>
+        <p class="cred">MBA &nbsp;&middot;&nbsp; CFP<sup>&reg;</sup> &nbsp;&middot;&nbsp; AIF<sup>&reg;</sup> &nbsp;&middot;&nbsp; CEPA</p>
+        <p class="sum">Pierre Movsessian is the Founder and CEO of My&nbsp;360 Wealth Management Group,
+        helping professionals, business owners and high-net-worth families build, preserve and protect
+        lasting wealth.</p>
       </div>
 
-      <div class="about-stats reveal">
-        <div class="as-item"><p class="as-n">10,388+</p><p class="as-l">Retirement plans served</p></div>
-        <div class="as-item"><p class="as-n">2.01M+</p><p class="as-l">Plan participants</p></div>
-        <div class="as-item"><p class="as-n">$145.2B+</p><p class="as-l">Assets under advisement</p></div>
-        <div class="as-item"><p class="as-n">6</p><p class="as-l">Designations across the team</p></div>
+      <div class="bio-blk reveal">
+        <p class="ac-k">Background</p>
+        <p>A graduate of <b>California State University, Northridge</b>, Pierre earned his Bachelor&rsquo;s
+        degree in Finance and his MBA before launching his career at <b>American Express Financial
+        Advisors</b> (now Ameriprise Financial), where he ranked among the top-performing advisors
+        nationwide. He later founded My&nbsp;360 Wealth Management Group on a foundation of
+        fiduciary-based planning and objective, long-term advice.</p>
+        <p>As a CERTIFIED FINANCIAL PLANNER&trade; professional, Accredited Investment
+        Fiduciary<sup>&reg;</sup> (AIF<sup>&reg;</sup>) and Certified Exit Planning Advisor (CEPA), Pierre
+        brings discipline and strategic rigor to every client engagement, with particular depth in guiding
+        business owners through successful transitions toward long-term financial independence.</p>
+        <p>Pierre speaks German, Armenian and Farsi.</p>
       </div>
-      <div class="about-foot reveal">
-        <p class="af-copy">Founded and led by <a href="/bio.html" class="af-bio"><b>Pierre M. Movsessian, MBA, CFP<sup>&reg;</sup>, AIF<sup>&reg;</sup>, CEPA</b> &rarr;</a> from Glendale, California, with a team credentialed across financial planning, fiduciary investment management, retirement income and exit planning.</p>
-        <p class="af-copy" style="margin-top:12px;">As CERTIFIED FINANCIAL PLANNER&trade; professionals, Accredited Investment Fiduciaries<sup>&reg;</sup> and Investment Adviser Representatives, we are committed to high professional and ethical standards. When providing advisory services we are subject to fiduciary obligations, and focused on helping clients make informed financial decisions.</p>
-        <div class="af-creds">
-          <a href="https://www.cfp.net/why-get-certified/the-standard-of-excellence" target="_blank" rel="noopener">CFP&reg;</a>
-          <a href="https://www.fi360.com/what-we-do/learning-development/aif-training/aif-designation" target="_blank" rel="noopener">AIF&reg;</a>
-          <a href="https://exit-planning-institute.org/program/certified-exit-planning-advisor" target="_blank" rel="noopener">CEPA&reg;</a>
-          <a href="https://www.theamericancollege.edu/learn/professional-designations-certifications/ricp" target="_blank" rel="noopener">RICP&reg;</a>
-          <span class="cred-plain">CFC&reg;</span>
-          <span class="cred-plain">MBA</span>
-        </div>
-        <p class="af-src">My 360&deg; Wealth Management Group, Global Retirement Partners and LPL Financial do not provide tax or legal advice. Tax, legal, accounting and other professional services are offered by independent third parties and are separate from services offered through My 360&deg; Wealth Management Group, Global Retirement Partners and LPL Financial. Clients are under no obligation to use any referenced provider.</p>
-        <p class="af-src">Figures as reported by LPL Financial and Global Retirement Partners. &ldquo;#1 independent broker-dealer&rdquo; per <i>Financial Advisor</i> magazine&rsquo;s 2025 ranking of the Top 30 Independent Broker-Dealers, based on FY2024 data. Rankings are not indicative of future performance and do not reflect any one client&rsquo;s experience.</p>
+
+      <div class="bio-blk bio-q reveal">
+        <blockquote>&ldquo;Life is a collection of experiences; we help you plan for them.&rdquo;</blockquote>
+        <cite>Pierre M. Movsessian</cite>
       </div>
+
+      <div class="bio-blk reveal">
+        <p class="ac-k">Beyond the firm</p>
+        <p>Pierre oversees financial services relationships for <b>Rize</b> and <b>UMe Credit Unions</b>,
+        supporting the planning and investment needs of thousands of members across Southern California.</p>
+        <p>A committed educator, he has taught CFP<sup>&reg;</sup> certification courses in investments,
+        taxes, estate planning and retirement planning at <b>UCLA</b> and the <b>University of
+        Phoenix</b>, and is a frequent guest speaker at the <b>University of Southern California</b> on
+        financial literacy, investing and wealth building for students and young professionals.</p>
+      </div>
+
+      <div class="bio-blk reveal">
+        <p class="ac-k">What we do</p>
+        <p>Pierre and the team specialise in retirement and income planning, wealth preservation, estate
+        and asset protection, risk management and insurance strategy, and business exit and succession
+        planning &mdash; delivering comprehensive, fiduciary-based guidance for families and business
+        owners. That work comes together in four parts of one relationship.</p>
+        <ul class="dsg pr4">
+          <li><a href="/services/private-wealth.html"><span class="n">Private Wealth &rarr;</span>
+            <span class="d">Investment management and planning for families building and protecting what
+            they have.</span></a></li>
+          <li><a href="/services/group-benefits.html"><span class="n">Group Benefits &amp; Retirement Plans &rarr;</span>
+            <span class="d">Fiduciary support, plan design and real advice for every employee.</span></a></li>
+          <li><a href="/services/exit-planning.html"><span class="n">Exit Planning &rarr;</span>
+            <span class="d">For owners whose wealth is still inside a business &mdash; before, during and
+            after the sale.</span></a></li>
+          <li><a href="/services/family-office.html"><span class="n">Family Office &amp; Family CFO &rarr;</span>
+            <span class="d">One point of coordination across every adviser, and continuity for the
+            family.</span></a></li>
+        </ul>
+      </div>
+
+      <div class="bio-blk reveal">
+        <p class="ac-k">Away from the office</p>
+        <p>Pierre loves spending time with his family and friends, enjoys traveling, and attends Lakers and
+        Kings games.</p>
+      </div>
+
+      <p style="margin:4px 0 0;"><a class="bio-back" href="/about.html">&larr; Back to About Us</a></p>
+
+
     </div>
   </section>
 </main>
 <div id="site-footer"></div>
+
 </body>
 </html>
