@@ -770,13 +770,6 @@
   .bk-role { margin:4px 0 0; font-size:12.5px; line-height:1.55; color:rgba(42,34,26,.68); }
   .bk-fig { margin:5px 0 0; font-size:11.5px; letter-spacing:.02em; color:#a07b32; font-weight:600; }
 
-  .about-stats { margin-top:16px; display:grid; grid-template-columns:repeat(2,1fr); gap:1px;
-                 background:rgba(42,34,26,.1); border:1px solid rgba(42,34,26,.1); }
-  @media (min-width:700px){ .about-stats { grid-template-columns:repeat(4,1fr); } }
-  .as-item { background:#fff; padding:18px 16px; text-align:center; }
-  .as-n { margin:0; font-family:var(--font-heading); font-size:25px; color:#a07b32; line-height:1; }
-  .as-l { margin:7px 0 0; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
-          color:rgba(42,34,26,.55); line-height:1.4; }
 
   /* ---- Contact ---- */
   .contact-sec { background:#17130f; color:var(--cream); padding:76px 0; }
@@ -834,6 +827,15 @@
   .af-bio { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(160,123,50,.45);
             transition: color .2s, border-color .2s; }
   .af-bio:hover { color: #6f5219; border-color: #6f5219; }
+  /* Page header — identical to process.html / contact.html / the service pages */
+  .hb-bar { padding: 64px 0; background: #fffaf0; }
+  .hb-bar-inner { display: flex; gap: 28px; align-items: stretch; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .hb-bar-rule { width: 3px; background: linear-gradient(to bottom, #a07b32, rgba(160,123,50,0.2)); flex-shrink: 0; border-radius: 1px; }
+  .hb-bar-content { flex: 1; }
+  .hb-bar-eyebrow { color: #a07b32; letter-spacing: 0.3em; text-transform: uppercase; font-size: 11px; margin: 0 0 10px; font-weight: 500; }
+  .hb-bar-title { font-family: var(--font-heading); font-weight: 500; font-size: 48px; color: #2a221a; margin: 0 0 14px; letter-spacing: -0.01em; line-height: 1.1; }
+  @media (max-width: 640px) { .hb-bar-title { font-size: 36px; } }
+  .hb-bar-desc { color: rgba(42,34,26,0.78); font-size: 16px; max-width: 620px; margin: 0; line-height: 1.65; }
 </style>
 <script type="application/ld+json">
 {
@@ -879,13 +881,20 @@
 <div id="site-nav"></div>
 <script src="/shared.js"></script>
 <main id="top" style="padding-top:150px;">
+  <!-- Page header — same component as Our Process, Contact and the service pages -->
+  <section class="hb-bar">
+    <div class="hb-bar-inner">
+      <div class="hb-bar-rule"></div>
+      <div class="hb-bar-content">
+        <p class="hb-bar-eyebrow">About Us</p>
+        <h1 class="hb-bar-title">Who we are</h1>
+        <p class="hb-bar-desc">A local team in Glendale, California, with national institutions behind us &mdash; and a way of working built around one relationship rather than a list of products.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="section about-sec" id="about" style="background:#f6efe3;">
     <div class="container-narrow">
-      <div class="about-head reveal">
-        <p class="lab">About Us</p>
-        <h1>Who we are</h1>
-        <p>A local team in Glendale, California, with national institutions behind us &mdash; and a way of working built around one relationship rather than a list of products.</p>
-      </div>
 
       <div class="ab-story reveal">
         <p class="ac-k">Where this comes from</p>
@@ -951,15 +960,10 @@
         </div>
       </div>
 
-      <div class="about-stats reveal">
-        <div class="as-item"><p class="as-n">10,388+</p><p class="as-l">Retirement plans served</p></div>
-        <div class="as-item"><p class="as-n">2.01M+</p><p class="as-l">Plan participants</p></div>
-        <div class="as-item"><p class="as-n">$145.2B+</p><p class="as-l">Assets under advisement</p></div>
-        <div class="as-item"><p class="as-n">6</p><p class="as-l">Designations across the team</p></div>
-      </div>
       <div class="about-foot reveal">
         <p class="af-copy">Founded and led by <a href="/bio.html" class="af-bio"><b>Pierre M. Movsessian, MBA, CFP<sup>&reg;</sup>, AIF<sup>&reg;</sup>, CEPA</b> &rarr;</a> from Glendale, California, with a team credentialed across financial planning, fiduciary investment management, retirement income and exit planning.</p>
         <p class="af-copy" style="margin-top:12px;">As CERTIFIED FINANCIAL PLANNER&trade; professionals, Accredited Investment Fiduciaries<sup>&reg;</sup> and Investment Adviser Representatives, we are committed to high professional and ethical standards. When providing advisory services we are subject to fiduciary obligations, and focused on helping clients make informed financial decisions.</p>
+        <p class="af-src">Custodian names and logos are the property of their respective owners and are shown for identification only. Their inclusion does not imply endorsement of, or affiliation with, My 360 Wealth Management Group.</p>
         <div class="af-creds">
           <a href="https://www.cfp.net/why-get-certified/the-standard-of-excellence" target="_blank" rel="noopener">CFP&reg;</a>
           <a href="https://www.fi360.com/what-we-do/learning-development/aif-training/aif-designation" target="_blank" rel="noopener">AIF&reg;</a>
