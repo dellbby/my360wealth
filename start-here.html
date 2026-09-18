@@ -1128,16 +1128,16 @@
 
   var SERVICE = {
     pw: { name:'Private Wealth',
-          page:'services/private-wealth.html', bro:'read-private-wealth.html',
+          page:'services/private-wealth.html',
           line:'Investment management and planning built around the decisions that actually change the outcome — tax, timing, protection and income.' },
     gb: { name:'Group Benefits & Retirement Plans',
-          page:'services/group-benefits.html', bro:'read-group-benefits.html',
+          page:'services/group-benefits.html',
           line:'Fiduciary support and plan design for the company, an owner’s tool for you, and real one-on-one advice for every employee.' },
     ep: { name:'Exit Planning',
-          page:'services/exit-planning.html', bro:'read-exit-planning.html',
+          page:'services/exit-planning.html',
           line:'Valuation and readiness before a sale, one seat accountable to your family during it, and a plan for the proceeds afterward.' },
     fo: { name:'Family Office & Family CFO',
-          page:'services/family-office.html', bro:'read-family-office.html',
+          page:'services/family-office.html',
           line:'One person at the centre of every adviser you have, holding the whole balance sheet — and continuity so your family never starts over.' }
   };
 
@@ -1234,10 +1234,10 @@
     }
 
     html+='<div class="sh-card"><p class="rank">Where to start</p><h3>'+top.name+'</h3><p>'+top.line+'</p>'+
-          '<a href="'+top.page+'">Read the full page &rarr;</a><a href="'+top.bro+'">See the brochure &rarr;</a></div>';
+          '<a href="'+top.page+'">Read the full page &rarr;</a></div>';
     if (second) {
       html+='<div class="sh-card"><p class="rank">Also relevant</p><h3>'+second.name+'</h3><p>'+second.line+'</p>'+
-            '<a href="'+second.page+'">Read the full page &rarr;</a><a href="'+second.bro+'">See the brochure &rarr;</a></div>';
+            '<a href="'+second.page+'">Read the full page &rarr;</a></div>';
     }
 
     function plain(x){var d=document.createElement('div');d.innerHTML=x;return (d.textContent||'').trim();}

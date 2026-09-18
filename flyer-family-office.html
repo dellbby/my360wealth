@@ -8,7 +8,11 @@
 
   gtag('config', 'G-FTQGHFH0GE');
 </script>
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Family Office &mdash; My 360 Wealth</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"><style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My 360 Wealth &mdash; Family Office (flyer)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<style>
   :root{
     --ink:#2a221a; --ink70:rgba(42,34,26,.76); --ink55:rgba(42,34,26,.58);
     --line:rgba(42,34,26,.13); --line-soft:rgba(42,34,26,.08);
@@ -161,32 +165,91 @@
     .pnum{padding-left:12px}
   }
   @media print{ .readbar,.pnum{display:none} }
-</style></head>
-<body>
-<div class="readbar"><b>On-screen version</b><span>Four pages, in reading order.</span><a href="fold-family-office.html">Open the print version (single fold, 17 &times; 11)</a><span class="sp">Family Office</span></div>
-<p class="pnum">Page 1 &mdash; front cover</p>
-  <div class="panel cover">
-    <span class="ptag">Panel 1 &mdash; front cover</span>
-    <span class="ring a"></span><span class="ring b"></span>
-    <div class="in">
-      <div class="mark" role="img" aria-label="My 360 Wealth Management Group"></div>
-      <p class="num">IV &nbsp;&middot;&nbsp; Family Office</p>
-      <h1>If you&rsquo;re the only one who knows<br><em>how it works, it isn&rsquo;t secure.</em></h1>
-      <p class="sub">Family Office &amp; Family CFO</p>
-    </div>
-    <div class="foot">Live Your One Best Life</div>
-  </div>
-<p class="pnum">Page 2 &mdash; inside left</p>
-  <div class="panel cream">
-    <span class="ptag">Panel 2 &mdash; inside left</span>
-    <p class="eyebrow">IV &nbsp;&middot;&nbsp; Family Office</p>
-    <h2 class="h-lead">Family Office &amp; Family CFO</h2>
+
+/* ============ STAGGERED-CUT FLYER ============
+   One sheet, printed front and back. The top bar is the staggered cut:
+   four flyers trimmed 11 / 10.5 / 10 / 9.5 in, so every bar shows when stacked. */
+body{background:#cfc4ae;margin:0;padding:0 0 40px}
+.flyer{--bar:#17130f; --bar-ink:#c9a974;
+       width:8.5in;height:11in;margin:22px auto;background:var(--paper);
+       box-shadow:0 12px 44px rgba(42,34,26,.22);
+       display:flex;flex-direction:column;overflow:hidden;position:relative}
+.tb{flex:0 0 .5in;height:.5in;background:var(--bar);color:var(--bar-ink);
+    display:flex;align-items:center;justify-content:center;text-align:center;padding:0 .55in;
+    font-size:15px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+.tb .r{font-weight:400;letter-spacing:.2em;opacity:.72}
+/* the front has room now the mark sits in the bar */
+.flyer:first-of-type .fb{padding-top:.5in}
+.flyer:first-of-type .f-h1{font-size:34px}
+.flyer:first-of-type .lead{font-size:16.5px}
+.flyer:first-of-type .row{padding:15px 0}
+.flyer:first-of-type .hubcell{padding:16px 14px}
+.flyer:first-of-type .pull{font-size:18px}
+.fb{flex:1 1 auto;min-height:0;padding:.4in .6in .26in;display:flex;flex-direction:column;overflow:hidden}
+.ff{flex:0 0 auto;margin-top:auto;padding-top:12px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink55)}
+.flyer.dark{background:var(--dark);color:var(--dark-ink)}
+.flyer.dark .ff{border-top-color:rgba(243,238,226,.16);color:rgba(243,238,226,.5)}
+.f-h1{font-size:31px;line-height:1.16}
+.f-h1 em{font-style:italic;color:var(--gold)}
+.f-mark{width:2.1in;height:.8in;background:var(--logo) left center/contain no-repeat}
+.row{padding:11px 0;border-top:1px solid var(--line-soft)}
+.row:first-of-type{border-top:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+.cbox{margin-top:14px;padding:16px 18px;background:var(--cream2);border:1px solid var(--line)}
+.flyer.dark .cbox{background:rgba(243,238,226,.05);border-color:rgba(243,238,226,.14)}
+.helper{max-width:8.5in;margin:22px auto 0;padding:14px 18px;background:#fffaf0;
+        border:1px solid var(--gold-soft);font-size:13px;line-height:1.6}
+.helper b{color:var(--gold)}
+.pnum{max-width:8.5in;margin:0 auto;padding:0 4px 6px;font-size:12px;letter-spacing:.16em;
+      text-transform:uppercase;color:rgba(42,34,26,.5)}
+/* flyer-scoped tightening: the flyer carries what four brochure panels carried */
+.flyer li{padding:4px 0 4px 16px;font-size:14.5px}
+.flyer .afl-grid{grid-template-columns:repeat(4,1fr);gap:0 14px;margin-top:5px}
+.flyer .afl-step h5{font-size:14px;margin:2px 0 3px}
+.flyer .afl-step p{font-size:10.5px;line-height:1.38}
+.flyer .disc{font-size:9px;line-height:1.5}
+.flyer .disc p{margin-bottom:4px}
+.flyer .afl{margin-top:9px;padding-top:9px}
+.flyer .cbox{margin-top:10px;padding:11px 16px}
+.flyer .lead{margin-top:12px}
+.flyer ul{margin-bottom:0}
+.flyer .row{padding:10px 0}
+.flyer .disc{font-size:8.8px}
+.faqgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin-top:7px}
+.fq h5{margin:0 0 3px;font-family:var(--serif);font-weight:500;font-size:14px;line-height:1.2;color:var(--ink)}
+.fq p{margin:0;font-size:10.5px;line-height:1.4;color:var(--ink70)}
+@media print{
+  @page{size:8.5in 11in;margin:0}
+  body{background:#fff;padding:0}
+  .helper,.pnum{display:none}
+  .flyer{margin:0;box-shadow:none;page-break-after:always;break-after:page;
+         -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .flyer:last-of-type{page-break-after:auto;break-after:auto}
+}
+@media screen and (max-width:900px){
+  .flyer{width:auto;height:auto;margin:14px 10px}
+  .fb{padding:26px 22px}
+  .two{grid-template-columns:1fr}
+}
+</style></head><body>
+<div class="helper"><b>Staggered-cut flyer &mdash; Family Office.</b>
+One sheet, printed front and back. Trim height <b>11 in</b> (the tallest of the four, so this bar sits at the back of the stack).
+To make the PDF: Print, Destination Save as PDF, paper size 8.5 &times; 11 in, margins None, Background graphics on.
+This bar does not print.</div>
+
+<p class="pnum">Front</p>
+<div class="flyer">
+  <div class="tb"><span>Family Office &amp; Family CFO</span></div>
+  <div class="fb">
+    <h1 class="f-h1">If you&rsquo;re the only one who knows<br><em>how it works, it isn&rsquo;t secure.</em></h1>
     <p class="lead">You have built something remarkable. But if you are the only person who understands how all of it fits together, you haven&rsquo;t really secured it. A Family CFO sits at the centre of the professionals you already have and holds the entire picture.</p>
     <div class="rule"></div>
     <p class="kicker">How we work</p>
-    <div style="padding:13px 0;border-top:1px solid var(--line-soft);"><p class="kicker">One point of coordination</p><p class="body">We convene your attorney, CPA, insurance and banking relationships around a single plan.</p></div><div style="padding:13px 0;border-top:1px solid var(--line-soft);"><p class="kicker">The whole balance sheet</p><p class="body">Operating businesses, real estate, entities, private holdings and public markets in one view.</p></div><div style="padding:13px 0;border-top:1px solid var(--line-soft);"><p class="kicker">Continuity, written down</p><p class="body">A protocol and a place your family can reach, so nothing depends on you being available.</p></div>
-    <p class="kicker">Who this is for</p>
-    <ul><li>Families whose wealth spans businesses, property, entities and investments</li><li>Families on the other side of a sale, with more to coordinate than to invest</li><li>Families where one person holds all the knowledge and nobody else could step in</li><li>Families whose advisers have never spoken to each other</li></ul>
+    <div class="row"><p class="kicker">One point of coordination</p><p class="body">We convene your attorney, CPA, insurance and banking relationships around a single plan.</p></div>
+    <div class="row"><p class="kicker">The whole balance sheet</p><p class="body">Operating businesses, real estate, entities, private holdings and public markets in one view.</p></div>
+    <div class="row"><p class="kicker">Continuity, written down</p><p class="body">A protocol and a place your family can reach, so nothing depends on you being available.</p></div>
     <div style="margin-top:16px;">
       <p class="kicker">Who sits in the middle</p>
       <div class="hub2">
@@ -245,17 +308,27 @@
         </div>
       </div>
     </div>
-<div style="margin-top:auto;padding-top:14px;">
-      <p class="pull">A wealth manager&rsquo;s relationship ends with you. A Family CFO&rsquo;s continues with your family.</p>
-    </div>
+    <div style="margin-top:14px;"><p class="pull">A wealth manager&rsquo;s relationship ends with you. A Family CFO&rsquo;s continues with your family.</p></div>
+    <div class="ff"><span>Live Your One Best Life</span><span>my360wealth.com &nbsp;&middot;&nbsp; 818.547.4720</span></div>
   </div>
-<p class="pnum">Page 3 &mdash; inside right</p>
-  <div class="panel">
-    <span class="ptag">Panel 3 &mdash; inside right</span>
-    <p class="eyebrow">What we do</p>
-    <p class="kicker" style="margin-top:16px;">What&rsquo;s included</p>
-    <ul><li>Estate strategy coordinated with your attorney</li><li>Multi-year tax planning across entities and generations</li><li>Family governance and next-generation education</li><li>A complete balance sheet and document vault</li><li>Business valuation, exit and succession (CEPA&reg;)</li></ul>
-    <p class="body" style="margin-top:14px;"><b>Nothing has to be in-house, and nothing has to change.</b> We work with the advisers you already have, and where you need one, we bring in trusted attorneys, CPAs and specialists from our own network.</p>
+</div>
+
+<p class="pnum">Back</p>
+<div class="flyer">
+  <div class="tb"><span>Family Office &amp; Family CFO</span></div>
+  <div class="fb">
+    <p class="kicker">What&rsquo;s included</p>
+    <ul>
+      <li>Estate strategy coordinated with your attorney</li>
+      <li>Multi-year tax planning across entities and generations</li>
+      <li>Family governance and next-generation education</li>
+      <li>A complete balance sheet and document vault</li>
+      <li>Business valuation, exit and succession (CEPA&reg;)</li>
+    </ul>
+    <p class="body" style="margin-top:12px;"><b>Nothing has to be in-house, and nothing has to change.</b> We work with the advisers you already have, and where you need one, we bring in trusted attorneys, CPAs and specialists from our own network.</p>
+
+    
+
     <div class="afl">
       <p class="kicker">Advice for Life &mdash; the same four steps, whichever door you came through</p>
       <div class="afl-grid">
@@ -266,43 +339,33 @@
       </div>
     </div>
 
-    <div class="quad">
-      <p class="kicker">One of four &mdash; the whole circle is available to you</p>
-      <svg class="quadfig" viewBox="0 0 600 300" role="img" aria-label="Four quarters of one circle: Private Wealth, Group Benefits, Exit Planning, Family Office.">
-        <circle cx="300" cy="150" r="78" fill="none" stroke="rgba(42,34,26,.09)" stroke-width="8"/>
-        <path class="qarc" d="M 305.4 72.2 A 78 78 0 0 1 377.8 144.6" stroke="#a07b32" opacity=".34"/>
-        <path class="qarc" d="M 377.8 155.4 A 78 78 0 0 1 305.4 227.8" stroke="#8a6a2b" opacity=".34"/>
-        <path class="qarc" d="M 294.6 227.8 A 78 78 0 0 1 222.2 155.4" stroke="#c9a974" opacity=".34"/>
-        <path class="qarc" d="M 222.2 144.6 A 78 78 0 0 1 294.6 72.2" stroke="#6b6055"/>
-        <text class="qc" x="300" y="156">360&#176;</text>
-        <text class="qnum" x="418" y="72" text-anchor="start">I</text>
-        <text class="qname" x="418" y="92" text-anchor="start">Private Wealth</text>
-        <text class="qnum" x="418" y="194" text-anchor="start">II</text>
-        <text class="qname" x="418" y="214" text-anchor="start">Group Benefits</text>
-        <text class="qnum" x="182" y="194" text-anchor="end">III</text>
-        <text class="qname" x="182" y="214" text-anchor="end">Exit Planning</text>
-        <text class="qnum on" x="182" y="72" text-anchor="end">IV</text>
-        <text class="qname on" x="182" y="92" text-anchor="end">Family Office</text>
-      </svg>
-    </div>
-  </div>
-<p class="pnum">Page 4 &mdash; back cover</p>
-  <div class="panel dark contact">
-    <span class="ptag">Panel 4 &mdash; back cover</span>
-    <div style="width:2.2in;height:.84in;background:var(--logo) left center/contain no-repeat;margin-bottom:26px;"></div>
-    <p class="eyebrow">The Next Step</p>
-    <h2 class="h-lead" style="color:var(--dark-ink);font-size:27px;">Start with what happens tomorrow.</h2>
-    <p class="lead">If you were unavailable next week, could your family take over? The honest answer to that usually sets the agenda for everything else.</p>
-    <div style="margin-top:26px;">
-      <p class="k">Office</p>
-      <p class="v">My 360 Wealth Management Group<br>500 N. Brand Blvd, Suite 2120<br>Glendale, CA 91203</p>
-      <p class="k" style="margin-top:16px;">Reach us</p>
-      <p class="v">818.547.4720 &middot; Fax 818.301.4020<br>service@my360wealth.com<br>www.my360wealth.com</p>
+    <div style="margin-top:11px;padding-top:10px;border-top:1px solid var(--line);">
+      <p class="kicker">Who this is for</p>
+      <ul>
+        <li>Families whose wealth spans businesses, property, entities and investments</li>
+        <li>Families on the other side of a sale, with more to coordinate than to invest</li>
+        <li>Families where one person holds all the knowledge and nobody else could step in</li>
+        <li>Families whose advisers have never spoken to each other</li>
+      </ul>
     </div>
 
-    <div style="margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);">
-      <div class="disc"><p>Securities offered through LPL Financial, Member FINRA/SIPC. Investment advisory services offered through Global Retirement Partners, LLC, an SEC registered investment advisor, dba My 360 Wealth Management Group, a separate entity from LPL Financial.</p><p>My 360 Wealth Management Group, Global Retirement Partners and LPL Financial do not provide tax or legal advice. LPL Financial representatives offer access to Trust Services through The Private Trust Company N.A., an affiliate of LPL Financial.</p><p>Descriptions of services are general and are not eligibility criteria, recommendations, or an offer of services. Fee descriptions are general; actual fees are set out in your advisory agreement and in Form ADV Part 2A. Business valuation and exit planning services are educational and planning in nature and are not an appraisal, a fairness opinion, or a solicitation to buy or sell a business. Pierre Movsessian CA Insurance #0B65327.</p></div>
+    <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--line);">
+      <p class="kicker">Questions we are asked</p>
+      <div class="faqgrid">
+        <div class="fq"><h5>What does a Family CFO actually do?</h5><p>The same function a CFO performs for a company, applied to a family: holds the complete picture, coordinates the specialists, keeps the reporting current, and makes sure decisions are made with the whole balance sheet in view.</p></div>
+        <div class="fq"><h5>How is the fee structured?</h5><p>Family Office relationships are engaged on one flat annual fee, capped, rather than a percentage of assets. Our other services are priced differently. Your actual fee is set out in your advisory agreement and Form ADV Part 2A.</p></div>
+        <div class="fq"><h5>Do we have to move our accounts?</h5><p>No. Coordination does not require custody. Where consolidating makes sense we will say so, and where it doesn&rsquo;t we won&rsquo;t.</p></div>
+        <div class="fq"><h5>What happens to my family if something happens to me?</h5><p>That is the point of the continuity protocol. The balance sheet, the documents and the adviser relationships already sit in one place your family can reach, so they continue with people who know the situation.</p></div>
+      </div>
+    </div>
+
+    
+
+    <div style="margin-top:auto;padding-top:12px;">
+      <div class="disc" style="color:var(--ink55);">
+        <p>Securities offered through LPL Financial, Member FINRA/SIPC. Investment advisory services offered through Global Retirement Partners, LLC, an SEC registered investment advisor, dba My 360 Wealth Management Group, a separate entity from LPL Financial. My 360 Wealth Management Group, Global Retirement Partners and LPL Financial do not provide tax or legal advice. LPL Financial representatives offer access to Trust Services through The Private Trust Company N.A., an affiliate of LPL Financial. Descriptions of services are general and are not eligibility criteria, recommendations, or an offer of services. Fee descriptions are general; actual fees are set out in your advisory agreement and in Form ADV Part 2A. Business valuation and exit planning services are educational and planning in nature and are not an appraisal, a fairness opinion, or a solicitation to buy or sell a business. Pierre Movsessian CA Insurance #0B65327.</p>
+      </div>
     </div>
   </div>
-
+</div>
 </body></html>
