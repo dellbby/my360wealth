@@ -9,7 +9,7 @@
   gtag('config', 'G-FTQGHFH0GE');
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>My 360 Wealth &mdash; Exit Planning (flyer)</title>
+<title>My 360 Wealth &mdash; Private Wealth (flyer)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 <style>
@@ -147,106 +147,95 @@
   }
   @media print{ .readbar,.pnum{display:none} }
 
-/* ============ STAGGERED-CUT FLYER ============
-   One sheet, printed front and back. The top bar is the staggered cut:
-   four flyers trimmed 11 / 10.5 / 10 / 9.5 in, so every bar shows when stacked. */
+/* ============ STAGGERED-CUT FLYER ============ */
 body{background:#cfc4ae;margin:0;padding:0 0 40px}
-.flyer{--bar:#a07b32; --bar-ink:#fffaf0;
-       width:8.5in;height:10.5in;margin:22px auto;background:var(--paper);
+.flyer{--bar:#c9a974; --bar-ink:#17130f;
+       width:8.5in;height:9.5in;margin:22px auto;background:var(--paper);
        box-shadow:0 12px 44px rgba(42,34,26,.22);
        display:flex;flex-direction:column;overflow:hidden;position:relative}
 .tb{flex:0 0 .5in;height:.5in;background:var(--bar);color:var(--bar-ink);
     display:flex;align-items:center;justify-content:center;text-align:center;padding:0 .55in;
     font-size:15px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
-.flyer:first-of-type .fb{padding-top:.5in}
-.flyer:first-of-type .f-h1{font-size:34px}
-.flyer:first-of-type .lead{font-size:16.5px}
-.flyer:first-of-type .row{padding:15px 0}
-.flyer:first-of-type .pull{font-size:18px}
-.fb{flex:1 1 auto;min-height:0;padding:.4in .6in .26in;display:flex;flex-direction:column;overflow:hidden}
-.ff{flex:0 0 auto;margin-top:auto;padding-top:12px;border-top:1px solid var(--line);
+.fb{flex:1 1 auto;min-height:0;padding:.34in .55in .24in;display:flex;flex-direction:column;overflow:hidden}
+.flyer:first-of-type .fb{padding-top:.4in}
+.ff{flex:0 0 auto;margin-top:auto;padding-top:10px;border-top:1px solid var(--line);
     display:flex;justify-content:space-between;align-items:baseline;
     font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink55)}
 .f-h1{font-size:31px;line-height:1.16}
 .f-h1.oneline{white-space:nowrap}
+.flyer:first-of-type .f-h1{font-size:33px}
 .f-h1 em{font-style:italic;color:var(--gold)}
-.row{padding:10px 0;border-top:1px solid var(--line-soft)}
+.row{padding:8px 0;border-top:1px solid var(--line-soft)}
 .row:first-of-type{border-top:0}
 .helper{max-width:8.5in;margin:22px auto 0;padding:14px 18px;background:#fffaf0;
         border:1px solid var(--gold-soft);font-size:13px;line-height:1.6}
-.helper b{color:var(--gold)}
 .pnum{max-width:8.5in;margin:0 auto;padding:0 4px 6px;font-size:12px;letter-spacing:.16em;
       text-transform:uppercase;color:rgba(42,34,26,.5)}
-.flyer li{padding:4px 0 4px 16px;font-size:14.5px}
+.flyer li{padding:3px 0 3px 16px;font-size:14px}
 .flyer .kicker{color:var(--dark)}
-.flyer .afl{margin-top:9px;padding-top:9px}
-.flyer .afl-grid{grid-template-columns:repeat(4,1fr);gap:0 14px;margin-top:5px}
-.flyer .afl-step h5{font-size:14px;margin:2px 0 3px}
-.flyer .afl-step p{font-size:10.5px;line-height:1.38}
-.flyer .lead{margin-top:12px}
+.flyer .lead{margin-top:10px;font-size:15.5px}
 .flyer ul{margin-bottom:0}
-.flyer .disc{font-size:9px;line-height:1.5}
-.flyer .disc p{margin-bottom:4px}
-.faqgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin-top:7px}
-.fq h5{margin:0 0 3px;font-family:var(--serif);font-weight:500;font-size:14px;line-height:1.2;color:var(--ink)}
-.fq p{margin:0;font-size:10.5px;line-height:1.4;color:var(--ink70)}
+.flyer .afl{margin-top:10px;padding-top:9px}
+.flyer .afl-grid{grid-template-columns:repeat(4,1fr);gap:0 14px;margin-top:5px}
+.flyer .afl-step h5{font-size:13.5px;margin:2px 0 3px}
+.flyer .afl-step p{font-size:10.5px;line-height:1.38}
+.flyer .disc{font-size:8.6px;line-height:1.48}
+.flyer .disc p{margin:0}
+
+/* ---- Life Milestones, back of the Private Wealth flyer ---- */
+.flyer.dark{background:var(--dark);color:var(--dark-ink)}
+.ms-title{font-family:var(--serif);font-style:italic;font-weight:500;font-size:36px;line-height:1.1;
+          color:var(--dark-ink);margin:0}
+.ms-sub{font-style:italic;font-size:15px;line-height:1.4;color:rgba(243,238,226,.72);margin:6px 0 0}
+.ms-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 26px;margin-top:22px}
+.ms-col{position:relative;padding:12px 0 12px 22px}
+.ms-col::before{content:'';position:absolute;left:4.5px;top:12px;bottom:12px;width:1px;background:var(--gold-lt);opacity:.75}
+.ms-cap{position:absolute;left:0;width:10px;height:13px}
+.ms-cap.t{top:0} .ms-cap.b{bottom:0}
+.ms-item{position:relative;margin-bottom:17px}
+.ms-item:last-child{margin-bottom:0}
+.ms-item::before{content:'';position:absolute;left:-21px;top:4px;width:8px;height:8px;border-radius:50%;
+                 background:var(--gold-lt)}
+.ms-item h5{margin:0 0 4px;font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.05em;
+            text-transform:uppercase;line-height:1.3;color:var(--dark-ink)}
+.ms-item ul{margin:0;padding:0;list-style:none}
+.ms-item li{position:relative;padding:2px 0 2px 12px;font-size:11.6px;line-height:1.45;
+            color:rgba(243,238,226,.86);border-top:0}
+.ms-item li::before{content:'';position:absolute;left:0;top:6px;width:3px;height:3px;border-radius:50%;
+                    background:var(--gold-soft)}
+.ms-item li ul{margin:1px 0 0;padding-left:9px}
+.ms-item li ul li::before{content:'';width:5px;height:1px;border-radius:0;top:8px;background:var(--gold-soft)}
+.ms-disc{margin:18px 0 0;font-size:9.2px;line-height:1.5;color:rgba(243,238,226,.55);text-align:center;
+         max-width:6.6in;margin-left:auto;margin-right:auto}
+.flyer.dark .disc{color:rgba(243,238,226,.42)}
+
 @media print{
-  @page{size:8.5in 10.5in;margin:0}
+  @page{size:8.5in 9.5in;margin:0}
   body{background:#fff;padding:0}
   .helper,.pnum{display:none}
   .flyer{margin:0;box-shadow:none;page-break-after:always;break-after:page;
          -webkit-print-color-adjust:exact;print-color-adjust:exact}
   .flyer:last-of-type{page-break-after:auto;break-after:auto}
 }
-@media screen and (max-width:900px){
-  .flyer{width:auto;height:auto;margin:14px 10px}
-  .fb{padding:26px 22px}
-}
 </style></head>
 <body>
-<div class="helper"><b>Staggered-cut flyer &mdash; Exit Planning.</b>
-One sheet, printed front and back. Trim height <b>10.5in</b>.
-To make the PDF: Print, Destination Save as PDF, paper size 8.5 &times; 10.5in, margins None, Background graphics on.
+<div class="helper"><b>Staggered-cut flyer &mdash; Private Wealth.</b> One sheet, printed front and back.
+Trim height <b>9.5in</b>. Print, Save as PDF, paper 8.5 &times; 9.5in, margins None, Background graphics on.
 This bar does not print.</div>
 
 <p class="pnum">Front</p>
 <div class="flyer">
-  <div class="tb"><span>Exit Planning for Business Owners &nbsp;&middot;&nbsp; CEPA</span></div>
+  <div class="tb"><span>Private Wealth Management</span></div>
   <div class="fb">
-    <h1 class="f-h1 oneline">Build Your Business. <em>Plan Your Exit.</em></h1>
-    <p class="lead">We help business owners prepare for a successful transition by aligning business value, personal wealth, tax strategy, and succession planning around what comes next.</p>
+    <h1 class="f-h1 oneline">Build Your Wealth. <em>Plan for What&rsquo;s Next.</em></h1>
+    <p class="lead">We help families and professionals bring investments, tax strategy, retirement income, and estate planning together into one coordinated plan built around your goals.</p>
     <div class="rule"></div>
     <p class="kicker">How we work</p>
-    <div class="row"><p class="kicker">Before</p><p class="body">Valuation and value-gap analysis, readiness, and the tax and estate work that only counts years out.</p></div>
-    <div class="row"><p class="kicker">During</p><p class="body">One seat accountable to your family, alongside your banker, M&amp;A attorney and CPA.</p></div>
-    <div class="row"><p class="kicker">After</p><p class="body">A plan for proceeds that now have to last permanently &mdash; and the Family CFO relationship that follows.</p></div>
-    <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--line);">
-      <p class="kicker">Who this is for</p>
-      <ul>
-      <li>Owners expecting to sell or transition within one to ten years</li>
-      <li>Owners who have had an approach and don&rsquo;t know what the business is worth</li>
-      <li>Families where the business is most of the net worth, with no plan if something happens first</li>
-      <li>Owners planning an internal transition to family, management or an ESOP</li>
-    </ul>
+    <div class="row"><p class="kicker">Planning first, portfolio second</p><p class="body">The allocation follows the goal, not the other way round.</p></div><div class="row"><p class="kicker">Tax-aware, and coordinated</p><p class="body">Asset location, loss harvesting and Roth timing, worked through with your CPA.</p></div><div class="row"><p class="kicker">Protection that matches the plan</p><p class="body">Insurance, beneficiary and long-term care review, and estate strategy alongside your attorney.</p></div>
+    <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--line);">
+      <p class="kicker">What&rsquo;s included</p>
+      <ul><li>Portfolio management, core and satellite</li><li>Retirement income planning (RICP&reg;) and claiming strategy</li><li>Withdrawal sequencing and multi-year Roth analysis</li><li>Equity compensation and concentrated stock</li><li>Trust funding and estate document review</li></ul>
     </div>
-    
-    <div class="ff"><span>Live Your One Best Life</span><span>my360wealth.com &nbsp;&middot;&nbsp; 818.547.4720</span></div>
-  </div>
-</div>
-
-<p class="pnum">Back</p>
-<div class="flyer">
-  <div class="tb"><span>Exit Planning for Business Owners &nbsp;&middot;&nbsp; CEPA</span></div>
-  <div class="fb">
-    <p class="kicker">What&rsquo;s included</p>
-    <ul>
-      <li>Business valuation and value-gap assessment</li>
-      <li>Entity and ownership structuring ahead of a deal</li>
-      <li>Pre-sale trust and estate planning, while it still qualifies</li>
-      <li>Key-employee retention and buy-sell review</li>
-      <li>Deal structures modelled for what you actually net</li>
-    </ul>
-    <p class="body" style="margin-top:12px;"><b>The credential behind it.</b> As a Certified Exit Planning Advisor (CEPA) professional, Pierre Movsessian and our team are specially trained to help business owners build, protect, and ultimately realize the value of their business &mdash; aligning both personal and professional goals to support a successful transition and long-term financial independence.</p>
     <div class="afl">
       <p class="kicker">Advice for Life &mdash; the same four steps, whichever door you came through</p>
       <div class="afl-grid">
@@ -256,17 +245,20 @@ This bar does not print.</div>
         <div class="afl-step"><p class="n">04</p><h5>Monitoring</h5><p>Life happens. Tracking keeps the plan on target, so we can anticipate change and adjust as circumstances do.</p></div>
       </div>
     </div>
-    <div style="margin-top:11px;padding-top:10px;border-top:1px solid var(--line);">
-      <p class="kicker">Questions we are asked</p>
-      <div class="faqgrid">
-        <div class="fq"><h5>What is a CEPA?</h5><p>Certified Exit Planning Advisor &mdash; a credential from the Exit Planning Institute focused on preparing a business and its owner for a transition, covering value growth, readiness, and the personal and financial planning around a sale.</p></div>
-        <div class="fq"><h5>How early should we start?</h5><p>Most meaningful tax and estate planning has to be in place well before a letter of intent. Three to five years gives real room; one year still helps; after a signed LOI the options narrow sharply.</p></div>
-        <div class="fq"><h5>Is your valuation an appraisal?</h5><p>No. Our business valuation and exit planning work is educational and planning in nature. It is not an appraisal, a fairness opinion, or a solicitation to buy or sell a business.</p></div>
-        <div class="fq"><h5>What if I&rsquo;m not sure I want to sell?</h5><p>That is the usual starting point. Understanding what the business is worth, and what would have to be true to sell it well, is useful whether or not you ever do.</p></div>
-      </div>
-    </div>
-    <div style="margin-top:auto;padding-top:12px;">
-      <div class="disc" style="color:var(--ink55);"><p>Securities offered through LPL Financial, Member FINRA/SIPC. Investment advisory services offered through Global Retirement Partners, LLC, an SEC registered investment advisor, dba My 360 Wealth Management Group, a separate entity from LPL Financial. My 360 Wealth Management Group, Global Retirement Partners and LPL Financial do not provide tax or legal advice. LPL Financial representatives offer access to Trust Services through The Private Trust Company N.A., an affiliate of LPL Financial. Descriptions of services are general and are not eligibility criteria, recommendations, or an offer of services. Fee descriptions are general; actual fees are set out in your advisory agreement and in Form ADV Part 2A. Business valuation and exit planning services are educational and planning in nature and are not an appraisal, a fairness opinion, or a solicitation to buy or sell a business. Pierre Movsessian CA Insurance #0B65327.</p></div>
+    <div class="ff"><span>Live Your One Best Life</span><span>my360wealth.com &nbsp;&middot;&nbsp; 818.547.4720</span></div>
+  </div>
+</div>
+
+<p class="pnum">Back</p>
+<div class="flyer dark">
+  <div class="tb"><span>Private Wealth Management</span></div>
+  <div class="fb">
+    <h2 class="ms-title">Life Milestones</h2>
+    <p class="ms-sub">We tailor your plan based on where you are in your life</p>
+    <div class="ms-grid"><div class="ms-col"><svg class="ms-cap t" viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg"><path d="M0 0 H10 L5 6.5 L10 13 H0 L5 6.5 Z" fill="#c9a974"/></svg><svg class="ms-cap b" viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg"><path d="M0 0 H10 L5 6.5 L10 13 H0 L5 6.5 Z" fill="#c9a974"/></svg><div class="ms-item"><h5>First Job</h5><ul><li>Begin funding a retirement account<ul><li>401(k)</li><li>IRA</li></ul></li><li>Get a credit card</li></ul></div><div class="ms-item"><h5>Getting Married</h5><ul><li>Purchase first home</li><li>Purchase disability insurance</li><li>Diversify your portfolio</li></ul></div><div class="ms-item"><h5>New Child</h5><ul><li>Develop a college savings plan</li><li>Purchase life insurance</li><li>Establish basic estate plan</li></ul></div><div class="ms-item"><h5>Changing Jobs / Divorce / Remarry</h5><ul><li>Consolidate 401(k) assets from previous employers into a rollover IRA</li><li>Mortgage refinance / new mortgage</li><li>Update will / trust / power of attorney</li></ul></div><div class="ms-item"><h5>Business Owner Exit Planning</h5><ul><li>Understanding business value &amp; readiness</li><li>Aligning personal, financial &amp; business goals</li><li>Designing the right exit &amp; legacy plan</li></ul></div></div><div class="ms-col"><svg class="ms-cap t" viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg"><path d="M0 0 H10 L5 6.5 L10 13 H0 L5 6.5 Z" fill="#c9a974"/></svg><svg class="ms-cap b" viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg"><path d="M0 0 H10 L5 6.5 L10 13 H0 L5 6.5 Z" fill="#c9a974"/></svg><div class="ms-item"><h5>Retiring Parents / Parent Care</h5><ul><li>Explore assisted living options</li><li>Create a comprehensive estate plan</li><li>Ensure retirement income</li></ul></div><div class="ms-item"><h5>Planning for Your Retirement / Kids Leave for College</h5><ul><li>Develop a retirement plan</li><li>Finance college education</li><li>Diversify your portfolio</li></ul></div><div class="ms-item"><h5>Legacy Planning</h5><ul><li>Transfer of assets to beneficiaries</li><li>Purchase second home</li><li>Diversity your portfolio</li></ul></div><div class="ms-item"><h5>Early Retirement</h5><ul><li>Utilize advanced estate planning techniques</li><li>Establish retirement income distribution strategy</li><li>Explore charitable giving options</li></ul></div><div class="ms-item"><h5>Late Retirement</h5><ul><li>Update will / estate plan</li><li>Start taking IRA required minimum distribution at 73</li><li>Manage medical expenses</li><li>Make assisted living arrangements</li></ul></div></div></div>
+    <p class="ms-disc">The information above is a hypothetical example of a plan for illustrative purposes only and is not intended to serve as investment advice since the availability and effectiveness of any strategy or plan is dependent upon your individual facts and circumstances.</p>
+    <div style="margin-top:auto;padding-top:10px;">
+      <div class="disc"><p>Securities offered through LPL Financial, Member FINRA/SIPC. Investment advisory services offered through Global Retirement Partners, LLC, an SEC registered investment advisor, dba My 360 Wealth Management Group, a separate entity from LPL Financial. My 360 Wealth Management Group, Global Retirement Partners and LPL Financial do not provide tax or legal advice. LPL Financial representatives offer access to Trust Services through The Private Trust Company N.A., an affiliate of LPL Financial. Descriptions of services are general and are not eligibility criteria, recommendations, or an offer of services. Fee descriptions are general; actual fees are set out in your advisory agreement and in Form ADV Part 2A. Pierre Movsessian CA Insurance #0B65327.</p></div>
     </div>
   </div>
 </div>

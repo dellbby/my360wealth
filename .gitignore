@@ -1,1 +1,23 @@
 node_modules/
+
+# Illustrator export helper scripts (local tooling, not part of the site)
+export_screens.jsx
+export_wide_print.jsx
+_archive-brochure-pages/fold-exit-planning.html
+_archive-brochure-pages/fold-family-office.html
+_archive-brochure-pages/fold-group-benefits.html
+_archive-brochure-pages/fold-private-wealth.html
+_archive-brochure-pages/folder.html
+_archive-brochure-pages/read-exit-planning.html
+_archive-brochure-pages/read-family-office.html
+_archive-brochure-pages/read-group-benefits.html
+_archive-brochure-pages/read-private-wealth.html
+Invoice_MY360-2026-0804.pdf
+folder.html
+COMPLIANCE-CHANGE-LOG.md
+AGENTS.md
+folder.html
+*.pdf
+brochures/flyer-exit-planning.pdf
+brochures/flyer-exit-planning.pdf
+brochures/flyer-family-office.pdf
