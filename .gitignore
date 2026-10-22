@@ -21,3 +21,5 @@ folder.html
 brochures/flyer-exit-planning.pdf
 brochures/flyer-exit-planning.pdf
 brochures/flyer-family-office.pdf
+*.html
+*.pdf
