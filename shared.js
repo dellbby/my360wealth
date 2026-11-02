@@ -344,6 +344,7 @@
   .menu-meta { flex-wrap: wrap; gap: 10px 12px; }
   .menu-meta a { white-space: nowrap; }
   .menu-meta a svg { flex: 0 0 auto; }
+  @media (max-width: 480px) { .menu-meta > span { display: none; } }
 
   /* Mobile: the fixed-header offset on <main> is sized for the desktop header.
      The mobile header is shorter, so trim the offset and the hero band padding
@@ -351,7 +352,7 @@
   @media (max-width: 768px) {
     main[style*="padding-top"] { padding-top: 112px !important; }
     .hb-bar { padding-top: 34px !important; padding-bottom: 34px !important; }
-    .hero { min-height: 78vh !important; padding: 150px 0 44px !important; }
+    .hero { min-height: 74vh !important; padding: 130px 0 44px !important; }
   }
 
   /* ---------------------------------------------------------------
