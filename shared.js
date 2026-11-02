@@ -340,6 +340,19 @@
   .menu-links { flex: 1 0 auto; justify-content: flex-start; }
   .menu-links a { padding-top: 7px; padding-bottom: 7px; }
   .menu-bottom { margin-top: auto; padding-bottom: max(40px, env(safe-area-inset-bottom)); }
+  /* Mobile menu: phone number and email each stay on one line */
+  .menu-meta { flex-wrap: wrap; gap: 10px 12px; }
+  .menu-meta a { white-space: nowrap; }
+  .menu-meta a svg { flex: 0 0 auto; }
+
+  /* Mobile: the fixed-header offset on <main> is sized for the desktop header.
+     The mobile header is shorter, so trim the offset and the hero band padding
+     to remove the empty gap above the page title. Presentation only. */
+  @media (max-width: 768px) {
+    main[style*="padding-top"] { padding-top: 112px !important; }
+    .hb-bar { padding-top: 34px !important; padding-bottom: 34px !important; }
+    .hero { min-height: 78vh !important; padding: 150px 0 44px !important; }
+  }
 
   /* ---------------------------------------------------------------
      TYPE FLOOR FOR THE INJECTED NAV AND FOOTER
