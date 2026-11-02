@@ -91,7 +91,7 @@
     
     <div class="nav-mobile">
       <button class="icon-btn" id="menuBtn" aria-label="Open menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
   </div>
@@ -339,6 +339,10 @@
   .menu-overlay { overflow-y: auto; -webkit-overflow-scrolling: touch; }
   .menu-links { flex: 1 0 auto; justify-content: flex-start; }
   .menu-links a { padding-top: 7px; padding-bottom: 7px; }
+  /* Hamburger button a touch larger */
+  .nav-mobile .icon-btn { width: 46px; height: 46px; }
+  /* Menu items: slightly smaller type so every label stays on one line */
+  .menu-links a { font-size: 15px; letter-spacing: 0.05em; white-space: nowrap; }
   .menu-bottom { margin-top: auto; padding-bottom: max(40px, env(safe-area-inset-bottom)); }
   /* Mobile menu: phone number and email each stay on one line */
   .menu-meta { flex-wrap: wrap; gap: 10px 12px; }
