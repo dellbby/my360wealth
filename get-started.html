@@ -457,6 +457,35 @@
   .ws-file p { margin:0 0 12px; font-size:14px; color:rgba(42,34,26,.68); }
   .ws-actions { margin:6px 0 0; }
   .ws-actions .submit { max-width:340px; }
+
+  /* ===================================================================
+     STEPPED WORKSHEET
+     Every field stays in the DOM and enabled at all times, so the whole
+     form is submitted in one POST. Steps are a view, not a split form.
+     =================================================================== */
+  .ws-prog { background:#ffffff; border:1px solid rgba(42,34,26,.10); padding:20px 24px; margin-bottom:20px; }
+  .ws-prog-top { display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:12px; }
+  .ws-prog-name { font-family:'Playfair Display', Georgia, serif; font-size:19px; color:#2a221a; margin:0; }
+  .ws-prog-count { font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#a07b32; font-weight:500; white-space:nowrap; }
+  .ws-prog-track { height:3px; background:rgba(42,34,26,.10); position:relative; overflow:hidden; }
+  .ws-prog-fill { position:absolute; inset:0 auto 0 0; width:0; background:#a07b32; transition:width .35s ease; }
+  .ws-prog-dots { display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; }
+  .ws-dot { width:22px; height:3px; background:rgba(42,34,26,.14); border:0; padding:0; cursor:pointer; transition:background .25s; }
+  .ws-dot.done { background:rgba(160,123,50,.55); }
+  .ws-dot.active { background:#a07b32; }
+  .ws-dot[disabled] { cursor:default; }
+
+  .ws-step[hidden] { display:none; }
+  .ws-nav { display:flex; align-items:center; gap:14px; margin:6px 0 0; flex-wrap:wrap; }
+  .ws-back { background:transparent; border:1px solid rgba(42,34,26,.22); color:#2a221a; padding:13px 26px;
+             font-size:12px; letter-spacing:.15em; text-transform:uppercase; font-weight:500; font-family:inherit;
+             cursor:pointer; transition:border-color .3s, color .3s; }
+  .ws-back:hover { border-color:#a07b32; color:#a07b32; }
+  .ws-nav .submit { width:auto; min-width:220px; flex:0 0 auto; cursor:pointer; }
+  .ws-err { color:#9a2d2d; font-size:12.5px; margin:14px 0 0; }
+  .field.is-bad input, .field.is-bad select, .field.is-bad textarea { border-color:#9a2d2d !important; }
+  @media (max-width:520px){ .ws-nav { flex-direction:column-reverse; align-items:stretch; }
+                            .ws-nav .submit, .ws-back { width:100%; min-width:0; } }
   .ws-foot { font-size:12.5px; line-height:1.6; color:rgba(42,34,26,.55); margin:16px 0 0; }
 </style>
 <meta property="og:type" content="website" />
@@ -499,10 +528,19 @@
           <p>Your responses come directly to our team and are used only to prepare for your planning conversation.</p>
         </div>
 
+        <div class="ws-prog reveal" id="wsProg">
+          <div class="ws-prog-top">
+            <p class="ws-prog-name" id="wsStepName">How to reach you</p>
+            <span class="ws-prog-count" id="wsStepCount">Step 1 of 10</span>
+          </div>
+          <div class="ws-prog-track"><div class="ws-prog-fill" id="wsFill"></div></div>
+          <div class="ws-prog-dots" id="wsDots"></div>
+        </div>
+
         <form id="worksheetForm" action="https://formspree.io/f/maewebwe" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="_subject" value="Financial Planning Worksheet submission" />
 
-    <section class="ws-sec reveal">
+    <section class="ws-sec ws-step" hidden>
       <h2>How to reach you</h2>
       <div class="ws-rule"></div>
       <p class="ws-note">So we can follow up once we have reviewed your worksheet.</p>
@@ -518,7 +556,7 @@
       </div>
     </section>
 
-    <section class="ws-sec reveal">
+    <section class="ws-sec ws-step" hidden>
       <h2>Family &amp; Friends</h2>
       <div class="ws-rule"></div>
       <div class="ws-grid">
@@ -596,7 +634,7 @@
       </div>
     </section>
 
-    <section class="ws-sec reveal">
+    <section class="ws-sec ws-step" hidden>
       <h2>Annual Income</h2>
       <div class="ws-rule"></div>
       <div class="ws-grid">
@@ -640,7 +678,7 @@
       </div>
     </section>
 
-    <section class="ws-sec reveal">
+    <section class="ws-sec ws-step" hidden>
       <h2>Expenses</h2>
       <div class="ws-rule"></div>
       <div class="ws-grid">
@@ -655,7 +693,7 @@
       </div>
     </section>
 
-    <section class="ws-sec reveal">
+    <section class="ws-sec ws-step" hidden>
       <h2>Goals &amp; Priorities</h2>
       <div class="ws-rule"></div>
       <p class="ws-note">Please share any short or long-term goals that are important to you. Include an estimated cost and target timeframe, if known, so we can better align your financial plan with your priorities.</p>
@@ -675,7 +713,7 @@
       </div>
     </section>
 
-    <section class="ws-sec reveal">
+    <section class="ws-sec ws-step" hidden>
       <h2>Net Worth</h2>
       <div class="ws-rule"></div>
       <p class="ws-note">For further analysis, please have your most current statements for the following types of accounts handy.</p>
@@ -702,7 +740,7 @@
       </div>
     </section>
 
-    <section class="ws-sec reveal">
+    <section class="ws-sec ws-step" hidden>
       <h2>Saving &amp; Contributions</h2>
       <div class="ws-rule"></div>
       <p class="ws-note">Annual savings amount.</p>
@@ -723,7 +761,7 @@
       </div>
     </section>
 
-    <section class="ws-sec reveal">
+    <section class="ws-sec ws-step" hidden>
       <h2>Residence Info</h2>
       <div class="ws-rule"></div>
       <div class="ws-grid">
@@ -784,7 +822,7 @@
       </div>
     </section>
 
-    <section class="ws-sec reveal">
+    <section class="ws-sec ws-step" hidden>
       <h2>Insurance Protection</h2>
       <div class="ws-rule"></div>
       <p class="ws-note">Please have your most recent statement available for review and analysis.</p>
@@ -819,7 +857,7 @@
       </div>
     </section>
 
-    <section class="ws-sec reveal">
+    <section class="ws-sec ws-step" hidden>
       <h2>Other Considerations</h2>
       <div class="ws-rule"></div>
       <div class="ws-grid">
@@ -830,8 +868,12 @@
       </div>
     </section>
 
-        <div class="ws-actions reveal">
-          <button class="submit" type="submit">Submit Worksheet</button>
+        <div class="ws-actions">
+          <div class="ws-nav">
+            <button class="ws-back" type="button" id="wsBack" hidden>Back</button>
+            <button class="submit" type="button" id="wsNext">Continue</button>
+          </div>
+          <p class="ws-err" id="wsErr" hidden>Please complete the required fields above before continuing.</p>
           <p class="ws-foot">Please do not include account numbers, Social Security numbers or passwords in this form. We will collect anything sensitive through a secure channel.</p>
           <p class="ws-foot">Prefer to talk it through first? Call <a href="tel:8185474720" style="color:#a07b32">(818) 547-4720</a> or email <a href="mailto:service@my360wealth.com" style="color:#a07b32">service@my360wealth.com</a>.</p>
         </div>
@@ -852,13 +894,103 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  const form = document.getElementById('worksheetForm');
-  const wrap = document.getElementById('form-wrap');
+  const form   = document.getElementById('worksheetForm');
+  const wrap   = document.getElementById('form-wrap');
+  const steps  = Array.from(form.querySelectorAll('.ws-step'));
+  const nextBt = document.getElementById('wsNext');
+  const backBt = document.getElementById('wsBack');
+  const errEl  = document.getElementById('wsErr');
+  const nameEl = document.getElementById('wsStepName');
+  const cntEl  = document.getElementById('wsStepCount');
+  const fillEl = document.getElementById('wsFill');
+  const dotsEl = document.getElementById('wsDots');
+  const progEl = document.getElementById('wsProg');
+
+  const names = steps.map(st => st.querySelector('h2').textContent.trim());
+  let current = 0, furthest = 0;
+
+  /* Required is carried on a data attribute and applied only to the visible
+     step. Fields are never disabled, so every one of them is still included
+     in the FormData that goes to Formspree. */
+  form.querySelectorAll('[required]').forEach(el => {
+    el.dataset.req = '1';
+    el.removeAttribute('required');
+  });
+
+  const fieldsOf = st => Array.from(st.querySelectorAll('input, select, textarea'));
+
+  names.forEach((n, i) => {
+    const d = document.createElement('button');
+    d.type = 'button'; d.className = 'ws-dot'; d.title = n;
+    d.setAttribute('aria-label', 'Step ' + (i + 1) + ': ' + n);
+    d.addEventListener('click', () => { if (i <= furthest) go(i); });
+    dotsEl.appendChild(d);
+  });
+  const dots = Array.from(dotsEl.children);
+
+  function paint() {
+    nameEl.textContent = names[current];
+    cntEl.textContent  = 'Step ' + (current + 1) + ' of ' + steps.length;
+    fillEl.style.width = (((current + 1) / steps.length) * 100) + '%';
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+      d.classList.toggle('done', i < current);
+      d.disabled = i > furthest;
+    });
+    backBt.hidden = current === 0;
+    nextBt.textContent = current === steps.length - 1 ? 'Submit Worksheet' : 'Continue';
+  }
+
+  function go(i, scroll) {
+    current = i;
+    if (i > furthest) furthest = i;
+    steps.forEach((st, k) => {
+      st.hidden = k !== i;
+      fieldsOf(st).forEach(el => {
+        if (el.dataset.req) { k === i ? el.setAttribute('required', '') : el.removeAttribute('required'); }
+      });
+    });
+    errEl.hidden = true;
+    form.querySelectorAll('.field.is-bad').forEach(f => f.classList.remove('is-bad'));
+    paint();
+    if (scroll !== false) {
+      const y = progEl.getBoundingClientRect().top + window.pageYOffset - 150;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+
+  function validate(i) {
+    let ok = true, first = null;
+    fieldsOf(steps[i]).forEach(el => {
+      if (!el.dataset.req) return;
+      const good = el.value.trim() !== '' && el.checkValidity();
+      el.closest('.field').classList.toggle('is-bad', !good);
+      if (!good) { ok = false; if (!first) first = el; }
+    });
+    if (!ok) { errEl.hidden = false; if (first) first.focus({ preventScroll: false }); }
+    return ok;
+  }
+
+  backBt.addEventListener('click', () => { if (current > 0) go(current - 1); });
+
+  nextBt.addEventListener('click', () => {
+    if (!validate(current)) return;
+    if (current < steps.length - 1) { go(current + 1); }
+    else { form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event('submit', { cancelable: true })); }
+  });
+
+  /* Enter advances rather than submitting early (textareas keep newlines). */
+  form.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') { e.preventDefault(); nextBt.click(); }
+  });
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const btn = form.querySelector('.submit');
-    btn.disabled = true;
-    btn.textContent = 'Sending\u2026';
+    for (let i = 0; i < steps.length; i++) {
+      if (!validate(i)) { go(i); return; }
+    }
+    nextBt.disabled = true;
+    nextBt.textContent = 'Sending…';
     try {
       const res = await fetch(form.action, {
         method: 'POST',
@@ -873,16 +1005,18 @@
         </div>`;
         window.scrollTo({ top: wrap.offsetTop - 160, behavior: 'smooth' });
       } else {
-        btn.disabled = false;
-        btn.textContent = 'Submit Worksheet';
+        nextBt.disabled = false;
+        nextBt.textContent = 'Submit Worksheet';
         alert('Sorry, something went wrong sending your worksheet. Please try again or call us at (818) 547-4720.');
       }
     } catch (err) {
-      btn.disabled = false;
-      btn.textContent = 'Submit Worksheet';
+      nextBt.disabled = false;
+      nextBt.textContent = 'Submit Worksheet';
       alert('Sorry, something went wrong sending your worksheet. Please try again or call us at (818) 547-4720.');
     }
   });
+
+  go(0, false);
 </script>
 <script src="/shared.js"></script>
 </body>
