@@ -541,10 +541,14 @@
           <input type="hidden" name="_subject" value="Financial Planning Worksheet submission" />
 
     <section class="ws-sec ws-step" hidden>
-      <h2>How to reach you</h2>
+      <h2>About You &amp; Your Family</h2>
       <div class="ws-rule"></div>
-      <p class="ws-note">So we can follow up once we have reviewed your worksheet.</p>
+      <p class="ws-note">Let’s start with the basics, and how to reach you once we have reviewed your worksheet.</p>
       <div class="ws-grid">
+        <div class="field span2">
+          <label for="full_name">Full Name <span class="req">*</span></label>
+          <input id="full_name" name="full_name" type="text" required />
+        </div>
         <div class="field">
           <label for="email">Email <span class="req">*</span></label>
           <input id="email" name="email" type="email" required placeholder="you@example.com" />
@@ -552,17 +556,6 @@
         <div class="field">
           <label for="phone">Phone</label>
           <input id="phone" name="phone" type="tel" placeholder="(555) 000-0000" />
-        </div>
-      </div>
-    </section>
-
-    <section class="ws-sec ws-step" hidden>
-      <h2>Family &amp; Friends</h2>
-      <div class="ws-rule"></div>
-      <div class="ws-grid">
-        <div class="field span2">
-          <label for="full_name">Full Name <span class="req">*</span></label>
-          <input id="full_name" name="full_name" type="text" required />
         </div>
         <div class="field">
           <label for="age">Age <span class="req">*</span></label>
