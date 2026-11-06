@@ -410,6 +410,21 @@
      FINANCIAL PLANNING WORKSHEET
      Light theme, same field components as the contact form.
      =================================================================== */
+  /* --- page-specific hero + spacing trims --- */
+  #worksheet { padding-top: 36px; }
+  .hb-bar { padding: 40px 0 !important; }
+  .hb-bar-title { font-size: 38px !important; margin-bottom: 10px !important; }
+  .hb-bar-desc { font-size: 15.5px !important; line-height: 1.6 !important; max-width: 640px; }
+  @media (max-width: 640px) { .hb-bar-title { font-size: 29px !important; } }
+
+  /* --- copy reads black, not muted brown --- */
+  .hb-bar-desc { color: #2a221a !important; }
+  .ws-intro p, .ws-sec > .ws-note { color: #2a221a !important; }
+  .ws-sec .field label { color: #2a221a !important; }
+  .hint { color: rgba(42,34,26,.75) !important; }
+  .ws-foot { color: #2a221a !important; }
+  .field input, .field select, .field textarea { color: #2a221a !important; }
+
   .ws-wrap { max-width: 860px; margin: 0 auto; }
   .ws-intro { background:#fffaf0; border:1px solid rgba(160,123,50,.22); padding:22px 26px; margin-bottom:28px; }
   .ws-intro p { margin:0; font-size:15px; line-height:1.65; color:rgba(42,34,26,.78); }
