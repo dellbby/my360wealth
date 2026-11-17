@@ -23,3 +23,6 @@ brochures/flyer-exit-planning.pdf
 brochures/flyer-family-office.pdf
 *.html
 *.pdf
+
+# new site pages must override the blanket *.html rule above
+!get-started.html
