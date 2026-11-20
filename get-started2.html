@@ -503,6 +503,9 @@
                    text-transform:uppercase; color:#a07b32; font-weight:700; margin:0 0 4px; }
   .ws-group > .gl { height:1px; background:rgba(42,34,26,.1); margin:0 0 6px; }
   .ws-pick { font-size:13px; color:rgba(42,34,26,.7); margin:0 0 20px; }
+  .ws-sub { font-family:'Playfair Display', Georgia, serif; font-weight:500; font-size:20px;
+            color:#2a221a; margin:30px 0 8px; padding-top:26px;
+            border-top:1px solid rgba(42,34,26,.1); }
   .ws-tag { display:inline-block; font-size:11px; letter-spacing:.14em; text-transform:uppercase;
             color:#a07b32; border:1px solid rgba(160,123,50,.4); padding:4px 10px; margin:0 0 14px; }
 </style>
@@ -562,26 +565,23 @@
     <section class="ws-sec ws-step" hidden>
       <h2>About You</h2>
       <div class="ws-rule"></div>
-      <p class="ws-note">So we know who we are speaking with, and how to reach you.</p>
+      <p class="ws-note">So we know who we are speaking with. Please leave an email address or a phone number, whichever you prefer.</p>
       <div class="ws-grid">
         <div class="field span2">
           <label for="full_name">Full Name <span class="req">*</span></label>
           <input id="full_name" name="full_name" type="text" required />
         </div>
         <div class="field">
-          <label for="email">Email <span class="req">*</span></label>
-          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" data-oneof="contact" placeholder="you@example.com" />
         </div>
         <div class="field">
           <label for="phone">Phone</label>
-          <input id="phone" name="phone" type="tel" placeholder="(555) 000-0000" />
+          <input id="phone" name="phone" type="tel" data-oneof="contact" placeholder="(555) 000-0000" />
         </div>
       </div>
-    </section>
 
-    <section class="ws-sec ws-step" hidden>
-      <h2>What would you like to cover?</h2>
-      <div class="ws-rule"></div>
+      <h3 class="ws-sub">What would you like to cover?</h3>
       <p class="ws-pick">Pick as many as apply. We will only ask follow-up questions about the areas you choose.</p>
       <div class="ws-group">
         <h3>Major Life Updates</h3>
@@ -972,7 +972,6 @@
     <section class="ws-sec ws-step" hidden>
       <h2>Anything Else</h2>
       <div class="ws-rule"></div>
-      <p class="ws-note">Last one.</p>
       <div class="ws-grid">
         <div class="field span2">
           <label for="other_topics">Other topics you would like to discuss</label>
@@ -1104,13 +1103,37 @@
   });
 
   function validate(i) {
-    let ok = true, first = null;
-    fieldsOf(steps[i]).forEach(el => {
+    let ok = true, first = null, msg = 'Please complete the required fields above before continuing.';
+    const f = fieldsOf(steps[i]);
+
+    f.forEach(el => {
       if (!el.dataset.req) return;
       const good = el.value.trim() !== '' && el.checkValidity();
       el.closest('.field').classList.toggle('is-bad', !good);
       if (!good) { ok = false; if (!first) first = el; }
     });
+
+    /* "one of" groups: at least one member must be filled, and anything that
+       was filled must still be valid for its type. */
+    const groups = [...new Set(f.filter(el => el.dataset.oneof).map(el => el.dataset.oneof))];
+    groups.forEach(g => {
+      const members = f.filter(el => el.dataset.oneof === g);
+      const filled = members.filter(el => el.value.trim() !== '');
+      const bad = filled.filter(el => !el.checkValidity());
+      if (filled.length === 0) {
+        members.forEach(el => el.closest('.field').classList.add('is-bad'));
+        ok = false; if (!first) first = members[0];
+        msg = 'Please leave either an email address or a phone number so we can reach you.';
+      } else if (bad.length) {
+        members.forEach(el => el.closest('.field').classList.toggle('is-bad', !el.checkValidity() && el.value.trim() !== ''));
+        ok = false; if (!first) first = bad[0];
+        msg = 'That email address does not look right. Please check it, or leave a phone number instead.';
+      } else {
+        members.forEach(el => el.closest('.field').classList.remove('is-bad'));
+      }
+    });
+
+    errEl.textContent = msg;
     if (!ok) { errEl.hidden = false; if (first) first.focus(); }
     return ok;
   }
