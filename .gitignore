@@ -1,28 +1,20 @@
 node_modules/
 
-# Illustrator export helper scripts (local tooling, not part of the site)
-export_screens.jsx
-export_wide_print.jsx
-_archive-brochure-pages/fold-exit-planning.html
-_archive-brochure-pages/fold-family-office.html
-_archive-brochure-pages/fold-group-benefits.html
-_archive-brochure-pages/fold-private-wealth.html
-_archive-brochure-pages/folder.html
-_archive-brochure-pages/read-exit-planning.html
-_archive-brochure-pages/read-family-office.html
-_archive-brochure-pages/read-group-benefits.html
-_archive-brochure-pages/read-private-wealth.html
-Invoice_MY360-2026-0804.pdf
-folder.html
-COMPLIANCE-CHANGE-LOG.md
+# Local tooling, not part of the site
+export_*.jsx
 AGENTS.md
-folder.html
-*.pdf
-brochures/flyer-exit-planning.pdf
-brochures/flyer-exit-planning.pdf
-brochures/flyer-family-office.pdf
-*.html
-*.pdf
+COMPLIANCE-CHANGE-LOG.md
+Invoice_*.pdf
 
-# new site pages must override the blanket *.html rule above
-!get-started.html
+# Working files: print sources, backups, staging
+_print-archive/
+_to_delete/
+*.bak
+*.bak-*
+
+# Loose print mockups and exports at the repo root
+/flyer-*.pdf
+/fold-*.pdf
+/read-*.pdf
+/My360-Compliance-*.pdf
+/folder.html
